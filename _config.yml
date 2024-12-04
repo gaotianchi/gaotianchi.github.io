@@ -4,9 +4,9 @@ description: 'This is me.' # This will show up in places like twitter, linkedin,
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
+github_username: 'gaotianchi'
 # email: "example@mail.com"
 # twitter_username: "twitteruser"
-github_username: 'gaotianchi'
 # linkedin_username: "linkedinuser"
 #facebook_username: username
 #flickr_username: username
