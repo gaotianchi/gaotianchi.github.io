@@ -11,10 +11,10 @@
     <link href='{{ site.baseurl }}/feed.xml' rel='alternate' type='application/atom+xml'>
     <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/favicon/apple-touch-icon.png?">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicon/favicon-32x32.png?">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/favicon/favicon-16x16.png?">
-    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/favicon/favicon.ico?" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{'/assets/favicon/apple-touch-icon.png' | prepend: site.baseurl}}">
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicon/favicon-32x32.png?">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/favicon/favicon-16x16.png?"> -->
+    <link rel="shortcut icon" href='{{ "/assets/favicon/favicon.png" | prepend: site.baseurl }}' type="image/x-icon">
     <link rel="manifest" href="{{ site.baseurl }}/assets/favicon/site.webmanifest">
 </head>
 
