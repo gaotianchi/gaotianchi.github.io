@@ -3,9 +3,6 @@ layout: default
 title: THIS IS ME
 ---
 
-
-## An easy to use, minimal, text focused Jekyll theme
-
 Hi there! I'm Tianchi Gao, a software development intern. While I'm still exploring my strengths and interests, I truly enjoy the journey of self-discovery, haha!
 
 Most of my blog posts start as handwritten entries in my notebook, originally in Chinese. Later, I take the time to translate them into English to share with a broader audience. What you’re reading now is the result of that process!
