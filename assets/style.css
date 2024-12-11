@@ -1,18 +1,5 @@
-@font-face {
-    font-family: 'Trajan Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Trajan Pro'), url('https://fonts.cdnfonts.com/s/14928/TrajanPro-Regular.woff') format('woff');
-}
-@font-face {
-    font-family: 'Trajan Pro';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Trajan Pro'), url('https://fonts.cdnfonts.com/s/14928/TrajanPro-Bold.woff') format('woff');
-}
-
 body {
-    font-family: 'Trajan Pro', serif;
+    font-family: 'Trirong', serif;
     margin: auto;
     padding: 20px;
     max-width: 720px;
@@ -56,7 +43,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 .title {
@@ -170,7 +157,7 @@ code {
     border-radius: 3px;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    overflow:auto;
+    overflow: auto;
 }
 
 blockquote {
