@@ -90,7 +90,7 @@ defaults:
 
 baseurl: https://gaotianchi.com
 permalink: /blog/:slug
-timezone: America/New_York
+timezone: Asia/Shanghai
 future: false
 
 exclude:
