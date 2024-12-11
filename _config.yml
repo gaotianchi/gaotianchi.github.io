@@ -85,16 +85,14 @@ defaults:
     values:
       layout: tagged
 
-baseurl: ''
-permalink: /blog/:slug
+permalink: /blog/:slug.html
 timezone: Asia/Shanghai
 future: false
 
 exclude:
 - README.md
 - LICENSE.md
-
-exclude: [vendor]
+- vendor
 
 Blog: /blog
 
