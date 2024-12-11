@@ -5,7 +5,7 @@ title: THIS IS ME
 
 Hi there! I'm Tianchi Gao, a software development intern. While I'm still exploring my strengths and interests, I truly enjoy the journey of self-discovery, haha!
 
-Most of my blog posts start as handwritten entries in my notebook, originally in Chinese. Later, I take the time to translate them into English to share with a broader audience. What you’re reading now is the result of that process!
+Most of my blog posts start as handwritten entries in my notebook, originally in Chinese. Later, I take the time to translate them into English to share with a broader audience. What you're reading now is the result of that process!
 
 Here are some topics I plan to write about in the future, covering my interests and thoughts. They serve as my inspiration list and will gradually evolve into full articles. If any topic catches your eye, feel free to share your thoughts!
 
