@@ -87,7 +87,7 @@ defaults:
       layout: tagged
 
 baseurl: ''
-permalink: /blog/:slug.html
+permalink: /blog/:slug
 timezone: Asia/Shanghai
 future: false
 
