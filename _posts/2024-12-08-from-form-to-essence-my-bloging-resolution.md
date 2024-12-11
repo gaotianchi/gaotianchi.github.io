@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From Form to Essence: My Blogging Resolution"
-date: 2024-12-08
+date: 2024-12-08 20:00
 tags: []
 ---
 
