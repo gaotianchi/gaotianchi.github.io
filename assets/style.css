@@ -1,15 +1,3 @@
-body {
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: #fff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
-}
-
 @font-face {
     font-family: 'Trajan Pro';
     font-style: normal;
@@ -21,6 +9,18 @@ body {
     font-style: normal;
     font-weight: 700;
     src: local('Trajan Pro'), url('https://fonts.cdnfonts.com/s/14928/TrajanPro-Bold.woff') format('woff');
+}
+
+body {
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
 }
 
 
@@ -347,7 +347,7 @@ hr {
 }
 
 body:hover {
-    border: 2px solid #000;
+    border-width: 0;
 }
 
 
