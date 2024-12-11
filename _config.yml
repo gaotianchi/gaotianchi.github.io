@@ -20,8 +20,7 @@
 
 title: GAO TIANCHI
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-This blog is my little corner to document growth, share knowledge, and express thoughts. Here, you'll find technical notes, personal reflections, and occasional musings. 
+description: This blog is my little corner to document growth, share knowledge, and express thoughts. Here, you'll find technical notes, personal reflections, and occasional musings. 
 baseurl: '' # the subpath of your site, e.g. /blog
 url: https://gaotianchi.com # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gaotianchi
