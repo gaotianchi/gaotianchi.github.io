@@ -88,7 +88,7 @@ defaults:
     values:
       layout: tagged
 
-baseurl: https://gaotianchi.com
+baseurl: ''
 permalink: /blog/:slug
 timezone: Asia/Shanghai
 future: false
@@ -102,8 +102,8 @@ exclude: [vendor]
 Blog: /blog
 
 # Add general links to site pages here
-links:
-  Resume: /assets/resume.pdf
+# links:
+#   Resume: /assets/resume.pdf
   
 
 # Add links for more focus here
