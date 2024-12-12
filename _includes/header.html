@@ -3,11 +3,15 @@
     <a href="{{ site.url }}">Home</a> 
     <a href="{{ site.url }}{{ site.Blog }}">Blog</a>
 
-    {% for link in site.links %}
-        <a href="{{ site.url }}{{ link[1] }}">{{ link[0] }}</a>
-    {% endfor %}
+    {% if site.links and site.links.size > 0 %}
+        {% for link in site.links %}
+            <a href="{{ site.url }}{{ link[1] }}">{{ link[0] }}</a>
+        {% endfor %}
+    {% endif %}
     
-    {% for link in site.special_links %}
+    {% if site.special_links and site.special_links.size > 0 %}
+        {% for link in site.special_links %}
             <a href="{{ link[1] }}" target="_blank">[{{ link[0] }}]</a>
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 </nav>
