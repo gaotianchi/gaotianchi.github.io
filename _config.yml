@@ -98,7 +98,9 @@ Blog: /blog
 
 # Add general links to site pages here
 links:
+  - About: /about
   
 
 # Add links for more focus here
 special_links:
+  - Google: https://www.google.com
