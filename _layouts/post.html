@@ -12,9 +12,16 @@ layout: compress
     <h1>{{ page.title }}</h1>
     <div style="display: flex; justify-content: space-between;">
         <i>{{ page.date | date: "%b %d, %Y" }}</i>
-        {% if page.original %}
-        <a href="/picture/{{ page.original }}" target="_blank">[[{{ page.slug }}]]</a>
+        <span>
+        {% if page.original and page.original.size > 0 %}
+        {% assign images = site.static_files | where: "path", "picture/#{ page.slug }" %}
+            [[
+            {% for image in images %}
+            <a href="{{ image }}" target="_blank">{{ image.name }}</a>
+            {% endfor %}
+            ]]
         {% endif %}
+        </span>
     </div>
     <h4 class="subtitle">{{ page.subtitle }}</h4>
 

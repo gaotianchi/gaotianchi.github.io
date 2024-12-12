@@ -3,7 +3,8 @@ layout: post
 title: "From Form to Essence: My Blogging Resolution"
 date: 2024-12-08 20:00 +0000
 tags: [general]
-original: /original
+original:
+    - page_1.jpg
 ---
 
 The idea of blogging has lingered in my mind for years.
