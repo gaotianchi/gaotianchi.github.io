@@ -59,6 +59,8 @@ whitelist:
   - jekyll-redirect-from
 
 markdown: kramdown
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
 lang: en
 
 compress_html:
