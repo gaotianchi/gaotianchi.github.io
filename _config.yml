@@ -96,12 +96,4 @@ exclude:
 
 Blog: /blog
 nav_links:
-  ABOUT: /about.html
-# Add general links to site pages here
-# links:
-#   Resume: /about
-  
-
-# Add links for more focus here
-# special_links:
-#   Search: https://www.google.com/search?q=site%3Agaotianchi.com
+  # ABOUT: /about.html
