@@ -1,17 +1,10 @@
 <h2 class="title">{{ site.title }}</h2>
 <nav>
-    <a href="{{ site.url }}">Home</a> 
-    <a href="{{ site.url }}{{ site.Blog }}">Blog</a>
-
+    <a href="{{ site.url }}">HOME</a> 
+    <a href="{{ site.url }}{{ site.Blog }}">BLOG</a>
     {% if site.links and site.links.size > 0 %}
-        {% for link in site.links %}
+        {% for link in site.nav_links %}
             <a href="{{ site.url }}{{ link[1] }}">{{ link[0] }}</a>
-        {% endfor %}
-    {% endif %}
-    
-    {% if site.special_links and site.special_links.size > 0 %}
-        {% for link in site.special_links %}
-            <a href="{{ link[1] }}" target="_blank">[{{ link[0] }}]</a>
         {% endfor %}
     {% endif %}
 </nav>
