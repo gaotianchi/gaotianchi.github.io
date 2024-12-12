@@ -13,14 +13,13 @@ layout: compress
     <div style="display: flex; justify-content: space-between;">
         <i>{{ page.date | date: "%b %d, %Y" }}</i>
         <span>
-        {% if page.original and page.original.size > 0 %}
-        {% assign images = site.static_files | where: "path", "picture/#{ page.slug }" %}
-            [[
-            {% for image in images %}
-            <a href="{{ image }}" target="_blank">{{ image.name }}</a>
-            {% endfor %}
-            ]]
-        {% endif %}
+            {% assign images = site.static_files | where: "path", "picture/#{ page.slug }" %}
+            {% if images.size > 0 %}
+                {% for image in images %}
+                    <a href="{{ image.path }}" target="_blank">[{{ forloop.index }}]</a>
+                {% endfor %}
+            {% endif %}
+            </span>
         </span>
     </div>
     <h4 class="subtitle">{{ page.subtitle }}</h4>
