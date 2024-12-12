@@ -59,6 +59,7 @@ whitelist:
   - jekyll-redirect-from
 
 markdown: kramdown
+lang: en
 
 compress_html:
   clippings: all
