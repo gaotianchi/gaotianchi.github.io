@@ -94,6 +94,7 @@ exclude:
 - LICENSE.md
 - vendor
 
+picture: /picture
 Blog: /blog
 nav_links:
   # ABOUT: /about.html
