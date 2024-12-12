@@ -13,7 +13,7 @@ layout: compress
     <div style="display: flex; justify-content: space-between;">
         <i>{{ page.date | date: "%b %d, %Y" }}</i>
         {% if page.original %}
-        <a href="{{ page.original }}">[[original]]</a>
+        <a href="/picture/{{ page.original }}" target="_blank">[[{{ page.slug }}]]</a>
         {% endif %}
     </div>
     <h4 class="subtitle">{{ page.subtitle }}</h4>
