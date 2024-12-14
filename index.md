@@ -9,13 +9,6 @@ Most of my blog posts begin as handwritten entries in my notebook, initially wri
 
 Here are some topics I plan to write about in the future, reflecting my interests and ideas. These serve as my inspiration list and will gradually develop into full articles. If any topic piques your interest, please feel free to share your thoughts!
 
-1. Why Did I Start Blogging?
-2. My Journey to Becoming a Developer
-3. A Memorable Debugging Experience
-4. Why I Love Handwritten Notes
-5. Blogging Tips for Beginners
-6. My Initial Impressions of Remote Work
-7. Small Struggles and Significant Wins in Learning to Code
-8. Reflections on Time Management
-9. Embracing Uncertainty with Grace
-10. Writing a Little Every Day: My Journey of Growth
+1. When my supervisor implied that I was going to work unpaid overtime on this internship.
+2. My Internship Observation: How People Whitewash Moral Flaws with Internet Phrases
+3. How do you make a startup idea a reality?
