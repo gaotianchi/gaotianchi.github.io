@@ -3,7 +3,7 @@ layout: default
 title: THIS IS ME
 ---
 
-Hi there! I'm Tianchi Gao, a software development intern. Although I am still exploring my strengths and interests, I genuinely enjoy the journey of self-discovery. Haha!
+Hi there! I'm Tianchi Gao, a software development intern. Nice to meet you!
 
 Most of my blog posts begin as handwritten entries in my notebook, initially written in Chinese. Later, I take the time to translate them into English to share with a wider audience. What you are reading now is the result of that process!
 
