@@ -18,7 +18,7 @@ Mr. Wang had been the top student in the city's college entrance exams, and the 
 "So powerful, then why is he here?"  
 "We don't know, it's rumored that the school went through a lot of trouble to keep him here."  
 "What happened to his leg? How can he sit and lecture?"  
-"I don't know, every day we have to let people carry him up and down the stairs, you see him go to the toilet is not fine."  
+"I don't know. He has to be carried up and down the stairs every day. Look, he's not going to the bathroom just fine."  
 
 I was silent, busy with my own things, but for this man I helped him bring food every day, carried up and downstairs, can not help but feel curious, but then this curiosity into boredom, in fact, more of my own boredom.
 
