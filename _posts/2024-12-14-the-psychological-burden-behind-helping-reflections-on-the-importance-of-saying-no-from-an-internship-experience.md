@@ -4,6 +4,8 @@ title: "The Psychological Burden Behind 'Helping': Reflections on the Importance
 date: 2024-12-14 20:10 +0000
 tags: [say-no]
 original: 
+    - 1.jpg
+    - 2.jpg
 ---
 
 This article reflects on the psychological burden of "helping" through the author's internship experience. The author finds themselves repeatedly taking on responsibilities that aren't theirs, leading to feelings of frustration. The story highlights how the author learns to set boundaries, realizing they have the right to say "no" and maintain inner balance. In the end, the author discovers that rejecting requests doesn't always cause conflict, as long as it's done with clarity and respect.
