@@ -1,7 +1,7 @@
 ---
 title: "The Path of Growth: My Entrepreneurial Journey 01"
 layout: post
-date: 2024-12-18 00:00 +0000
+date: 2024-12-22 00:00 +0000
 tag: [entrepreneurship]
 original: 
     - 1.jpg
