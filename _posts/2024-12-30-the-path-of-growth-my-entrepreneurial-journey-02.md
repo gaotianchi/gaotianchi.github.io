@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Path of Growth: My Entrepreneurial Journey 01"
+title: "The Path of Growth: My Entrepreneurial Journey 02"
 date: 2024-12-30 00:00 +0000
 tag: [entrepreneurship]
 original: 
