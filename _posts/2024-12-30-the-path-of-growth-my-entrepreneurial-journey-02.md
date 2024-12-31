@@ -13,4 +13,8 @@ In the past week, I made an important decision for myself - to learn 3D modeling
 
 ---
 
+Recently, I came up with the idea of becoming a pop-up card creator. Pop-up cards are a medium that can convey beauty and surprise, and how to make unique pop-up cards has become the core problem I must solve. In addition to the need for suitable production tools, more importantly, I need a language that can clearly express my creativity and ideas. 3D modeling tools provide me with this language, especially in showing the mechanical structure and geometric three-dimensional design of pop-up cards, which has irreplaceable advantages.
+
+Traditional pop-up card designs are mostly flat. However, I prefer to create non-flat, geometric works to highlight the three-dimensional structure of pop-up cards. I aim to provide consumers with a brand-new experience through this innovative form.
+
 Translating...
