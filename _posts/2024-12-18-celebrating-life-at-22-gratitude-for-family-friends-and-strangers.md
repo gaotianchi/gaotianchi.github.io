@@ -3,7 +3,6 @@ layout: post
 title: "Celebrating Life at 22: Gratitude for Family, Friends, and Strangers"
 date: 2024-12-18 00:00 +0000
 tags: [general]
-description: "My internship is still ongoing, and today marks a special day in this journey—today is my 22nd year on Earth."
 original: 
     - 1.jpg
     - 2.jpg
