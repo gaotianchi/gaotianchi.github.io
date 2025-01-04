@@ -3,6 +3,7 @@ layout: post
 title: "The Path of Growth: My Entrepreneurial Journey 02"
 date: 2024-12-30 00:00 +0000
 tag: [entrepreneurship]
+description: "This article aims to explore why I chose to learn 3D modeling and how far-reaching this choice may be."
 original: 
     - 1.jpg
     - 2.jpg
