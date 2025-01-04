@@ -3,7 +3,6 @@ layout: post
 title: "The Psychological Burden Behind 'Helping': Reflections on the Importance of Saying No from an Internship Experience"
 date: 2024-12-13 00:00 +0000
 tags: [say-no]
-description: "This article reflects on the psychological burden of "helping" through the author's internship experience."
 original: 
     - 1.jpg
     - 2.jpg
