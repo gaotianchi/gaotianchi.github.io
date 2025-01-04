@@ -3,6 +3,7 @@ layout: post
 title: "From Form to Essence: My Blogging Resolution"
 date: 2024-12-08 20:00 +0000
 tags: [general]
+description: "High-quality content will be the essence of my blog, while form will merely serve to enhance the content."
 original: 
     - 1.jpg
 ---

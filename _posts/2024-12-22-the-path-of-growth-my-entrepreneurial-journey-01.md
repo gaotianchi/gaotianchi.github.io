@@ -3,6 +3,7 @@ title: "The Path of Growth: My Entrepreneurial Journey 01"
 layout: post
 date: 2024-12-22 00:00 +0000
 tag: [entrepreneurship]
+description: "Over the past week, I’ve been planning to launch an online store focused on selling pop-up cards."
 original: 
     - 1.jpg
     - 2.jpg
