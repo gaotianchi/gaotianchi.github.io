@@ -15,7 +15,7 @@ author:
   bio: >- # tell to the world
     还没想好在这个网站写什么。
     算了！先写起来吧！
-  username: username # general username
+  username: gaotianchi # general username
   github: gaotianchi # github username
   twitter: gaotianchix # twitter username
   facebook: # facebook username
@@ -23,7 +23,7 @@ author:
   avatar: /assets/img/avatar.webp # change with your own avatar
 
 # URL settings
-url: "https://gaotianchi.github.io" #
+url: "https://gaotianchi.com" #
 baseurl:
 permalink: /:title/
 google_analytics: # leave it blank if not wish
