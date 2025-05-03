@@ -26,7 +26,7 @@ author:
 url: "https://gaotianchi.com" #
 baseurl:
 permalink: /:title/
-google_analytics: # leave it blank if not wish
+google_analytics: G-KSMTNEVWS5 # leave it blank if not wish
 fb_appid:
 
 # Collection setting
