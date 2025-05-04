@@ -51,11 +51,11 @@ layout: compress
             <time datetime="{{ page.createdAt | date_to_xmlschema }}" itemprop="datePublished">
               {% assign hour = page.createdAt | date: "%H" | plus: 0 %}
               {{ page.createdAt | date: "%Y年%-m月%-d日" }}
-              {% if hour >= 0 and hour < 5 %}凌晨
-              {% elsif hour >= 5 and hour < 11 %}上午
-              {% elsif hour >= 11 and hour < 13 %}中午
-              {% elsif hour >= 13 and hour < 18 %}下午
-              {% elsif hour >= 18 and hour < 23 %}晚上
+              {% if hour >= 0 and 5 > hour %}凌晨
+              {% elsif hour >= 5 and 11 > hour %}上午
+              {% elsif hour >= 11 and 13 > hour %}中午
+              {% elsif hour >= 13 and 18 > hour %}下午
+              {% elsif hour >= 18 and 23 > hour %}晚上
               {% else %}深夜
               {% endif %}
               <!-- {{ page.createdAt | date: "%-H:%M" }} -->

@@ -9,6 +9,7 @@ image: assets/img/ogp.png # This image used for Open Graph more info https://ogp
 repo: https://github.com/gaotianchi/gaotianchi.github.io # site repo [optional]
 mode: light # default theme "dark" | "light"
 
+
 # Profile settings
 author:
   name: 高天驰 # author name
@@ -90,3 +91,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-postfiles
+
+feed:
+  posts_limit: 20
+  tags: true
