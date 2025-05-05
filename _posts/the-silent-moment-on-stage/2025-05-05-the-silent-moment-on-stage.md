@@ -6,7 +6,7 @@ description: 大约 8 年前，我有幸和两位女同学同台朗诵，途中�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-05 08:01:09
+modifiedAt: 2025-05-05 09:01:59
 tags:
   - 成长印记
 title: 舞台上的沉默——话筒失灵的那一天

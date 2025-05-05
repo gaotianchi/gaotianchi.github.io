@@ -1,7 +1,7 @@
 // Fonts preferences
-// 中英文混合：优先系统字体，英文尝试用 Roboto
+// 中英文混合：优先系统字体，兼顾中文（PingFang SC）和英文（Segoe UI）
 $sans-family: -apple-system, BlinkMacSystemFont, 
-  "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", 
+  "Segoe UI", "PingFang SC", "Hiragino Sans GB", 
   "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // 等宽字体：兼顾中文（Noto Sans Mono）和英文
