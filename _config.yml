@@ -95,3 +95,5 @@ plugins:
 feed:
   posts_limit: 20
   tags: true
+  icon: "/assets/favicon.ico"
+  logo: "/assets/favicon.ico"
