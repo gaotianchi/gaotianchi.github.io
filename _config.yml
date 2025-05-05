@@ -1,11 +1,10 @@
 # Site settings
 title: 高天驰 # site title
-description: >- # site description
-  还没想好在这个网站写什么。
-  算了！先写起来吧！
+description: >-
+  这里是高天驰的个人博客，记录我的写作、成长与思考，涵盖随笔、读书笔记与生活观察，是我理解世界与自我的方式。
 lang: zh-cn # default lang
 timezone: Asia/Shanghai # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
+image: assets/img/ogp.webp # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/gaotianchi/gaotianchi.github.io # site repo [optional]
 mode: light # default theme "dark" | "light"
 
@@ -14,8 +13,10 @@ mode: light # default theme "dark" | "light"
 author:
   name: 高天驰 # author name
   bio: >- # tell to the world
-    还没想好在这个网站写什么。
-    算了！先写起来吧！
+    <p class="" data-start="67" data-end="109"><strong data-start="67" data-end="94">&ldquo;获得自由的标志是什么？&mdash;&mdash;是不再感到羞愧。&rdquo;</strong><br data-start="94" data-end="97" />&mdash;&mdash;尼采，《快乐的科学》</p>
+    <p class="" data-start="111" data-end="169">对我而言，真正的自由或许只在毁灭的瞬间降临。只要活着，便无法摆脱生活的枷锁。<br data-start="149" data-end="152" />而写作，是我与这副枷锁言和的方式。</p>
+
+  location: 中国 # author location
   username: gaotianchi # general username
   github: gaotianchi # github username
   twitter: gaotianchix # twitter username
