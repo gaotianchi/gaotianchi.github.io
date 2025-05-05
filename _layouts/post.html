@@ -46,11 +46,11 @@ layout: compress
           </div>
           {% endif %}
           <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
-          {% if post.date %}
+          {% if page.date %}
           <div class="post-meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
-              {% assign hour = post.date | date: "%H" | plus: 0 %}
-              {{ post.date | date: "%Y年%-m月%-d日" }}
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {% assign hour = page.date | date: "%H" | plus: 0 %}
+              {{ page.date | date: "%Y年%-m月%-d日" }}
               {% if hour >= 0 and 5 > hour %}凌晨
               {% elsif hour >= 5 and 11 > hour %}上午
               {% elsif hour >= 11 and 13 > hour %}中午
@@ -58,7 +58,7 @@ layout: compress
               {% elsif hour >= 18 and 23 > hour %}晚上
               {% else %}深夜
               {% endif %}
-              <!-- {{ post.date | date: "%-H:%M" }} -->
+              <!-- {{ page.date | date: "%-H:%M" }} -->
             </time>
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
               <span itemprop="name">{{ site.author.name }}</span>
