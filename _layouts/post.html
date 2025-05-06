@@ -32,7 +32,10 @@ layout: compress
   <div class="wrapper post">
     <main class="page-content" aria-label="Content">
       <article itemscope itemtype="https://schema.org/BlogPosting">
-
+        {% if page.image %}
+        <img class="post-image" src="{{ page.image | absolute_url }}" alt="{{ page.title | escape }}"
+          itemprop="image" />
+        {% endif %}
         <header class="header">
           {% if page.tags and page.tags != empty %}
           <div class="tags">
@@ -72,10 +75,6 @@ layout: compress
           </div>
           {% endif %}
         </header>
-        {% if page.image %}
-        <img class="post-image" src="{{ page.image | absolute_url }}" alt="{{ page.title | escape }}"
-          itemprop="image" />
-        {% endif %}
         <div class="page-content" itemprop="articleBody">
           {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
           {% if page.tweet %}
