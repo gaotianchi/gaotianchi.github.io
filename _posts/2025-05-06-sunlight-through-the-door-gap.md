@@ -1,9 +1,9 @@
 ---
 aliases:
-  - 门缝里的阳光：一次关于尊重与善意的挣扎
-  - 猫、门与自由：我与神秘室友的半年合租记
   - 白猫的囚室与我的良心之战
   - 当阳光照进封闭的房间
+  - 猫、门与自由：我与神秘室友的半年合租记
+  - 门缝里的阳光：一次关于尊重与善意的挣扎
   - 拯救猫，还是尊重她：一道艰难的选择题
 category: 
 createdAt: 2025-05-06 07:18:36
@@ -12,7 +12,8 @@ description: 合租室友将猫关在封闭的房间里数日，我担心猫的�
 excerpt_only: false
 image: /assets/img/sunlight-through-the-door-gap/cat.png
 layout: post
-modifiedAt: 2025-05-06 08:29:51
+modifiedAt: 2025-05-06 10:00:21
+showImage: true
 tags:
   - 成长印记
 title: 门缝里的阳光——一次关于尊重与善意的挣扎
