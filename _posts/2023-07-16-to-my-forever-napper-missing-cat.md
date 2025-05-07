@@ -7,16 +7,16 @@ description: '"我"翻看着手机里最后几张猫咪熟睡的照片，那些�
 excerpt_only: false
 image: /assets/img/to-my-forever-napper-missing-cat/IMG_20230101_093450_Burst012.jpg
 layout: post
-modifiedAt: 2025-05-07 16:34:11
+modifiedAt: 2025-05-07 16:49:44
 showImage: true
 tags:
   - 随笔
-title: 窗台、狗粮与被遗忘的晚安：给失踪小猫的情书
+title: 想念那只总爱吃狗粮的猫
 ---
 
 这似乎是它失踪前的最后几张照片之一，像很多它的其他照片一样，它在睡觉。
 
-![](/assets/img/to-my-forever-napper-missing-cat/20230213_sleep_when_i_writing-scaled-e1689568755363-768x1024.jpg)
+![](https://www.gaotianchi.com/assets/img/to-my-forever-napper-missing-cat/20230213_sleep_when_i_writing-scaled-e1689568755363-768x1024.jpg)
 
 我在当天的日记中写道：
 
@@ -32,17 +32,13 @@ title: 窗台、狗粮与被遗忘的晚安：给失踪小猫的情书
 
 ---
 
-![](/assets/img/to-my-forever-napper-missing-cat/20230716_look_out_windows-768x1024.jpg)
-
-这是挺久远的照片了，这是上大学前的最后一个暑假 2021:06:22 17:56:08 拍摄的一组照片，当时我在写日记，它原本趴在桌子的右侧睡得正酣，不知道什么东西吸引了注意力，于是便跑到窗台上四处观望，当天的晚霞很美，或许它在欣赏风景吧。
+![](https://www.gaotianchi.com/assets/img/to-my-forever-napper-missing-cat/20230716_look_out_windows-768x1024.jpg)
 
 这是挺久远的照片了，这是上大学前的最后一个暑假 2021:06:22 17:56:08 拍摄的一组照片，当时我在写日记，它原本趴在桌子的右侧睡得正酣，不知道什么东西吸引了注意力，于是便跑到窗台上四处观望，当天的晚霞很美，或许它在欣赏风景吧。
 
 ---
 
-![](/assets/img/to-my-forever-napper-missing-cat/20230716_sleep-768x1024.jpg)
-
-他太喜欢睡觉了！以至于他的大部分照片都是在他睡觉的时候拍的。冬天的时候，他喜欢睡在自己的圆形小窝里，有时趁人不注意的时候会偷偷的爬到床上的被窝里睡觉，不过除了我以外没有人纵容他这么做。冬天的有一段时期，他每天白天在家睡一天，傍晚的时候离开家，没有人知道他去哪了，但是几乎没有人怀疑，他会在第二天凌晨从家后的窗户缝里钻进房间，然后悄无声息的在房间里的床上睡上一整天，那段时间我刚好在楼下那个房间里睡觉，他就睡在我的枕边，我有时能听见他的齁声。
+![](https://www.gaotianchi.com/assets/img/to-my-forever-napper-missing-cat/20230716_sleep-768x1024.jpg)
 
 他太喜欢睡觉了！以至于他的大部分照片都是在他睡觉的时候拍的。冬天的时候，他喜欢睡在自己的圆形小窝里，有时趁人不注意的时候会偷偷的爬到床上的被窝里睡觉，不过除了我以外没有人纵容他这么做。
 
@@ -50,7 +46,7 @@ title: 窗台、狗粮与被遗忘的晚安：给失踪小猫的情书
 
 ---
 
-![](/assets/img/to-my-forever-napper-missing-cat/20230716_tease-768x1024.jpg)
+![](https://www.gaotianchi.com/assets/img/to-my-forever-napper-missing-cat/20230716_tease-768x1024.jpg)
 
 他睡得真的太香了！有时候我无论怎么捉弄他，他都不理睬我。
 
