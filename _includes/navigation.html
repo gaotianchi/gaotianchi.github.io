@@ -4,10 +4,30 @@
     <div class="nav-arrow">上一篇</div>
     <span class="post-title">{{ page.previous.title }}</span>
   </a>
-  {% endif %} {% if page.next %}
+  {% else %}
+  <div class="post-nav-item post-nav-prev">
+    <div class="nav-arrow">
+      <a href="{{ site.baseurl }}">首页</a>
+      <a href="/tags/">标签</a>
+      <a href="/archive/">归档</a>
+    </div>
+    <!-- <span class="nav-arrow">这已经是最早的文章了</span> -->
+  </div>
+  {% endif %}
+
+  {% if page.next %}
   <a class="post-nav-item post-nav-next" href="{{ page.next | relative_url }}">
     <div class="nav-arrow">下一篇</div>
     <span class="post-title">{{ page.next.title }}</span>
   </a>
+  {% else %}
+  <div class="post-nav-item post-nav-next">
+    <div class="nav-arrow">
+      <a href="{{ site.baseurl }}">首页</a>
+      <a href="/tags/">标签</a>
+      <a href="/archive/">归档</a>
+    </div>
+    <!-- <span class="nav-arrow">这已经是最近的文章了</span> -->
+  </div>
   {% endif %}
 </nav>
