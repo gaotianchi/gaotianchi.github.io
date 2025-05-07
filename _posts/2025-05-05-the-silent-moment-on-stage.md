@@ -9,7 +9,7 @@ layout: post
 modifiedAt: 2025-05-05 09:01:59
 showImage: true
 tags:
-  - 成长印记
+  - 随笔
 title: 舞台上的沉默——话筒失灵的那一天
 ---
 

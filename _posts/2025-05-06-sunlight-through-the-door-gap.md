@@ -15,7 +15,7 @@ layout: post
 modifiedAt: 2025-05-06 10:00:21
 showImage: true
 tags:
-  - 成长印记
+  - 随笔
 title: 门缝里的阳光——一次关于尊重与善意的挣扎
 ---
 
