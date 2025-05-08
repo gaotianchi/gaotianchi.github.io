@@ -20,8 +20,7 @@ description: 所有文章在这里根据标签归档。
 <article class="post-item" id="results-container">
   <span class="post-item-date">
     {%- capture current_year -%}{{ post.date | date: "%Y" }}{%- endcapture -%}
-    <a href="/archive/#{{ current_year }}">{{ post.date | date: "%Y" }}</a>-
-    {{ post.date | date: "%-m-%-d" }}</span>
+    <a href="/archive/#{{ current_year }}">{{ post.date | date: "%Y" }}</a>-{{ post.date | date: "%-m-%-d" }}</span>
   <h3 class="post-item-title">
     <a href="{{ post.url }}">{{ post.title | escape }}</a>
   </h3>
