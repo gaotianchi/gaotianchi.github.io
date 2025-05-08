@@ -10,7 +10,7 @@ layout: post
 modifiedAt: 2025-05-06 18:10:02
 showImage: true
 tags:
-  - 成长印记
+  - 随笔
 title: 在威海蔄山小学的初体验
 ---
 
