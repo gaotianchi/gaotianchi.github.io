@@ -10,11 +10,11 @@ description: 我曾以为辍学去送外卖是逃离束缚的方式。在短暂�
 excerpt_only: false
 image: /assets/img/hours-as-a-delivery-rider-an-unfinished-escape/cover.png
 layout: post
-modifiedAt: 2025-05-08 12:43:47
+modifiedAt: 2025-05-08 13:04:50
 showImage: true
 tags:
   - 成长印记
-title: 辍学送外卖的48小时：一场未完成的逃离
+title: 一次逃离——辍学送外卖的48小时
 views: 1
 ---
 
