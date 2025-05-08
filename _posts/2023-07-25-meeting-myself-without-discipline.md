@@ -10,7 +10,7 @@ layout: post
 modifiedAt: 2025-05-07 17:02:56
 showImage: true
 tags:
-  - 随笔
+  - 自我认知
 title: 当强制力消失后，我才真正认识自己
 ---
 
