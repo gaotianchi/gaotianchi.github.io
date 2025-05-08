@@ -7,7 +7,7 @@ description: 我尝试着刨析潜藏在我体内的两种完全冲突的人格�
 excerpt_only: false
 image: /assets/img/analyzing-my-dual-personality/dual-personality.png
 layout: post
-modifiedAt: 2025-05-08 11:10:49
+modifiedAt: 2025-05-08 11:16:22
 showImage: true
 tags:
   - 自我认知
