@@ -14,7 +14,7 @@ home: true
 {%- endfor -%}
 
 <div class="archive-tags" style="margin-top: 1rem;">
-  <a class="tag-item" href="/tags/">全部</a>
+  <a class="tag-item" href="/archive/">全部</a>
   {%- for tag in site.tags -%}
   {% capture name %}{{ tag | first }}{% endcapture %}
   <a class="tag-item" href="/tags/#{{name}}">{{ name }}</a>
