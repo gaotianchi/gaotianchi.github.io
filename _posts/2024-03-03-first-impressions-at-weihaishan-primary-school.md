@@ -10,7 +10,7 @@ layout: post
 modifiedAt: 2025-05-06 18:10:02
 showImage: true
 tags:
-  - 随笔
+  - 成长印记
 title: 初来乍到，在威海蔄山小学的初体验
 ---
 
