@@ -1,0 +1,18 @@
+{
+  "showInlineTitle": false,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "attachmentFolderPath": "资源/附件",
+  "userIgnoreFilters": [
+    "资源/"
+  ],
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "showUnsupportedFiles": false
+}

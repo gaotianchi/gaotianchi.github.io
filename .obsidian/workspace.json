@@ -1,0 +1,317 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "b2f8a9e238ef204e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9156b5f873ecb30",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1c221daa4a8c54b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "1c439c891e441d34",
+        "type": "tabs",
+        "dimension": 42.13973799126639,
+        "children": [
+          {
+            "id": "bfa6f2f9b0474ad3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byCreatedTime",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          }
+        ]
+      },
+      {
+        "id": "8d49a6e9eb6d712f",
+        "type": "tabs",
+        "dimension": 57.86026200873361,
+        "children": [
+          {
+            "id": "2877e31a8c312775",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          },
+          {
+            "id": "f6cc9aad619d4afc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "9fa6a20871134e89",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "byModifiedTime"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "26b87c98f3e4f523",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "a94e23cb84f3a3bd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 278.5
+  },
+  "right": {
+    "id": "31cb0a881854ac08",
+    "type": "split",
+    "children": [
+      {
+        "id": "0327624b681fc193",
+        "type": "tabs",
+        "dimension": 40.041710114702816,
+        "children": [
+          {
+            "id": "8b8188d2a9a674f3",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "options": {
+                  "collapse-filter": false,
+                  "search": "",
+                  "localJumps": 2,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": true,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": false,
+                  "showArrow": true,
+                  "textFadeMultiplier": 3,
+                  "nodeSizeMultiplier": 1.77006920415225,
+                  "lineSizeMultiplier": 1.66833910034602,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.50876188557926,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          },
+          {
+            "id": "f35db303b9af219c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "3be83372dabeda17",
+        "type": "tabs",
+        "dimension": 59.95828988529719,
+        "children": [
+          {
+            "id": "14d8982c4c5116e9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "资源/白板/物供全流程.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "物供全流程 的反向链接列表"
+            }
+          },
+          {
+            "id": "c67158bfd69ca95e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "资源/博客/_posts/2024-03-03-first-impressions-at-weihaishan-primary-school.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "2024-03-03-first-impressions-at-weihaishan-primary-school 的出链列表"
+            }
+          },
+          {
+            "id": "b317101cf497cb55",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 358.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "templates:插入模板": false,
+      "switcher:打开快速切换": false,
+      "canvas:新建白板": false,
+      "command-palette:打开命令面板": false,
+      "graph:查看关系图谱": false,
+      "zk-prefixer:创建时间戳笔记": false,
+      "workspaces:管理工作区布局": false,
+      "random-note:开始漫游笔记": false,
+      "homepage:Open homepage": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "26b87c98f3e4f523",
+  "lastOpenFiles": [
+    "README.md",
+    "_posts/2023-07-19-reading-analysis-review-and-reflection.md",
+    "_posts/2023-07-25-meeting-myself-without-discipline.md",
+    "202505030940.md",
+    "202505081157.md",
+    "202505081051.md",
+    "202505081137.md",
+    "202505081147.md",
+    "202505030750.md",
+    "资源/博客/_posts/2022-06-20-the-slaves-who-rejected-freedom.md",
+    "资源/博客/_posts/2023-07-25-meeting-myself-without-discipline.md",
+    "资源/博客/_posts/2025-05-08-analyzing-my-dual-personality.md",
+    "资源/博客/_posts/2025-05-06-sunlight-through-the-door-gap.md",
+    "资源/归档/论文/~$212102772_高天驰_毕业论文指导过程记录.docx",
+    "资源/博客/_posts/2023-12-23-random-thoughts-on-blogs-food-and-friends.md",
+    "资源/博客/_posts/2024-03-03-first-impressions-at-weihaishan-primary-school.md",
+    "资源/博客/_posts/2025-05-07-morning-sunlight-and-unresolved-feelings.md",
+    "资源/博客/_posts/2022-12-08-year-end-summary-2022.md",
+    "资源/博客/_posts/2022-11-13-from-kindergarten-to-college.md",
+    "资源/归档/Obsidian-repository/日记/2023年1月日记/2023-01-13.md",
+    "资源/归档/Obsidian-repository/日记/2023年1月日记/2023-01-14.md",
+    "资源/归档/Obsidian-repository/日记/2023年1月日记/2023-01-15.md",
+    "资源/归档/Obsidian-repository/日记/2023年1月日记/2023-01-16.md",
+    "资源/归档/Obsidian-repository/日记/2023年1月日记/2023-01-17.md",
+    "资源/归档/Obsidian-repository/日记/2023年1月日记/2023-01-18.md",
+    "资源/归档/Obsidian-repository/日记/2023年1月日记/2023-01-19.md",
+    "资源/归档/Obsidian-repository/日记/2023年1月日记/2023-01-20.md",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/shadowed_core/node_modules/util/index.js",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/resolver/symlinked/_/symlink_target",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/resolver/symlinked/_/node_modules",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/resolver/symlinked/package/package.json",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/resolver/symlinked/package/bar.js",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/resolver/same_names/foo/index.js",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/resolver/multirepo/packages/package-b",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/resolver/multirepo/packages/package-a",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/resolve/test/resolver/other_path/lib/other-lib.js",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/hexo-theme-landscape/source/css/images/banner.jpg",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/nib/iconic/iconic_stroke.svg",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/highlight.js/styles/pojoaque.jpg",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/highlight.js/styles/brown-papersq.png",
+    "资源/归档/学校/closedProjects/gaotianchi.com/node_modules/psl/browserstack-logo.svg",
+    "资源/归档/学校/closedProjects/gaotianchi/frontend/node_modules/quill/assets/icons/video.svg",
+    "资源/归档/学校/closedProjects/gaotianchi/frontend/node_modules/quill/assets/icons/size-increase.svg",
+    "资源/归档/学校/closedProjects/gaotianchi/frontend/node_modules/quill/assets/icons/table-delete-rows.svg",
+    "资源/归档/学校/closedProjects/gaotianchi/frontend/node_modules/quill/assets/icons/undo.svg",
+    "资源/归档/学校/closedProjects/gaotianchi/frontend/node_modules/quill/assets/icons/underline.svg",
+    "资源/归档/Obsidian-repository/笔记/长期规划.canvas",
+    "资源/归档/其他/Programming-notes/资源/附件/SCRAPY类图.canvas",
+    "资源/归档/其他/Programming-notes/资源/附件/SCRAPY 框架.canvas",
+    "资源/归档/其他/Programming-notes/笔记/howdoi/howdoi.canvas",
+    "资源/归档/其他/Obsidian-repository/笔记/长期规划.canvas",
+    "资源/白板/物供全流程.canvas",
+    "资源/归档/旧仓库/白板/笔记处理流.canvas",
+    "资源/归档/旧仓库/白板/角色生命历程.canvas",
+    "资源/归档/旧仓库/白板/线程的生命周期.canvas",
+    "资源/归档/旧仓库/白板/自己做饭工作流.canvas"
+  ]
+}

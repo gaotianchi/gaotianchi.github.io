@@ -1,0 +1,10 @@
+/* src/svelte/styles.css */
+.view-count-text--emphasize {
+  color: var(--text-accent);
+}
+.view-count-text--warning {
+  color: var(--text-warning);
+}
+.view-content.view-count-view {
+  padding: var(--size-4-3) var(--size-4-3) var(--size-4-8);
+}
