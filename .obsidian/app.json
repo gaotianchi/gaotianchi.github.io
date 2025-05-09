@@ -3,9 +3,18 @@
   "trashOption": "local",
   "alwaysUpdateLinks": true,
   "promptDelete": false,
-  "attachmentFolderPath": "资源/附件",
+  "attachmentFolderPath": "assets",
   "userIgnoreFilters": [
-    "资源/"
+    "_data/",
+    "_layouts/",
+    "_includes/",
+    "_drafts/",
+    "_sass/",
+    "_sass/",
+    "_site/",
+    "assets/css/",
+    "assets/favicons/",
+    "assets/js/"
   ],
   "pdfExportSettings": {
     "includeName": false,
@@ -14,5 +23,9 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "showUnsupportedFiles": false
+  "showUnsupportedFiles": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "_drafts",
+  "newLinkFormat": "absolute",
+  "useMarkdownLinks": true
 }
