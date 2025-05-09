@@ -86,6 +86,7 @@ exclude:
   - lighthouse.png
   - klise-*.gem
   - klise.gemspec
+  - 模板
 
 # Plugins
 plugins:
