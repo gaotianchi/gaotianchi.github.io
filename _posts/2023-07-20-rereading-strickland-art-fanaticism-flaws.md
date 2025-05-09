@@ -1,5 +1,5 @@
 ---
-aliases: 
+aliases: []
 category: 
 createdAt: 2025-05-07 15:52:27
 date: 2023-07-20T15:52:27+08:00
@@ -7,7 +7,7 @@ description: 我在多年后重读《月亮与六便士》，对查尔斯·思�
 excerpt_only: false
 image: /assets/img/rereading-strickland-art-fanaticism-flaws/paul-gauguin.jpg
 layout: post
-modifiedAt: 2025-05-07 15:54:21
+modifiedAt: 2025-05-09 08:25:29
 showImage: true
 tags:
   - 随笔

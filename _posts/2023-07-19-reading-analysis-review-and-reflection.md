@@ -1,5 +1,5 @@
 ---
-aliases: 
+aliases: []
 category: 
 createdAt: 2025-05-07 17:05:17
 date: 2023-07-19T17:10:00+08:00
@@ -7,7 +7,7 @@ description: '"我"在六月初满怀热情地开始研读《Real Analysis》，
 excerpt_only: false
 image: /assets/img/reading-analysis-review-and-reflection/IMG_20230719_150028-1024x768.jpg
 layout: post
-modifiedAt: 2025-05-07 17:11:12
+modifiedAt: 2025-05-09 08:25:29
 showImage: true
 tags:
   - 随笔

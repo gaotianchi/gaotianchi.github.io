@@ -1,5 +1,5 @@
 ---
-aliases: 
+aliases: []
 category: 
 createdAt: 2025-05-08 13:18:37
 date: 2022-12-08T12:06:00+08:00
@@ -7,7 +7,7 @@ description: 在过去的一年中，我经历了许多内心的挣扎与反思�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-08 13:20:43
+modifiedAt: 2025-05-09 08:25:29
 showImage: true
 tags:
   - 成长印记

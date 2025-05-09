@@ -1,9 +1,9 @@
 ---
 aliases:
   - 晨间治愈：文字是我的特效药
-  - 在清晨的微光中与自己和解
-  - 一个晚起者的自白：当写作成为解药
   - 从忧郁到随笔：我的心灵自救记录
+  - 一个晚起者的自白：当写作成为解药
+  - 在清晨的微光中与自己和解
 category: 
 createdAt: 2025-05-07 08:35:02
 date: 2025-05-07T08:35:02+08:00
@@ -11,7 +11,7 @@ description: 在这篇随笔中，作者分享了清晨的写作与阅读习惯�
 excerpt_only: false
 image: https://images.unsplash.com/photo-1586513677534-b926f5477204?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 layout: post
-modifiedAt: 2025-05-07 09:27:57
+modifiedAt: 2025-05-09 08:25:29
 showImage: true
 tags:
   - 随笔
