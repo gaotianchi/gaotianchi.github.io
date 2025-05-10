@@ -3,7 +3,7 @@ comments: false
 createdAt: 2025-05-02 11:25:31
 description: 关于作者以及这个网站的一切。
 layout: page
-modifiedAt: 2025-05-10 13:08:56
+modifiedAt: 2025-05-10 14:32:35
 permalink: /about/
 title: 关于
 ---
@@ -30,7 +30,7 @@ title: 关于
 
 ### 技术工具
 
-这个博客网站通过[Jekyll](https://jekyllrb.com/)搭建，部署在[GitHub](https://github.com/)上，主题采用[Klise](https://github.com/piharpi/jekyll-klise)。由于某些未知原因，我的网站在某些地区访问速度非常慢，甚至无法访问，但这不影响我的创作动力。
+这个博客网站通过[Jekyll](https://jekyllrb.com/)搭建，部署在[GitHub](https://github.com/)上，主题采用[Klise](https://github.com/piharpi/jekyll-klise)。我的网站在某些地区访问速度非常慢，我暂时不去关注这些问题，等我写足 100 篇博文之后在考虑技术上的优化。
 
 ### 历史沿革
 
