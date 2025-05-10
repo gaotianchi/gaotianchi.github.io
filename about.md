@@ -30,7 +30,7 @@ title: 关于
 
 ### 技术工具
 
-这个博客网站通过[Jekyll](https://jekyllrb.com/)搭建，部署在[GitHub](https://github.com/)上，主题采用[Klise](https://github.com/piharpi/jekyll-klise)。我的网站在某些地区访问速度非常慢，我暂时不去关注这些问题，等我写足 100 篇博文之后在考虑技术上的优化。
+这个博客网站通过[Jekyll](https://jekyllrb.com/)搭建，部署在[GitHub](https://github.com/)上，主题采用[Klise](https://github.com/piharpi/jekyll-klise)。我的网站在某些地区访问速度非常慢，我暂时不去关注这些问题，等我写足 100 篇博文之后再考虑技术上的优化。
 
 ### 历史沿革
 
