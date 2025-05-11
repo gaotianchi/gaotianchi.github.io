@@ -7,7 +7,8 @@ image:
 layout: post
 modifiedAt: 2025-05-11 20:48:52
 showImage: true
-tags: []
+tags: 
+  - 诗集
 title: 汇总大学至暗时期写的诗
 ---
 
