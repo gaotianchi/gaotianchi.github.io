@@ -7,7 +7,8 @@ image:
 layout: post
 modifiedAt: 2025-05-13 21:06:58
 showImage: true
-tags: []
+tags: 
+  - 随笔
 title: 离开出租屋的前夜
 ---
 
