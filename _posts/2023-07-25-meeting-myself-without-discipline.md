@@ -7,10 +7,10 @@ description: '我一直在两种状态间摇摆：在学校时是模范生，假
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-09 08:25:29
+modifiedAt: 2025-05-25 17:01:09
 showImage: true
 tags:
-  - 自我认知
+  - 随笔
 title: 当强制力消失后，我才真正认识自己
 ---
 

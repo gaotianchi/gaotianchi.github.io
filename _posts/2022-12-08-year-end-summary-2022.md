@@ -7,10 +7,10 @@ description: 在过去的一年中，我经历了许多内心的挣扎与反思�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-09 08:25:29
+modifiedAt: 2025-05-25 17:01:09
 showImage: true
 tags:
-  - 成长印记
+  - 随笔
 title: 2022 年终总结
 views: 1
 ---
