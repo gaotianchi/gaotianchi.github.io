@@ -9,7 +9,7 @@ createdAt: 2025-05-07 08:35:02
 date: 2025-05-07T08:35:02+08:00
 description: 在这篇随笔中，作者分享了清晨的写作与阅读习惯，以及文字如何成为治愈内心郁结的“特效药”。从早起烧水、避免打扰室友的细节，到回忆18岁时通过阅读弗洛伊德、川端康成和周国平的书籍熬过备考的艰难岁月，文字不仅是记录，更是一种自我救赎的方式。文章探讨了清晨的宁静、阳光的温柔，以及写作如何帮助作者梳理心绪、对抗忧郁，最终找到内心的平衡。
 excerpt_only: false
-image: https://images.unsplash.com/photo-1586513677534-b926f5477204?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: 
 layout: post
 modifiedAt: 2025-05-09 08:25:29
 showImage: true

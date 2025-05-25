@@ -10,7 +10,7 @@ createdAt: 2025-05-06 07:18:36
 date: 2025-05-06T07:18:36+08:00
 description: 合租室友将猫关在封闭的房间里数日，我担心猫的身心健康，于是和室友交涉，请求她允许我将猫放出来，在等待中我越来越焦躁，两种理念在我脑海中都争着——对于私人领域的捍卫和对于生命的尊重。还在抉择之中，我在写作期间收到一个惊喜。
 excerpt_only: false
-image: /assets/img/sunlight-through-the-door-gap/cat.png
+image: 
 layout: post
 modifiedAt: 2025-05-09 08:25:29
 showImage: true

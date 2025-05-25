@@ -5,7 +5,7 @@ createdAt: 2025-05-07 15:24:51
 date: 2023-08-22T15:24:51+08:00
 description: 我从一次寻常的校园周边徒步展开回忆：清晨乳子湖畔的宁静短暂治愈了失眠的疲惫，废弃核酸检测亭与铁丝网却将人拉回疫情时代的集体记忆。踏入后山时，孤独与恐惧如影随形——无人的哨岗、破碎的围栏、想象中的野兽与恶人，甚至蝉鸣也成了唯一的慰藉。山顶孔子像下的凉风与侯麦电影般的野餐幻想形成微妙对比，而现实始终是嘈杂与铁丝网的割裂感。这篇随笔记录了一场身体与精神的双重漫游，在荒芜与诗意间追问幸福的转瞬性与不可复现。
 excerpt_only: false
-image: /assets/img/a-lonely-reverie-during-a-hike-in-the-back-mountains/IMG_20230822_1426251.jpg
+image: 
 layout: post
 modifiedAt: 2025-05-09 08:25:29
 showImage: true

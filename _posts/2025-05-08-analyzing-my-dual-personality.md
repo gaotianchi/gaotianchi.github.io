@@ -5,7 +5,7 @@ createdAt: 2025-05-08 06:15:42
 date: 2025-05-08T06:15:42+08:00
 description: 我尝试着刨析潜藏在我体内的两种完全冲突的人格，一种致力于为我建立和维护新旧社交关系，并且乐意接受外界的评价，一种则完全相反，它不断摧毁前者建立和维护的社交关系，还销毁所有社交痕迹。这种行为模式存在已久，直到今天我才开始正视它，将其视为一个”问题“所在。
 excerpt_only: false
-image: /assets/img/analyzing-my-dual-personality/dual-personality.png
+image: 
 layout: post
 modifiedAt: 2025-05-09 08:25:29
 showImage: true
