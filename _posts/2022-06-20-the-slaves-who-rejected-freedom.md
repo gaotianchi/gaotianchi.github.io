@@ -7,11 +7,12 @@ description: 在一个春日，法律宣布解放奴隶，赋予他们自由。�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-08-08 20:38:04
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 小说
 title: 法律的奴隶和人的奴隶
+unlisted: false
 ---
 
 这是一个晴朗的适合工作的春天，一条法律断送了奴隶主的财路，为千千万万的奴隶送来了自由。

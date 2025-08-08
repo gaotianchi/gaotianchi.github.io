@@ -7,11 +7,12 @@ description: 我尝试着刨析潜藏在我体内的两种完全冲突的人格�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-25 17:01:09
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
-title: 社交关系中的自我博弈：一个双重人格者的内心独白
+title: 社交关系中的自我博弈
+unlisted: false
 ---
 
 > 求解答：在同一家店买东西，和老板熟了后，反倒不愿意再在这家店买，这是什么心理？怎么解决？

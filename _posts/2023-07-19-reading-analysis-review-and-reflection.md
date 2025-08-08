@@ -7,11 +7,12 @@ description: '"我"在六月初满怀热情地开始研读《Real Analysis》，
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-25 17:01:09
+modifiedAt: 2025-08-08 21:34:29
 showImage: true
 tags:
   - 随笔
 title: 阅读实分析回顾与反思
+unlisted: true
 ---
 
 不知道这算不算是一个不幸的消息，我决定放弃阅读罗伊登和菲茨帕特里克合著的《Real Analysis》这本书，做出这个决定的诱因是十几分钟前，我尝试解决一个小节后面的习题，但是无果，并不是因为仅仅这一次解不出来题目就做出这个决定，而是在此之前的多此尝试中都是要面临这样一个令人沮丧的结果，这种接二连三的沮丧感侵蚀了我的信心和继续读下去的兴趣。

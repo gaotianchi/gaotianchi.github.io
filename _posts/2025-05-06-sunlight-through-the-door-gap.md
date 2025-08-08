@@ -12,11 +12,12 @@ description: 合租室友将猫关在封闭的房间里数日，我担心猫的�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-25 17:01:09
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
 title: 一次关于尊重与善意的挣扎
+unlisted: false
 ---
 
 从 24 年的 11 月份我开始居住在这样一个合租房里，与我同住在这套房子的还有一个女租客，她长租在这里，终日待在自己的房间里，与一只白猫为伴，对我来说，她是一个神秘的女人。

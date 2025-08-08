@@ -5,11 +5,12 @@ date: 2025-05-18T12:22:21+08:00
 description: 这是一篇在列车上的随笔。
 image: 
 layout: post
-modifiedAt: 2025-05-25 17:01:09
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
 title: 在列车上的胡思乱想
+unlisted: false
 ---
 
 我坐在窗边的小桌上，右手边就是我的床铺。这次比较幸运，买到了下铺，不用卡在一个逼仄的小格子里睡觉。

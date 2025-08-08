@@ -10,12 +10,12 @@ description: 我曾以为辍学去送外卖是逃离束缚的方式。在短暂�
 excerpt_only: false
 image: /assets/img/hours-as-a-delivery-rider-an-unfinished-escape/cover.png
 layout: post
-modifiedAt: 2025-05-25 17:01:09
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
 title: 一次逃离——辍学送外卖的48小时
-views: 1
+unlisted: false
 ---
 
 那是一段异常糟糕的日子，我在一个求职网站上投递了很多简历，想要找一份普工，没过多久我就收到了很多回复，我没有太多的考量，选择了一份送外卖的工作。我当时对工作的要求可以说只有一个，那就是有住宿的地方。经过简单的商谈之后我开始兴奋地收拾起行李了。

@@ -7,12 +7,12 @@ description: 我在学校大门口徘徊，看着人群自由进出，心中感�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-09 08:25:29
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
 title: 又是迷失的一天
-views: 1
+unlisted: false
 ---
 
 我在学校的一个大门处彷徨了一会儿，只见熙熙攘攘的人群陆续穿过那扇门，毫无顾忌，仿佛那扇门从来没有锁过一样。

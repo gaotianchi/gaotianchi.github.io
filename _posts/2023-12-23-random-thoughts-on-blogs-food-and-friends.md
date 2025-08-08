@@ -7,11 +7,12 @@ description: 又 TMD 在折腾博客，有完没完！南招卤蛋很好吃。�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-09 08:25:29
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
 title: 博客、食物、好友以及平淡的生活
+unlisted: false
 ---
 
 为什么我的博客系统项目迟迟没有结束？原因相当明了，那就是我的定位一直在变化，而且往往是在开发的前期和中期发生变化，这使得我的博客系统从来没有完工过。

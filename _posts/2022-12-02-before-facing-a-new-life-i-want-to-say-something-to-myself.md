@@ -7,12 +7,12 @@ description: 我想对自己说些什么，但欲言又止。
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-25 17:01:09
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
 title: 在面对新生活之前，我想对自己说些什么
-views: 2
+unlisted: false
 ---
 
 我想对自己说些什么，但欲言又止。

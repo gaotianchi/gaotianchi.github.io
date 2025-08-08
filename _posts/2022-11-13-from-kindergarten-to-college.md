@@ -7,12 +7,12 @@ description: 回忆过去，从小学的快乐到如今的困惑，时间飞逝�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-09 08:25:29
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
 title: 我的学校生涯
-views: 1
+unlisted: false
 ---
 
 宿舍里的桌子和板凳使人用久了会颈椎痛，如今我几乎很难在这上面编程超过半小时，我的阅读书架可以帮助我把计算机或者数本架起来，但是我的键盘还是很低很低。

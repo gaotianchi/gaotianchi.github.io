@@ -6,11 +6,12 @@ date: 2025-07-01 18:45:03+08:00
 description: 身无分文的我，为了赶一趟高铁，睡在虹桥机场的椅子上。这是我在上海的最后一晚，没有告别，也没有体面，只有一顶帽子挡着灯光，一碗泡面暖着肚子。
 image: /assets/img/shanghai-airport-lounge-my-last-night-refuge/shanghai.png
 layout: post
-modifiedAt: 2025-08-08 19:33:31
+modifiedAt: 2025-08-08 21:38:34
 showImage: true
 tags:
   - 随笔
 title: 上海的最后一站
+unlisted: false
 ---
 
 我躺在虹桥T2航站楼的候机厅里，头顶是通宵不灭的灯光，身旁是不认识的旅人。我即将离开上海，没有航班，没有目的地，我只是在等一趟高铁。
