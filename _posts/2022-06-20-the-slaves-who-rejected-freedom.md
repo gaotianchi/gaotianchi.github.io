@@ -7,10 +7,10 @@ description: 在一个春日，法律宣布解放奴隶，赋予他们自由。�
 excerpt_only: false
 image: 
 layout: post
-modifiedAt: 2025-05-25 17:01:09
+modifiedAt: 2025-08-08 20:38:04
 showImage: true
 tags:
-  - 虚构
+  - 小说
 title: 法律的奴隶和人的奴隶
 ---
 
