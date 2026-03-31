@@ -11,7 +11,6 @@ redirect_from:
   - /reading-analysis-review-and-reflection/
   - /rereading-strickland-art-fanaticism-flaws/
   - /meeting-myself-without-discipline/
-  - /a-lonely-reverie-during-a-hike-in-the-back-mountains/
   - /random-thoughts-on-blogs-food-and-friends/
   - /first-impressions-at-weihaishan-primary-school/
   - /internship-ending-more-random-thoughts/
