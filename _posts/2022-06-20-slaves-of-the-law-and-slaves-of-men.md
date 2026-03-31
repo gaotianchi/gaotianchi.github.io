@@ -5,6 +5,8 @@ tags:
   - 小说
 date: 2022-06-20T17:34:00+08:00
 layout: post
+redirect_from:
+  - /2022-06-20-the-slaves-who-rejected-freedom/
 ---
 
 这是一个晴朗的适合工作的春天，一条法律断送了奴隶主的财路，为千千万万的奴隶送来了自由。
