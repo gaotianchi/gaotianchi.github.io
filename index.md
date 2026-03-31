@@ -26,9 +26,7 @@ redirect_from:
   - /random-thoughts-on-a-train/
   - /night-walk-thoughts/
   - /days-off-plan/
-  - /job-hobbies-and-mediocre-life/
   - /exploring-my-job-hunting-boundaries/
-  - /walkers-monologue-in-the-park/
   - /two-letters-i-wrote-to-my-teacher-three-years-ago/
   - /birthday-gift-for-23rd-year-old/
   - /turn-blogging-into-a-business/
