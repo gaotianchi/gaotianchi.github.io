@@ -14,7 +14,7 @@ mode: light # default theme "dark" | "light"
 author:
   name: 高天驰 # author name
   bio: >- # tell to the world
-    <p class="" data-start="67" data-end="109"><strong data-start="67" data-end="94">&ldquo;获得自由的标志是什么？&mdash;&mdash;是不再感到羞愧。&rdquo;</strong>&mdash;&mdash;尼采，《快乐的科学》</p>
+    <p class="" data-start="67" data-end="109"><strong data-start="67" data-end="94">&ldquo;获得自由的标志是什么？&mdash;&mdash;是不再感到羞愧。&rdquo;&mdash;&mdash;尼采，《快乐的科学》</strong></p>
     <p class="" data-start="111" data-end="169">活着，便无法摆脱生活的枷锁。写作，是与这副枷锁言和的方式。</p>
 
 
