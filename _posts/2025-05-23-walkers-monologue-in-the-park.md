@@ -2,7 +2,7 @@
 title: 城市山林间的漫步
 description: 忘记那个公园叫什么了，离我租的房子很近。
 tags:
-  - 随笔
+  - 游记
 date: 2025-05-23T20:45:21+08:00
 layout: post
 ---
