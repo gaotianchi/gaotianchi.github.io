@@ -6,7 +6,7 @@ tags:
 date: 2021-10-27T20:00:15+08:00
 layout: post
 ---
-![](assets/img/self-study-application/Pasted%20image%2020260402200156.png)
+![](/assets/img/self-study-application/Pasted%20image%2020260402200156.png)
 
 尊敬的老师： 
 
@@ -78,4 +78,4 @@ layout: post
 至指导员老师处，他的原文答复是：“这么有文采，先跟班主任说一下，再跟级部主任说一下。”
 见其没有直接否决，我对申请成功更有信心，热切希望老师您能够批准！ 
 
-![](assets/img/self-study-application/Pasted%20image%2020260402200330.png)
+![](/assets/img/self-study-application/Pasted%20image%2020260402200330.png)
