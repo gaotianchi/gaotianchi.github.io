@@ -34,10 +34,6 @@ gem "webrick", "~> 1.7"
 
 gem "jekyll-redirect-from"
 
-# gem "csv"
-# gem "base64" # Ruby 3.4+ 可能需要这个
-# gem "bigdecimal"
-# gem "date"
-# gem "fileutils"
-# gem "json"
-# gem "uri"
+gem "csv"
+gem "base64"
+gem "bigdecimal"

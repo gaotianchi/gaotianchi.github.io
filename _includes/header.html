@@ -38,7 +38,8 @@
         | truncate: 200
         | escape
     }}" />
-  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://cdn-city.livere.com https://utteranc.es; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' https: data:; connect-src 'self' https://www.googletagmanager.com; frame-src https://utteranc.es; font-src 'self' https://cdn.jsdelivr.net;" />
   <meta property="fb:app_id" content="{{ site.fb_appid }}" />
   <meta property="og:site_name" content="{% if page.title %}{{ page.title | escape }} | {{
       site.author.name
@@ -113,7 +114,9 @@
       });
     </script>
   <script type="text/javascript" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=TeX-AMS-MML_HTMLorMML"
+    integrity="sha512-tiaNmAzpy3KcgtuiLwT9WSlSsqGqtDB5ylMwxoqG5ysNIyzkBw24k6UFTuXGgyXJLJ8aM/ho1h67NRKedPx++Q=="
+    crossorigin="anonymous"></script>
   {% endif %}
 
 </head>
