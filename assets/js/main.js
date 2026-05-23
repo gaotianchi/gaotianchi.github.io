@@ -28,4 +28,13 @@
       ? area.classList.add("blurry")
       : area.classList.remove("blurry");
   });
+
+  // Close menu when clicking overlay background
+  const trigger = document.querySelector(".trigger");
+  trigger.addEventListener("click", function (e) {
+    if (e.target === this) {
+      cbox.checked = false;
+      document.querySelector(".wrapper").classList.remove("blurry");
+    }
+  });
 })();

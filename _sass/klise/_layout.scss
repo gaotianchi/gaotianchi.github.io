@@ -136,6 +136,9 @@
         fill: $black;
         opacity: 0.7;
       }
+      .icon-close {
+        display: none;
+      }
       &:hover {
         > svg {
           opacity: 1;
@@ -145,6 +148,13 @@
         -webkit-transform: scale(0.9, 0.9);
         transform: scale(0.9, 0.9);
       }
+    }
+
+    input[type="checkbox"]:checked ~ label .icon-hamburger {
+      display: none;
+    }
+    input[type="checkbox"]:checked ~ label .icon-close {
+      display: inline;
     }
 
     input[type="checkbox"]:not(:checked) ~ .trigger {

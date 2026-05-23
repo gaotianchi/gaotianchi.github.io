@@ -146,6 +146,10 @@ body[data-theme="dark"] {
           }
         }
 
+        input[type="checkbox"]:checked ~ label .icon-close {
+          fill: $dark-white;
+        }
+
         input[type="checkbox"]:checked ~ .trigger {
           background: $dark-black;
         }
