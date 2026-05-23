@@ -14,10 +14,9 @@ mode: light # default theme "dark" | "light"
 author:
   name: 高天驰 # author name
   bio: >- # tell to the world
-    <p class="" data-start="67" data-end="109"><strong data-start="67" data-end="94">&ldquo;获得自由的标志是什么？&mdash;&mdash;是不再感到羞愧。&rdquo;&mdash;&mdash;尼采，《快乐的科学》</strong></p>
-    <p class="" data-start="111" data-end="169">活着，便无法摆脱生活的枷锁。写作，是与这副枷锁言和的方式。</p>
-
-
+    "获得自由的标志是什么？——是不再感到羞愧。" ——尼采，《快乐的科学》
+  tagline: >-
+    活着，便无法摆脱生活的枷锁。写作，是与这副枷锁言和的方式。
   location: 中国 # author location
   username: gaotianchi # general username
   github: gaotianchi # github username
@@ -65,6 +64,9 @@ jekyll_compose:
 
 # Homepage limit posts
 number_of_posts: 5
+
+# Now — 首页近况，无可见文章时展示
+now: 在 Bosch 做软件工程师，周末在读《有限与无限的游戏》。
 
 # Build settings
 # theme: klise

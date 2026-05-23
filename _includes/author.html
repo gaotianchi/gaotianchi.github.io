@@ -6,4 +6,7 @@
   />
   <h2 class="author-name">{{ site.author.name }}</h2>
   <p class="author-bio">{{ site.author.bio }}</p>
+  {% if site.author.tagline %}
+  <p class="author-tagline">{{ site.author.tagline }}</p>
+  {% endif %}
 </div>

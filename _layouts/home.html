@@ -5,6 +5,7 @@ home: true
 
 {%- assign visible_posts = site.posts | where_exp: "p", "p.visibility != 'hidden'" -%}
 {%- if visible_posts.size > 0 -%}
+
 <h3 class="posts-item-note" aria-label="最近文章">最近文章</h3>
 {%- for post in visible_posts limit: site.number_of_posts -%}
 <article class="post-item">
@@ -14,7 +15,6 @@ home: true
   </h4>
 </article>
 {%- endfor -%}
-{%- endif -%}
 
 {%- assign has_visible_tags = false -%}
 {%- for tag in site.tags -%}
@@ -36,4 +36,34 @@ home: true
   {% endif %}
   {%- endfor -%}
 </div>
+{%- endif -%}
+
+{%- else -%}
+
+{%- if site.now -%}
+<div class="home-now">
+  <div class="home-now-label">近况</div>
+  <div class="home-now-content">{{ site.now }}</div>
+</div>
+{%- endif -%}
+
+<div class="home-cards">
+  <a class="home-card" href="/archive/">
+    <div class="home-card-title">归档</div>
+    <div class="home-card-desc">浏览所有文章</div>
+  </a>
+  <a class="home-card" href="/tags/">
+    <div class="home-card-title">标签</div>
+    <div class="home-card-desc">按主题浏览</div>
+  </a>
+  <a class="home-card" href="/about/">
+    <div class="home-card-title">关于</div>
+    <div class="home-card-desc">了解我</div>
+  </a>
+  <a class="home-card" href="/legacy/">
+    <div class="home-card-title">少作</div>
+    <div class="home-card-desc">过往的文字</div>
+  </a>
+</div>
+
 {%- endif -%}
