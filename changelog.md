@@ -20,6 +20,7 @@ comments: false
       新增 <a href="/colophon/">/colophon/</a> 页面，说明站点构建理念与技术选型。
       页脚链接重组为双行布局（联系与站点导航分离）。
       /about/ 页面移除站点历史章节（已迁移至 /changelog/）。
+      手机端菜单改进：图标在汉堡与关闭之间切换，点击遮罩可收起菜单。
     </div>
   </li>
   <li class="changelog-entry">
