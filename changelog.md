@@ -17,6 +17,9 @@ comments: false
       调整正文默认字号至 16px。
       将所有文章归档至 <a href="/legacy/">/legacy/</a>，首页、归档页与标签页不再列出。
       隐藏文章之间保留上下篇导航，边缘显示"回到首页"。
+      新增 <a href="/colophon/">/colophon/</a> 页面，说明站点构建理念与技术选型。
+      页脚链接重组为双行布局（联系与站点导航分离）。
+      /about/ 页面移除站点历史章节（已迁移至 /changelog/）。
     </div>
   </li>
   <li class="changelog-entry">
