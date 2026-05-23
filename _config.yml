@@ -99,3 +99,4 @@ feed:
   tags: true
   icon: "/assets/favicon.ico"
   logo: "/assets/favicon.ico"
+  excerpt_only: true
