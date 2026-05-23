@@ -10,25 +10,32 @@ comments: false
   <li class="changelog-entry">
     <time class="changelog-date">2026-05-23</time>
     <div class="changelog-content">
-      新增 <a href="/blank/">/blank/</a> 页面，遵循 IndieWeb 惯例。
-      新增 <a href="/ai/">/ai/</a> 透明度声明页面。
-      导航菜单精简为 Home、Archive、About。
-      页脚新增 AI 与 Blank 链接。
-    </div>
-  </li>
-  <li class="changelog-entry">
-    <time class="changelog-date">2026-05-23</time>
-    <div class="changelog-content">
+      新增 <a href="/blank/">/blank/</a>、<a href="/ai/">/ai/</a>、<a href="/changelog/">/changelog/</a> 页面。
       作者卡片重新设计为左对齐布局，精简为头像、姓名与独白。
+      导航菜单精简为英文（Home、Archive、About）。
+      页脚重新设计，增加邮件、RSS、AI、Blank、Changes 链接与隐蔽的"少作"入口。
       调整正文默认字号至 16px。
+      将所有文章归档至 <a href="/legacy/">/legacy/</a>，首页、归档页与标签页不再列出。
+      隐藏文章之间保留上下篇导航，边缘显示"回到首页"。
     </div>
   </li>
   <li class="changelog-entry">
-    <time class="changelog-date">2026-05-23</time>
+    <time class="changelog-date">2025-05-05</time>
     <div class="changelog-content">
-      将所有文章归档至 <a href="/legacy/">/legacy/</a>，首页、归档页与标签页不再列出。
-      页脚重新设计，增加邮件、GitHub、Twitter、RSS 链接与隐蔽的"少作"入口。
-      隐藏文章之间仍保留上下篇导航，边缘显示"回到首页"。
+      回归建站，域名定为 gaotianchi.com，使用 Jekyll + GitHub Pages，主题采用 Klise。
+      网站不再混杂，专注于个人写作：探究自我、疗愈内心、打开心结。
+    </div>
+  </li>
+  <li class="changelog-entry">
+    <time class="changelog-date">2022 — 2025</time>
+    <div class="changelog-content">
+      频繁更换域名、网站名称和建站工具。用过 WordPress、Blogger，甚至用 Flask 从零开发过博客网站。精力消耗在工具上，轻视了内容本身。
+    </div>
+  </li>
+  <li class="changelog-entry">
+    <time class="changelog-date">2022-09-03</time>
+    <div class="changelog-content">
+      初次建站，名为"悲伤的斯蒂梵冈"。
     </div>
   </li>
 </ul>
