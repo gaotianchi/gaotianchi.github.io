@@ -207,15 +207,15 @@ body[data-theme="dark"] {
 
   // Footer
   .footer {
-    span.footer_item {
-      color: $dark-white;
-    }
-    a.footer_item:not(:last-child) {
+    .footer_item {
       color: $dark-white;
     }
     .footer_copyright {
       color: $dark-gray;
-      opacity: 1;
+      opacity: 0.8;
+    }
+    .footer_legacy {
+      color: $dark-gray;
     }
   }
 

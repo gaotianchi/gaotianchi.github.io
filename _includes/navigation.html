@@ -1,9 +1,15 @@
 <nav class="post-nav">
-  {% if page.previous %}
+  {% if page.previous and (page.visibility == "hidden" or page.previous.visibility != "hidden") %}
   <a class="post-nav-item post-nav-prev" href="{{ page.previous | relative_url }}">
     <div class="nav-arrow">上一篇</div>
     <span class="post-title">{{ page.previous.title }}</span>
   </a>
+  {% elsif page.visibility == "hidden" %}
+  <div class="post-nav-item post-nav-prev">
+    <div class="nav-arrow">
+      <a href="{{ site.url }}">回到首页</a>
+    </div>
+  </div>
   {% else %}
   <div class="post-nav-item post-nav-prev">
     <div class="nav-arrow">
@@ -11,15 +17,20 @@
       <a href="/tags/">标签</a>
       <a href="/archive/">归档</a>
     </div>
-    <!-- <span class="nav-arrow">这已经是最早的文章了</span> -->
   </div>
   {% endif %}
 
-  {% if page.next %}
+  {% if page.next and (page.visibility == "hidden" or page.next.visibility != "hidden") %}
   <a class="post-nav-item post-nav-next" href="{{ page.next | relative_url }}">
     <div class="nav-arrow">下一篇</div>
     <span class="post-title">{{ page.next.title }}</span>
   </a>
+  {% elsif page.visibility == "hidden" %}
+  <div class="post-nav-item post-nav-next">
+    <div class="nav-arrow">
+      <a href="{{ site.url }}">回到首页</a>
+    </div>
+  </div>
   {% else %}
   <div class="post-nav-item post-nav-next">
     <div class="nav-arrow">
@@ -27,7 +38,6 @@
       <a href="/tags/">标签</a>
       <a href="/archive/">归档</a>
     </div>
-    <!-- <span class="nav-arrow">这已经是最近的文章了</span> -->
   </div>
   {% endif %}
 </nav>

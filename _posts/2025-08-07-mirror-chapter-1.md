@@ -5,6 +5,8 @@ tags:
   - 小说
 date: 2025-08-08T19:25:53+08:00
 layout: post
+status: archived
+visibility: hidden
 redirect_from:
   - /2025-08-07-0735-mirror-chapter-1/
 ---

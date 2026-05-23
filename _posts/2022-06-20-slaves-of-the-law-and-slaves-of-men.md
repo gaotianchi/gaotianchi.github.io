@@ -5,6 +5,8 @@ tags:
   - 小说
 date: 2022-06-20T17:34:00+08:00
 layout: post
+status: archived
+visibility: hidden
 redirect_from:
   - /2022-06-20-the-slaves-who-rejected-freedom/
 ---

@@ -5,6 +5,8 @@ tags:
   - 随笔
 date: 2023-07-16T16:33:00+08:00
 layout: post
+status: archived
+visibility: hidden
 ---
 
 这似乎是它失踪前的最后几张照片之一，像很多它的其他照片一样，它在睡觉。
