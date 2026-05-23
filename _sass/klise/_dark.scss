@@ -153,40 +153,6 @@ body[data-theme="dark"] {
     }
   }
 
-  // Author
-  .author {
-    .author-tagline {
-      color: $dark-gray;
-    }
-  }
-
-  // Home now
-  .home-now {
-    .home-now-label {
-      color: $dark-white;
-    }
-    .home-now-content {
-      color: $dark-text-base-color;
-    }
-  }
-
-  // Home cards
-  .home-card {
-    border-color: $dark-light;
-
-    &:hover {
-      border-color: $dark-smoke;
-    }
-
-    .home-card-title {
-      color: $dark-white;
-    }
-
-    .home-card-desc {
-      color: $dark-gray;
-    }
-  }
-
   // Post Item
   .post-item {
     &:not(:first-child) {
