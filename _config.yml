@@ -1,7 +1,7 @@
 # Site settings
 title: 高天驰 # site title
 description: >-
-  这里是高天驰的个人博客，记录我的写作、成长与思考，涵盖随笔、读书笔记与生活观察，是我理解世界与自我的方式。
+  生活设下枷锁，文字构筑愿景。
 lang: zh-cn # default lang
 timezone: Asia/Shanghai # set your timezone
 image: assets/img/ogp.webp # This image used for Open Graph more info https://ogp.me/
@@ -14,9 +14,7 @@ mode: light # default theme "dark" | "light"
 author:
   name: 高天驰 # author name
   bio: >- # 独白
-    活着，便无法摆脱生活的枷锁。写作，是与这副枷锁言和的方式。
-  quote: >- # 作为注脚的引言
-    "获得自由的标志是什么？——是不再感到羞愧。" ——尼采，《快乐的科学》
+    生活设下枷锁，文字构筑愿景。
   location: 中国 # author location
   username: gaotianchi # general username
   github: gaotianchi # github username

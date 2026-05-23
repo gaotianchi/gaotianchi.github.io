@@ -155,11 +155,10 @@ body[data-theme="dark"] {
 
   // Author
   .author {
+    border-bottom-color: $dark-light;
+
     .author-bio {
-      color: $dark-text-base-color;
-    }
-    .author-quote {
-      color: $dark-gray;
+      color: $dark-white;
     }
   }
 
