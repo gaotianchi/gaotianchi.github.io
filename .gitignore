@@ -7,3 +7,4 @@ klise-*.gem
 Gemfile.lock
 .obsidian
 .trash
+.claude

@@ -8,7 +8,9 @@
       "Bash(bundle install *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git revert *)"
+      "Bash(git revert *)",
+      "Bash(pkill -f \"jekyll serve\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:4000)"
     ]
   }
 }
