@@ -7,7 +7,8 @@
       "Bash(gem --version)",
       "Bash(bundle install *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git revert *)"
     ]
   }
 }
