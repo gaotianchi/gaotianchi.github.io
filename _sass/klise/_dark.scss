@@ -153,6 +153,16 @@ body[data-theme="dark"] {
     }
   }
 
+  // Author
+  .author {
+    .author-bio {
+      color: $dark-text-base-color;
+    }
+    .author-quote {
+      color: $dark-gray;
+    }
+  }
+
   // Post Item
   .post-item {
     &:not(:first-child) {
