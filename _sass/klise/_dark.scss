@@ -126,10 +126,24 @@ body[data-theme="dark"] {
     .menu {
       a#mode {
         .mode-sunny {
-          display: block;
+          opacity: 0;
+          transform: rotate(-90deg) scale(0.5);
+          line {
+            stroke: $dark-white;
+            fill: none;
+          }
+          circle {
+            fill: none;
+            stroke: $dark-white;
+          }
         }
         .mode-moon {
-          display: none;
+          opacity: 1;
+          transform: rotate(0deg) scale(1);
+          path {
+            stroke: $dark-white;
+            fill: none;
+          }
         }
       }
 

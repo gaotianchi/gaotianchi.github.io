@@ -22,9 +22,9 @@
     left: 8px;
     top: 6px;
     position: relative;
+    width: 24px;
+    height: 24px;
     clear: both;
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
     opacity: 0.7;
     z-index: 1;
     &:hover {
@@ -35,33 +35,40 @@
       -webkit-transform: scale(0.9, 0.9);
       transform: scale(0.9, 0.9);
     }
-    .mode-moon {
-      display: block;
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .mode-sunny {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
       line {
         stroke: $black;
         fill: none;
       }
-
       circle {
-        fill: $black;
+        fill: none;
         stroke: $black;
       }
     }
-    .mode-sunny {
-      display: none;
-      line {
-        stroke: $dark-white;
+    .mode-moon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.5);
+      path {
+        stroke: $black;
         fill: none;
-      }
-      circle {
-        fill: none;
-        stroke: $dark-white;
       }
     }
   }
 
   .trigger {
     float: right;
+  }
+
+  @at-root body.notransition .navbar svg {
+    transition: none !important;
   }
 
   .menu-trigger {

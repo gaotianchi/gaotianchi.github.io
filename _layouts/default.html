@@ -17,7 +17,14 @@ layout: compress
       } else if (state === "light") {
         body.removeAttribute("data-theme");
       } else {
-        localStorage.setItem("theme", data);
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (prefersDark) {
+          body.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        } else {
+          body.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+        }
       }
     };
  

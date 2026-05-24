@@ -8,6 +8,12 @@ comments: false
 
 <ul class="changelog">
   <li class="changelog-entry">
+    <time class="changelog-date">2026-05-24</time>
+    <div class="changelog-content">
+      左上角主题切换图标动态化：浅色主题显示太阳，深色主题显示月亮，切换带旋转过渡动画。首次访问自动跟随系统偏好。
+    </div>
+  </li>
+  <li class="changelog-entry">
     <time class="changelog-date">2026-05-23</time>
     <div class="changelog-content">
       新增 <a href="/blank/">/blank/</a>、<a href="/ai/">/ai/</a>、<a href="/changelog/">/changelog/</a>、<a href="/colophon/">/colophon/</a> 页面。
