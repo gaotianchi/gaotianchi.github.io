@@ -70,9 +70,21 @@ comments: false
     font-size: 0.9375rem;
     line-height: 1.7;
     color: #434648;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
   .changelog-content a {
     color: #003fff;
+  }
+  @media (max-width: 768px) {
+    .changelog-entry {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .changelog-date {
+      width: auto;
+    }
   }
   body[data-theme="dark"] .changelog-entry {
     border-bottom-color: #1b1d25;
