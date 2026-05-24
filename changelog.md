@@ -16,7 +16,7 @@ comments: false
   <li class="changelog-entry">
     <time class="changelog-date">2026-05-23</time>
     <div class="changelog-content">
-      新增 <a href="/blank/">/blank/</a>、<a href="/ai/">/ai/</a>、<a href="/changelog/">/changelog/</a>、<a href="/colophon/">/colophon/</a> 页面。
+      新增 <a href="/blank/">/blank/</a>、<a href="/ai/">/ai/</a>等页面。
       作者卡片左对齐（头像、姓名、独白）；导航菜单精简为英文。
       页脚重新设计，增加邮件、RSS、AI、Blank、Changes 链接及"少作"入口。
       历史文章归档至 <a href="/legacy/">/legacy/</a>；全局字号 16px。
