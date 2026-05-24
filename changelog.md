@@ -51,9 +51,12 @@ comments: false
   }
   .changelog-entry {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1.25rem 0;
     border-bottom: 1px solid #ececec;
+  }
+  .changelog-entry::before {
+    display: none;
   }
   .changelog-entry:last-child {
     border-bottom: none;
