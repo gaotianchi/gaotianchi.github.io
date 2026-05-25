@@ -19,14 +19,18 @@
     toggleTheme(localStorage.getItem("theme"))
   );
 
-  // Blur the content when the menu is open
+  // Mobile menu: blur content, prevent body scroll when open
   const cbox = document.getElementById("menu-trigger");
 
   cbox.addEventListener("change", function () {
     const area = document.querySelector(".wrapper");
-    this.checked
-      ? area.classList.add("blurry")
-      : area.classList.remove("blurry");
+    if (this.checked) {
+      area.classList.add("blurry");
+      document.body.style.overflow = "hidden";
+    } else {
+      area.classList.remove("blurry");
+      document.body.style.overflow = "";
+    }
   });
 
   // Close menu when clicking overlay background
@@ -35,7 +39,17 @@
     if (e.target === this) {
       cbox.checked = false;
       document.querySelector(".wrapper").classList.remove("blurry");
+      document.body.style.overflow = "";
     }
+  });
+
+  // Close menu when a menu link is clicked (uncheck before navigation)
+  document.querySelectorAll(".menu-link").forEach(function (link) {
+    link.addEventListener("click", function () {
+      cbox.checked = false;
+      document.querySelector(".wrapper").classList.remove("blurry");
+      document.body.style.overflow = "";
+    });
   });
 
   // Back to top
