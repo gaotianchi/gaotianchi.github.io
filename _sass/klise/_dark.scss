@@ -296,23 +296,6 @@ body[data-theme="dark"] {
 
   // Archive page
 
-  .archive-cat-btn {
-    --cat-color: #{$dark-gray};
-
-    &[data-tier="2"] {
-      --cat-color: #{$dark-text-base-color};
-    }
-
-    &[data-tier="3"] {
-      --cat-color: #{$dark-white};
-    }
-
-    &:hover,
-    &.active {
-      color: $dark-white;
-    }
-  }
-
   .archive-tag-btn {
     --tag-color: #{$dark-gray};
 

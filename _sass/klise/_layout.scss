@@ -460,78 +460,6 @@
   margin: -1px;
 }
 
-.archive-categories {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.4rem 1.2rem;
-}
-
-.archive-cat-btn {
-  --cat-color: #{$gray};
-  --cat-opacity: 0.5;
-  --cat-size: 0.8125rem;
-  --cat-weight: 450;
-
-  background: none;
-  border: none;
-  padding: 0;
-  font-family: $sans-family;
-  cursor: pointer;
-  line-height: 1.5;
-  color: var(--cat-color);
-  opacity: var(--cat-opacity);
-  font-size: var(--cat-size);
-  font-weight: var(--cat-weight);
-  letter-spacing: 0.01em;
-  transition: color 0.3s ease, opacity 0.3s ease;
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    height: 2px;
-    background: currentColor;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &[data-tier="2"] {
-    --cat-color: #{$text-base-color};
-    --cat-opacity: 0.7;
-    --cat-size: 1rem;
-    --cat-weight: 520;
-  }
-
-  &[data-tier="3"] {
-    --cat-color: #{$black};
-    --cat-opacity: 0.92;
-    --cat-size: 1.25rem;
-    --cat-weight: 620;
-  }
-
-  &:hover,
-  &.active {
-    color: $black;
-    opacity: 1;
-  }
-
-  &:hover::after {
-    opacity: 0.3;
-  }
-
-  &.active::after {
-    opacity: 0.7;
-  }
-
-  &.active {
-    font-weight: 600;
-  }
-}
-
 .archive-tags {
   display: flex;
   flex-wrap: wrap;
@@ -719,11 +647,6 @@
 @include media-query($on-mobile) {
   .archive-section {
     margin-bottom: 0;
-  }
-
-  // Touch-friendly hit targets for category buttons
-  .archive-cat-btn {
-    padding: 10px 0;
   }
 
   // Reduce tag cloud padding on mobile
