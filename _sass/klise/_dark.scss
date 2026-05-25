@@ -29,12 +29,8 @@ body[data-theme="dark"] {
   // Post
   .page-content {
     a {
-      color: $dark-text-link-blue;
-
-      &:hover,
-      &:active,
-      &:focus {
-        color: $dark-text-link-blue-active;
+      &:hover {
+        opacity: 0.55;
       }
     }
 
@@ -48,7 +44,7 @@ body[data-theme="dark"] {
     h5,
     h6 {
       .anchor-head {
-        color: $dark-text-link-blue;
+        color: inherit;
       }
     }
   }
@@ -90,14 +86,14 @@ body[data-theme="dark"] {
   // Link
   a {
     color: inherit;
-    text-decoration-color: $dark-smoke;
 
     &:hover {
-      color: $dark-text-link-blue;
+      opacity: 0.55;
     }
 
-    &:focus {
-      outline-color: rgba(255, 82, 119, 0.6);
+    &:focus-visible {
+      outline: 1px solid;
+      outline-offset: 2px;
     }
   }
 
@@ -191,11 +187,8 @@ body[data-theme="dark"] {
     }
     .post-item-title {
       a {
-        color: $dark-text-base-color;
-
-        &:hover,
-        &focus {
-          color: $dark-white;
+        &:hover {
+          opacity: 0.55;
         }
       }
     }
@@ -221,8 +214,7 @@ body[data-theme="dark"] {
       color: $dark-white;
 
       &:hover {
-        opacity: 0.5;
-        color: $dark-white;
+        opacity: 0.55;
       }
     }
 
@@ -231,8 +223,7 @@ body[data-theme="dark"] {
       opacity: 0.45;
 
       &:hover {
-        opacity: 0.85;
-        color: $dark-gray;
+        opacity: 0.65;
       }
     }
   }
@@ -252,7 +243,7 @@ body[data-theme="dark"] {
       &:hover,
       &:focus {
         .post-title {
-          color: $dark-text-link-blue-active;
+          opacity: 0.55;
         }
       }
 
@@ -292,10 +283,10 @@ body[data-theme="dark"] {
       color: $dark-text-base-color;
     }
     .solution {
-      color: $dark-text-link-blue;
+      color: $dark-gray;
     }
     .solution:hover {
-      color: $dark-text-link-blue-active;
+      opacity: 0.55;
     }
   }  
 
@@ -347,14 +338,18 @@ body[data-theme="dark"] {
 
     // Categories: filled pill with accent color (dark mode)
     &[data-cat].active {
-      background: rgba(255, 82, 119, 0.15);
-      color: $dark-text-link-blue;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding-left: 0.6rem;
+      padding-right: 0.6rem;
     }
 
     // Tags: outlined border with accent color (dark mode)
     &[data-tag].active {
-      border-color: rgba(255, 82, 119, 0.35);
-      color: $dark-text-link-blue;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
     }
 
     &[data-tag].active::after {
@@ -395,7 +390,7 @@ body[data-theme="dark"] {
     color: $dark-text-base-color !important;
 
     &:hover {
-      color: $dark-text-link-blue !important;
+      opacity: 0.55 !important;
     }
   }
 

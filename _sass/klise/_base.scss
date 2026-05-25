@@ -232,14 +232,15 @@ h6 > a {
 // Link
 a {
   color: inherit;
-  text-decoration-color: $smoke;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 
   &:hover {
-    color: $text-link-blue;
+    opacity: 0.55;
   }
 
-  &:focus {
-    outline: 3px solid rgba(0, 54, 199, 0.6);
+  &:focus-visible {
+    outline: 1px solid;
     outline-offset: 2px;
   }
 }
