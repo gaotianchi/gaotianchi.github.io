@@ -486,6 +486,7 @@
   font-weight: var(--tag-weight);
   letter-spacing: 0.01em;
   transition: color 0.4s ease, opacity 0.4s ease;
+  position: relative;
 
   &[data-tier="2"] {
     --tag-color: #{$text-base-color};
@@ -510,6 +511,28 @@
     opacity: 1;
     color: $black;
     font-weight: 600;
+  }
+
+  // Tags: underline indicator
+  &[data-tag].active::after {
+    content: '';
+    position: absolute;
+    left: 0.3rem;
+    right: 0.3rem;
+    bottom: -2px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    opacity: 0.6;
+  }
+
+  // Categories: background chip indicator
+  &[data-cat].active {
+    background: rgba(128, 128, 128, 0.1);
+    border-radius: 4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
   }
 
   .tag-count {
