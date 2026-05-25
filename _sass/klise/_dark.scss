@@ -264,21 +264,28 @@ body[data-theme="dark"] {
   }
 
   // Home
-  .home-head .home-title {
+  .home-title {
     color: $dark-white;
+  }
+
+  .home-post-date {
+    color: $dark-gray;
   }
 
   .home-post-title a {
     color: $dark-white;
 
     &:hover {
-      color: $dark-text-link-blue;
+      opacity: 0.5;
     }
   }
 
+  .home-post-item:hover .home-post-date {
+    opacity: 0.6;
+  }
+
   .home-archive-link:hover {
-    color: $dark-text-link-blue;
-    border-color: $dark-text-link-blue;
+    opacity: 0.8;
   }
 
 

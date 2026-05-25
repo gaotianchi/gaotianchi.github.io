@@ -373,42 +373,45 @@
   }
 }
 
-// Home — minimal typographic
+// Home — architectural minimalism
 .home-wrapper {
-  padding-top: 12vh;
+  padding-top: 18vh;
 
   @include media-query($on-mobile) {
-    padding-top: 8vh;
+    padding-top: 12vh;
   }
 }
 
 .home-head {
-  margin-bottom: 4.5rem;
+  margin-bottom: 5rem;
+}
 
-  .home-title {
-    font-size: 2.25rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin: 0 0 0.75rem;
-    color: $black;
-  }
+.home-title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin: 0 0 0.15rem;
+  color: $black;
+  opacity: 0.55;
+}
 
-  .home-desc {
-    font-size: 1rem;
-    color: $gray;
-    line-height: 1.7;
-    max-width: 28em;
-    margin: 0;
-  }
+.home-desc {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: $gray;
+  line-height: 1.6;
+  max-width: 26em;
+  margin: 0;
+  opacity: 0.5;
 }
 
 .home-posts {
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
 }
 
 .home-post-item {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.75rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -417,44 +420,47 @@
 
 .home-post-date {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: $gray;
-  margin-bottom: 0.4rem;
+  opacity: 0.35;
+  margin-bottom: 0.35rem;
   line-height: 1;
+  transition: opacity 0.25s ease;
+}
+
+.home-post-item:hover .home-post-date {
+  opacity: 0.6;
 }
 
 .home-post-title {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.45;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.55;
   margin: 0;
 
   a {
     color: $black;
     text-decoration: none;
-    border: none;
+    transition: opacity 0.25s ease;
 
     &:hover {
-      color: $text-link-blue;
+      opacity: 0.45;
     }
   }
 }
 
 .home-archive-link {
-  display: inline-block;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: $gray;
   text-decoration: none;
-  letter-spacing: 0.02em;
-  padding: 0.3rem 0;
-  border-bottom: 1px solid transparent;
-  transition: color 0.25s ease, border-color 0.25s ease;
+  letter-spacing: 0.08em;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
 
   &:hover {
-    color: $text-link-blue;
-    border-color: $text-link-blue;
+    opacity: 0.8;
   }
 }
 
