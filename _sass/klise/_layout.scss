@@ -600,7 +600,7 @@
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 70px 1fr auto;
+  grid-template-columns: 70px 1fr;
   gap: 0 36px;
   align-items: baseline;
   position: relative;
@@ -663,14 +663,6 @@
   }
 }
 
-.timeline-cat {
-  font-size: 0.625rem;
-  color: $gray;
-  opacity: 0.2;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-}
-
 .archive-empty {
   text-align: center;
   color: $gray;
@@ -700,7 +692,7 @@
   }
 
   .timeline-item {
-    grid-template-columns: 44px 1fr auto;
+    grid-template-columns: 44px 1fr;
     gap: 0 20px;
     padding: 0.35rem 0;
 

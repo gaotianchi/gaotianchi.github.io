@@ -96,7 +96,6 @@ comments: false
     <div class="timeline-item" data-category="{{ post.category }}" data-tags="{{ post.tags | join: ',' }}">
       <span class="timeline-date">{{ post.date | date: "%m-%d" }}</span>
       <a class="timeline-link" href="{{ post.url }}">{{ post.title | escape }}</a>
-      <span class="timeline-cat">[{{ post.category }}]</span>
     </div>
     {%- if forloop.last -%}</div>{%- endif -%}
     {%- endfor -%}
