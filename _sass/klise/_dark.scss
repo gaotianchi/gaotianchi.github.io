@@ -279,6 +279,10 @@ body[data-theme="dark"] {
       stroke: $dark-white;
     }
 
+    &:focus-visible {
+      outline-color: $dark-text-link-blue;
+    }
+
     &:hover {
       background: lighten($dark-light, 5%);
     }

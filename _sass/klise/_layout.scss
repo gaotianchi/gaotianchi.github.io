@@ -469,6 +469,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid $text-link-blue;
+    outline-offset: 2px;
+  }
 
   svg {
     polyline {
