@@ -441,7 +441,7 @@
 
 // Archive page
 .archive-section {
-  margin-bottom: 3rem;
+  margin-bottom: 0;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -449,21 +449,22 @@
 }
 
 .archive-section-label {
-  font-size: 0.625rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: $gray;
-  margin: 0 0 0.75rem;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
   padding: 0;
-  opacity: 0.3;
+  margin: -1px;
 }
 
 .archive-categories {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.4rem 1rem;
+  gap: 0.4rem 1.2rem;
 }
 
 .archive-cat-btn {
@@ -484,6 +485,19 @@
   font-weight: var(--cat-weight);
   letter-spacing: 0.01em;
   transition: color 0.3s ease, opacity 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
   &[data-tier="2"] {
     --cat-color: #{$text-base-color};
@@ -505,6 +519,14 @@
     opacity: 1;
   }
 
+  &:hover::after {
+    opacity: 0.3;
+  }
+
+  &.active::after {
+    opacity: 0.7;
+  }
+
   &.active {
     font-weight: 600;
   }
@@ -513,64 +535,62 @@
 .archive-tags {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.4rem 1rem;
-
-  .tag-item {
-    padding: 1px 3px;
-    border-radius: 2px;
-    border: 1px solid rgba(128, 128, 128, 0.1);
-    background-color: rgba(128, 128, 128, 0.1);
-  }
+  justify-content: center;
+  align-content: center;
+  max-width: 480px;
+  margin: 0 auto;
+  gap: 0.4rem 0.7rem;
+  padding: 2.5rem 1rem;
 }
 
 .archive-tag-btn {
   --tag-color: #{$gray};
-  --tag-opacity: 0.5;
-  --tag-size: 0.8125rem;
-  --tag-weight: 450;
+  --tag-opacity: 0.3;
+  --tag-size: 0.9rem;
+  --tag-weight: 400;
 
   background: none;
   border: none;
-  padding: 0;
+  padding: 0.15rem 0.3rem;
   font-family: $sans-family;
   cursor: pointer;
-  line-height: 1.5;
+  line-height: 1.4;
   color: var(--tag-color);
   opacity: var(--tag-opacity);
   font-size: var(--tag-size);
   font-weight: var(--tag-weight);
   letter-spacing: 0.01em;
-  transition: color 0.3s ease, opacity 0.3s ease;
+  transition: color 0.4s ease, opacity 0.4s ease;
 
   &[data-tier="2"] {
     --tag-color: #{$text-base-color};
-    --tag-opacity: 0.7;
-    --tag-size: 1rem;
-    --tag-weight: 520;
+    --tag-opacity: 0.45;
+    --tag-size: 1.1rem;
+    --tag-weight: 500;
   }
 
   &[data-tier="3"] {
     --tag-color: #{$black};
-    --tag-opacity: 0.92;
-    --tag-size: 1.25rem;
-    --tag-weight: 620;
+    --tag-opacity: 0.6;
+    --tag-size: 1.3rem;
+    --tag-weight: 600;
   }
 
-  &:hover,
-  &.active {
-    color: $black;
+  &:hover {
     opacity: 1;
+    color: $black;
   }
 
   &.active {
+    opacity: 1;
+    color: $black;
     font-weight: 600;
   }
 
   .tag-count {
-    margin-left: 0.1em;
-    font-size: 0.6em;
-    opacity: 0.4;
+    font-size: 0.55em;
+    opacity: 0.35;
+    margin-left: 0.15em;
     vertical-align: super;
   }
 }
@@ -698,13 +718,17 @@
 
 @include media-query($on-mobile) {
   .archive-section {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 
-  // Touch-friendly hit targets for filter buttons
-  .archive-cat-btn,
-  .archive-tag-btn {
+  // Touch-friendly hit targets for category buttons
+  .archive-cat-btn {
     padding: 10px 0;
+  }
+
+  // Reduce tag cloud padding on mobile
+  .archive-tags {
+    padding: 1.5rem 0.5rem;
   }
 
   .archive-timeline {

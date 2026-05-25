@@ -295,9 +295,6 @@ body[data-theme="dark"] {
   }
 
   // Archive page
-  .archive-section-label {
-    color: $dark-gray;
-  }
 
   .archive-cat-btn {
     --cat-color: #{$dark-gray};
@@ -327,9 +324,14 @@ body[data-theme="dark"] {
       --tag-color: #{$dark-white};
     }
 
-    &:hover,
+    &:hover {
+      color: $dark-white;
+      opacity: 1 !important;
+    }
+
     &.active {
       color: $dark-white;
+      opacity: 1 !important;
     }
   }
 
