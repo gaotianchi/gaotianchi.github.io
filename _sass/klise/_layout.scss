@@ -373,6 +373,102 @@
   }
 }
 
+// Home — architectural minimalism
+.home-wrapper {
+  .author {
+    border-bottom: none;
+    margin-bottom: 5.5rem;
+    padding: 2rem 0 0;
+
+    @include media-query($on-mobile) {
+      margin-bottom: 4rem;
+      padding: 1.5rem 0 0;
+    }
+  }
+
+  .author-name {
+    font-weight: 700;
+  }
+
+  .author-bio {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $gray;
+    opacity: 0.75;
+  }
+
+  // Hide "最近文章" heading
+  .posts-item-note {
+    display: none;
+  }
+
+  // Post list — borderless, separated by whitespace
+  .post-item {
+    display: block;
+    padding: 0;
+    margin: 0 0 2.25rem;
+    border-top: none !important;
+
+    &:first-child {
+      border-top: none !important;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .post-item-date {
+    display: block;
+    min-width: auto;
+    padding: 0;
+    margin: 0 0 0.35rem;
+    line-height: 1;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $gray;
+    opacity: 0.55;
+    letter-spacing: 0.02em;
+  }
+
+  .post-item-title {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1.063rem;
+    font-weight: 400;
+    letter-spacing: 0;
+
+    a {
+      color: $black;
+      text-decoration: none;
+      border: none;
+      transition: opacity 0.25s ease;
+
+      &:hover {
+        opacity: 0.5;
+        color: $black;
+      }
+    }
+  }
+
+  .home-archive-link {
+    display: inline-block;
+    margin-top: 3rem;
+    font-size: 0.8125rem;
+    color: $gray;
+    text-decoration: none;
+    opacity: 0.45;
+    transition: opacity 0.25s ease, color 0.25s ease;
+
+    &:hover {
+      opacity: 0.85;
+      color: $gray;
+    }
+  }
+}
+
 .not-found {
   text-align: center;
   display: flex;

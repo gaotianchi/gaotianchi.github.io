@@ -4,15 +4,24 @@ home: true
 ---
 
 {%- assign visible_posts = site.posts | where_exp: "p", "p.visibility != 'hidden'" -%}
-{%- if visible_posts.size > 0 -%}
-<h3 class="posts-item-note" aria-label="最近文章">最近文章</h3>
-{%- for post in visible_posts limit: site.number_of_posts -%}
-<article class="post-item">
-  <span class="post-item-date">{{ post.date | date: "%Y/%-m/%-d" }}</span>
-  <h4 class="post-item-title">
-    <a href="{{ post.url }}">{{ post.title | escape }}</a>
-  </h4>
-</article>
+{%- assign essays = "" | split: "" -%}
+{%- for post in visible_posts -%}
+{%- unless post.url contains '-w' -%}
+{%- assign essays = essays | push: post -%}
+{%- endunless -%}
 {%- endfor -%}
+
+{%- if essays.size > 0 -%}
+<section class="home-posts">
+  {%- for post in essays limit: site.number_of_posts -%}
+  <article class="post-item">
+    <time class="post-item-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%-m.%-d" }}</time>
+    <h3 class="post-item-title">
+      <a href="{{ post.url }}">{{ post.title | escape }}</a>
+    </h3>
+  </article>
+  {%- endfor -%}
+</section>
 {%- endif -%}
 
+<a class="home-archive-link" href="/archive/">所有文章&ensp;→</a>

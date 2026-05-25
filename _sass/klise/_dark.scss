@@ -201,6 +201,42 @@ body[data-theme="dark"] {
     }
   }
 
+  // Home — dark mode overrides
+  .home-wrapper {
+    .author {
+      border-bottom-color: transparent;
+    }
+
+    .author-bio {
+      color: $dark-gray;
+      opacity: 0.7;
+    }
+
+    .post-item-date {
+      color: $dark-gray;
+      opacity: 0.55;
+    }
+
+    .post-item-title a {
+      color: $dark-white;
+
+      &:hover {
+        opacity: 0.5;
+        color: $dark-white;
+      }
+    }
+
+    .home-archive-link {
+      color: $dark-gray;
+      opacity: 0.45;
+
+      &:hover {
+        opacity: 0.85;
+        color: $dark-gray;
+      }
+    }
+  }
+
   // Post Navigation
   .post-nav {
     border-color: $dark-light;
