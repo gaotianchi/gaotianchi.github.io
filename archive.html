@@ -141,6 +141,10 @@ comments: false
         if (item.style.display !== 'none') hasVisible = true;
       });
       group.style.display = hasVisible ? '' : 'none';
+      var year = group.previousElementSibling;
+      if (year && year.classList.contains('timeline-year')) {
+        year.style.display = hasVisible ? '' : 'none';
+      }
     });
 
     emptyMsg.style.display = anyVisible ? 'none' : '';
