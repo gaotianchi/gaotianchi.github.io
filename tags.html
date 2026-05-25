@@ -1,24 +1,39 @@
 ---
+title: 标签
 permalink: /tags/
-layout: none
+layout: page
+description: 所有文章在这里根据标签归档。
 ---
 
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=/archive/">
-<title>Redirecting...</title>
-<script>
-  var hash = window.location.hash.replace('#', '');
-  if (hash) {
-    window.location.replace('/archive/?tag=' + encodeURIComponent(hash));
-  } else {
-    window.location.replace('/archive/');
-  }
-</script>
-</head>
-<body>
-  <p><a href="/archive/">点击此处跳转到归档页面</a></p>
-</body>
-</html>
+<div class="archive-tags" style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+  <a class="tag-item" style="color: inherit; padding: 5px 8px; border-radius: 2px;" href="/archive/">全部</a>
+  {%- for tag in site.tags -%}
+  {% capture name %}{{ tag | first }}{% endcapture %}
+  {% assign visible_count = site.tags[name] | where_exp: "p", "p.visibility != 'hidden'" | size %}
+  {% if visible_count > 0 %}
+  <a class="tag-item" style="color: inherit; padding: 5px 8px; border-radius: 2px;" href="/tags/#{{name}}">{{ name
+    }}</a>
+  {% endif %}
+  {%- endfor -%}
+</div>
+
+{%- for tag in site.tags -%}
+{%- capture name -%}{{ tag | first }}{%- endcapture -%}
+{%- assign visible_posts = site.tags[name] | where_exp: "p", "p.visibility != 'hidden'" -%}
+{%- if visible_posts.size > 0 -%}
+<h2 id="{{ name }}">
+  {{ name | upcase }}
+</h2>
+{%- for post in visible_posts -%}
+<article class="post-item" id="results-container">
+  <span style="color: #434648;" class="post-item-date">
+    {%- capture current_year -%}{{ post.date | date: "%Y" }}{%- endcapture -%}
+    <a style="color: #434648;" href="/archive/#{{ current_year }}">{{ post.date | date: "%Y" }}</a>/{{ post.date | date:
+    "%-m/%-d" }}</span>
+  <h3 class="post-item-title">
+    <a href="{{ post.url }}">{{ post.title | escape }}</a>
+  </h3>
+</article>
+{%- endfor -%}
+{%- endif -%}
+{%- endfor -%}

@@ -44,7 +44,7 @@ layout: compress
               {% assign tags = page.tags %}
               <span itemprop="keywords">
                 {% for tag in tags %}
-                <a class="tag" href="/archive/?tag={{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last
+                <a class="tag" href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last
                 %},{% endunless %}
                 {% endfor %}
               </span>

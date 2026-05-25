@@ -31,7 +31,7 @@ home: true
   {% capture name %}{{ tag | first }}{% endcapture %}
   {% assign visible_count = site.tags[name] | where_exp: "p", "p.visibility != 'hidden'" | size %}
   {% if visible_count > 0 %}
-  <a class="tag-item" style="color: inherit; padding: 5px 8px; border-radius: 2px;" href="/archive/?tag={{name | downcase | slugify}}">{{ name
+  <a class="tag-item" style="color: inherit; padding: 5px 8px; border-radius: 2px;" href="/tags/#{{name}}">{{ name
     }}</a>
   {% endif %}
   {%- endfor -%}
