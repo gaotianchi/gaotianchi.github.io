@@ -253,11 +253,11 @@
 
   .author-calligraphy {
     display: block;
-    height: 2.4em;
+    height: 3.6em;
     margin: 0 0 10px 0;
 
     @include media-query($on-mobile) {
-      height: 2em;
+      height: 2.8em;
     }
   }
 
