@@ -5,10 +5,11 @@ slug: formalism-and-individual-habits
 status: archived
 visibility: hidden
 lastmod: 2021-12-01T13:03:07+08:00
-categories:
-  - 少作
+category: 少作
 tags:
   - 信件
+  - 规则
+  - 自由
 url: ""
 description: 收信人是学院的某个行政人员。写第一封信的起因是，当时宿舍有许多规定与我对大学生活的认识有着严重冲突。我没想到大学宿舍卫生管理制度竟然与高中如此相似，甚至更加极端：垃圾桶里不允许有垃圾、桌子上不允许放东西、储物柜书本要摆放整齐且不允许放置规定以外的东西、被子要叠成豆腐块、枕头上要放枕巾、地面上不允许有头发丝和灰尘……
 author: 高天驰

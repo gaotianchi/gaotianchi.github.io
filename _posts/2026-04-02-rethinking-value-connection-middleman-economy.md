@@ -5,10 +5,11 @@ slug: rethinking-value-connection-middleman-economy
 status: archived
 visibility: hidden
 lastmod: 2026-04-02T17:35:10+08:00
-categories:
-  - 少作
+category: 深思
 tags:
   - 读书
+  - 商业
+  - 中介
 url: ""
 description: 昨天读完了《中间人经济》这本书，借此机会聊一聊我对中介的认识以及上一份工作经历。
 author: 高天驰

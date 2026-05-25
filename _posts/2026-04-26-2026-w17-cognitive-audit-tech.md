@@ -5,10 +5,11 @@ slug: 2026-w17-cognitive-audit-tech
 status: archived
 visibility: hidden
 lastmod: 2026-04-26T20:11:19+08:00
-categories:
-  - 少作
+category: 审计
 tags:
-  - 随笔
+  - 周记
+  - 认知审计
+  - 科技
 url: ""
 description: 本周是2026年的第17周，这篇博文是周记系列的第二篇文章。这一周，我在通勤期间阅读了数百个来自各大权威咨询网站的摘要，并且充分实践了上一篇博文中提到的认知审计计划，这些便是本篇文章想要讨论的元素。
 author: 高天驰

@@ -5,10 +5,11 @@ slug: confinement-vs-autonomous-study
 status: archived
 visibility: hidden
 lastmod: 2022-03-17T20:16:22+08:00
-categories:
-  - 少作
+category: 少作
 tags:
   - 信件
+  - 规则
+  - 自由
 url: ""
 description: 这封信写于我申请"自主自习"期间。班主任认为我可能不愿意呆在原本的座位上，提议让我换个座位，或者放个单人桌子在教室后面让我坐在那里自习。除此以外，她还打出了"集体主义"的牌，然而这张牌对我来说并不是能扭转局势的王牌。
 author: 高天驰

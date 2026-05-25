@@ -5,10 +5,11 @@ slug: self-study-application
 status: archived
 visibility: hidden
 lastmod: 2021-10-27T20:00:15+08:00
-categories:
-  - 少作
+category: 少作
 tags:
   - 信件
+  - 规则
+  - 自由
 url: ""
 description: 由于无法忍耐大学的强制圈管政策，我发起了一个自主自习申请。
 author: 高天驰

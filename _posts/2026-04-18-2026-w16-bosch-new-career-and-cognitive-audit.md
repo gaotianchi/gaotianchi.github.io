@@ -5,10 +5,11 @@ slug: 2026-w16-bosch-new-career-and-cognitive-audit
 status: archived
 visibility: hidden
 lastmod: 2026-04-18T16:56:02+08:00
-categories:
-  - 少作
+category: 审计
 tags:
-  - 随笔
+  - 周记
+  - 认知审计
+  - 职场
 url: ""
 description: 记录本周看剧、入职实践以及对元认知管理的一点思考。
 author: 高天驰

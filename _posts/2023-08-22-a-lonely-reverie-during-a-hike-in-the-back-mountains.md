@@ -5,10 +5,12 @@ slug: a-lonely-reverie-during-a-hike-in-the-back-mountains
 status: published
 visibility: public
 lastmod: 2023-08-22T15:24:51+08:00
-categories:
-  - 少作
+category: 深思
 tags:
   - 游记
+  - 幸福
+  - 自由
+  - 思考
 url: ""
 description: 这篇随笔记录了一场身体与精神的双重漫游，在荒芜与诗意间追问幸福的转瞬性与不可复现。
 author: 高天驰
