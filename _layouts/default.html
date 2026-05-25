@@ -34,10 +34,8 @@ layout: compress
   </script>
 
   {% include navbar.html %}
-  <div class="wrapper{% if page.layout == 'home' %} home-wrapper{% endif %}">
-    {%- unless page.layout == 'home' -%}
+  <div class="wrapper">
     {% include author.html %}
-    {%- endunless -%}
     <main aria-label="Content">
       {{ content }}
     </main>

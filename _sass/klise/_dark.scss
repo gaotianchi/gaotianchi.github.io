@@ -261,32 +261,7 @@ body[data-theme="dark"] {
     .solution:hover {
       color: $dark-text-link-blue-active;
     }
-  }
-
-  // Home
-  .home-title {
-    color: $dark-white;
-  }
-
-  .home-post-date {
-    color: $dark-gray;
-  }
-
-  .home-post-title a {
-    color: $dark-white;
-
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-
-  .home-post-item:hover .home-post-date {
-    opacity: 0.6;
-  }
-
-  .home-archive-link:hover {
-    opacity: 0.8;
-  }
+  }  
 
 
   #back-to-top {
