@@ -263,14 +263,6 @@ body[data-theme="dark"] {
     }
   }  
 
-  .search-article {
-    input[type="search"] {
-      color: $dark-text-base-color;
-      &::-webkit-input-placeholder {
-        color: rgba(128,128,128,0.8);
-      }
-    }
-  }
 
   #back-to-top {
     background: $dark-light;
