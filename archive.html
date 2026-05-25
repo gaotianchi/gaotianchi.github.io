@@ -173,5 +173,15 @@ comments: false
       }
     });
   });
+
+  // URL parameter: ?tag=tagname activates the tag filter on load
+  var params = new URLSearchParams(window.location.search);
+  var tagParam = params.get('tag');
+  if (tagParam) {
+    var targetBtn = document.querySelector('.archive-tag-btn[data-tag="' + tagParam + '"]');
+    if (targetBtn) {
+      targetBtn.click();
+    }
+  }
 })();
 </script>
