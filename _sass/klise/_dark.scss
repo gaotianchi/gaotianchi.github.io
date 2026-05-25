@@ -293,4 +293,68 @@ body[data-theme="dark"] {
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     }
   }
+
+  // Archive page
+  .archive-section-label {
+    color: $dark-gray;
+  }
+
+  .archive-cat-btn {
+    --cat-color: #{$dark-gray};
+
+    &[data-tier="2"] {
+      --cat-color: #{$dark-text-base-color};
+    }
+
+    &[data-tier="3"] {
+      --cat-color: #{$dark-white};
+    }
+
+    &:hover,
+    &.active {
+      color: $dark-white;
+    }
+  }
+
+  .archive-tag-btn {
+    --tag-color: #{$dark-gray};
+
+    &[data-tier="2"] {
+      --tag-color: #{$dark-text-base-color};
+    }
+
+    &[data-tier="3"] {
+      --tag-color: #{$dark-white};
+    }
+
+    &:hover,
+    &.active {
+      color: $dark-white;
+    }
+  }
+
+  .timeline-year {
+    color: $dark-white;
+    border-bottom-color: $dark-light;
+  }
+
+  .timeline-date {
+    color: $dark-gray;
+  }
+
+  .timeline-link {
+    color: $dark-text-base-color !important;
+
+    &:hover {
+      color: $dark-text-link-blue !important;
+    }
+  }
+
+  .timeline-cat {
+    color: $dark-gray;
+  }
+
+  .archive-empty {
+    color: $dark-gray;
+  }
 }

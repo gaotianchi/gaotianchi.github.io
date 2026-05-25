@@ -439,13 +439,240 @@
   }
 }
 
+// Archive page
+.archive-section {
+  margin-bottom: 2.75rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.archive-section-label {
+  font-size: 0.625rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: $gray;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  opacity: 0.3;
+}
+
+.archive-categories {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.9rem;
+}
+
+.archive-cat-btn {
+  --cat-color: #{$gray};
+  --cat-opacity: 0.5;
+  --cat-size: 0.8125rem;
+  --cat-weight: 450;
+
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: $sans-family;
+  cursor: pointer;
+  line-height: 1.5;
+  color: var(--cat-color);
+  opacity: var(--cat-opacity);
+  font-size: var(--cat-size);
+  font-weight: var(--cat-weight);
+  letter-spacing: 0.01em;
+  transition: color 0.25s ease, opacity 0.25s ease;
+
+  &[data-tier="2"] {
+    --cat-color: #{$text-base-color};
+    --cat-opacity: 0.7;
+    --cat-size: 1rem;
+    --cat-weight: 520;
+  }
+
+  &[data-tier="3"] {
+    --cat-color: #{$black};
+    --cat-opacity: 0.92;
+    --cat-size: 1.25rem;
+    --cat-weight: 620;
+  }
+
+  &:hover,
+  &.active {
+    color: $black;
+    opacity: 1;
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+}
+
 .archive-tags {
-  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.9rem;
+
   .tag-item {
     padding: 1px 3px;
     border-radius: 2px;
     border: 1px solid rgba(128, 128, 128, 0.1);
     background-color: rgba(128, 128, 128, 0.1);
+  }
+}
+
+.archive-tag-btn {
+  --tag-color: #{$gray};
+  --tag-opacity: 0.5;
+  --tag-size: 0.8125rem;
+  --tag-weight: 450;
+
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: $sans-family;
+  cursor: pointer;
+  line-height: 1.5;
+  color: var(--tag-color);
+  opacity: var(--tag-opacity);
+  font-size: var(--tag-size);
+  font-weight: var(--tag-weight);
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease, opacity 0.3s ease;
+
+  &[data-tier="2"] {
+    --tag-color: #{$text-base-color};
+    --tag-opacity: 0.7;
+    --tag-size: 1rem;
+    --tag-weight: 520;
+  }
+
+  &[data-tier="3"] {
+    --tag-color: #{$black};
+    --tag-opacity: 0.92;
+    --tag-size: 1.25rem;
+    --tag-weight: 620;
+  }
+
+  &:hover,
+  &.active {
+    color: $black;
+    opacity: 1;
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+
+  .tag-count {
+    margin-left: 0.1em;
+    font-size: 0.6em;
+    opacity: 0.4;
+    vertical-align: super;
+  }
+}
+
+.archive-timeline {
+  margin-top: 0.25rem;
+}
+
+.timeline-year-group {
+  margin-bottom: 1.75rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-year {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  letter-spacing: 0.04em;
+  color: $gray;
+  opacity: 0.35;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.15rem 0;
+  line-height: 1.8;
+}
+
+.timeline-date {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: $gray;
+  opacity: 0.35;
+  min-width: 3em;
+  text-align: right;
+  letter-spacing: 0.02em;
+}
+
+.timeline-link {
+  flex: 1;
+  min-width: 0;
+  color: $text-base-color !important;
+  text-decoration: none;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    color: $text-link-blue !important;
+  }
+
+  &[target="_blank"]::after {
+    content: none !important;
+  }
+}
+
+.timeline-cat {
+  flex-shrink: 0;
+  font-size: 0.625rem;
+  color: $gray;
+  opacity: 0.25;
+  padding-left: 0.5rem;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.archive-empty {
+  text-align: center;
+  color: $gray;
+  font-style: italic;
+  font-size: 0.875rem;
+  padding: 3rem 0;
+}
+
+@include media-query($on-mobile) {
+  .archive-section {
+    margin-bottom: 2rem;
+  }
+
+  .timeline-item {
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+  }
+
+  .timeline-date {
+    min-width: 2.6em;
+  }
+
+  .timeline-link {
+    white-space: normal;
+  }
+
+  .timeline-cat {
+    padding-left: 0.25rem;
   }
 }
 
