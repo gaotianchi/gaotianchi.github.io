@@ -146,8 +146,20 @@ comments: false
     btn.addEventListener('click', function() {
       if (btn.hasAttribute('data-cat')) {
         var catVal = btn.getAttribute('data-cat');
+        if (catVal === 'all') {
+          document.querySelectorAll('.archive-tag-btn[data-cat]').forEach(function(b) {
+            b.classList.remove('active');
+          });
+          document.querySelectorAll('.archive-tag-btn[data-tag]').forEach(function(b) {
+            b.classList.remove('active');
+          });
+          btn.classList.add('active');
+          activeCat = 'all';
+          activeTag = '';
+          filter();
+          return;
+        }
         if (btn.classList.contains('active')) {
-          if (catVal === 'all') return;
           btn.classList.remove('active');
           document.querySelector('.archive-tag-btn[data-cat="all"]').classList.add('active');
           activeCat = 'all';
