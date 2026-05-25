@@ -251,6 +251,16 @@
     letter-spacing: -0.02em;
   }
 
+  .author-calligraphy {
+    display: block;
+    height: 2.4em;
+    margin: 0 0 10px 0;
+
+    @include media-query($on-mobile) {
+      height: 2em;
+    }
+  }
+
   .author-bio {
     margin: 0;
     font-size: 1.063rem;
