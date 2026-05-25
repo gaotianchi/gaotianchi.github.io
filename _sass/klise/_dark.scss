@@ -271,4 +271,22 @@ body[data-theme="dark"] {
       }
     }
   }
+
+  #back-to-top {
+    background: $dark-light;
+
+    svg polyline {
+      stroke: $dark-white;
+    }
+
+    &:hover {
+      background: lighten($dark-light, 5%);
+    }
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+  }
 }

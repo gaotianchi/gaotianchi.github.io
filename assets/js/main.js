@@ -37,4 +37,27 @@
       document.querySelector(".wrapper").classList.remove("blurry");
     }
   });
+
+  // Back to top
+  const backToTop = document.getElementById("back-to-top");
+
+  if (backToTop) {
+    let ticking = false;
+
+    const update = () => {
+      backToTop.classList.toggle("visible", window.scrollY > 400);
+      ticking = false;
+    };
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 })();
