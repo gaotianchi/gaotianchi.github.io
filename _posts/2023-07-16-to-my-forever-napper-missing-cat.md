@@ -1,12 +1,18 @@
 ---
 title: 想念那只总爱吃狗粮的猫
-description: 它没有名字，只是叫‘小猫’。
+date: 2023-07-16T16:33:00+08:00
+slug: to-my-forever-napper-missing-cat
+status: published
+visibility: public
+lastmod: 2023-07-16T16:33:00+08:00
+categories:
+  - 少作
 tags:
   - 随笔
-date: 2023-07-16T16:33:00+08:00
+url: ""
+description: 它没有名字，只是叫'小猫'。
+author: 高天驰
 layout: post
-status: archived
-visibility: hidden
 ---
 
 这似乎是它失踪前的最后几张照片之一，像很多它的其他照片一样，它在睡觉。
@@ -14,7 +20,7 @@ visibility: hidden
 ![](https://www.gaotianchi.com/assets/img/to-my-forever-napper-missing-cat/20230213_sleep_when_i_writing-scaled-e1689568755363-768x1024.jpg)
 我在当天的日记中写道：
 
-> 如果有人说：“等到……就会变好了”。我会发笑，是否表明我对未来是悲观的？当下我不那么认为，而是觉得说那句话的人太过天真，生活永远不会主动变好，奇迹总是不会发生。
+> 如果有人说："等到……就会变好了"。我会发笑，是否表明我对未来是悲观的？当下我不那么认为，而是觉得说那句话的人太过天真，生活永远不会主动变好，奇迹总是不会发生。
 
 基于什么样的心境写下这段话我已不得而知，只是知道后来的一个事实应验了最后一段话：我祈祷它能回家，但这个奇迹到 4 个月后仍然没有发生。
 

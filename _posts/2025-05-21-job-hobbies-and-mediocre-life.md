@@ -1,12 +1,18 @@
 ---
 title: 关于求职、爱好与平庸生活
-description: 这篇文章记录了我的求职困境、爱好的变迁，以及对平庸生活的反抗。
+date: 2025-05-21T20:21:24+08:00
+slug: job-hobbies-and-mediocre-life
+status: published
+visibility: public
+lastmod: 2025-05-21T20:21:24+08:00
+categories:
+  - 少作
 tags:
   - 随笔
-date: 2025-05-21T20:21:24+08:00
+url: ""
+description: 这篇文章记录了我的求职困境、爱好的变迁，以及对平庸生活的反抗。
+author: 高天驰
 layout: post
-status: archived
-visibility: hidden
 ---
 最近以来，天气愈发炎热，室内外都充斥着沉闷的空气，时不时刮过来温热的风——这些都是夏天到来的迹象。我很少有明确的季节相关的时间概念。如果你问我夏季什么时候开始、什么时候结束，我真的对这种问题一头雾水。
 
