@@ -526,13 +526,26 @@
     opacity: 0.6;
   }
 
-  // Categories: background chip indicator
+  // Categories: filled pill with accent color
   &[data-cat].active {
-    background: rgba(128, 128, 128, 0.1);
-    border-radius: 4px;
+    background: rgba(0, 63, 255, 0.08);
+    border-radius: 12px;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    color: $text-link-blue;
+  }
+
+  // Tags: outlined border with accent color
+  &[data-tag].active {
+    border: 1.5px solid rgba(0, 63, 255, 0.25);
+    border-radius: 12px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    color: $text-link-blue;
   }
+
+  &[data-tag].active::after {
+    display: none;
   }
 
   .tag-count {

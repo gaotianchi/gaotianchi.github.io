@@ -317,9 +317,20 @@ body[data-theme="dark"] {
       opacity: 1 !important;
     }
 
-    // Categories: background chip in dark mode
+    // Categories: filled pill with accent color (dark mode)
     &[data-cat].active {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 82, 119, 0.15);
+      color: $dark-text-link-blue;
+    }
+
+    // Tags: outlined border with accent color (dark mode)
+    &[data-tag].active {
+      border-color: rgba(255, 82, 119, 0.35);
+      color: $dark-text-link-blue;
+    }
+
+    &[data-tag].active::after {
+      display: none;
     }
   }
 
