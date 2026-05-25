@@ -333,13 +333,33 @@ body[data-theme="dark"] {
     }
   }
 
+  .archive-timeline {
+    &::before {
+      background: $dark-light;
+    }
+  }
+
   .timeline-year {
     color: $dark-white;
-    border-bottom-color: $dark-light;
+    opacity: 0.1;
+  }
+
+  .timeline-item {
+    &::before {
+      background: lighten($dark-light, 3%);
+    }
+
+    &:hover::before {
+      background: $dark-gray;
+    }
   }
 
   .timeline-date {
     color: $dark-gray;
+  }
+
+  .timeline-item:hover .timeline-date {
+    color: $dark-white;
   }
 
   .timeline-link {
