@@ -241,6 +241,12 @@
   .author-content {
     flex: 1;
     min-width: 0;
+
+    @include media-query($on-mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .author-name {
@@ -258,8 +264,6 @@
 
     @include media-query($on-mobile) {
       height: 2.8em;
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 
