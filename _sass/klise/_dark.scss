@@ -261,7 +261,25 @@ body[data-theme="dark"] {
     .solution:hover {
       color: $dark-text-link-blue-active;
     }
-  }  
+  }
+
+  // Home
+  .home-head .home-title {
+    color: $dark-white;
+  }
+
+  .home-post-title a {
+    color: $dark-white;
+
+    &:hover {
+      color: $dark-text-link-blue;
+    }
+  }
+
+  .home-archive-link:hover {
+    color: $dark-text-link-blue;
+    border-color: $dark-text-link-blue;
+  }
 
 
   #back-to-top {
