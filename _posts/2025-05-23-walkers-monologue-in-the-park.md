@@ -5,9 +5,8 @@ slug: walkers-monologue-in-the-park
 status: published
 visibility: public
 lastmod: 2025-05-23T20:45:21+08:00
-category: 深思
+category: 游记
 tags:
-  - 游记
   - 媒介
   - 阅读
   - 思考

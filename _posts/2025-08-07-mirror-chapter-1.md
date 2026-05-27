@@ -5,9 +5,8 @@ slug: mirror-chapter-1
 status: published
 visibility: public
 lastmod: 2025-08-08T19:25:53+08:00
-category: 深思
+category: 小说
 tags:
-  - 小说
   - 创作
 url: ""
 description: 在山谷的中央，高达百米的巨型铜像上，发生了一桩后来被判定为自杀的命案。

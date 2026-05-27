@@ -5,7 +5,7 @@ slug: job-hobbies-and-mediocre-life
 status: published
 visibility: public
 lastmod: 2025-05-21T20:21:24+08:00
-category: 深思
+category: 随笔
 tags:
   - 随笔
   - 求职
