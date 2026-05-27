@@ -8,6 +8,23 @@ comments: false
 
 <ul class="changelog">
   <li class="changelog-entry">
+    <time class="changelog-date">2026-05-27</time>
+    <div class="changelog-content">
+      首页头部改为 logo 徽记居中布局，配装饰分隔线与衬线格言，奠定 Dark Academia 基调。
+      归档页分类/标签分组显示，新增筛选状态栏及清除按钮。
+      文章页排版重构：标题左对齐、serif 元信息、正文前装饰分隔线。
+      纯 Liquid 文章目录自动生成，单栏内联展示，滚动高亮当前位置。
+    </div>
+  </li>
+  <li class="changelog-entry">
+    <time class="changelog-date">2026-05-25</time>
+    <div class="changelog-content">
+      归档页全新设计：纵向时间线 + 水印年份，标签云 + 分类筛选，支持分类与标签组合过滤。
+      文章分类与标签体系重构，统一命名规范。
+      全站新增回到顶部按钮。
+    </div>
+  </li>
+  <li class="changelog-entry">
     <time class="changelog-date">2026-05-24</time>
     <div class="changelog-content">
       左上角主题切换图标动态化：浅色主题显示太阳，深色主题显示月亮，切换带旋转过渡动画。首次访问自动跟随系统偏好。
