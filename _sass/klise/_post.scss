@@ -6,6 +6,33 @@
   }
 }
 
+// Article watermark — subtle logo behind title area
+.wrapper.post article {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 260px;
+    height: 260px;
+    background: url("/assets/img/logo.png") center / contain no-repeat;
+    opacity: 0.035;
+    transform: rotate(-8deg);
+    pointer-events: none;
+    z-index: 0;
+
+    @include media-query($on-mobile) {
+      width: 150px;
+      height: 150px;
+      top: -0.5rem;
+      right: -0.5rem;
+      opacity: 0.03;
+    }
+  }
+}
+
 // Post header
 .header {
   margin-top: 4.5em;

@@ -71,6 +71,12 @@ body[data-theme="dark"] {
     border-color: $dark-light;
   }
 
+  // Article watermark
+  .wrapper.post article::before {
+    filter: invert(1);
+    opacity: 0.05;
+  }
+
   // Post header
   .header .tags .tag {
     color: $dark-gray;
