@@ -27,7 +27,8 @@ body[data-theme="dark"] {
   }
 
   // Post
-  .page-content {
+  .page-content,
+  .post-body {
     a {
       &:hover {
         opacity: 0.55;
@@ -43,6 +44,8 @@ body[data-theme="dark"] {
     h4,
     h5,
     h6 {
+      color: $dark-white;
+
       .anchor-head {
         color: inherit;
       }
@@ -68,18 +71,25 @@ body[data-theme="dark"] {
     border-color: $dark-light;
   }
 
+  // Post header
+  .header .tags .tag {
+    color: $dark-gray;
+  }
+
   // Post Meta
   .post-meta {
     color: $dark-gray;
+  }
 
-    time {
-      &::after {
-        background-color: $dark-light;
-      }
+  // Post divider
+  .post-divider {
+    &::before,
+    &::after {
+      background: $dark-light;
     }
 
-    span[itemprop="author"] {
-      border-color: $dark-light;
+    .post-divider-ornament {
+      color: $dark-gray;
     }
   }
 
@@ -246,8 +256,6 @@ body[data-theme="dark"] {
     border-color: $dark-light;
 
     .post-nav-item {
-      font-weight: $bold-weight;
-
       .post-title {
         color: $dark-white;
         opacity: 0.9;

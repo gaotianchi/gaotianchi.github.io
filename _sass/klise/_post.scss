@@ -6,70 +6,130 @@
   }
 }
 
-// Post title
+// Post header
 .header {
-  margin-top: 7.8em;
-  margin-bottom: 1em;
+  margin-top: 4.5em;
+  margin-bottom: 1.75em;
+
+  @include media-query($on-mobile) {
+    margin-top: 2.75em;
+    margin-bottom: 1.25em;
+  }
 
   .tags {
-    margin-left: 3px;
-    letter-spacing: 0.5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    margin-bottom: 1.25rem;
 
     .tag {
-      font-weight: $bold-weight;
+      display: inline-block;
       font-size: $small-font-size - 2;
+      font-weight: $normal-weight;
+      color: $gray;
+      opacity: 0.6;
+      letter-spacing: 0.03em;
 
-      &:hover {
-        text-decoration: none;
+      &::before {
+        content: "#";
+        opacity: 0.5;
       }
     }
   }
 
   .header-title {
-    font-size: 2em;
-    line-height: 1.2;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    font-size: 2.25em;
+    font-weight: $bold-weight;
+    line-height: 1.25;
+    margin: 0;
+    letter-spacing: -0.01em;
 
     &.center {
       text-align: center;
     }
 
     @include media-query($on-mobile) {
-      font-size: 1.9em;
+      font-size: 1.75em;
     }
   }
 }
 
-// Post meta
+// Post meta — editorial serif
 .post-meta {
-  padding-top: 3px;
-  line-height: 1.3;
+  margin-top: 0.85rem;
+  font-family: $serif-family;
+  font-size: 0.9375rem;
   color: $gray;
+  opacity: 0.65;
+  line-height: 1.6;
+
+  @include media-query($on-mobile) {
+    font-size: 0.8125rem;
+  }
 
   time {
-    position: relative;
-    margin-right: 1.5em;
+    position: static;
+    margin-right: 0;
 
     &::after {
-      background: $light;
-      bottom: 1px;
-      content: " ";
-      height: 2px;
-      position: absolute;
-      right: -20px;
-      width: 12px;
+      display: none;
     }
   }
 
-  span[itemprop="author"] {
-    border-bottom: 1px dotted $light;
+  .post-meta-sep {
+    margin: 0 0.45em;
+    opacity: 0.45;
+  }
+
+  .post-meta-modified {
+    font-style: italic;
+    opacity: 0.8;
+  }
+}
+
+// Post hero image
+.post-hero {
+  margin: 0 0 0.5rem;
+
+  img {
+    width: 100%;
+    border-radius: 2px;
+  }
+}
+
+// Post ornamental divider
+.post-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 2.25rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: $light;
+  }
+
+  .post-divider-ornament {
+    flex-shrink: 0;
+    padding: 0 12px;
+    font-size: 0.45rem;
+    color: $gray;
+    opacity: 0.3;
+    line-height: 1;
+  }
+
+  @include media-query($on-mobile) {
+    margin: 1.5rem 0 1.75rem;
   }
 }
 
 // Post content
 .page-content {
-  padding-top: 8px;
+  padding-top: 0;
 
   iframe {
     text-align: center;
@@ -108,16 +168,23 @@
       outline-offset: 2px;
     }
   }
+}
 
+// Post body — refined reading typography
+.post-body {
   > p {
-    font-size: 1rem;
+    font-size: 1.063rem;
     margin: 0;
-    padding-top: $spacing-full - 15;
-    padding-bottom: $spacing-full - 15;
+    padding-top: $spacing-full - 13;
+    padding-bottom: $spacing-full - 13;
+
+    @include media-query($on-mobile) {
+      font-size: 1rem;
+    }
   }
 
   ul.task-list {
-    list-style: none; 
+    list-style: none;
     margin: 0;
 
     li::before {
@@ -141,8 +208,12 @@
   h6 {
     color: $black;
     font-weight: $bold-weight;
-    margin-top: $spacing-full;
+    margin-top: $spacing-full + 6;
     margin-bottom: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     &:hover {
       .anchor-head {
@@ -192,6 +263,7 @@
   }
 }
 
+// Post navigation
 .post-nav {
   display: flex;
   position: relative;
@@ -201,11 +273,15 @@
 
   .post-nav-item {
     border-bottom: 0;
-    font-weight: $bold-weight;
     padding-bottom: 10px;
+    padding-top: 10px;
+    width: 50%;
+    text-decoration: none;
+    box-sizing: border-box;
 
     .post-title {
       color: $black;
+      font-weight: $normal-weight;
     }
 
     &:hover,
@@ -216,16 +292,13 @@
     }
 
     .nav-arrow {
+      font-family: $serif-family;
       font-weight: $normal-weight;
       font-size: $small-font-size;
       color: $gray;
+      opacity: 0.6;
       margin-bottom: 3px;
     }
-
-    width: 50%;
-    padding-top: 10px;
-    text-decoration: none;
-    box-sizing: border-box;
 
     &:nth-child(odd) {
       padding-left: 0;
