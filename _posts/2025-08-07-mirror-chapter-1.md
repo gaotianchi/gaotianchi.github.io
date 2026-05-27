@@ -7,7 +7,8 @@ visibility: public
 lastmod: 2025-08-08T19:25:53+08:00
 category: 小说
 tags:
-  - 创作
+  - 悬疑
+  - 爱情
 url: ""
 description: 在山谷的中央，高达百米的巨型铜像上，发生了一桩后来被判定为自杀的命案。
 author: 高天驰

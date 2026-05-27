@@ -9,7 +9,6 @@ category: 游记
 tags:
   - 媒介
   - 阅读
-  - 思考
 url: ""
 description: 忘记那个公园叫什么了，离我租的房子很近。
 author: 高天驰

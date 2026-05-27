@@ -7,10 +7,7 @@ visibility: public
 lastmod: 2025-05-21T20:21:24+08:00
 category: 随笔
 tags:
-  - 随笔
   - 求职
-  - 生活
-  - 思考
 url: ""
 description: 这篇文章记录了我的求职困境、爱好的变迁，以及对平庸生活的反抗。
 author: 高天驰

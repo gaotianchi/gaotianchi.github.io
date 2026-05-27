@@ -5,11 +5,10 @@ slug: to-my-forever-napper-missing-cat
 status: published
 visibility: public
 lastmod: 2023-07-16T16:33:00+08:00
-category: 少作
+category: 纪念
 tags:
-  - 随笔
   - 猫
-  - 情感
+  - 朋友
 url: ""
 description: 它没有名字，只是叫'小猫'。
 author: 高天驰
