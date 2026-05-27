@@ -12,6 +12,10 @@ $medium-font-size: $base-font-size * 0.938;
 $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.85;
 
+// Serif font stack — Dark Academia editorial
+$serif-family: "EB Garamond", "Cormorant Garamond", "Georgia", "Noto Serif SC",
+  "Source Han Serif SC", "STSong", "SimSun", "Songti SC", serif;
+
 // Font weight
 // $light-weight: 300; // uncomment if necessary
 $normal-weight: 400;
@@ -28,6 +32,7 @@ $light: #ececec;
 $smoke: #d2c7c7;
 $gray: #6b7886;
 $white: #fff;
+$paper-white: #fafaf7;
 
 // Dark Colors
 $dark-text-base-color: #c7bebe;
@@ -39,6 +44,7 @@ $dark-white: #eaeaea;
 $dark-light: #1b1d25;
 $dark-smoke: #4a4d56;
 $dark-gray: #767f87;
+$dark-paper: #1a1a1c;
 
 // Width of the content area
 $wide-size: 890px;

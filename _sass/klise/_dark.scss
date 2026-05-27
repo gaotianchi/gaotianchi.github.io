@@ -1,6 +1,6 @@
 body[data-theme="dark"] {
   color: $dark-text-base-color;
-  background-color: $dark-black;
+  background-color: $dark-paper;
 
   // Heading
   h1,
@@ -167,16 +167,25 @@ body[data-theme="dark"] {
     }
   }
 
-  // Author
-  .author {
-    border-bottom-color: $dark-light;
-
-    .author-bio {
-      color: $dark-white;
+  // Emblem
+  .emblem {
+    .emblem-logo {
+      filter: invert(1);
     }
 
-    .author-calligraphy {
-      filter: invert(1);
+    .emblem-divider {
+      &::before,
+      &::after {
+        background: $dark-light;
+      }
+    }
+
+    .emblem-divider-ornament {
+      color: $dark-gray;
+    }
+
+    .emblem-motto {
+      color: $dark-gray;
     }
   }
 
@@ -200,13 +209,13 @@ body[data-theme="dark"] {
 
   // Home — dark mode overrides
   .home-wrapper {
-    .author {
+    .emblem {
       border-bottom-color: transparent;
     }
 
-    .author-bio {
+    .emblem-motto {
       color: $dark-gray;
-      opacity: 0.7;
+      opacity: 0.5;
     }
 
     .post-item-date {
