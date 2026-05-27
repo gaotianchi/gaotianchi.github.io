@@ -2,14 +2,13 @@
 title: 2026-W17：深空探测、AI突破与前额叶激活，记录认知审计下的个人进化
 date: 2026-04-26T20:11:19+08:00
 slug: 2026-w17-cognitive-audit-tech
-status: archived
-visibility: hidden
+status: published
+visibility: public
 lastmod: 2026-04-26T20:11:19+08:00
-category: 审计
+category: 周记
 tags:
-  - 周记
+  - 咨询
   - 认知审计
-  - 科技
 url: ""
 description: 本周是2026年的第17周，这篇博文是周记系列的第二篇文章。这一周，我在通勤期间阅读了数百个来自各大权威咨询网站的摘要，并且充分实践了上一篇博文中提到的认知审计计划，这些便是本篇文章想要讨论的元素。
 author: 高天驰

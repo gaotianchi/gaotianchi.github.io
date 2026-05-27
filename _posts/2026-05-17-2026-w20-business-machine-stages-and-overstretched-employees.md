@@ -2,14 +2,12 @@
 title: 2026-W20：商业机器的五个阶段，与被透支的"全能"员工
 date: 2026-05-17T21:16:04+08:00
 slug: 2026-w20-business-machine-stages-and-overstretched-employees
-status: archived
-visibility: hidden
+status: published
+visibility: public
 lastmod: 2026-05-17T21:16:04+08:00
-category: 审计
+category: 周记
 tags:
-  - 周记
-  - 商业
-  - SaaS
+  - 创业
   - 职场
 url: ""
 description: 职能边界模糊的时代，底层商业链路从未改变。本文详细拆解了一台商业机器从产品研发、获客、销售、交付到裂变的五个运转阶段。同时深入剖析了企业主打包"全能岗位"的深层动机——通过透支员工的时间与健康，用高频的淘汰率来对冲系统设计上的缺陷与市场的不确定性。

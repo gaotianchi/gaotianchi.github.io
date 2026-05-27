@@ -2,14 +2,13 @@
 title: 新篇杂谈
 date: 2026-03-31T17:08:23+08:00
 slug: weak-ties-interference-attraction-tears-poverty
-status: archived
-visibility: hidden
+status: published
+visibility: public
 lastmod: 2026-03-31T17:08:23+08:00
-category: 深思
+category: 随笔
 tags:
-  - 随笔
-  - 社交网络
-  - 思考
+  - 弱关系
+  - 吸引力
 url: ""
 description: 很长一段时间，对于"完美"的执念让我一个字也无法动笔。如今，我胡乱写下这篇博文，就是对这种执念的挑战。
 author: 高天驰

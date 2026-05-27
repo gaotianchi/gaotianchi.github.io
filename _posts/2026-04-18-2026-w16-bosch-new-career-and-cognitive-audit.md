@@ -2,12 +2,11 @@
 title: 2026-W16：博斯、新职场与认知审计
 date: 2026-04-18T16:56:02+08:00
 slug: 2026-w16-bosch-new-career-and-cognitive-audit
-status: archived
-visibility: hidden
+status: published
+visibility: public
 lastmod: 2026-04-18T16:56:02+08:00
-category: 审计
+category: 周记
 tags:
-  - 周记
   - 认知审计
   - 职场
 url: ""

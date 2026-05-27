@@ -2,13 +2,12 @@
 title: 读完《中间人经济》：重新理解连接的价值
 date: 2026-04-02T17:35:10+08:00
 slug: rethinking-value-connection-middleman-economy
-status: archived
-visibility: hidden
+status: published
+visibility: public
 lastmod: 2026-04-02T17:35:10+08:00
-category: 深思
+category: 读书
 tags:
-  - 读书
-  - 商业
+  - 创业
   - 中介
 url: ""
 description: 昨天读完了《中间人经济》这本书，借此机会聊一聊我对中介的认识以及上一份工作经历。
