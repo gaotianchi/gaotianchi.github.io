@@ -72,6 +72,8 @@ layout: compress
           <span class="post-divider-ornament">&#9670;</span>
         </div>
 
+        {% include toc.html html=content %}
+
         <div class="post-body" itemprop="articleBody">
           {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
         </div>
@@ -91,6 +93,56 @@ layout: compress
     {% include footer.html %}
   </div>
   {% include back-to-top.html %}
+
+  <script>
+  (function() {
+    var toc = document.getElementById('toc');
+    if (!toc) return;
+    var tocList = document.getElementById('toc-list');
+    var tocToggle = document.getElementById('toc-toggle');
+
+    // Scroll spy
+    var headings = document.querySelectorAll('.post-body h2, .post-body h3, .post-body h4');
+    var tocLinks = tocList.querySelectorAll('a');
+    if (tocLinks.length === 0) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        var id = entry.target.getAttribute('id');
+        var link = tocList.querySelector('a[href="#' + CSS.escape(id) + '"]');
+        if (link) {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(function(l) { l.classList.remove('active'); });
+            link.classList.add('active');
+          }
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px' });
+
+    headings.forEach(function(h) { observer.observe(h); });
+
+    // Smooth scroll
+    tocList.addEventListener('click', function(e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      e.preventDefault();
+      var id = a.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + id);
+      }
+    });
+
+    // Toggle collapse
+    tocToggle.addEventListener('click', function() {
+      var expanded = tocToggle.getAttribute('aria-expanded') === 'true';
+      tocToggle.setAttribute('aria-expanded', !expanded);
+      tocToggle.innerHTML = expanded ? '&#9654;' : '&#9660;';
+      tocList.style.display = expanded ? 'none' : '';
+    });
+  })();
+  </script>
 </body>
 
 </html>

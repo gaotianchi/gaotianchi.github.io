@@ -1,0 +1,48 @@
+{%- comment -%}
+  Generate table of contents from rendered HTML.
+  Extracts h2, h3, h4 headings with kramdown-generated IDs.
+  Usage: {% include toc.html html=content %}
+{%- endcomment -%}
+
+{%- assign nodes = include.html | split: '<h' -%}
+
+{%- capture toc_items -%}
+{%- for node in nodes -%}
+  {%- if forloop.first -%}{%- continue -%}{%- endif -%}
+
+  {%- assign level_char = node | slice: 0, 1 -%}
+  {%- assign level = level_char | plus: 0 -%}
+  {%- if level < 2 or level > 4 -%}{%- continue -%}{%- endif -%}
+
+  {%- comment -%} Extract heading ID from id="..." attribute {%- endcomment -%}
+  {%- assign id_parts = node | split: 'id="' -%}
+  {%- assign after_id = id_parts[1] | split: '"' -%}
+  {%- assign heading_id = after_id[0] -%}
+
+  {%- unless heading_id -%}{%- continue -%}{%- endunless -%}
+
+  {%- comment -%} Extract heading text between > and </h {%- endcomment -%}
+  {%- assign text_parts = node | split: '>' -%}
+  {%- assign after_tag = text_parts[1] -%}
+  {%- assign text_final = after_tag | split: '</h' -%}
+  {%- assign heading_text = text_final[0] | strip_html | strip -%}
+
+  {%- unless heading_text -%}{%- continue -%}{%- endunless -%}
+
+  <li class="toc-item toc-h{{ level }}"><a href="#{{ heading_id }}">{{ heading_text }}</a></li>
+{%- endfor -%}
+{%- endcapture -%}
+
+{%- assign toc_trimmed = toc_items | strip -%}
+
+{%- if toc_trimmed != "" -%}
+<nav class="toc" id="toc" aria-label="目录">
+  <div class="toc-header">
+    <span class="toc-title">目录</span>
+    <button class="toc-toggle" id="toc-toggle" aria-expanded="false">&#9654;</button>
+  </div>
+  <ol class="toc-list" id="toc-list">
+    {{ toc_trimmed }}
+  </ol>
+</nav>
+{%- endif -%}
