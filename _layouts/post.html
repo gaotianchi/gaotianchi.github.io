@@ -99,7 +99,6 @@ layout: compress
     var toc = document.getElementById('toc');
     if (!toc) return;
     var tocList = document.getElementById('toc-list');
-    var tocToggle = document.getElementById('toc-toggle');
 
     // Scroll spy
     var headings = document.querySelectorAll('.post-body h2, .post-body h3, .post-body h4');
@@ -134,13 +133,6 @@ layout: compress
       }
     });
 
-    // Toggle collapse
-    tocToggle.addEventListener('click', function() {
-      var expanded = tocToggle.getAttribute('aria-expanded') === 'true';
-      tocToggle.setAttribute('aria-expanded', !expanded);
-      tocToggle.innerHTML = expanded ? '&#9654;' : '&#9660;';
-      tocList.style.display = expanded ? 'none' : '';
-    });
   })();
   </script>
 </body>

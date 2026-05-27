@@ -135,9 +135,6 @@
 }
 
 .toc-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 0.25rem;
 }
 
@@ -147,22 +144,6 @@
   color: $gray;
   opacity: 0.5;
   letter-spacing: 0.06em;
-}
-
-.toc-toggle {
-  display: none;
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 0.625rem;
-  color: $gray;
-  opacity: 0.5;
-  cursor: pointer;
-  line-height: 1;
-
-  @media (max-width: $on-mobile) {
-    display: block;
-  }
 }
 
 .toc-list {
@@ -175,7 +156,6 @@
   }
 
   @media (max-width: $on-mobile) {
-    display: none;
     margin-top: 0.25rem;
   }
 }
@@ -211,12 +191,6 @@
 
 .toc-h3 a { font-size: 0.8125rem; }
 .toc-h4 a { font-size: 0.75rem; opacity: 0.45; }
-
-@media (max-width: $on-mobile) {
-  .toc-header {
-    margin-bottom: 0;
-  }
-}
 
 // Post content
 .page-content {
