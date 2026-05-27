@@ -543,10 +543,80 @@
 
 .archive-tags {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.45rem 0.7rem;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 0.75rem 0 1.25rem;
+}
+
+.archive-filter-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.archive-filter-label {
+  flex-shrink: 0;
+  font-family: $serif-family;
+  font-size: 0.75rem;
+  color: $gray;
+  opacity: 0.45;
+  letter-spacing: 0.06em;
+  min-width: 2.4em;
+}
+
+.archive-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+}
+
+.archive-filter-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  margin: 0.5rem 0 1rem;
+  border: 1px solid $light;
+  font-family: $serif-family;
+  font-size: 0.8125rem;
+  color: $text-base-color;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.archive-filter-status-icon {
+  flex-shrink: 0;
+  font-size: 0.45rem;
+  color: $gray;
+  opacity: 0.4;
+}
+
+.archive-filter-status-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.archive-filter-status-text strong {
+  font-weight: 600;
+  color: $black;
+}
+
+.archive-filter-clear {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0.15rem 0.5rem;
+  font-family: $sans-family;
+  font-size: 0.6875rem;
+  color: $gray;
+  opacity: 0.5;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .archive-tag-btn {

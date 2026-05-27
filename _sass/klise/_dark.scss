@@ -328,6 +328,32 @@ body[data-theme="dark"] {
 
   // Archive page
 
+  .archive-filter-label {
+    color: $dark-gray;
+    opacity: 0.4;
+  }
+
+  .archive-filter-status {
+    border-color: $dark-light;
+    color: $dark-text-base-color;
+  }
+
+  .archive-filter-status-icon {
+    color: $dark-gray;
+  }
+
+  .archive-filter-status-text strong {
+    color: $dark-white;
+  }
+
+  .archive-filter-clear {
+    color: $dark-gray;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
   .archive-tag-btn {
     --tag-color: #{$dark-gray};
 
