@@ -333,24 +333,23 @@
 .footer {
   margin-top: 8em;
   margin-bottom: 2em;
-  padding: 0 $spacing-half;
 
   @include media-query($on-mobile) {
     margin-top: 3em;
   }
 
   .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    max-width: $narrow-size;
-    margin: 0 auto 2.5rem auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
     @include media-query($on-mobile) {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.75rem;
+      gap: 1.5rem;
       margin-bottom: 1.75rem;
       padding-bottom: 1.5rem;
     }
