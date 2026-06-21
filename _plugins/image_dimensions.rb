@@ -16,22 +16,27 @@ module Jekyll
           return nil unless header[0..7].bytes == [137, 80, 78, 71, 13, 10, 26, 10]
           [header[16..19].unpack1("N"), header[20..23].unpack1("N")]
         when ".jpg", ".jpeg"
-          f.seek(2)
-          while f.pos < f.size - 8
+          f.seek(2)  # skip SOI
+          while f.pos < f.size - 9
             b = f.read(2)
             break if b.nil? || b.bytesize < 2
             break unless b[0].ord == 0xFF
             code = b[1].ord
-            break if code == 0xDA
+            break if code == 0xDA || code == 0xD9  # SOS or EOI
+            seg_len = f.read(2).unpack1("n")
+            break if seg_len.nil? || seg_len < 2
+
             if [0xC0, 0xC1, 0xC2].include?(code)
-              seg = f.read(7)
-              h = seg[1..2].unpack1("n")
-              w = seg[3..4].unpack1("n")
+              # SOF: precision(1) + height(2) + width(2) + ...
+              data = f.read(5)
+              h = data[1..2].unpack1("n")
+              w = data[3..4].unpack1("n")
               return [w, h] if w && h && w > 0
+              remaining = seg_len - 2 - 5
+              f.seek(remaining, IO::SEEK_CUR) if remaining > 0
+            else
+              f.seek(seg_len - 2, IO::SEEK_CUR)
             end
-            len = f.read(2).unpack1("n")
-            break if len.nil? || len < 2
-            f.seek(len - 2, IO::SEEK_CUR)
           end
           nil
         when ".gif"
