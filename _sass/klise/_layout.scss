@@ -545,6 +545,7 @@
   @include media-query($on-mobile) {
     .post-item {
       flex-direction: column;
+      flex-wrap: nowrap;
       align-items: flex-start;
       margin-bottom: 1.1rem;
     }
@@ -560,10 +561,13 @@
     }
 
     .post-item-date {
+      display: block;
       margin: 0 0 0.15rem;
+      padding: 0;
       font-size: 0.6875rem;
       opacity: 0.45;
       order: 1;
+      text-align: left;
     }
   }
 
