@@ -523,12 +523,14 @@
     user-select: none;
     align-self: flex-end;
     padding-bottom: 0.15em;
+    margin-right: 0.4em;
   }
 
   .post-item-date {
     flex-shrink: 0;
     padding: 0;
-    margin-left: 0.25rem;
+    margin: 0;
+    text-align: right;
     line-height: 1;
     font-weight: 400;
     font-size: 0.75rem;
@@ -536,6 +538,7 @@
     opacity: 0.55;
     letter-spacing: 0.02em;
     white-space: nowrap;
+    font-variant-numeric: tabular-nums;
   }
 
   // Mobile: vertical stack — date above, no leader, title wraps
