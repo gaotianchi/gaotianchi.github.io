@@ -2,59 +2,61 @@
 layout: default
 ---
 <article itemscope itemtype="https://schema.org/BlogPosting">
-  <header class="header">
-    {% if page.tags and page.tags != empty %}
-    <div class="tags" itemprop="keywords">
-      {% for tag in page.tags %}
-      <span class="tag">{{ tag }}</span>
-      {% endfor %}
-    </div>
-    {% endif %}
-    <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
-    {% if page.date %}
-    <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: "%Y年%-m月%-d日" }}
-      </time>
-      <span class="post-meta-sep">&middot;</span>
-      <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-        <span itemprop="name">{{ site.author.name }}</span>
-      </span>
-      {% if page.modified %}
-      <span class="post-meta-sep">&middot;</span>
-      <span class="post-meta-modified">更新于 {{ page.modified | date: "%Y年%-m月%-d日" }}</span>
+  <div class="post-top">
+    <header class="header">
+      {% if page.tags and page.tags != empty %}
+      <div class="tags" itemprop="keywords">
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
       {% endif %}
-      <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.modified | date: "%Y年%-m月%-d日" }}</time>
-      <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
-      <span hidden itemprop="image">{{ page.image | absolute_url }}</span>
-      <span hidden itemprop="mainEntityOfPage">{{ page.description | escape }}</span>
-    </div>
+      <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
+      {% if page.date %}
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: "%Y年%-m月%-d日" }}
+        </time>
+        <span class="post-meta-sep">&middot;</span>
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <span itemprop="name">{{ site.author.name }}</span>
+        </span>
+        {% if page.modified %}
+        <span class="post-meta-sep">&middot;</span>
+        <span class="post-meta-modified">更新于 {{ page.modified | date: "%Y年%-m月%-d日" }}</span>
+        {% endif %}
+        <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.modified | date: "%Y年%-m月%-d日" }}</time>
+        <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
+        <span hidden itemprop="image">{{ page.image | absolute_url }}</span>
+        <span hidden itemprop="mainEntityOfPage">{{ page.description | escape }}</span>
+      </div>
+      {% endif %}
+    </header>
+
+    {% if page.image and page.showImage %}
+    <figure class="post-hero">
+      <img src="{{ page.image | absolute_url }}" alt="{{ page.title | escape }}" itemprop="image" loading="lazy" />
+    </figure>
     {% endif %}
-  </header>
 
-  {% if page.image and page.showImage %}
-  <figure class="post-hero">
-    <img src="{{ page.image | absolute_url }}" alt="{{ page.title | escape }}" itemprop="image" loading="lazy" />
-  </figure>
-  {% endif %}
-
-  <div class="post-divider">
-    <span class="post-divider-ornament">&#9670;</span>
-  </div>
-
-  <div class="toc-row">
-    <div class="toc-col">
-      {% include toc.html html=content %}
+    <div class="post-divider">
+      <span class="post-divider-ornament">&#9670;</span>
     </div>
+
+    <div class="toc-row">
+      <div class="toc-col">
+        {% include toc.html html=content %}
+      </div>
+    </div>
+
+    <figure class="toc-watermark" aria-hidden="true">
+      <img src="/assets/img/logo.png" alt="" />
+    </figure>
   </div>
 
   <div class="post-body" itemprop="articleBody">
     {% include anchor_headings.html html=content anchorClass="anchor-head" anchorBody="#" beforeHeading=true h_min=1 h_max=4 %}
   </div>
-
-  <figure class="toc-watermark" aria-hidden="true">
-    <img src="/assets/img/logo.png" alt="" />
-  </figure>
 </article>
 
 {% if page.tweet %}
@@ -68,75 +70,56 @@ layout: default
 {% endif %}
 
 <script>
-// Watermark — random position within header + TOC area
+// Watermark — random position + rotation within .post-top area
 (function() {
   var wm = document.querySelector('.toc-watermark');
   if (!wm) return;
-  var article = wm.closest('article');
-  if (!article) return;
+  var container = wm.parentElement;
+  if (!container || !container.classList.contains('post-top')) return;
 
-  var header = article.querySelector('.header');
-  var tocRow = article.querySelector('.toc-row');
-  if (!header || !tocRow) return;
-
-  var aw = article.offsetWidth;
-  // Confine watermark to the band between header top and TOC bottom
-  var yMin = header.offsetTop;
-  var yMax = tocRow.offsetTop + tocRow.offsetHeight;
-  var areaH = Math.max(yMax - yMin, 200);
-  var size = 400;
-
-  // Allow partial overflow at edges
-  var left   = Math.random() * (aw + size * 0.4) - size * 0.3;
-  var top    = yMin + Math.random() * areaH - size * 0.2;
+  // Random rotation on each load
   var rotate = Math.floor(Math.random() * 360);
-
-  wm.style.left = left + 'px';
-  wm.style.top  = top  + 'px';
-  wm.style.transform = 'rotate(' + rotate + 'deg)';
+  wm.style.setProperty('transform', 'rotate(' + rotate + 'deg)', 'important');
 })();
 
-// TOC 滚动监听 + 平滑滚动
+// TOC scroll + back-to-top
 (function() {
   var toc = document.getElementById('toc');
   if (!toc) return;
-  var tocList = document.getElementById('toc-list');
-  if (!tocList) return;
 
   // Scroll spy
-  var headings = document.querySelectorAll('.post-body h2, .post-body h3, .post-body h4');
-  var tocLinks = tocList.querySelectorAll('a');
-  if (tocLinks.length === 0) return;
+  var tocList = document.getElementById('toc-list');
+  if (tocList) {
+    var headings = document.querySelectorAll('.post-body h2, .post-body h3, .post-body h4');
+    var tocLinks = tocList.querySelectorAll('a');
+    if (tocLinks.length > 0) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          var id = entry.target.getAttribute('id');
+          var link = tocList.querySelector('a[href="#' + CSS.escape(id) + '"]');
+          if (link) {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(function(l) { l.classList.remove('active'); });
+              link.classList.add('active');
+            }
+          }
+        });
+      }, { rootMargin: '-80px 0px -70% 0px' });
+      headings.forEach(function(h) { observer.observe(h); });
+    }
+  }
 
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      var id = entry.target.getAttribute('id');
-      var link = tocList.querySelector('a[href="#' + CSS.escape(id) + '"]');
-      if (link) {
-        if (entry.isIntersecting) {
-          tocLinks.forEach(function(l) { l.classList.remove('active'); });
-          link.classList.add('active');
-        }
-      }
-    });
-  }, { rootMargin: '-80px 0px -70% 0px' });
-
-  headings.forEach(function(h) { observer.observe(h); });
-
-  // Smooth scroll for TOC links + toc-title back-to-top
+  // Smooth scroll + back-to-top via title link
   toc.addEventListener('click', function(e) {
     var a = e.target.closest('a');
     if (!a) return;
-
     var href = a.getAttribute('href');
     if (href === '#') {
-      // Scroll to top
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       history.pushState(null, '', window.location.pathname);
       return;
     }
-
     e.preventDefault();
     var id = href.slice(1);
     var target = document.getElementById(id);

@@ -19,14 +19,18 @@
   }
 }
 
-// Article watermark — absolute positioned, randomised by JS
-.wrapper.post article {
+// Post top — header + TOC + watermark container
+.post-top {
   position: relative;
 }
 
 .toc-watermark {
   position: absolute;
-  width: 400px;
+  
+  
+  width: 65%;
+  right: 3%;
+  top: 30%;
   z-index: 0;
   pointer-events: none;
   user-select: none;
@@ -35,7 +39,8 @@
   img {
     width: 100%;
     height: auto;
-    opacity: 0.04;
+    opacity: 0.09;
+    background: transparent;
   }
 
   @include media-query($on-mobile) {

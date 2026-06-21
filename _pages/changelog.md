@@ -17,6 +17,9 @@ comments: false
       中文字体换用霞鹜文楷（LXGW WenKai），正文超链接新增蓝色下划线风格化，脚注重排为学术论文引用格式。
       图片加载优化：新增 lazy_images 与 image_dimensions 插件，自动添加 loading="lazy" 及 width/height 属性消除布局偏移；修复 JPEG 尺寸解析器字节偏移 bug；站点 logo 排除占位灰底。
       删除 disqus.js、galite.js、search.min.js 等冗余资源；修复旧文图片 alt 文本与相对路径；CSP 白名单适配 GA4。
+      文章页水印重构：logo 从标题区移至目录右侧，CSS 固定定位 + JS 随机旋转；修复 JS 定位失效改用 right 锚点。
+      标题锚点 # 修复：改用 anchorBody 参数 HTML 直出，绝对定位至标题左留白区；修复 article overflow:hidden 裁切锚点。
+      TOC 回到顶部：目录标题可点击跳转页面顶端，修复 pushState hash 导致回到顶部按钮失效。
     </div>
   </li>
   <li class="changelog-entry">
