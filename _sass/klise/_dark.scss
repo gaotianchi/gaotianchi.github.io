@@ -264,6 +264,10 @@ body[data-theme="dark"] {
       opacity: 0.55;
     }
 
+    .post-item-leader {
+      color: rgba(255, 255, 255, 0.08);
+    }
+
     .post-item-title a {
       color: $dark-white;
 
@@ -484,5 +488,25 @@ body[data-theme="dark"] {
 
   .archive-empty {
     color: $dark-gray;
+  }
+
+  // Footnotes
+  .footnotes {
+    border-top-color: $dark-light;
+    color: $dark-gray;
+
+    li {
+      &::before {
+        color: $dark-gray;
+      }
+
+      &:target {
+        background: rgba($dark-text-link-blue, 0.08);
+      }
+    }
+  }
+
+  sup[id^="fnref"] a {
+    color: $dark-text-link-blue;
   }
 }

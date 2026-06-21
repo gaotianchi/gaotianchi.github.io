@@ -438,12 +438,12 @@
 .home-wrapper {
   .emblem {
     border-bottom: none;
-    margin-bottom: 5.5rem;
-    padding: 3rem 0 0;
+    margin-bottom: 2.5rem;
+    padding: 2rem 0 0;
 
     @include media-query($on-mobile) {
-      margin-bottom: 4rem;
-      padding: 2rem 0 0;
+      margin-bottom: 2rem;
+      padding: 1.5rem 0 0;
     }
   }
 
@@ -474,11 +474,13 @@
     display: none;
   }
 
-  // Post list — borderless, separated by whitespace
+  // Post list — book TOC style (title ············ date)
   .post-item {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
     padding: 0;
-    margin: 0 0 2.5rem;
+    margin: 0 0 0.9rem;
     border-top: none !important;
 
     &:first-child {
@@ -490,26 +492,14 @@
     }
   }
 
-  .post-item-date {
-    display: block;
-    min-width: auto;
-    padding: 0;
-    margin: 0 0 0.35rem;
-    line-height: 1;
-    font-weight: 400;
-    font-size: 0.75rem;
-    color: $gray;
-    opacity: 0.55;
-    letter-spacing: 0.02em;
-  }
-
   .post-item-title {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 1.063rem;
+    font-size: 0.938rem;
     font-weight: 400;
     letter-spacing: 0;
+    white-space: nowrap;
 
     a {
       color: $black;
@@ -523,9 +513,35 @@
     }
   }
 
+  .post-item-leader {
+    flex: 1 1 1ch;
+    min-width: 1ch;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.12);
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+    user-select: none;
+    align-self: flex-end;
+    padding-bottom: 0.15em;
+  }
+
+  .post-item-date {
+    flex-shrink: 0;
+    padding: 0;
+    margin-left: 0.25rem;
+    line-height: 1;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $gray;
+    opacity: 0.55;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
   .home-archive-link {
     display: inline-block;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     font-size: 0.8125rem;
     color: $gray;
     text-decoration: none;

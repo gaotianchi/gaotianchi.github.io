@@ -446,3 +446,75 @@
 .post-updated-at {
   font-family: "Ubuntu mono", "monospace";
 }
+
+// Footnotes — academic citation style
+.footnotes {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid $light;
+  font-size: 0.8125rem;
+  color: $gray;
+  line-height: 1.75;
+
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    counter-reset: fn;
+  }
+
+  li {
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    position: relative;
+    counter-increment: fn;
+
+    &::before {
+      content: "[" counter(fn) "]";
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: $gray;
+      opacity: 0.6;
+      white-space: nowrap;
+    }
+
+    p {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+
+    &:target {
+      background: rgba($text-link-blue, 0.06);
+    }
+  }
+}
+
+.reversefootnote {
+  text-decoration: none;
+  opacity: 0.3;
+  font-size: 0.75rem;
+  margin-left: 0.15rem;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+// In-text footnote reference (superscript number)
+sup[id^="fnref"] {
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    color: $text-link-blue;
+    padding: 0 1px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

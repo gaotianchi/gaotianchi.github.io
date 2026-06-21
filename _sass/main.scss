@@ -12,9 +12,11 @@ $medium-font-size: $base-font-size * 0.938;
 $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.85;
 
-// Serif font stack — Dark Academia editorial
-$serif-family: "EB Garamond", "Cormorant Garamond", "Georgia", "Noto Serif SC",
-  "Source Han Serif SC", "STSong", "SimSun", "Songti SC", serif;
+// Serif font stack — 英文 EB Garamond，中文 LXGW WenKai（霞鹜文楷·民国书刊风）
+// Fallback: macOS Songti SC | Windows SimSun | Linux Noto Serif CJK SC
+$serif-family: "EB Garamond", "Cormorant Garamond", "Georgia",
+  "LXGW WenKai", "Songti SC", "STSong", "SimSun", "PMingLiU",
+  "Noto Serif CJK SC", "Source Han Serif SC", serif;
 
 // Font weight
 // $light-weight: 300; // uncomment if necessary
