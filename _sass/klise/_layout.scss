@@ -333,6 +333,7 @@
 .footer {
   margin-top: 8em;
   margin-bottom: 2em;
+  padding: 0 $spacing-half;
 
   @include media-query($on-mobile) {
     margin-top: 3em;
@@ -341,23 +342,30 @@
   .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-bottom: 2.5rem;
+    gap: 3rem;
+    max-width: $narrow-size;
+    margin: 0 auto 2.5rem auto;
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
     @include media-query($on-mobile) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.5rem;
+    }
+
+    @media screen and (max-width: 420px) {
+      grid-template-columns: 1fr;
+      text-align: center;
       gap: 1.5rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.25rem;
     }
   }
 
   .footer-column {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
   }
 
   .footer-heading {
@@ -365,7 +373,7 @@
     font-weight: $bold-weight;
     color: $black;
     opacity: 0.55;
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0.4em 0;
     letter-spacing: 1px;
     text-transform: none;
     font-family: inherit;
@@ -375,13 +383,19 @@
     color: $black;
     opacity: 0.65;
     font-weight: $normal-weight;
-    font-size: $small-font-size - 1;
+    font-size: $small-font-size;
     text-decoration: none;
     letter-spacing: 0.3px;
-    line-height: 1.8;
+    line-height: 2;
+    padding: 2px 0;
 
     &:hover {
       opacity: 0.4;
+    }
+
+    @include media-query($on-mobile) {
+      line-height: 2.2;
+      padding: 3px 0;
     }
   }
 
@@ -389,12 +403,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     flex-wrap: wrap;
+    padding-top: 2px;
   }
 
   .footer_copyright {
-    font-size: $small-font-size - 2;
+    font-size: $small-font-size - 1;
     color: $gray;
     opacity: 0.6;
   }
@@ -403,14 +418,14 @@
     opacity: 0.4;
     margin: 0 2px;
     color: $gray;
-    font-size: $small-font-size - 2;
+    font-size: $small-font-size - 1;
   }
 
   .footer_legacy {
     color: inherit;
     text-decoration: none;
     opacity: 0.2;
-    font-size: $small-font-size - 2;
+    font-size: $small-font-size - 1;
 
     &:hover {
       opacity: 0.6;

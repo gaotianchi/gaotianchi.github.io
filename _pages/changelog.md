@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: 变更记录
 permalink: /changelog/
 layout: page
 description: 这个站点的变更记录。

@@ -1,12 +1,12 @@
-- title: Home
+- title: 首页
   url: /
   external: false
 
-- title: Archive
+- title: 归档
   url: /archive/
   external: false
 
-- title: About
+- title: 关于
   url: /about/
   external: false
 

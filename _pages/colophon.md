@@ -1,5 +1,5 @@
 ---
-title: Colophon
+title: 站点信息
 permalink: /colophon/
 layout: page
 description: 这个网站是如何构建的？
