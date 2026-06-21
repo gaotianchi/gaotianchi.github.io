@@ -40,4 +40,5 @@ redirect_from:
   - /5684-shanghai-airport-lounge-my-last-night-refuge/
   - /2002-volunteering-jiuhuashan-writing-family-conflict/
   - /tags/
+  - /legacy/
 ---

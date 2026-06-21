@@ -240,7 +240,13 @@
   }
 
   a {
-    text-decoration: none;
+    color: $text-link-blue;
+    text-decoration: underline;
+    text-decoration-color: rgba($text-link-blue, 0.22);
+    text-underline-offset: 3px;
+    text-decoration-thickness: from-font;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    opacity: 1;
 
     &[target="_blank"]::after {
       content: " \2197";
@@ -252,7 +258,8 @@
     }
 
     &:hover {
-      opacity: 0.55;
+      text-decoration-color: rgba($text-link-blue, 0.7);
+      opacity: 1;
     }
 
     &:focus-visible {
@@ -272,6 +279,21 @@
 
     @include media-query($on-mobile) {
       font-size: 1rem;
+    }
+  }
+
+  a {
+    color: $text-link-blue;
+    text-decoration: underline;
+    text-decoration-color: rgba($text-link-blue, 0.22);
+    text-underline-offset: 3px;
+    text-decoration-thickness: from-font;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+    opacity: 1;
+
+    &:hover {
+      text-decoration-color: rgba($text-link-blue, 0.7);
+      opacity: 1;
     }
   }
 

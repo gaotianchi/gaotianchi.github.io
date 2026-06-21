@@ -30,8 +30,16 @@ body[data-theme="dark"] {
   .page-content,
   .post-body {
     a {
+      color: $dark-text-link-blue;
+      text-decoration: underline;
+      text-decoration-color: rgba($dark-text-link-blue, 0.22);
+      text-underline-offset: 3px;
+      text-decoration-thickness: from-font;
+      opacity: 1;
+
       &:hover {
-        opacity: 0.55;
+        text-decoration-color: rgba($dark-text-link-blue, 0.7);
+        opacity: 1;
       }
     }
 
