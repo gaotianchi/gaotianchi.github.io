@@ -34,6 +34,9 @@ fb_appid:
 collections:
   posts:
     output: true
+  pages:
+    output: true
+    permalink: /:path/
 
 # Markdown settings
 markdown: kramdown
@@ -48,6 +51,10 @@ defaults:
     values:
       layout: post
       comments: false
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
 
 # Jekyll Compose default front matter
 jekyll_compose:
