@@ -111,13 +111,26 @@ kbd {
   text-shadow: 0 1px 0 $white;
 }
 
-// Image
+// Image — aspect ratio preserved via width/height attrs
 img {
   max-width: 100%;
+  height: auto;
   vertical-align: middle;
   -webkit-user-drag: none;
   margin: 0 auto;
   text-align: center;
+  transition: opacity 0.35s ease;
+
+  // Placeholder while loading: subtle tint shows through
+  &[loading="lazy"] {
+    background: rgba(0, 0, 0, 0.03);
+    object-fit: cover;
+  }
+}
+
+// Site logo — transparent, no placeholder background
+.emblem-logo {
+  background: transparent !important;
 }
 
 // Figure
