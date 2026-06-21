@@ -2,8 +2,6 @@
 title: 2026-W18：无限游戏指南，在抽象空间里寻找幸福的通行证
 date: 2026-05-04T19:57:09+08:00
 slug: 2026-w18-abstract-vision-framework
-status: published
-visibility: public
 lastmod: 2026-05-04T19:57:09+08:00
 category: 周记
 tags:

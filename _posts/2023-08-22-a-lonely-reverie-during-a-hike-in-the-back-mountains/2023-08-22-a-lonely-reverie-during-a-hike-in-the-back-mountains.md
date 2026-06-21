@@ -2,8 +2,6 @@
 title: 一次后山徒步的孤独遐思
 date: 2023-08-22T15:24:51+08:00
 slug: a-lonely-reverie-during-a-hike-in-the-back-mountains
-status: published
-visibility: public
 lastmod: 2023-08-22T15:24:51+08:00
 category: 游记
 tags:

@@ -2,8 +2,6 @@
 title: 关于求职、爱好与平庸生活
 date: 2025-05-21T20:21:24+08:00
 slug: job-hobbies-and-mediocre-life
-status: published
-visibility: public
 lastmod: 2025-05-21T20:21:24+08:00
 category: 随笔
 tags:

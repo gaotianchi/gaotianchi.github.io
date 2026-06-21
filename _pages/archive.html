@@ -9,7 +9,7 @@ comments: false
 <section class="archive-section">
   <h3 class="archive-section-label">标签云</h3>
   {%- comment -%}Collect visible categories for cloud{%- endcomment -%}
-  {%- assign visible_posts_cat = site.posts | where_exp: "p", "p.visibility != 'hidden'" -%}
+  {%- assign visible_posts_cat = site.posts -%}
   {%- assign cat_list = "" | split: "" -%}
   {%- for post in visible_posts_cat -%}
     {%- assign cat_list = cat_list | push: post.category -%}
@@ -28,7 +28,7 @@ comments: false
   {%- assign min_tag_count = 9999 -%}
   {%- for tag in site.tags -%}
   {%- assign tag_posts = tag | last -%}
-  {%- assign visible_count = tag_posts | where_exp: "p", "p.visibility != 'hidden'" | size -%}
+  {%- assign visible_count = tag_posts  | size -%}
   {%- if visible_count > 0 -%}
     {%- if visible_count > max_tag_count -%}{%- assign max_tag_count = visible_count -%}{%- endif -%}
     {%- if visible_count < min_tag_count -%}{%- assign min_tag_count = visible_count -%}{%- endif -%}
@@ -59,7 +59,7 @@ comments: false
         {%- for tag in site.tags -%}
         {%- assign tag_name = tag | first -%}
         {%- assign tag_posts = tag | last -%}
-        {%- assign visible_count = tag_posts | where_exp: "p", "p.visibility != 'hidden'" | size -%}
+        {%- assign visible_count = tag_posts  | size -%}
         {%- if visible_count > 0 -%}
         {%- assign normalized = visible_count | minus: min_tag_count | times: 100 | divided_by: tag_range -%}
         {%- if normalized >= 67 -%}
@@ -84,7 +84,7 @@ comments: false
 
 <section class="archive-section timeline-section">
   <div class="archive-timeline" id="archive-timeline">
-    {%- assign visible_posts = site.posts | where_exp: "p", "p.visibility != 'hidden'" -%}
+    {%- assign visible_posts = site.posts  -%}
     {%- for post in visible_posts -%}
     {%- capture current_year -%}{{ post.date | date: "%Y" }}{%- endcapture -%}
     {%- if current_year != previous_year -%}

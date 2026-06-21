@@ -305,12 +305,22 @@ body[data-theme="dark"] {
 
   // Footer
   .footer {
+    .footer-grid {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+    .footer-heading {
+      color: $dark-white;
+      opacity: 0.7;
+    }
     .footer_item {
       color: $dark-white;
     }
     .footer_copyright {
       color: $dark-gray;
       opacity: 0.8;
+    }
+    .footer_sep {
+      color: $dark-gray;
     }
     .footer_legacy {
       color: $dark-gray;

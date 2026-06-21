@@ -2,8 +2,6 @@
 title: 法律的奴隶和人的奴隶
 date: 2022-06-20T17:34:00+08:00
 slug: slaves-of-the-law-and-slaves-of-men
-status: published
-visibility: public
 lastmod: 2022-06-20T17:34:00+08:00
 category: 小说
 tags:

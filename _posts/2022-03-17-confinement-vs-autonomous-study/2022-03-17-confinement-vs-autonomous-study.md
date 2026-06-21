@@ -2,8 +2,6 @@
 title: 圈管与自习
 date: 2022-03-17T20:16:22+08:00
 slug: confinement-vs-autonomous-study
-status: archived
-visibility: hidden
 lastmod: 2022-03-17T20:16:22+08:00
 category: 少作
 tags:

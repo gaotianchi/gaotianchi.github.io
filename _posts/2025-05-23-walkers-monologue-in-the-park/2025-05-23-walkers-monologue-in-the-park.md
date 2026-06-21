@@ -2,8 +2,6 @@
 title: 城市山林间的漫步
 date: 2025-05-23T20:45:21+08:00
 slug: walkers-monologue-in-the-park
-status: published
-visibility: public
 lastmod: 2025-05-23T20:45:21+08:00
 category: 游记
 tags:

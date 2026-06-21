@@ -2,8 +2,6 @@
 title: 想念那只总爱吃狗粮的猫
 date: 2023-07-16T16:33:00+08:00
 slug: to-my-forever-napper-missing-cat
-status: published
-visibility: public
 lastmod: 2023-07-16T16:33:00+08:00
 category: 纪念
 tags:

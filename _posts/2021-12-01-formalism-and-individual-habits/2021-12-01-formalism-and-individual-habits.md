@@ -2,8 +2,6 @@
 title: 私人习惯与集体权力
 date: 2021-12-01T13:03:07+08:00
 slug: formalism-and-individual-habits
-status: archived
-visibility: hidden
 lastmod: 2021-12-01T13:03:07+08:00
 category: 少作
 tags:

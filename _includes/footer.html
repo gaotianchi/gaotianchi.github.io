@@ -1,25 +1,29 @@
 <footer class="footer">
-  <div class="footer_links">
-    <div class="footer_row">
-      <a class="footer_item" href="mailto:gaootianchi@gmail.com">EMAIL</a>
-      <span class="footer_sep">·</span>
-      <a class="footer_item" href="/feed.xml">RSS</a>
+  <div class="footer-grid">
+    <div class="footer-column">
+      <h4 class="footer-heading">关于</h4>
+      <a class="footer_item" href="/about/">关于作者</a>
+      <a class="footer_item" href="mailto:gaootianchi@qq.com">邮箱联系</a>
     </div>
-    <div class="footer_row">
-      <a class="footer_item" href="/ai/">AI</a>
-      <span class="footer_sep">·</span>
-      <a class="footer_item" href="/blank/">BLANK</a>
-      <span class="footer_sep">·</span>
-      <a class="footer_item" href="/colophon/">COLOPHON</a>
-      <span class="footer_sep">·</span>
-      <a class="footer_item" href="/changelog/">CHANGES</a>
+    <div class="footer-column">
+      <h4 class="footer-heading">内容</h4>
+      <a class="footer_item" href="/archive/">文章归档</a>
+      <a class="footer_item" href="/feed.xml">RSS 订阅</a>
+    </div>
+    <div class="footer-column">
+      <h4 class="footer-heading">站点</h4>
+      <a class="footer_item" href="/changelog/">变更记录</a>
+      <a class="footer_item" href="/colophon/">站点信息</a>
+      <a class="footer_item" href="/ai/">AI 声明</a>
     </div>
   </div>
-  <small class="footer_copyright">
-    Copyright &copy; 2022-{{ site.time | date: "%Y" }} 高天驰
-    <span class="footer_sep">·</span>
-    <a class="footer_legacy" href="/legacy/">少作</a>
-  </small>
+  <div class="footer_bottom">
+    <small class="footer_copyright">
+      Copyright &copy; 2022-{{ site.time | date: "%Y" }} 高天驰
+    </small>
+    <span class="footer_sep">&middot;</span>
+    <a class="footer_item footer_legacy" href="/blank/">留白</a>
+  </div>
 </footer>
 <script src="/assets/js/main.js" defer="defer"></script>
 {%- if site.google_analytics -%}

@@ -2,8 +2,6 @@
 title: 新篇杂谈
 date: 2026-03-31T17:08:23+08:00
 slug: weak-ties-interference-attraction-tears-poverty
-status: published
-visibility: public
 lastmod: 2026-03-31T17:08:23+08:00
 category: 随笔
 tags:

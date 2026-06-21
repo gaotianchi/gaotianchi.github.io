@@ -2,8 +2,6 @@
 title: 镜子-第一章
 date: 2025-08-08T19:25:53+08:00
 slug: mirror-chapter-1
-status: published
-visibility: public
 lastmod: 2025-08-08T19:25:53+08:00
 category: 小说
 tags:

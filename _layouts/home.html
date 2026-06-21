@@ -3,7 +3,7 @@ layout: default
 home: true
 ---
 
-{%- assign visible_posts = site.posts | where_exp: "p", "p.visibility != 'hidden'" -%}
+{%- assign visible_posts = site.posts -%}
 
 {%- if visible_posts.size > 0 -%}
 <section class="home-posts">

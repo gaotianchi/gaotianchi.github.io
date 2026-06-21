@@ -2,8 +2,6 @@
 title: 自主自习申请书
 date: 2021-10-27T20:00:15+08:00
 slug: self-study-application
-status: archived
-visibility: hidden
 lastmod: 2021-10-27T20:00:15+08:00
 category: 少作
 tags:

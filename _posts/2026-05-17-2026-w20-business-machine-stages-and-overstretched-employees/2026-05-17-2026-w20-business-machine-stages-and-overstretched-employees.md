@@ -2,8 +2,6 @@
 title: 2026-W20：商业机器的五个阶段，与被透支的"全能"员工
 date: 2026-05-17T21:16:04+08:00
 slug: 2026-w20-business-machine-stages-and-overstretched-employees
-status: published
-visibility: public
 lastmod: 2026-05-17T21:16:04+08:00
 category: 周记
 tags:

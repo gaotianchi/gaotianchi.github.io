@@ -2,8 +2,6 @@
 title: 2026-W17：深空探测、AI突破与前额叶激活，记录认知审计下的个人进化
 date: 2026-04-26T20:11:19+08:00
 slug: 2026-w17-cognitive-audit-tech
-status: published
-visibility: public
 lastmod: 2026-04-26T20:11:19+08:00
 category: 周记
 tags:
