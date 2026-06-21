@@ -539,6 +539,32 @@
     white-space: nowrap;
   }
 
+  // Mobile: vertical stack — date above, no leader, title wraps
+  @include media-query($on-mobile) {
+    .post-item {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 1.1rem;
+    }
+
+    .post-item-title {
+      font-size: 1rem;
+      white-space: normal;
+      order: 2;
+    }
+
+    .post-item-leader {
+      display: none;
+    }
+
+    .post-item-date {
+      margin: 0 0 0.15rem;
+      font-size: 0.6875rem;
+      opacity: 0.45;
+      order: 1;
+    }
+  }
+
   .home-archive-link {
     display: inline-block;
     margin-top: 1.5rem;
