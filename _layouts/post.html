@@ -1,140 +1,103 @@
 ---
-layout: compress
+layout: default
 ---
-
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'zh-cn' }}">
-
-{% include header.html %}
-
-<body data-theme="{{ site.mode }}" class="notransition">
-
-  <script>
-    const body = document.body;
-    const data = body.getAttribute("data-theme");
-
-    const initTheme = (state) => {
-      if (state === "dark") {
-        body.setAttribute("data-theme", "dark");
-      } else if (state === "light") {
-        body.removeAttribute("data-theme");
-      } else {
-        localStorage.setItem("theme", data);
-      }
-    };
-
-    initTheme(localStorage.getItem("theme"));
-
-    setTimeout(() => body.classList.remove("notransition"), 75);
-  </script>
-
-  {% include navbar.html %}
-  <div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-      <article itemscope itemtype="https://schema.org/BlogPosting">
-        <header class="header">
-          {% if page.tags and page.tags != empty %}
-          <div class="tags" itemprop="keywords">
-            {% for tag in page.tags %}
-            <span class="tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-          {% endif %}
-          <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
-          {% if page.date %}
-          <div class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date: "%Y年%-m月%-d日" }}
-            </time>
-            <span class="post-meta-sep">&middot;</span>
-            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <span itemprop="name">{{ site.author.name }}</span>
-            </span>
-            {% if page.modified %}
-            <span class="post-meta-sep">&middot;</span>
-            <span class="post-meta-modified">更新于 {{ page.modified | date: "%Y年%-m月%-d日" }}</span>
-            {% endif %}
-            <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.modified | date: "%Y年%-m月%-d日" }}</time>
-            <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
-            <span hidden itemprop="image">{{ page.image | absolute_url }}</span>
-            <span hidden itemprop="mainEntityOfPage">{{ page.description | escape }}</span>
-          </div>
-          {% endif %}
-        </header>
-
-        {% if page.image and page.showImage %}
-        <figure class="post-hero">
-          <img src="{{ page.image | absolute_url }}" alt="{{ page.title | escape }}" itemprop="image" />
-        </figure>
-        {% endif %}
-
-        <div class="post-divider">
-          <span class="post-divider-ornament">&#9670;</span>
-        </div>
-
-        {% include toc.html html=content %}
-
-        <div class="post-body" itemprop="articleBody">
-          {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
-        </div>
-      </article>
-
-      {% if page.tweet %}
-      <p>Comments this article on
-        <a href="https://twitter.com/{{site.twitter}}/status/{{page.tweet}}">Twitter</a>.
-      </p>
+<article itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="header">
+    {% if page.tags and page.tags != empty %}
+    <div class="tags" itemprop="keywords">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
+    {% if page.date %}
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%Y年%-m月%-d日" }}
+      </time>
+      <span class="post-meta-sep">&middot;</span>
+      <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">{{ site.author.name }}</span>
+      </span>
+      {% if page.modified %}
+      <span class="post-meta-sep">&middot;</span>
+      <span class="post-meta-modified">更新于 {{ page.modified | date: "%Y年%-m月%-d日" }}</span>
       {% endif %}
+      <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.modified | date: "%Y年%-m月%-d日" }}</time>
+      <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
+      <span hidden itemprop="image">{{ page.image | absolute_url }}</span>
+      <span hidden itemprop="mainEntityOfPage">{{ page.description | escape }}</span>
+    </div>
+    {% endif %}
+  </header>
 
-      {% if page.next or page.previous %}
-      {% include navigation.html %}
-      {% endif %}
-    </main>
+  {% if page.image and page.showImage %}
+  <figure class="post-hero">
+    <img src="{{ page.image | absolute_url }}" alt="{{ page.title | escape }}" itemprop="image" loading="lazy" />
+  </figure>
+  {% endif %}
 
-    {% include footer.html %}
+  <div class="post-divider">
+    <span class="post-divider-ornament">&#9670;</span>
   </div>
-  {% include back-to-top.html %}
 
-  <script>
-  (function() {
-    var toc = document.getElementById('toc');
-    if (!toc) return;
-    var tocList = document.getElementById('toc-list');
+  {% include toc.html html=content %}
 
-    // Scroll spy
-    var headings = document.querySelectorAll('.post-body h2, .post-body h3, .post-body h4');
-    var tocLinks = tocList.querySelectorAll('a');
-    if (tocLinks.length === 0) return;
+  <div class="post-body" itemprop="articleBody">
+    {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
+  </div>
+</article>
 
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        var id = entry.target.getAttribute('id');
-        var link = tocList.querySelector('a[href="#' + CSS.escape(id) + '"]');
-        if (link) {
-          if (entry.isIntersecting) {
-            tocLinks.forEach(function(l) { l.classList.remove('active'); });
-            link.classList.add('active');
-          }
+{% if page.tweet %}
+<p>Comments this article on
+  <a href="https://twitter.com/{{site.twitter}}/status/{{page.tweet}}">Twitter</a>.
+</p>
+{% endif %}
+
+{% if page.next or page.previous %}
+{% include navigation.html %}
+{% endif %}
+
+<script>
+// TOC 滚动监听 + 平滑滚动
+(function() {
+  var toc = document.getElementById('toc');
+  if (!toc) return;
+  var tocList = document.getElementById('toc-list');
+  if (!tocList) return;
+
+  // Scroll spy
+  var headings = document.querySelectorAll('.post-body h2, .post-body h3, .post-body h4');
+  var tocLinks = tocList.querySelectorAll('a');
+  if (tocLinks.length === 0) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var id = entry.target.getAttribute('id');
+      var link = tocList.querySelector('a[href="#' + CSS.escape(id) + '"]');
+      if (link) {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(function(l) { l.classList.remove('active'); });
+          link.classList.add('active');
         }
-      });
-    }, { rootMargin: '-80px 0px -70% 0px' });
-
-    headings.forEach(function(h) { observer.observe(h); });
-
-    // Smooth scroll
-    tocList.addEventListener('click', function(e) {
-      var a = e.target.closest('a');
-      if (!a) return;
-      e.preventDefault();
-      var id = a.getAttribute('href').slice(1);
-      var target = document.getElementById(id);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.replaceState(null, '', '#' + id);
       }
     });
+  }, { rootMargin: '-80px 0px -70% 0px' });
 
-  })();
-  </script>
-</body>
+  headings.forEach(function(h) { observer.observe(h); });
 
-</html>
+  // Smooth scroll
+  tocList.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    e.preventDefault();
+    var id = a.getAttribute('href').slice(1);
+    var target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#' + id);
+    }
+  });
+})();
+</script>

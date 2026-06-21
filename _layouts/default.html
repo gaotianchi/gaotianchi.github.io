@@ -34,8 +34,8 @@ layout: compress
   </script>
 
   {% include navbar.html %}
-  <div class="wrapper{% if page.layout == 'home' %} home-wrapper{% endif %}">
-    {% include emblem.html %}
+  <div class="wrapper{% if page.layout == 'home' %} home-wrapper{% endif %}{% if page.layout == 'post' %} post{% endif %}">
+    {% unless page.layout == 'post' %}{% include emblem.html %}{% endunless %}
     <main aria-label="Content">
       {{ content }}
     </main>
