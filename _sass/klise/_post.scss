@@ -6,30 +6,40 @@
   }
 }
 
-// Article watermark — subtle logo behind title area
+// TOC container — above watermark
+.toc-row {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.25rem;
+}
+
+.toc-col {
+  .toc {
+    margin-bottom: 0;
+  }
+}
+
+// Article watermark — absolute positioned, randomised by JS
 .wrapper.post article {
   position: relative;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -2rem;
-    right: -2rem;
-    width: 260px;
-    height: 260px;
-    background: url("/assets/img/logo.png") center / contain no-repeat;
-    opacity: 0.035;
-    transform: rotate(-8deg);
-    pointer-events: none;
-    z-index: 0;
+.toc-watermark {
+  position: absolute;
+  width: 400px;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  margin: 0;
 
-    @include media-query($on-mobile) {
-      width: 150px;
-      height: 150px;
-      top: -0.5rem;
-      right: -0.5rem;
-      opacity: 0.03;
-    }
+  img {
+    width: 100%;
+    height: auto;
+    opacity: 0.04;
+  }
+
+  @include media-query($on-mobile) {
+    display: none;
   }
 }
 
@@ -171,6 +181,11 @@
   color: $gray;
   opacity: 0.5;
   letter-spacing: 0.06em;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .toc-list {
@@ -205,7 +220,6 @@
     }
 
     &.active {
-      opacity: 1;
       color: $black;
       font-weight: 500;
     }
@@ -246,7 +260,6 @@
     text-underline-offset: 3px;
     text-decoration-thickness: from-font;
     transition: text-decoration-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
-    opacity: 1;
 
     &[target="_blank"]::after {
       content: " \2197";
@@ -259,7 +272,6 @@
 
     &:hover {
       text-decoration-color: rgba($text-link-blue, 0.7);
-      opacity: 1;
     }
 
     &:focus-visible {
@@ -271,6 +283,8 @@
 
 // Post body — refined reading typography
 .post-body {
+  position: relative;
+  z-index: 1;
   > p {
     font-size: 1.063rem;
     margin: 0;
@@ -289,12 +303,16 @@
     text-underline-offset: 3px;
     text-decoration-thickness: from-font;
     transition: text-decoration-color 0.2s ease, color 0.2s ease;
-    opacity: 1;
 
     &:hover {
       text-decoration-color: rgba($text-link-blue, 0.7);
-      opacity: 1;
     }
+  }
+
+  // Heading anchor — hidden until heading hover, styled as link
+  .anchor-head {
+    opacity: 0;
+    text-decoration: none;
   }
 
   ul.task-list {
@@ -320,6 +338,7 @@
   h4,
   h5,
   h6 {
+    position: relative;
     color: $black;
     font-weight: $bold-weight;
     margin-top: $spacing-full + 6;
@@ -331,21 +350,22 @@
 
     &:hover {
       .anchor-head {
-        opacity: 1;
+        opacity: 1 !important;
       }
     }
 
     .anchor-head {
-      position: relative;
-      opacity: 0;
+      position: absolute;
+      left: -1em;
+      opacity: 0 !important;
       outline: none;
+      color: $text-link-blue;
+      text-decoration: none;
+      font-weight: $bold-weight;
+      transition: opacity 0.15s ease;
 
-      &::before {
-        content: "#";
-        position: absolute;
-        right: -3px;
-        width: 1em;
-        font-weight: $bold-weight;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

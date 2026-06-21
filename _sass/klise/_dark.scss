@@ -35,11 +35,9 @@ body[data-theme="dark"] {
       text-decoration-color: rgba($dark-text-link-blue, 0.22);
       text-underline-offset: 3px;
       text-decoration-thickness: from-font;
-      opacity: 1;
 
       &:hover {
         text-decoration-color: rgba($dark-text-link-blue, 0.7);
-        opacity: 1;
       }
     }
 
@@ -79,8 +77,8 @@ body[data-theme="dark"] {
     border-color: $dark-light;
   }
 
-  // Article watermark
-  .wrapper.post article::before {
+  // TOC watermark
+  .toc-watermark img {
     filter: invert(1);
     opacity: 0.05;
   }

@@ -42,11 +42,19 @@ layout: default
     <span class="post-divider-ornament">&#9670;</span>
   </div>
 
-  {% include toc.html html=content %}
+  <div class="toc-row">
+    <div class="toc-col">
+      {% include toc.html html=content %}
+    </div>
+  </div>
 
   <div class="post-body" itemprop="articleBody">
-    {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
+    {% include anchor_headings.html html=content anchorClass="anchor-head" anchorBody="#" beforeHeading=true h_min=1 h_max=4 %}
   </div>
+
+  <figure class="toc-watermark" aria-hidden="true">
+    <img src="/assets/img/logo.png" alt="" />
+  </figure>
 </article>
 
 {% if page.tweet %}
@@ -60,6 +68,34 @@ layout: default
 {% endif %}
 
 <script>
+// Watermark — random position within header + TOC area
+(function() {
+  var wm = document.querySelector('.toc-watermark');
+  if (!wm) return;
+  var article = wm.closest('article');
+  if (!article) return;
+
+  var header = article.querySelector('.header');
+  var tocRow = article.querySelector('.toc-row');
+  if (!header || !tocRow) return;
+
+  var aw = article.offsetWidth;
+  // Confine watermark to the band between header top and TOC bottom
+  var yMin = header.offsetTop;
+  var yMax = tocRow.offsetTop + tocRow.offsetHeight;
+  var areaH = Math.max(yMax - yMin, 200);
+  var size = 400;
+
+  // Allow partial overflow at edges
+  var left   = Math.random() * (aw + size * 0.4) - size * 0.3;
+  var top    = yMin + Math.random() * areaH - size * 0.2;
+  var rotate = Math.floor(Math.random() * 360);
+
+  wm.style.left = left + 'px';
+  wm.style.top  = top  + 'px';
+  wm.style.transform = 'rotate(' + rotate + 'deg)';
+})();
+
 // TOC 滚动监听 + 平滑滚动
 (function() {
   var toc = document.getElementById('toc');
@@ -87,16 +123,26 @@ layout: default
 
   headings.forEach(function(h) { observer.observe(h); });
 
-  // Smooth scroll
-  tocList.addEventListener('click', function(e) {
+  // Smooth scroll for TOC links + toc-title back-to-top
+  toc.addEventListener('click', function(e) {
     var a = e.target.closest('a');
     if (!a) return;
+
+    var href = a.getAttribute('href');
+    if (href === '#') {
+      // Scroll to top
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.pushState(null, '', window.location.pathname);
+      return;
+    }
+
     e.preventDefault();
-    var id = a.getAttribute('href').slice(1);
+    var id = href.slice(1);
     var target = document.getElementById(id);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      history.replaceState(null, '', '#' + id);
+      history.pushState(null, '', '#' + id);
     }
   });
 })();
