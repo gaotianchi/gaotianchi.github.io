@@ -8,6 +8,14 @@ comments: false
 
 <ul class="changelog">
   <li class="changelog-entry">
+    <time class="changelog-date">2026-06-23</time>
+    <div class="changelog-content">
+      Feed RFC 4287 合规修复：修正 entry <code>id</code> 与 <code>link</code> 尾斜杠不一致问题，补充 <code>&lt;icon&gt;</code> 元素，修正 <code>xml:lang</code> 为 <code>zh-CN</code>（BCP 47），开启 feed 全文输出（<code>excerpt_only: false</code>）。
+      Feed 分类净化：新增 <code>feed_polish.rb</code> 插件，后处理移除 feed.xml 中标签对 <code>&lt;category&gt;</code> 元素的污染，仅保留文章正文分类。
+      移动端首页日期左对齐修复：<code>flex-wrap: nowrap</code> 防止日期偏移。
+    </div>
+  </li>
+  <li class="changelog-entry">
     <time class="changelog-date">2026-06-21</time>
     <div class="changelog-content">
       目录结构重组：文章与图片合放至 <code>_posts/&lt;slug&gt;/</code> 同名目录，独立页面迁入 <code>_pages/</code> 集合，<code>page.html</code> 重构为继承 default 布局。
