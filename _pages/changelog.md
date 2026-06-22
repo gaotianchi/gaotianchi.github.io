@@ -10,24 +10,20 @@ comments: false
   <li class="changelog-entry">
     <time class="changelog-date">2026-06-23</time>
     <div class="changelog-content">
-      Feed RFC 4287 合规修复：修正 entry <code>id</code> 与 <code>link</code> 尾斜杠不一致问题，补充 <code>&lt;icon&gt;</code> 元素，修正 <code>xml:lang</code> 为 <code>zh-CN</code>（BCP 47），开启 feed 全文输出（<code>excerpt_only: false</code>）。
-      Feed 分类净化：新增 <code>feed_polish.rb</code> 插件，后处理移除 feed.xml 中标签对 <code>&lt;category&gt;</code> 元素的污染，仅保留文章正文分类。
-      移动端首页日期左对齐修复：<code>flex-wrap: nowrap</code> 防止日期偏移。
+      Feed RFC 4287 合规修复：修正 entry <code>id</code> 与 <code>link</code> 尾斜杠不一致问题，补充 <code>&lt;icon&gt;</code> 元素，修正 <code>xml:lang</code> 为 <code>zh-CN</code>（BCP 47），开启 feed 全文输出。
+      Feed 分类净化：移除 feed.xml 中标签对 <code>&lt;category&gt;</code> 元素的污染，仅保留文章正文分类。
+      移动端首页日期左对齐修复。
     </div>
   </li>
   <li class="changelog-entry">
     <time class="changelog-date">2026-06-21</time>
     <div class="changelog-content">
-      目录结构重组：文章与图片合放至 <code>_posts/&lt;slug&gt;/</code> 同名目录，独立页面迁入 <code>_pages/</code> 集合，<code>page.html</code> 重构为继承 default 布局。
-      取消文章隐藏机制：移除全部文章的 visibility 与 status 字段，删除 /legacy/ 历史归档页面及相关过滤逻辑。
-      全站中文化：导航、页面标题统一使用中文；页脚改为三列中文网格布局，桌面平板手机响应式适配。
-      首页排版重构：桌面端书本目录风格（标题 ············ 日期，虚线引导），移动端日期置顶、引导线隐藏。
-      中文字体换用霞鹜文楷（LXGW WenKai），正文超链接新增蓝色下划线风格化，脚注重排为学术论文引用格式。
-      图片加载优化：新增 lazy_images 与 image_dimensions 插件，自动添加 loading="lazy" 及 width/height 属性消除布局偏移；修复 JPEG 尺寸解析器字节偏移 bug；站点 logo 排除占位灰底。
-      删除 disqus.js、galite.js、search.min.js 等冗余资源；修复旧文图片 alt 文本与相对路径；CSP 白名单适配 GA4。
-      文章页水印重构：logo 从标题区移至目录右侧，CSS 固定定位 + JS 随机旋转；修复 JS 定位失效改用 right 锚点。
-      标题锚点 # 修复：改用 anchorBody 参数 HTML 直出，绝对定位至标题左留白区；修复 article overflow:hidden 裁切锚点。
-      TOC 回到顶部：目录标题可点击跳转页面顶端，修复 pushState hash 导致回到顶部按钮失效。
+      全站中文化：导航、页面标题、页脚统一使用中文。
+      首页排版重构：桌面端书本目录风格（标题 ············ 日期），移动端日期置顶。
+      中文字体换用霞鹜文楷（LXGW WenKai），正文超链接新增蓝色下划线。
+      图片支持懒加载，消除布局偏移；文章水印移至目录右侧并随机旋转。
+      标题旁显示 # 锚点链接；目录标题可点击回到页面顶部。
+      所有历史文章公开可见，移除旧版归档页。
     </div>
   </li>
   <li class="changelog-entry">
@@ -67,7 +63,6 @@ comments: false
       新增 <a href="/blank/">/blank/</a>、<a href="/ai/">/ai/</a>等页面。
       作者卡片左对齐（头像、姓名、独白）；导航菜单精简为英文。
       页脚重新设计，增加邮件、RSS、AI、Blank、Changes 链接及"少作"入口。
-      历史文章归档至 <a href="/legacy/">/legacy/</a>；全局字号 16px。
       手机端菜单改进：汉堡/关闭图标切换，点击遮罩收起。
     </div>
   </li>
