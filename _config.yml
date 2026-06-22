@@ -2,7 +2,7 @@
 title: 高天驰 # site title
 description: >-
   生活设下枷锁，文字构筑愿景。
-lang: zh-cn # default lang
+lang: zh-CN # default lang
 timezone: Asia/Shanghai # set your timezone
 image: assets/img/ogp.webp # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/gaotianchi/gaotianchi.github.io # site repo [optional]
@@ -106,4 +106,4 @@ feed:
   tags: false
   icon: "/assets/favicon.ico"
   logo: "/assets/favicon.ico"
-  excerpt_only: true
+  excerpt_only: false
