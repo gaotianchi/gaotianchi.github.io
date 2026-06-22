@@ -103,7 +103,7 @@ plugins:
 
 feed:
   posts_limit: 20
-  tags: true
+  tags: false
   icon: "/assets/favicon.ico"
   logo: "/assets/favicon.ico"
   excerpt_only: true
