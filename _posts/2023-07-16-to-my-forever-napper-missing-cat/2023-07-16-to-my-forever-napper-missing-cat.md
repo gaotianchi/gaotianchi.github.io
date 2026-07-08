@@ -9,7 +9,7 @@ tags:
   - 朋友
 url: ""
 description: 它没有名字，只是叫'小猫'。
-author: 高天驰
+author: Tianchi
 layout: post
 ---
 

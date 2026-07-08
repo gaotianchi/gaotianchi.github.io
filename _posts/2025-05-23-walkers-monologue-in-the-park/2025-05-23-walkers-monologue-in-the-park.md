@@ -9,7 +9,7 @@ tags:
   - 阅读
 url: ""
 description: 忘记那个公园叫什么了，离我租的房子很近。
-author: 高天驰
+author: Tianchi
 layout: post
 ---
 今天天气凉爽，清风拂过，体感微凉。在家呆久了，感觉无所事事，决定出去走走，目的地是附近的公园，大约要步行二十分钟。

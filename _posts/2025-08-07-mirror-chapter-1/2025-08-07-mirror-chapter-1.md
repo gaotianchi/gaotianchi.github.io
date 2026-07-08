@@ -9,7 +9,7 @@ tags:
   - 爱情
 url: ""
 description: 在山谷的中央，高达百米的巨型铜像上，发生了一桩后来被判定为自杀的命案。
-author: 高天驰
+author: Tianchi
 layout: post
 redirect_from:
   - /2025-08-07-0735-mirror-chapter-1/

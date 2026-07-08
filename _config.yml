@@ -1,5 +1,5 @@
 # Site settings
-title: 高天驰 # site title
+title: Tianchi # site title
 description: >-
   生活设下枷锁，文字构筑愿景。
 lang: zh-CN # default lang
@@ -12,7 +12,7 @@ mode: light # default theme "dark" | "light"
 # <br data-start="149" data-end="152" />
 # Profile settings
 author:
-  name: 高天驰 # author name
+  name: Tianchi # author name
   bio: >- # 独白
     生活设下枷锁，文字构筑愿景。
   location: 中国 # author location
@@ -20,7 +20,7 @@ author:
   github: gaotianchi # github username
   twitter: gaotianchix # twitter username
   facebook: # facebook username
-  email: gaootianchi@qq.com # author email
+  email: gaootianchi@outlook.com # author email
   avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # URL settings

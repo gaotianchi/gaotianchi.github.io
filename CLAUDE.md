@@ -4,7 +4,7 @@
 
 ## 项目概览
 
-高天驰的个人博客，基于 **Jekyll 4.1** 构建，托管于 **GitHub Pages**，域名 `www.gaotianchi.com`。主题为高度定制化的 [Klisé](https://github.com/piharpi/jekyll-klise)。全站内容为**简体中文**。
+Tianchi 的个人博客，基于 **Jekyll 4.1** 构建，托管于 **GitHub Pages**，域名 `www.gaotianchi.com`。主题为高度定制化的 [Klisé](https://github.com/piharpi/jekyll-klise)。全站内容为**简体中文**。
 
 ## 常用命令
 

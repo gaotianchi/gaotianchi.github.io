@@ -9,7 +9,7 @@ tags:
   - 讽刺
 url: ""
 description: 当习惯了被奴役，我们还能接受自由吗？这边文章写于大学期间，周围人对于各种规则的无条件顺从，使我感到困惑，于是写下了许多篇类似的小短文。
-author: 高天驰
+author: Tianchi
 layout: post
 redirect_from:
   - /2022-06-20-the-slaves-who-rejected-freedom/
