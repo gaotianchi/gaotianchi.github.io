@@ -406,16 +406,6 @@ body[data-theme="dark"] {
   }
 
   .archive-tag-btn {
-    --tag-color: #{$dark-gray};
-
-    &[data-tier="2"] {
-      --tag-color: #{$dark-text-base-color};
-    }
-
-    &[data-tier="3"] {
-      --tag-color: #{$dark-white};
-    }
-
     &:hover {
       color: $dark-white;
       opacity: 1 !important;
@@ -424,26 +414,7 @@ body[data-theme="dark"] {
     &.active {
       color: $dark-white;
       opacity: 1 !important;
-    }
-
-    // Categories: filled pill with accent color (dark mode)
-    &[data-cat].active {
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding-left: 0.6rem;
-      padding-right: 0.6rem;
-    }
-
-    // Tags: outlined border with accent color (dark mode)
-    &[data-tag].active {
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      border-radius: 12px;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-
-    &[data-tag].active::after {
-      display: none;
+      border-bottom-color: $dark-smoke;
     }
   }
 

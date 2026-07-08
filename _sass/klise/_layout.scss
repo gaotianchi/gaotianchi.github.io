@@ -636,7 +636,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 0.75rem 0 1.25rem;
+  padding: 1rem 0 1.25rem;
 }
 
 .archive-filter-group {
@@ -658,7 +658,7 @@
 .archive-filter-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem 0.6rem;
+  gap: 0.3rem 0.85rem;
 }
 
 .archive-filter-status {
@@ -711,37 +711,31 @@
 }
 
 .archive-tag-btn {
-  --tag-color: #{$gray};
-  --tag-opacity: 0.3;
-  --tag-size: 0.9rem;
-  --tag-weight: 400;
-
   background: none;
   border: none;
-  padding: 0.15rem 0.3rem;
-  font-family: $sans-family;
+  border-bottom: 2px solid transparent;
+  padding: 0.15rem 0.2rem 0.1rem;
+  font-family: $serif-family;
   cursor: pointer;
-  line-height: 1.4;
-  color: var(--tag-color);
-  opacity: var(--tag-opacity);
-  font-size: var(--tag-size);
-  font-weight: var(--tag-weight);
-  letter-spacing: 0.01em;
-  transition: color 0.4s ease, opacity 0.4s ease;
-  position: relative;
+  line-height: 1.5;
+  color: $gray;
+  opacity: 0.45;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  transition: color 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
 
   &[data-tier="2"] {
-    --tag-color: #{$text-base-color};
-    --tag-opacity: 0.45;
-    --tag-size: 1.1rem;
-    --tag-weight: 500;
+    opacity: 0.6;
+    font-size: 1.05rem;
+    font-weight: 500;
   }
 
   &[data-tier="3"] {
-    --tag-color: #{$black};
-    --tag-opacity: 0.6;
-    --tag-size: 1.3rem;
-    --tag-weight: 600;
+    opacity: 0.75;
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: $black;
   }
 
   &:hover {
@@ -753,46 +747,30 @@
     opacity: 1;
     color: $black;
     font-weight: 600;
+    border-bottom-color: $smoke;
   }
 
-  // Tags: underline indicator
-  &[data-tag].active::after {
-    content: '';
-    position: absolute;
-    left: 0.3rem;
-    right: 0.3rem;
-    bottom: -2px;
-    height: 2px;
-    background: currentColor;
-    border-radius: 1px;
+  // "全部" reset button — exempt from tier sizing, always moderate
+  &.archive-tag-all {
     opacity: 0.6;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: $gray;
+
+    &.active {
+      opacity: 1;
+      color: $black;
+      font-weight: 600;
+    }
   }
 
-  // Categories: filled pill with accent color
-  &[data-cat].active {
-    background: rgba(0, 0, 0, 0.04);
-    border-radius: 12px;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-  }
-
-  // Tags: outlined border with accent color
-  &[data-tag].active {
-    border: 1.5px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  &[data-tag].active::after {
-    display: none;
-  }
-
-  .tag-count {
+  .cat-count {
     font-size: 0.55em;
-    opacity: 0.35;
+    opacity: 0.3;
     margin-left: 0.15em;
     vertical-align: super;
+    font-family: $sans-family;
+    font-weight: 400;
   }
 }
 
