@@ -6,7 +6,6 @@ description: 此页有意留白。
 redirect_from:
   - /from-kindergarten-to-college/
   - /before-facing-a-new-life-i-want-to-say-something-to-myself/
-  - /48-hours-as-a-delivery-rider-an-unfinished-escape/
   - /another-lost-day/
   - /to-my-forever-napper-missing-cat/
   - /reading-analysis-review-and-reflection/
