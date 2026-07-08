@@ -3,7 +3,7 @@ title: 一些改善健康的小技巧
 date: 2026-6-22T21:04:00+08:00
 slug: easy-health-tips
 lastmod: 2026-6-22T21:04:00+08:00
-category: 健康
+category: 随笔
 tags: [番茄钟,囚徒健身,睡眠,运动]
 description: 从专注力、睡眠以及运动这三个角度，聊聊一些改善健康的小技巧。
 author: 高天驰

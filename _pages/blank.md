@@ -4,6 +4,53 @@ permalink: /blank/
 layout: page
 description: 此页有意留白。
 comments: false
+redirect_from:
+  - /from-kindergarten-to-college/
+  - /before-facing-a-new-life-i-want-to-say-something-to-myself/
+  - /year-end-summary-2022/
+  - /48-hours-as-a-delivery-rider-an-unfinished-escape/
+  - /another-lost-day/
+  - /to-my-forever-napper-missing-cat/
+  - /reading-analysis-review-and-reflection/
+  - /rereading-strickland-art-fanaticism-flaws/
+  - /meeting-myself-without-discipline/
+  - /random-thoughts-on-blogs-food-and-friends/
+  - /first-impressions-at-weihaishan-primary-school/
+  - /internship-ending-more-random-thoughts/
+  - /the-silent-moment-on-stage/
+  - /sunlight-through-the-door-gap/
+  - /morning-sunlight-and-unresolved-feelings/
+  - /analyzing-my-dual-personality/
+  - /analyzing-my-people-pleasant-personality/
+  - /living-alone-internship-cooking-university-city-and-the-confusion-of-a-young-person/
+  - /a-collection-of-poems-written-during-the-darkest-period-of-college/
+  - /life-as-it-is-not-as-it-should-be/
+  - /last-night-before-moving-ou/
+  - /random-thoughts-on-a-train/
+  - /night-walk-thoughts/
+  - /days-off-plan/
+  - /exploring-my-job-hunting-boundaries/
+  - /two-letters-i-wrote-to-my-teacher-three-years-ago/
+  - /birthday-gift-for-23rd-year-old/
+  - /turn-blogging-into-a-business/
+  - /1930-concern-from-family-members/
+  - /2103-step-reach-write/
+  - /1921-my-first-podcast/
+  - /1640-just-writing-something-see-you-tomorrow/
+  - /2038-facing-uncertainty/
+  - /1146-redundant-items-in-a-rental-house/
+  - /1830-just-live/
+  - /5684-shanghai-airport-lounge-my-last-night-refuge/
+  - /2002-volunteering-jiuhuashan-writing-family-conflict/
+  - /confinement-vs-autonomous-study/
+  - /formalism-and-individual-habits/
+  - /self-study-application/
+  - /2026-w16-bosch-new-career-and-cognitive-audit/
+  - /2026-w17-cognitive-audit-tech/
+  - /2026-w18-abstract-vision-framework/
+  - /2026-w20-business-machine-stages-and-overstretched-employees/
+  - /tags/
+  - /legacy/
 ---
 
 <style>
