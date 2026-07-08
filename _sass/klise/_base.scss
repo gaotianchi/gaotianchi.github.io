@@ -376,8 +376,7 @@ table {
 }
 
 // When mouse block a text set this color
-mark,
-::selection {
+mark {
   background: #fffba0;
   color: $black;
 }
