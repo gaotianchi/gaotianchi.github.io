@@ -7,6 +7,12 @@ description: 这个站点的变更记录。
 
 <ul class="changelog">
   <li class="changelog-entry">
+    <time class="changelog-date">2026-07-09</time>
+    <div class="changelog-content">
+      首页归档入口文案改为"更多文字"，字号与字间距对齐日期列表。
+    </div>
+  </li>
+  <li class="changelog-entry">
     <time class="changelog-date">2026-07-08</time>
     <div class="changelog-content">
       新增诗歌布局（poem layout），中文衬线换为 Noto Serif SC（宋体）。
