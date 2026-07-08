@@ -497,7 +497,7 @@
     border: 0;
     font-size: 0.938rem;
     font-weight: 400;
-    letter-spacing: 0;
+    letter-spacing: 0.3em;
     white-space: nowrap;
 
     a {
@@ -513,21 +513,26 @@
   }
 
   .post-item-leader {
-    flex: 1 1 1ch;
-    min-width: 1ch;
+    flex: 1 1 auto;
+    min-width: 2ch;
+    height: 0.75em;
     overflow: hidden;
-    white-space: nowrap;
-    color: rgba(0, 0, 0, 0.12);
-    font-size: 0.625rem;
-    letter-spacing: 0.15em;
     user-select: none;
     align-self: flex-end;
-    padding-bottom: 0.15em;
-    margin-right: 0.4em;
+    margin-right: 0.15em;
+    margin-bottom: 0.15em;
+
+    // CSS repeating dots — fills available width regardless of title length
+    background-image: radial-gradient(circle, currentColor 0.8px, transparent 0.8px);
+    background-size: 0.6em 0.6em;
+    background-repeat: repeat-x;
+    background-position: left center;
+    color: rgba(0, 0, 0, 0.25);
   }
 
   .post-item-date {
     flex-shrink: 0;
+    width: fit-content;
     padding: 0;
     margin: 0;
     text-align: right;
@@ -536,7 +541,7 @@
     font-size: 0.75rem;
     color: $gray;
     opacity: 0.55;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.3em;
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
   }

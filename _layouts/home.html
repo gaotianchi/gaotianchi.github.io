@@ -12,7 +12,7 @@ home: true
     <h3 class="post-item-title">
       <a href="{{ post.url }}">{{ post.title | escape }}</a>
     </h3>
-    <span class="post-item-leader" aria-hidden="true">·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·</span>
+    <span class="post-item-leader" aria-hidden="true"></span>
     <time class="post-item-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
   </article>
   {%- endfor -%}
