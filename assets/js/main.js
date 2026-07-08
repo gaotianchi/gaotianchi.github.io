@@ -4,6 +4,9 @@
   const lamp = document.getElementById("mode");
 
   const toggleTheme = (state) => {
+    const html = document.documentElement;
+    html.classList.add('theme-switching');
+
     if (state === "dark") {
       localStorage.setItem("theme", "light");
       body.removeAttribute("data-theme");
@@ -13,6 +16,8 @@
     } else {
       initTheme(state);
     }
+
+    setTimeout(() => html.classList.remove('theme-switching'), 400);
   };
 
   lamp.addEventListener("click", () =>

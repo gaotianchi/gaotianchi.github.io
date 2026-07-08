@@ -9,10 +9,20 @@
 
 .notransition {
   -webkit-transition: none;
-  -moz-transition: none; 
+  -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
   transition: none;
+}
+
+// Smooth theme toggle — injects transitions into all children during the brief
+// switching window, then removed by JS after 400ms.  Prevents jarring instant
+// color flips on elements that lack their own transition property.
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, opacity 0.35s ease !important;
 }
 
 html {

@@ -735,7 +735,6 @@
     opacity: 0.75;
     font-size: 1.18rem;
     font-weight: 600;
-    color: $black;
   }
 
   &:hover {
@@ -755,11 +754,9 @@
     opacity: 0.6;
     font-size: 0.95rem;
     font-weight: 400;
-    color: $gray;
 
     &.active {
       opacity: 1;
-      color: $black;
       font-weight: 600;
     }
   }
@@ -790,6 +787,7 @@
     background: $light;
     z-index: 1;
     pointer-events: none;
+    transition: background-color 0.35s ease;
   }
 }
 
@@ -812,6 +810,7 @@
   user-select: none;
   position: relative;
   z-index: 0;
+  transition: color 0.35s ease, opacity 0.35s ease;
 }
 
 .timeline-item {
@@ -869,6 +868,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: color 0.35s ease, opacity 0.35s ease;
 
   &:hover {
     opacity: 0.55 !important;

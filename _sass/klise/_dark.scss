@@ -406,6 +406,8 @@ body[data-theme="dark"] {
   }
 
   .archive-tag-btn {
+    color: $dark-gray;
+
     &:hover {
       color: $dark-white;
       opacity: 1 !important;
