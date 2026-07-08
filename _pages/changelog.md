@@ -9,6 +9,14 @@ description: 这个站点的变更记录。
   <li class="changelog-entry">
     <time class="changelog-date">2026-07-08</time>
     <div class="changelog-content">
+      新增诗歌布局（poem layout），中文衬线换为 Noto Serif SC（宋体）。
+      首页列表虚线改为 CSS 背景自适应填充，全站标题字间距统一调整。
+      移除自定义文本选中色，恢复浏览器默认样式。
+    </div>
+  </li>
+  <li class="changelog-entry">
+    <time class="changelog-date">2026-07-08</time>
+    <div class="changelog-content">
       归档页仅保留分类筛选，按文章数量降序，默认显示"全部"；主题切换过渡更平滑。
       移除 8 篇早期文章，旧链接重定向至留白页。
       出于隐私考量，作者名由真实姓名改为 Tianchi，网站标题改为大写 TIANCHI，头像和默认社交预览图一并移除。
