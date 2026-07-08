@@ -7,6 +7,14 @@ description: 这个站点的变更记录。
 
 <ul class="changelog">
   <li class="changelog-entry">
+    <time class="changelog-date">2026-07-08</time>
+    <div class="changelog-content">
+      归档页仅保留分类筛选，按文章数量降序，默认显示"全部"；主题切换过渡更平滑。
+      移除 8 篇早期文章，旧链接重定向至留白页。
+      出于隐私考量，作者名由真实姓名改为 Tianchi，网站标题改为大写 TIANCHI，头像和默认社交预览图一并移除。
+    </div>
+  </li>
+  <li class="changelog-entry">
     <time class="changelog-date">2026-06-23</time>
     <div class="changelog-content">
       Feed RFC 4287 合规修复：修正 entry <code>id</code> 与 <code>link</code> 尾斜杠不一致问题，补充 <code>&lt;icon&gt;</code> 元素，修正 <code>xml:lang</code> 为 <code>zh-CN</code>（BCP 47），开启 feed 全文输出。
