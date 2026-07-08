@@ -25,7 +25,6 @@ redirect_from:
   - /a-collection-of-poems-written-during-the-darkest-period-of-college/
   - /life-as-it-is-not-as-it-should-be/
   - /last-night-before-moving-ou/
-  - /random-thoughts-on-a-train/
   - /night-walk-thoughts/
   - /days-off-plan/
   - /exploring-my-job-hunting-boundaries/
