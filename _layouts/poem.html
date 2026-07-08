@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article class="poem" itemscope itemtype="https://schema.org/CreativeWork">
+  <header class="poem-header">
+    {% if page.tags and page.tags != empty %}
+    <div class="poem-tags" itemprop="keywords">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <h1 class="poem-title" itemprop="headline">{{ page.title | escape }}</h1>
+    {% if page.date %}
+    <div class="poem-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%Y年%-m月%-d日" }}
+      </time>
+      <span class="poem-meta-sep">&middot;</span>
+      <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">{{ site.author.name }}</span>
+      </span>
+      <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.modified | date: "%Y年%-m月%-d日" }}</time>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="poem-body" itemprop="text">
+    {{ content }}
+  </div>
+</article>
+
+{% if page.next or page.previous %}
+{% include navigation.html %}
+{% endif %}

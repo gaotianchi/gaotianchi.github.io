@@ -284,6 +284,28 @@ body[data-theme="dark"] {
     }
   }
 
+  // Poem layout
+  .poem-body {
+    border-top-color: $dark-light;
+
+    a {
+      color: $dark-text-link-blue;
+      text-decoration-color: rgba($dark-text-link-blue, 0.22);
+
+      &:hover {
+        text-decoration-color: rgba($dark-text-link-blue, 0.7);
+      }
+    }
+  }
+
+  .poem-tags .tag {
+    color: $dark-gray;
+  }
+
+  .poem-meta {
+    color: $dark-gray;
+  }
+
   // Post Navigation
   .post-nav {
     border-color: $dark-light;

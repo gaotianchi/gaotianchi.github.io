@@ -1,0 +1,106 @@
+// Poem layout — refined, minimal typography for poetry
+//
+// Design intent:
+//   The signature of this layout is EMPTINESS — every element not essential to
+//   reading poetry is removed.  The narrow column (32em vs 45em for prose) is
+//   the primary visual signal that this is not a standard article.
+//   A single hairline rule structurally separates metadata from the verse.
+.poem {
+  max-width: 32em;
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.poem-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.poem-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+  margin-bottom: 1.25rem;
+
+  .tag {
+    display: inline-block;
+    font-size: $small-font-size - 2;
+    font-weight: $normal-weight;
+    color: $gray;
+    opacity: 0.6;
+    letter-spacing: 0.03em;
+
+    &::before {
+      content: "#";
+      opacity: 0.5;
+    }
+  }
+}
+
+.poem-title {
+  font-size: 2em;
+  font-weight: $bold-weight;
+  line-height: 1.3;
+  margin: 0;
+  letter-spacing: 0.02em;
+
+  @include media-query($on-mobile) {
+    font-size: 1.625em;
+  }
+}
+
+.poem-meta {
+  margin-top: 0.75rem;
+  font-family: $serif-family;
+  font-size: 0.8125rem;
+  color: $gray;
+  opacity: 0.5;
+  line-height: 1.6;
+
+  .poem-meta-sep {
+    margin: 0 0.45em;
+    opacity: 0.45;
+  }
+}
+
+// Single hairline rule separating title header from the verse — the only
+// structural ornament on the page.
+.poem-body {
+  position: relative;
+  padding-top: 2rem;
+  border-top: 1px solid $light;
+  line-height: 2;
+  font-size: 1.063rem;
+
+  @include media-query($on-mobile) {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  > p {
+    white-space: pre-wrap;
+    margin: 0 0 1.25em;
+    padding: 0;
+    line-height: 2.2;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  // Allow inline code if present
+  code {
+    font-size: 0.875em;
+  }
+
+  // Links if needed (less prominent than prose)
+  a {
+    color: $text-link-blue;
+    text-decoration: underline;
+    text-decoration-color: rgba($text-link-blue, 0.22);
+    text-underline-offset: 3px;
+    text-decoration-thickness: from-font;
+  }
+}
