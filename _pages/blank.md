@@ -3,7 +3,6 @@ title: 留白
 permalink: /blank/
 layout: page
 description: 此页有意留白。
-comments: false
 redirect_from:
   - /from-kindergarten-to-college/
   - /before-facing-a-new-life-i-want-to-say-something-to-myself/
