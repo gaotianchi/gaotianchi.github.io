@@ -1,7 +1,7 @@
 # Site settings
-title: Tianchi # site title
+title: TIANCHI # site title
 description: >-
-  生活设下枷锁，文字构筑愿景。
+  生活设下枷锁，文字构筑愿景
 lang: zh-CN # default lang
 timezone: Asia/Shanghai # set your timezone
 image: assets/img/ogp.webp # This image used for Open Graph more info https://ogp.me/
@@ -14,7 +14,7 @@ mode: light # default theme "dark" | "light"
 author:
   name: Tianchi # author name
   bio: >- # 独白
-    生活设下枷锁，文字构筑愿景。
+    生活设下枷锁，文字构筑愿景
   location: 中国 # author location
   username: gaotianchi # general username
   github: gaotianchi # github username
