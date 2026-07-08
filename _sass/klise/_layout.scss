@@ -577,15 +577,16 @@
   }
 
   .home-archive {
+    display: flex;
+    justify-content: flex-end;
     margin-top: 2rem;
-    text-align: right;
   }
 
   .home-archive-link {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: $gray;
     text-decoration: none;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.3em;
     opacity: 0.65;
     transition: opacity 0.25s ease;
 
