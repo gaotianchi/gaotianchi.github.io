@@ -53,11 +53,6 @@ comments: false
       </div>
     </div>
   </div>
-  <div class="archive-filter-status" id="filter-status" style="display: none;">
-    <span class="archive-filter-status-icon">&#9670;</span>
-    <span class="archive-filter-status-text" id="filter-status-text"></span>
-    <button class="archive-filter-clear" id="filter-clear">清除</button>
-  </div>
 </section>
 
 <section class="archive-section timeline-section">
@@ -86,29 +81,9 @@ comments: false
   var items = document.querySelectorAll('.timeline-item');
   var groups = document.querySelectorAll('.timeline-year-group');
   var emptyMsg = document.getElementById('archive-empty');
-  var statusBar = document.getElementById('filter-status');
-  var statusText = document.getElementById('filter-status-text');
-  var clearBtn = document.getElementById('filter-clear');
 
   var allBtn = document.querySelector('.archive-tag-all');
   var activeCat = 'all';
-
-  function countVisible() {
-    var count = 0;
-    items.forEach(function(item) {
-      if (item.style.display !== 'none') count++;
-    });
-    return count;
-  }
-
-  function updateStatus() {
-    if (activeCat === 'all') {
-      statusBar.style.display = 'none';
-      return;
-    }
-    statusText.innerHTML = '分类「<strong>' + activeCat + '</strong>」  &mdash;  ' + countVisible() + ' 篇';
-    statusBar.style.display = 'flex';
-  }
 
   function activate(btn, catVal) {
     document.querySelectorAll('.archive-tag-btn').forEach(function(b) {
@@ -142,7 +117,6 @@ comments: false
     });
 
     emptyMsg.style.display = anyVisible ? 'none' : '';
-    updateStatus();
   }
 
   document.getElementById('archive-tags').addEventListener('click', function(e) {
@@ -156,8 +130,5 @@ comments: false
     activate(btn, catVal);
   });
 
-  clearBtn.addEventListener('click', function() {
-    activate(allBtn, 'all');
-  });
 })();
 </script>
