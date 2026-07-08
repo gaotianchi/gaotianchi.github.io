@@ -576,17 +576,21 @@
     }
   }
 
+  .home-archive {
+    margin-top: 2rem;
+    text-align: right;
+  }
+
   .home-archive-link {
-    display: inline-block;
-    margin-top: 1.5rem;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     color: $gray;
     text-decoration: none;
-    opacity: 0.45;
+    letter-spacing: 0.05em;
+    opacity: 0.65;
     transition: opacity 0.25s ease;
 
     &:hover {
-      opacity: 0.75;
+      opacity: 1;
     }
   }
 }
