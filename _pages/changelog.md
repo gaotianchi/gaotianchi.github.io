@@ -7,6 +7,24 @@ description: 这个站点的变更记录。
 
 <ul class="changelog">
   <li class="changelog-entry">
+    <time class="changelog-date">2026-07-12</time>
+    <div class="changelog-content">
+      重写 <a href="/ai/">AI 使用声明</a>页面，阐明 AI 与人的职责边界——拒绝 AI 参与思想创作，坦承氛围编程辅助网站建设。
+    </div>
+  </li>
+  <li class="changelog-entry">
+    <time class="changelog-date">2026-07-11</time>
+    <div class="changelog-content">
+      全站中文引号规范化——ASCII 直引号替换为中文弯引号。
+    </div>
+  </li>
+  <li class="changelog-entry">
+    <time class="changelog-date">2026-07-10</time>
+    <div class="changelog-content">
+      发布《静止与思想沙盒》；增加内容区底部间距，微调页脚上边距。
+    </div>
+  </li>
+  <li class="changelog-entry">
     <time class="changelog-date">2026-07-09</time>
     <div class="changelog-content">
       首页归档入口文案改为"更多文字"，字号与字间距对齐日期列表。
