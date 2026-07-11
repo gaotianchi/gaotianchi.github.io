@@ -5,7 +5,6 @@ layout: page
 description: 这个网站是如何构建的？
 ---
 
-博客网站 www.gaotianchi.com 由 [Jekyll](https://jekyllrb.com/) 静态网页生成器生成，主题采用 [Klise](https://github.com/piharpi/jekyll-klise)，托管在 GitHub Pages 上，最终呈现在你的面前。在此之前我使用过 WordPress、Blogger，甚至用 Flask 独自开发网站并部署在个人服务器上，但最终回归到 Github Pages 静态网页上。
+这个博客网站由 [Jekyll](https://jekyllrb.com/) 静态网页生成器生成，主题采用 [Klise](https://github.com/piharpi/jekyll-klise)，博客系统的技术迭代主要依靠 Claude Code 和 DeepSeek。
 
-
-<small style="display:block; margin-top: 3em; opacity: 0.5;">最后更新：2026 年 7 月</small>
+关于托管，此前我用过 WordPress、Blogger 等博客平台，也使用过 Flask 开发过个人博客系统。经过多次考量，最终将博客部署在性价比最高的 Github Pages 静态网页上。
