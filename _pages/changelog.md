@@ -9,7 +9,7 @@ description: 这个站点的变更记录。
   <li class="changelog-entry">
     <time class="changelog-date">2026-07-12</time>
     <div class="changelog-content">
-      重写 <a href="/ai/">AI 使用声明</a>和<a href="/colophon/">站点信息</a>页面——阐明 AI 与人的职责边界，坦承氛围编程辅助网站建设。
+      重写 <a href="/ai/">AI 使用声明</a>和<a href="/colophon/">站点信息</a>页面。
     </div>
   </li>
   <li class="changelog-entry">
