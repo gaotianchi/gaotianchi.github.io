@@ -21,7 +21,7 @@ description: 这个站点的变更记录。
   <li class="changelog-entry">
     <time class="changelog-date">2026-07-10</time>
     <div class="changelog-content">
-      发布《静止与思想沙盒》；增加内容区底部间距，微调页脚上边距。
+      增加内容区底部间距，微调页脚上边距。
     </div>
   </li>
   <li class="changelog-entry">
