@@ -1,11 +1,17 @@
 {%- assign displayed_time = page.lastmod | default: page.date -%}
-{%- if displayed_time or page.ai_generated -%}
 <div class="page-lastmod">
-  {%- if displayed_time -%}
-  <span class="page-lastmod-time">最后更新于 {{ displayed_time | date: "%Y年%-m月%-d日" }}</span>
-  {%- endif -%}
-  {%- if page.ai_generated -%}
-  <span class="ai-notice">本文部分内容由 AI 辅助生成</span>
+  <div class="page-lastmod-actions">
+    <a class="email-reply-link" href="mailto:gaootianchi@qq.com?subject=RE%3A%20{{ page.title | url_encode }}">通过邮件回应</a>
+  </div>
+  {%- if displayed_time or page.ai_generated -%}
+  <div class="page-lastmod-meta">
+    {%- if page.ai_generated -%}
+    <span class="ai-notice">本文部分内容由 AI 辅助生成</span>
+    <span class="page-lastmod-sep">&middot;</span>
+    {%- endif -%}
+    {%- if displayed_time -%}
+    最后更新于 {{ displayed_time | date: "%Y年%-m月%-d日" }}
+    {%- endif -%}
+  </div>
   {%- endif -%}
 </div>
-{%- endif -%}
