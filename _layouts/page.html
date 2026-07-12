@@ -5,7 +5,4 @@ layout: default
   <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}.</h1>
 </header>
 {% include anchor_headings.html html=content anchorClass="anchor-head" anchorBody="#" beforeHeading=true h_min=4 h_max=4 %}
-{%- assign displayed_time = page.lastmod | default: page.date -%}
-{%- if displayed_time -%}
-<div class="page-lastmod">最后更新于 {{ displayed_time | date: "%Y年%-m月%-d日" }}</div>
-{%- endif -%}
+{% include content-footer.html %}

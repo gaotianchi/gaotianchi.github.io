@@ -1,0 +1,11 @@
+{%- assign displayed_time = page.lastmod | default: page.date -%}
+{%- if displayed_time or page.ai_generated -%}
+<div class="page-lastmod">
+  {%- if displayed_time -%}
+  <span>最后更新于 {{ displayed_time | date: "%Y年%-m月%-d日" }}</span>
+  {%- endif -%}
+  {%- if page.ai_generated -%}
+  <span class="ai-notice">&middot; 本文部分内容由 AI 辅助生成</span>
+  {%- endif -%}
+</div>
+{%- endif -%}

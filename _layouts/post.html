@@ -21,11 +21,11 @@ layout: default
         <span itemprop="author" itemscope itemtype="https://schema.org/Person">
           <span itemprop="name">{{ site.author.name }}</span>
         </span>
-        {% if page.modified %}
+        {% if page.lastmod %}
         <span class="post-meta-sep">&middot;</span>
-        <span class="post-meta-modified">更新于 {{ page.modified | date: "%Y年%-m月%-d日" }}</span>
+        <span class="post-meta-modified">更新于 {{ page.lastmod | date: "%Y年%-m月%-d日" }}</span>
         {% endif %}
-        <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.modified | date: "%Y年%-m月%-d日" }}</time>
+        <time hidden datetime="{{ page.lastmod | date_to_xmlschema }}" itemprop="dateModified">{{ page.lastmod | date: "%Y年%-m月%-d日" }}</time>
         <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
         <span hidden itemprop="image">{{ page.image | absolute_url }}</span>
         <span hidden itemprop="mainEntityOfPage">{{ page.description | escape }}</span>
@@ -68,6 +68,8 @@ layout: default
 {% if page.next or page.previous %}
 {% include navigation.html %}
 {% endif %}
+
+{% include content-footer.html %}
 
 <script>
 // Watermark — random position + rotation within .post-top area

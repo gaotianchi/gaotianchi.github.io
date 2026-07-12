@@ -20,7 +20,7 @@ layout: default
       <span itemprop="author" itemscope itemtype="https://schema.org/Person">
         <span itemprop="name">{{ site.author.name }}</span>
       </span>
-      <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.modified | date: "%Y年%-m月%-d日" }}</time>
+      <time hidden datetime="{{ page.lastmod | date_to_xmlschema }}" itemprop="dateModified">{{ page.lastmod | date: "%Y年%-m月%-d日" }}</time>
     </div>
     {% endif %}
   </header>
@@ -33,3 +33,5 @@ layout: default
 {% if page.next or page.previous %}
 {% include navigation.html %}
 {% endif %}
+
+{% include content-footer.html %}
