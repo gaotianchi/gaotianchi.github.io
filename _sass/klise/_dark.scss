@@ -301,7 +301,7 @@ body[data-theme="dark"] {
     }
 
     .post-item-title a {
-      color: inherit;
+      color: $dark-text-base-color;
 
       &:hover {
         opacity: 0.55;
