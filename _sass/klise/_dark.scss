@@ -58,6 +58,27 @@ body[data-theme="dark"] {
     }
   }
 
+  // Changelog table
+  .changelog-table {
+    td, th {
+      border-bottom-color: $dark-light;
+    }
+
+    td:first-child {
+      color: $dark-gray;
+    }
+
+    td:last-child {
+      color: $dark-text-base-color;
+    }
+
+    @include media-query($on-mobile) {
+      tr {
+        border-bottom-color: $dark-light;
+      }
+    }
+  }
+
   // Syntax
   code {
     &.highlighter-rouge {

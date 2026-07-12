@@ -276,6 +276,65 @@
   }
 }
 
+// Changelog table
+.changelog-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+
+  td, th {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid $light;
+    vertical-align: baseline;
+    text-align: left;
+  }
+
+  th {
+    display: none;
+  }
+
+  td:first-child {
+    width: 6.5rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: $gray;
+    white-space: nowrap;
+    padding-right: 1rem;
+  }
+
+  td:last-child {
+    color: $text-base-color;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  @include media-query($on-mobile) {
+    td, th {
+      display: block;
+      padding: 0.25rem 0;
+      border-bottom: none;
+    }
+
+    td:first-child {
+      width: auto;
+      padding-right: 0;
+    }
+
+    tr {
+      padding: 1rem 0;
+      border-bottom: 1px solid $light;
+      display: block;
+    }
+
+    tr:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
 // Post body — refined reading typography
 .post-body {
   position: relative;
