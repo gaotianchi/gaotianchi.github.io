@@ -1,29 +1,8 @@
 ---
-layout: compress
+layout: default
 ---
-
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'zh-cn' }}">
-
-{% include header.html %}
-
-<body data-theme="{{ site.mode }}" class="notransition">
-
-  {% include navbar.html %}
-  <div class="wrapper">
-    <main aria-label="Content">
-      <div class="not-found">
-        <div class="container">
-          <div class="title">404</div>
-          <p class="phrase">😕 额……看来你迷路了。</p>
-          <a class="solution" href="{{ site.url }}">回到主页</a>
-        </div>
-      </div>
-    </main>
-    {% include footer.html %}
-  </div>
-
-  {% include back-to-top.html %}
-</body>
-
-</html>
+<div class="not-found">
+  <h1 class="title">404</h1>
+  <p class="phrase">你来到了没有知识的荒原</p>
+  <p><a href="/" class="solution">返回首页</a></p>
+</div>
