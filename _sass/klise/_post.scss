@@ -312,25 +312,41 @@
   }
 
   @include media-query($on-mobile) {
-    td, th {
+    thead {
+      display: none;
+    }
+
+    tbody, tr, td {
       display: block;
-      padding: 0.25rem 0;
+    }
+
+    tr {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid $light;
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+
+    td {
+      padding: 0;
       border-bottom: none;
     }
 
     td:first-child {
       width: auto;
       padding-right: 0;
+      font-size: 0.75rem;
+      color: $gray;
+      opacity: 0.7;
+      margin-bottom: 0.35rem;
     }
 
-    tr {
-      padding: 1rem 0;
-      border-bottom: 1px solid $light;
-      display: block;
-    }
-
-    tr:last-child {
-      border-bottom: none;
+    td:last-child {
+      font-size: 0.9375rem;
+      line-height: 1.75;
     }
   }
 }
