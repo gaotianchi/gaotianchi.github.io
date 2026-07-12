@@ -97,10 +97,15 @@
 
   // Links if needed (less prominent than prose)
   a {
-    color: $text-link-blue;
+    color: #6d6260;
     text-decoration: underline;
-    text-decoration-color: rgba($text-link-blue, 0.22);
+    text-decoration-color: rgba(0, 0, 0, 0.18);
     text-underline-offset: 3px;
     text-decoration-thickness: from-font;
+    transition: text-decoration-color 0.2s ease;
+
+    &:hover {
+      text-decoration-color: rgba(0, 0, 0, 0.5);
+    }
   }
 }

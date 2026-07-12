@@ -80,7 +80,7 @@
   }
 
   .menu-link {
-    color: $black;
+    color: inherit;
     line-height: $base-line-height + 0.4;
     text-decoration: none;
     padding: 5px 8px;
@@ -383,7 +383,7 @@
   }
 
   .footer_item {
-    color: $black;
+    color: inherit;
     opacity: 0.65;
     font-weight: $normal-weight;
     font-size: $small-font-size;
@@ -393,7 +393,7 @@
     padding: 2px 0;
 
     &:hover {
-      opacity: 0.4;
+      opacity: 0.55;
     }
 
     @include media-query($on-mobile) {
@@ -505,7 +505,7 @@
     white-space: nowrap;
 
     a {
-      color: $black;
+      color: inherit;
       text-decoration: none;
       border: none;
       transition: opacity 0.25s ease;
@@ -588,14 +588,14 @@
 
   .home-archive-link {
     font-size: 0.75rem;
-    color: $gray;
+    color: inherit;
     text-decoration: none;
     letter-spacing: 0.3em;
     opacity: 0.65;
     transition: opacity 0.25s ease;
 
     &:hover {
-      opacity: 1;
+      opacity: 0.55;
     }
   }
 }
@@ -812,17 +812,17 @@
   opacity: 0.7;
 }
 
-.timeline-link {
-  color: $text-base-color !important;
+.archive-timeline .timeline-link {
+  color: inherit;
   text-decoration: none;
   font-size: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition: color 0.35s ease, opacity 0.35s ease;
+  transition: opacity 0.35s ease;
 
   &:hover {
-    opacity: 0.55 !important;
+    opacity: 0.55;
   }
 
   &[target="_blank"]::after {
@@ -872,7 +872,7 @@
     font-size: 0.625rem;
   }
 
-  .timeline-link {
+  .archive-timeline .timeline-link {
     white-space: normal;
   }
 }
