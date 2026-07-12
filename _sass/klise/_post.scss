@@ -6,11 +6,9 @@
   }
 }
 
-// TOC container — above watermark
+// TOC container — currently hidden
 .toc-row {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 1.25rem;
+  display: none;
 }
 
 .toc-col {
