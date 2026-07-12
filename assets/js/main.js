@@ -80,4 +80,47 @@
       history.pushState(null, "", window.location.pathname);
     });
   }
+
+  // Like counter
+  (function() {
+    var buttons = document.querySelectorAll('.like-button');
+    if (!buttons.length) return;
+
+    var API = 'https://api.counterapi.dev/v1/gaotianchi.com/';
+    var LIKED_KEY = 'liked_';
+
+    buttons.forEach(function(btn) {
+      var slug = btn.getAttribute('data-slug');
+      if (!slug) return;
+      var key = API + slug;
+      var storageKey = LIKED_KEY + slug;
+      var countEl = btn.querySelector('.like-count');
+
+      // Fetch current count
+      fetch(key)
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          countEl.textContent = d.count > 0 ? ' ' + d.count : '';
+        })
+        .catch(function() {});
+
+      // Check if already liked this session
+      if (localStorage.getItem(storageKey)) {
+        btn.setAttribute('data-liked', 'true');
+      }
+
+      // Click handler
+      btn.addEventListener('click', function() {
+        if (btn.getAttribute('data-liked') === 'true') return;
+        fetch(key + '/up')
+          .then(function(r) { return r.json(); })
+          .then(function(d) {
+            countEl.textContent = ' ' + d.count;
+            btn.setAttribute('data-liked', 'true');
+            localStorage.setItem(storageKey, '1');
+          })
+          .catch(function() {});
+      });
+    });
+  })();
 })();
