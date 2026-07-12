@@ -1,0 +1,328 @@
+// Post wrapper
+.wrapper.post {
+  @include media-query($on-mobile) {
+    padding-left: $spacing-half;
+    padding-right: $spacing-half;
+  }
+}
+
+// Post top — header + TOC + watermark container
+.post-top {
+  position: relative;
+}
+
+.toc-watermark {
+  position: absolute;
+
+
+  width: 65%;
+  right: 3%;
+  top: 30%;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  margin: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    opacity: 0.09;
+    background: transparent;
+  }
+
+  @include media-query($on-mobile) {
+    display: none;
+  }
+}
+
+// Post header
+.header {
+  margin-top: 4.5em;
+  margin-bottom: 1.75em;
+
+  @include media-query($on-mobile) {
+    margin-top: 2.75em;
+    margin-bottom: 1.25em;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    margin-bottom: 1.25rem;
+
+    .tag {
+      display: inline-block;
+      font-size: $small-font-size - 2;
+      font-weight: $normal-weight;
+      color: $gray;
+      opacity: 0.6;
+      letter-spacing: 0.03em;
+
+      &::before {
+        content: "#";
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .header-title {
+    font-size: 2.25em;
+    font-weight: $bold-weight;
+    line-height: 1.25;
+    margin: 0;
+    letter-spacing: 0.06em;
+
+    &.center {
+      text-align: center;
+    }
+
+    @include media-query($on-mobile) {
+      font-size: 1.75em;
+    }
+  }
+}
+
+// Post meta — editorial serif
+.post-meta {
+  margin-top: 0.85rem;
+  font-family: $serif-family;
+  font-size: 0.9375rem;
+  color: $gray;
+  opacity: 0.65;
+  line-height: 1.6;
+
+  @include media-query($on-mobile) {
+    font-size: 0.8125rem;
+  }
+
+  time {
+    position: static;
+    margin-right: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .post-meta-sep {
+    margin: 0 0.45em;
+    opacity: 0.45;
+  }
+
+  .post-meta-modified {
+    font-style: italic;
+    opacity: 0.8;
+  }
+}
+
+// Post hero image
+.post-hero {
+  margin: 0 0 0.5rem;
+
+  img {
+    width: 100%;
+    border-radius: 2px;
+  }
+}
+
+// Post ornamental divider
+.post-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 1.5rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: $light;
+  }
+
+  .post-divider-ornament {
+    flex-shrink: 0;
+    padding: 0 12px;
+    font-size: 0.45rem;
+    color: $gray;
+    opacity: 0.3;
+    line-height: 1;
+  }
+
+  @include media-query($on-mobile) {
+    margin: 1.5rem 0 1.25rem;
+  }
+}
+
+// Post content
+.page-content {
+  padding-top: 0;
+
+  iframe {
+    text-align: center;
+  }
+
+  figure {
+    img {
+      border-radius: 2px;
+    }
+
+    figcaption {
+      margin-top: 5px;
+      font-style: italic;
+      font-size: $small-font-size;
+    }
+  }
+
+  a {
+    color: $link-body-color;
+    text-decoration: underline;
+    text-decoration-color: $link-underline-color-light;
+    text-underline-offset: 3px;
+    text-decoration-thickness: from-font;
+    transition: text-decoration-color 0.2s ease;
+
+    &:hover {
+      text-decoration-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &.external-link {
+      text-decoration-style: dotted;
+
+      &::after {
+        content: "\2009↗";
+        font-size: 0.75em;
+        opacity: 0.45;
+      }
+    }
+
+    &:focus-visible {
+      outline: 1px solid;
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Post body — refined reading typography
+.post-body {
+  position: relative;
+  z-index: 1;
+  > p {
+    font-size: 1.063rem;
+    margin: 0;
+    padding-top: $spacing-full - 13;
+    padding-bottom: $spacing-full - 13;
+
+    @include media-query($on-mobile) {
+      font-size: 1rem;
+    }
+  }
+
+  a {
+    color: $link-body-color;
+    text-decoration: underline;
+    text-decoration-color: $link-underline-color-light;
+    text-underline-offset: 3px;
+    text-decoration-thickness: from-font;
+    transition: text-decoration-color 0.2s ease;
+
+    &:hover {
+      text-decoration-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &.external-link {
+      text-decoration-style: dotted;
+
+      &::after {
+        content: "\2009↗";
+        font-size: 0.75em;
+        opacity: 0.45;
+      }
+    }
+  }
+
+  // Heading anchor — hidden until heading hover, styled as link
+  .anchor-head {
+    opacity: 0;
+    text-decoration: none;
+  }
+
+  ul.task-list {
+    list-style: none;
+    margin: 0;
+
+    li::before {
+      content: "";
+    }
+
+    li input[type="checkbox"] {
+      margin-right: 10px;
+    }
+  }
+
+  dl dt {
+    font-weight: $bold-weight;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    color: $black;
+    font-weight: $bold-weight;
+    margin-top: $spacing-full + 6;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:hover {
+      .anchor-head {
+        opacity: 1 !important;
+      }
+    }
+
+    .anchor-head {
+      position: absolute;
+      left: -1em;
+      opacity: 0 !important;
+      outline: none;
+      color: inherit;
+      text-decoration: none;
+      font-weight: $bold-weight;
+      transition: opacity 0.15s ease;
+    }
+  }
+
+  h1 {
+    @include relative-font-size(1.5);
+  }
+
+  h2 {
+    @include relative-font-size(1.375);
+  }
+
+  h3 {
+    @include relative-font-size(1.25);
+    border-bottom: 1px solid $light;
+    padding-bottom: 4px;
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+  }
+
+  h5 {
+    @include relative-font-size(1);
+  }
+
+  h6 {
+    @include relative-font-size(0.875);
+  }
+}

@@ -1,0 +1,199 @@
+// Navbar
+.navbar {
+  height: auto;
+  max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
+  max-width: -webkit-calc(#{$wide-size} - (#{$spacing-full} * 2));
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  border-bottom: 1px solid $light;
+  padding: $spacing-full - 15px $spacing-full;
+  @extend %clearfix;
+}
+
+// Navigation
+.menu {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+
+  a#mode {
+    float: left;
+    left: 8px;
+    top: 6px;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    clear: both;
+    opacity: 0.7;
+    z-index: 1;
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+    &:active {
+      -webkit-transform: scale(0.9, 0.9);
+      transform: scale(0.9, 0.9);
+    }
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .mode-sunny {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+      line {
+        stroke: $black;
+        fill: none;
+      }
+      circle {
+        fill: none;
+        stroke: $black;
+      }
+    }
+    .mode-moon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.5);
+      path {
+        stroke: $black;
+        fill: none;
+      }
+    }
+  }
+
+  .trigger {
+    float: right;
+  }
+
+  @at-root body.notransition .navbar svg {
+    transition: none !important;
+  }
+
+  .menu-trigger {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .menu-link {
+    color: inherit;
+    line-height: $base-line-height + 0.4;
+    text-decoration: none;
+    padding: 5px 8px;
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    &.rss {
+      position: relative;
+      bottom: -3px;
+      outline: none;
+    }
+
+    @include media-query($on-mobile) {
+      opacity: 0.8;
+    }
+  }
+
+  .menu-link.active {
+    opacity: 1;
+    font-weight: 600;
+  }
+
+  @include media-query($on-mobile) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+    height: 50px;
+    background-color: $white;
+    border-bottom: 1px solid $light;
+
+    a#mode {
+      left: 10px;
+      top: 12px;
+    }
+
+    .menu-icon {
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 50px;
+      height: 23px;
+      line-height: 0;
+      padding-top: 13px;
+      padding-bottom: 15px;
+      cursor: pointer;
+      text-align: center;
+      z-index: 1;
+      > svg {
+        fill: $black;
+        opacity: 0.7;
+      }
+      .icon-close {
+        display: none;
+      }
+      &:hover {
+        > svg {
+          opacity: 1;
+        }
+      }
+      &:active {
+        -webkit-transform: scale(0.9, 0.9);
+        transform: scale(0.9, 0.9);
+      }
+    }
+
+    input[type="checkbox"]:checked ~ label .icon-hamburger {
+      display: none;
+    }
+    input[type="checkbox"]:checked ~ label .icon-close {
+      display: inline;
+    }
+
+    input[type="checkbox"]:not(:checked) ~ .trigger {
+      clear: both;
+      visibility: hidden;
+    }
+
+    input[type="checkbox"]:checked ~ .trigger {
+      position: fixed;
+      left: 0;
+      right: 0;
+      animation: 0.2s ease-in forwards fadein;
+      -webkit-animation: 0.2s ease-in forwards fadein;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: $white;
+      height: 100vh;
+      width: 100%;
+      top: 0;
+    }
+
+    .menu-link {
+      display: block;
+      box-sizing: border-box;
+      font-size: 1.1em;
+
+      &:not(:last-child) {
+        margin: 0;
+        padding: 2px 0;
+      }
+    }
+  }
+}

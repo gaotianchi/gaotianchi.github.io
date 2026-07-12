@@ -1,0 +1,78 @@
+// Footnotes — academic citation style
+.footnotes {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid $light;
+  font-size: 0.8125rem;
+  color: $gray;
+  line-height: 1.75;
+
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    counter-reset: fn;
+  }
+
+  li {
+    position: static;
+    padding: 0.25rem 0;
+    counter-increment: fn;
+
+    &::before {
+      content: "[" counter(fn) "]";
+      display: inline;
+      width: auto;
+      margin: 0 0.5em 0 0;
+      text-align: left;
+      direction: ltr;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: $gray;
+      opacity: 0.6;
+    }
+
+    p {
+      display: inline;
+      margin: 0;
+      padding: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    a {
+      word-break: break-all;
+    }
+
+    &:target {
+      background: rgba($text-link-blue, 0.06);
+    }
+  }
+}
+
+.reversefootnote {
+  text-decoration: none;
+  opacity: 0.3;
+  font-size: 0.75rem;
+  margin-left: 0.15rem;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+// In-text footnote reference (superscript number)
+sup[id^="fnref"] {
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    color: inherit;
+    padding: 0 1px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.55;
+    }
+  }
+}

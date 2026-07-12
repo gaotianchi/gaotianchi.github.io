@@ -1,0 +1,44 @@
+// Page last-modified timestamp
+.page-lastmod {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $light;
+  font-family: $serif-family;
+  font-size: 0.75rem;
+  color: $gray;
+  opacity: 0.5;
+  text-align: right;
+
+  @include media-query($on-mobile) {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    text-align: left;
+  }
+}
+
+.page-lastmod-actions {
+  margin-bottom: 0.5rem;
+}
+
+.page-lastmod-meta {
+  font-size: 0.6875rem;
+  opacity: 0.7;
+}
+
+.page-lastmod-sep {
+  opacity: 0.4;
+}
+
+.email-reply-link {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.55;
+  }
+}
+
+.ai-notice {
+  opacity: 0.65;
+}

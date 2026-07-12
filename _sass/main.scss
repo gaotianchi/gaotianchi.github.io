@@ -1,2 +1,8 @@
-@import "variables", "mixins", "klise/base", "klise/layout", "klise/post",
-  "klise/poem", "klise/syntax", "klise/dark";
+@import "variables", "mixins",
+  "klise/base",
+  "components/navbar", "components/emblem", "components/post-item",
+  "components/footer", "components/back-to-top",
+  "components/toc", "components/post-nav", "components/footnotes",
+  "components/changelog", "components/content-footer",
+  "pages/post", "pages/home", "pages/archive", "pages/404",
+  "klise/layout", "klise/poem", "klise/syntax", "klise/dark";

@@ -1,0 +1,78 @@
+// TOC container — currently hidden
+.toc-row {
+  display: none;
+}
+
+.toc-col {
+  .toc {
+    margin-bottom: 0;
+  }
+}
+
+// Table of contents — quiet inline list, no box
+.toc {
+  margin: 0 0 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.8;
+}
+
+.toc-header {
+  margin-bottom: 0.25rem;
+}
+
+.toc-title {
+  font-family: $serif-family;
+  font-size: 0.75rem;
+  color: $gray;
+  opacity: 0.5;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li::before {
+    content: none;
+  }
+
+  @media (max-width: $on-mobile) {
+    margin-top: 0.25rem;
+  }
+}
+
+.toc-item {
+  padding: 0;
+
+  a {
+    display: block;
+    color: $gray;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+    padding: 0;
+    border: none;
+
+    &:hover {
+      opacity: 0.55;
+    }
+
+    &.active {
+      color: $black;
+      font-weight: 500;
+      opacity: 1;
+    }
+  }
+}
+
+.toc-h2 { padding-left: 0; }
+.toc-h3 { padding-left: 0.75rem; }
+.toc-h4 { padding-left: 1.5rem; }
+
+.toc-h3 a { font-size: 0.8125rem; }
+.toc-h4 a { font-size: 0.75rem; opacity: 0.45; }

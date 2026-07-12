@@ -1,0 +1,252 @@
+// Archive page
+.archive-section {
+  margin-bottom: 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.archive-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0 1.25rem;
+}
+
+.archive-filter-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.archive-filter-label {
+  flex-shrink: 0;
+  font-family: $serif-family;
+  font-size: 0.75rem;
+  color: $gray;
+  opacity: 0.45;
+  letter-spacing: 0.06em;
+  min-width: 2.4em;
+}
+
+.archive-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.85rem;
+}
+
+.archive-tag-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.15rem 0.2rem 0.1rem;
+  font-family: $serif-family;
+  cursor: pointer;
+  line-height: 1.5;
+  color: $gray;
+  opacity: 0.45;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  transition: color 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+
+  &[data-tier="2"] {
+    opacity: 0.6;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  &[data-tier="3"] {
+    opacity: 0.75;
+    font-size: 1.18rem;
+    font-weight: 600;
+  }
+
+  &:hover {
+    opacity: 1;
+    color: $black;
+  }
+
+  &.active {
+    opacity: 1;
+    color: $black;
+    font-weight: 600;
+    border-bottom-color: $smoke;
+  }
+
+  // "全部" reset button — exempt from tier sizing, always moderate
+  &.archive-tag-all {
+    opacity: 0.6;
+    font-size: 0.95rem;
+    font-weight: 400;
+
+    &.active {
+      opacity: 1;
+      font-weight: 600;
+    }
+  }
+
+  .cat-count {
+    font-size: 0.55em;
+    opacity: 0.3;
+    margin-left: 0.15em;
+    vertical-align: super;
+    font-family: $sans-family;
+    font-weight: 400;
+  }
+}
+
+// Vertical Timeline
+.archive-timeline {
+  position: relative;
+  margin-top: 1.5rem;
+
+  // Vertical backbone line (sits in the grid gap between date and title)
+  &::before {
+    content: '';
+    position: absolute;
+    left: 88px;
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    background: $light;
+    z-index: 1;
+    pointer-events: none;
+    transition: background-color 0.35s ease;
+  }
+}
+
+// Groups are separated by .timeline-year elements in the HTML flow
+
+// Year — natural block between year groups
+.archive-timeline .timeline-year {
+  margin: 2.5rem 0 0.25rem;
+  padding: 0 0 0 106px;
+  font-size: 7rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  color: $gray;
+  opacity: 0.07;
+  letter-spacing: 0.12em;
+  pointer-events: none;
+  user-select: none;
+  position: relative;
+  z-index: 0;
+  transition: color 0.35s ease, opacity 0.35s ease;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 0 36px;
+  align-items: baseline;
+  position: relative;
+  padding: 0.15rem 0;
+  z-index: 2;
+
+  // Dot node centered on the backbone line
+  &::before {
+    content: '';
+    position: absolute;
+    left: 85px;    // 88 - 3 (half of dot), centered on backbone
+    top: calc(50% + 2px);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $light;
+    z-index: 2;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  &:hover::before {
+    background: $gray;
+    transform: translateY(-50%) scale(1.5);
+  }
+}
+
+.timeline-date {
+  text-align: right;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  transform: translateY(-1px);
+  color: $gray;
+  opacity: 0.3;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.timeline-item:hover .timeline-date {
+  color: $black;
+  opacity: 0.7;
+}
+
+.archive-timeline .timeline-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: opacity 0.35s ease;
+
+  &:hover {
+    opacity: 0.55;
+  }
+
+  &[target="_blank"]::after {
+    content: none !important;
+  }
+}
+
+.archive-empty {
+  text-align: center;
+  color: $gray;
+  font-style: italic;
+  font-size: 0.875rem;
+  padding: 3rem 0;
+}
+
+@include media-query($on-mobile) {
+  .archive-section {
+    margin-bottom: 0;
+  }
+
+  .archive-timeline {
+    margin-top: 1rem;
+
+    &::before {
+      left: 54px;
+    }
+  }
+
+  .archive-timeline .timeline-year {
+    font-size: 3.5rem;
+    opacity: 0.06;
+    padding-left: 64px;
+    margin: 1.5rem 0 0.15rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 44px 1fr;
+    gap: 0 20px;
+    padding: 0.35rem 0;
+
+    &::before {
+      left: 51px;    // 54 - 3 (half of dot), centered on backbone
+    }
+  }
+
+  .timeline-date {
+    font-size: 0.625rem;
+  }
+
+  .archive-timeline .timeline-link {
+    white-space: normal;
+  }
+}

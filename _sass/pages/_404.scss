@@ -1,0 +1,23 @@
+.not-found {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 75vh;
+  .title {
+    font-size: 5em;
+    font-weight: $bold-weight;
+    line-height: 1.1;
+    color: $black;
+    text-shadow: 1px 0px 0px $text-link-blue;
+  }
+  .phrase {
+    color: $text-base-color;
+  }
+  .solution {
+    letter-spacing: 0.5px;
+  }
+  .solution:hover {
+    opacity: 0.55;
+  }
+}
