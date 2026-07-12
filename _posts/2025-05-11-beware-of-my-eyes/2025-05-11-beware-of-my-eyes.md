@@ -3,9 +3,10 @@ layout: poem
 title: 小心我的双眼
 date: 2025-05-11T09:41:18+08:00
 slug: beware-of-my-eyes
-lastmod: 2025-05-11T09:41:18+08:00
+
 category: 诗
 tags: [虚伪,觉醒]
+lastmod: 2026-07-12T17:17:54+08:00
 description: 觉醒者对虚伪道德与伪善言行的犀利洞察。
 author: Tianchi
 ---

@@ -3,9 +3,10 @@ layout: poem
 title: 我赞美自我
 date: 2025-05-11T09:41:18+08:00
 slug: i-praise-myself
-lastmod: 2025-05-11T09:41:18+08:00
+
 category: 诗
 tags: [自我,存在主义]
+lastmod: 2026-07-12T17:17:54+08:00
 description: 通过层层递进的排比，构建了一个以自我认知为核心的价值体系。
 author: Tianchi
 ---

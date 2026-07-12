@@ -301,8 +301,15 @@
   }
 }
 
+.page-lastmod-time {
+  display: block;
+}
+
 .ai-notice {
-  opacity: 0.7;
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.6875rem;
+  opacity: 0.65;
 }
 
 // Changelog table

@@ -3,9 +3,10 @@ layout: poem
 title: 权力与其人
 date: 2025-05-11T09:41:18+08:00
 slug: power-and-its-people
-lastmod: 2025-05-11T09:41:18+08:00
+
 category: 诗
 tags: [权力,自由]
+lastmod: 2026-07-12T17:17:54+08:00
 description: 以大王花的腐臭意象，揭露权力腐化的本质与人群的盲从。
 author: Tianchi
 ---

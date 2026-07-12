@@ -3,9 +3,10 @@ layout: poem
 title: 我在寻找一个人
 date: 2025-05-11T09:41:18+08:00
 slug: looking-for-someone
-lastmod: 2025-05-11T09:41:18+08:00
+
 category: 诗
 tags: [自由,集体主义]
+lastmod: 2026-07-12T17:17:54+08:00
 description: 一封写给理想自我的情书，描绘了一个保持独立思考、勇于直面人生困境的精神肖像。
 author: Tianchi
 ---

@@ -4,7 +4,8 @@ permalink: /changelog/
 layout: page
 description: 这个站点的变更记录。
 date: 2026-05-23T20:33:26+08:00
-lastmod: 2026-07-12T16:20:08+08:00
+lastmod: 2026-07-12T17:17:54+08:00
+ai_generated: true
 ---
 
 | 日期 | 变更 |
