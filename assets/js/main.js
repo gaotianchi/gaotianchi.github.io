@@ -88,6 +88,20 @@
 
     var API = 'https://api.counterapi.dev/v1/gaotianchi.com/';
     var LIKED_KEY = 'liked_';
+    var uid = 0;
+
+    function jsonp(url, fn) {
+      var id = 'capi_' + (uid++);
+      window[id] = function(data) {
+        fn(data);
+        delete window[id];
+        document.getElementById(id).remove();
+      };
+      var s = document.createElement('script');
+      s.id = id;
+      s.src = url + (url.indexOf('?') > -1 ? '&' : '?') + 'callback=' + id;
+      document.head.appendChild(s);
+    }
 
     buttons.forEach(function(btn) {
       var slug = btn.getAttribute('data-slug');
@@ -96,15 +110,12 @@
       var storageKey = LIKED_KEY + slug;
       var countEl = btn.querySelector('.like-count');
 
-      // Fetch current count
-      fetch(key)
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          countEl.textContent = d.count > 0 ? ' ' + d.count : '';
-        })
-        .catch(function() {});
+      // Fetch current count via JSONP
+      jsonp(key, function(d) {
+        countEl.textContent = d.count > 0 ? ' ' + d.count : '';
+      });
 
-      // Check if already liked this session
+      // Check if already liked
       if (localStorage.getItem(storageKey)) {
         btn.setAttribute('data-liked', 'true');
       }
@@ -112,14 +123,11 @@
       // Click handler
       btn.addEventListener('click', function() {
         if (btn.getAttribute('data-liked') === 'true') return;
-        fetch(key + '/up')
-          .then(function(r) { return r.json(); })
-          .then(function(d) {
-            countEl.textContent = ' ' + d.count;
-            btn.setAttribute('data-liked', 'true');
-            localStorage.setItem(storageKey, '1');
-          })
-          .catch(function() {});
+        jsonp(key + '/up', function(d) {
+          countEl.textContent = ' ' + d.count;
+          btn.setAttribute('data-liked', 'true');
+          localStorage.setItem(storageKey, '1');
+        });
       });
     });
   })();
