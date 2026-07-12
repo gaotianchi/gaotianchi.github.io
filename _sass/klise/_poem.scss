@@ -107,5 +107,15 @@
     &:hover {
       text-decoration-color: rgba(0, 0, 0, 0.5);
     }
+
+    &.external-link {
+      text-decoration-style: dotted;
+
+      &::after {
+        content: "\2009↗";
+        font-size: 0.75em;
+        opacity: 0.45;
+      }
+    }
   }
 }
