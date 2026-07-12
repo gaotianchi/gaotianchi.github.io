@@ -1,27 +1,5 @@
 (function() {
-  // === Theme initialization (runs immediately, before DOM) ===
   const body = document.body;
-
-  const initTheme = (state) => {
-    if (state === 'dark') {
-      body.setAttribute('data-theme', 'dark');
-    } else if (state === 'light') {
-      body.removeAttribute('data-theme');
-    } else {
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        body.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        body.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      }
-    }
-  };
-
-  initTheme(localStorage.getItem('theme'));
-
-  setTimeout(() => body.classList.remove('notransition'), 75);
 
   // === Everything else (on DOM ready) ===
   document.addEventListener('DOMContentLoaded', function() {
@@ -41,7 +19,14 @@
           localStorage.setItem('theme', 'dark');
           body.setAttribute('data-theme', 'dark');
         } else {
-          initTheme(state);
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (prefersDark) {
+            body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+          }
         }
 
         setTimeout(() => html.classList.remove('theme-switching'), 400);
