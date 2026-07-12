@@ -32,7 +32,7 @@ body[data-theme="dark"] {
     a {
       color: #b8adab;
       text-decoration: underline;
-      text-decoration-color: rgba(255, 255, 255, 0.18);
+      text-decoration-color: $link-underline-color-dark;
       text-underline-offset: 3px;
       text-decoration-thickness: from-font;
 
@@ -325,7 +325,7 @@ body[data-theme="dark"] {
     a {
       color: #b8adab;
       text-decoration: underline;
-      text-decoration-color: rgba(255, 255, 255, 0.18);
+      text-decoration-color: $link-underline-color-dark;
       text-underline-offset: 3px;
       text-decoration-thickness: from-font;
 

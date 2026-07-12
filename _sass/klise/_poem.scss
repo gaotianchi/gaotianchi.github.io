@@ -97,9 +97,9 @@
 
   // Links if needed (less prominent than prose)
   a {
-    color: #6d6260;
+    color: $link-body-color;
     text-decoration: underline;
-    text-decoration-color: rgba(0, 0, 0, 0.18);
+    text-decoration-color: $link-underline-color-light;
     text-underline-offset: 3px;
     text-decoration-thickness: from-font;
     transition: text-decoration-color 0.2s ease;
