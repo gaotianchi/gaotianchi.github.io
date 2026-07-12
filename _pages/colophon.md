@@ -3,6 +3,8 @@ title: 站点信息
 permalink: /colophon/
 layout: page
 description: 这个网站是如何构建的？
+date: 2026-05-23T20:48:33+08:00
+lastmod: 2026-07-12T15:56:26+08:00
 ---
 
 这个博客网站由 [Jekyll](https://jekyllrb.com/) 静态网页生成器生成，主题采用 [Klise](https://github.com/piharpi/jekyll-klise)。另外，主题样式的更新迭代主要 Claude Code 和 DeepSeek 完成。
