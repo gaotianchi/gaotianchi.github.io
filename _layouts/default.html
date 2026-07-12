@@ -7,32 +7,6 @@ layout: compress
 
 <body data-theme="{{ site.mode }}" class="notransition">
 
-  <script>
-    const body = document.body;
-    const data = body.getAttribute("data-theme");
-
-    const initTheme = (state) => {
-      if (state === "dark") {
-        body.setAttribute("data-theme", "dark");
-      } else if (state === "light") {
-        body.removeAttribute("data-theme");
-      } else {
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (prefersDark) {
-          body.setAttribute("data-theme", "dark");
-          localStorage.setItem("theme", "dark");
-        } else {
-          body.removeAttribute("data-theme");
-          localStorage.setItem("theme", "light");
-        }
-      }
-    };
- 
-    initTheme(localStorage.getItem("theme"));
-    
-    setTimeout(() => body.classList.remove("notransition"), 75);
-  </script>
-
   {% include navbar.html %}
   <div class="wrapper{% if page.layout == 'home' %} home-wrapper{% endif %}{% if page.layout == 'post' %} post{% endif %}">
     {% if page.layout == 'home' %}{% include emblem.html %}{% endif %}
