@@ -13,6 +13,6 @@ description: 阐明 AI 与人的职责边界。
 
 比如，每次更新网站代码，我会向 Claude Code 下达类似：“根据 Git 变更记录更新 [/changelog/](/changelog/) 页面”这类消息。将非结构化的文本或者长文本结构化输出，是 AI 的强项，这也是我借助 AI 最多的地方之一。
 
-最后，[bydamo.la 的 AI 宣言](https://www.bydamo.la/p/ai-manifesto) 启发我创建了这个页面，用以阐明 AI 与人的职责边界。
+[bydamo.la 的 AI 宣言](https://www.bydamo.la/p/ai-manifesto) 启发我创建了这个页面，用以阐明 AI 与人的职责边界。
 
 [^1]: 氛围编程（Vibe Coding），指通过自然语言指令驱动 AI 完成代码编写。
