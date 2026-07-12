@@ -24,5 +24,3 @@ lastmod: 2026-07-12T16:20:08+08:00
 | 2022 — 2025 | 频繁更换域名与建站工具（WordPress、Blogger、Flask）。 |
 | 2022-09-03 | 首次建站，名"悲伤的斯蒂梵冈"。 |
 {: .changelog-table}
-
-<small style="display:block; margin-top: 2em; opacity: 0.4; font-size: 0.8125rem;">此页面会随站点更新持续补充。</small>

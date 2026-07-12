@@ -286,6 +286,21 @@
   }
 }
 
+// Page last-modified timestamp
+.page-lastmod {
+  margin-top: 3rem;
+  font-family: $serif-family;
+  font-size: 0.8125rem;
+  color: $gray;
+  opacity: 0.5;
+  text-align: right;
+
+  @include media-query($on-mobile) {
+    margin-top: 2rem;
+    text-align: left;
+  }
+}
+
 // Changelog table
 .changelog-table {
   width: 100%;

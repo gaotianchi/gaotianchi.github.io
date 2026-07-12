@@ -62,5 +62,5 @@ lastmod: 2026-07-08T23:40:54+08:00
 </style>
 
 <div class="blank-content">
-  <p>此页有意留白。</p>
+  <p>此页有意留白</p>
 </div>

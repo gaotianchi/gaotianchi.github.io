@@ -62,6 +62,11 @@ body[data-theme="dark"] {
     }
   }
 
+  // Page last-modified
+  .page-lastmod {
+    color: $dark-gray;
+  }
+
   // Changelog table
   .changelog-table {
     td, th {
