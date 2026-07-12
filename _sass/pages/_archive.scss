@@ -54,13 +54,13 @@
   &[data-tier="2"] {
     opacity: 0.6;
     font-size: 1.05rem;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   &[data-tier="3"] {
     opacity: 0.75;
     font-size: 1.18rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   &:hover {
@@ -71,7 +71,7 @@
   &.active {
     opacity: 1;
     color: $black;
-    font-weight: 600;
+    font-weight: 700;
     border-bottom-color: $smoke;
   }
 
@@ -83,7 +83,7 @@
 
     &.active {
       opacity: 1;
-      font-weight: 600;
+      font-weight: 700;
     }
   }
 
