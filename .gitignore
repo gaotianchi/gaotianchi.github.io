@@ -7,3 +7,9 @@ klise-*.gem
 Gemfile.lock
 .obsidian
 .trash
+
+# 开发过程文件
+.playwright-mcp/
+docs/superpowers/
+.superpowers/
+.claude/settings.local.json
