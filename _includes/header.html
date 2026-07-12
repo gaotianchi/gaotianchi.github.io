@@ -40,7 +40,6 @@
     }}" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://cdn-city.livere.com https://utteranc.es; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; img-src 'self' https: data:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.google.com; frame-src https://utteranc.es; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com;" />
-  <meta property="fb:app_id" content="{{ site.fb_appid }}" />
   <meta property="og:site_name" content="{% if page.title %}{{ page.title | escape }} | {{
       site.author.name
     }}{% else %}{{ site.title | escape }}{% endif %}" />
@@ -66,8 +65,6 @@
     }}" />
   {% if page.image %}
   <meta property="og:image" content="{{ page.image | absolute_url }}" />
-  {% else %}
-  <meta property="og:image" content="{{ site.image | absolute_url }}" />
   {% endif %}
   <meta property="og:image:width" content="640" />
   <meta property="og:image:height" content="640" />
@@ -90,8 +87,6 @@
     }}" />
   {% if page.image %}
   <meta name="twitter:image" content="{{ page.image | absolute_url }}" />
-  {% else %}
-  <meta name="twitter:image" content="{{ site.image | absolute_url }}" />
   {% endif %} {% feed_meta %}
   <link rel="icon" type='image/x-icon' sizes="48x48" href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />

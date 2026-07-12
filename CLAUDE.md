@@ -84,10 +84,9 @@ _sass/klise/
   _base.scss           → 重置、排版、间距
   _layout.scss         → 网格、头部、页脚、导航栏
   _post.scss           → 文章排版、目录、标签、题图、水印
+  _poem.scss           → 诗歌页面布局
   _syntax.scss         → Rouge 语法高亮主题（浅色 + 深色）
   _dark.scss           → 深色模式覆写
-  _fonts.scss          → @font-face 和字体栈
-  _miscellaneous.scss  → 工具类、回到顶部、汉堡菜单
 ```
 
 主题配色：浅色模式使用暖调纸色背景（`#f3ede4`），深色模式使用深灰色调。字体：EB Garamond（衬线，用于标题），霞鹜文楷（用于中文正文）。

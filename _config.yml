@@ -4,12 +4,9 @@ description: >-
   生活设下枷锁，文字构筑愿景
 lang: zh-CN # default lang
 timezone: Asia/Shanghai # set your timezone
-image: assets/img/ogp.webp # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/gaotianchi/gaotianchi.github.io # site repo [optional]
 mode: light # default theme "dark" | "light"
 
-# <br data-start="94" data-end="97" />
-# <br data-start="149" data-end="152" />
 # Profile settings
 author:
   name: Tianchi # author name
@@ -19,16 +16,13 @@ author:
   username: gaotianchi # general username
   github: gaotianchi # github username
   twitter: gaotianchix # twitter username
-  facebook: # facebook username
   email: gaootianchi@outlook.com # author email
-  avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # URL settings
 url: "https://www.gaotianchi.com" #
 baseurl:
 permalink: /:title/
 google_analytics: G-KSMTNEVWS5 # leave it blank if not wish
-fb_appid:
 
 # Collection setting
 collections:

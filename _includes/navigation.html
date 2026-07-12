@@ -5,18 +5,10 @@
     <span class="post-title">{{ page.previous.title }}</span>
   </a>
   {% else %}
-  <div class="post-nav-item post-nav-prev">
-    <div class="nav-arrow">
-      <a href="{{ site.url }}">回到首页</a>
-    </div>
-  </div>
-  {% else %}
-  <div class="post-nav-item post-nav-prev">
-    <div class="nav-arrow">
-      <a href="{{ site.url }}">首页</a>
-      <a href="/archive/">归档</a>
-    </div>
-  </div>
+  <a class="post-nav-item post-nav-prev" href="/archive/">
+    <div class="nav-arrow">上一篇</div>
+    <span class="post-title">归档</span>
+  </a>
   {% endif %}
 
   {% if page.next %}
@@ -25,17 +17,9 @@
     <span class="post-title">{{ page.next.title }}</span>
   </a>
   {% else %}
-  <div class="post-nav-item post-nav-next">
-    <div class="nav-arrow">
-      <a href="{{ site.url }}">回到首页</a>
-    </div>
-  </div>
-  {% else %}
-  <div class="post-nav-item post-nav-next">
-    <div class="nav-arrow">
-      <a href="{{ site.url }}">首页</a>
-      <a href="/archive/">归档</a>
-    </div>
-  </div>
+  <a class="post-nav-item post-nav-next" href="/archive/">
+    <div class="nav-arrow">下一篇</div>
+    <span class="post-title">归档</span>
+  </a>
   {% endif %}
 </nav>
