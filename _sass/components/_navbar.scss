@@ -1,8 +1,8 @@
 // Navbar
 .navbar {
   height: auto;
-  max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
-  max-width: -webkit-calc(#{$wide-size} - (#{$spacing-full} * 2));
+  max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
+  max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full} * 2));
   position: relative;
   margin-right: auto;
   margin-left: auto;
@@ -201,7 +201,7 @@
 // Random quote — subtle, left-aligned with theme toggle
 .navbar-quote {
   margin: 0 auto;
-  max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
+  max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
   padding: 0.3rem $spacing-full 0;
   font-family: $serif-family;
   font-size: 0.6875rem;
