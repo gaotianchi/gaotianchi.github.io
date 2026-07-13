@@ -103,8 +103,12 @@
         var container = wm.parentElement;
         if (!container || !container.classList.contains('post-top')) return;
 
-        // Random rotation on each load
-        var rotate = Math.floor(Math.random() * 360);
+        // Random position + rotation on each load
+        var topPos = 20 + Math.floor(Math.random() * 21);   // 20–40%
+        var rightPos = Math.floor(Math.random() * 9);        // 0–8%
+        var rotate = Math.floor(Math.random() * 360);        // 0–359°
+        wm.style.setProperty('top', topPos + '%', 'important');
+        wm.style.setProperty('right', rightPos + '%', 'important');
         wm.style.setProperty('transform', 'rotate(' + rotate + 'deg)', 'important');
       })();
     }
