@@ -228,13 +228,11 @@
         try {
           var quotes = JSON.parse(dataScript.textContent);
           var el = document.getElementById('footer-quote');
-          if (quotes.length > 0 && Math.random() < 0.7) {
+          if (quotes.length > 0) {
             var q = quotes[Math.floor(Math.random() * quotes.length)];
             el.querySelector('.navbar-quote-text').textContent = q.text;
             el.querySelector('.navbar-quote-source').textContent = q.source || '佚名';
             el.style.visibility = '';
-          } else {
-            el.style.visibility = 'hidden';
           }
         } catch (e) {}
       }
