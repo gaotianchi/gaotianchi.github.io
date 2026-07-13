@@ -221,17 +221,19 @@
       })();
     }
 
-    // Footer random quote — 30% chance of showing, otherwise hidden
+    // Random quote — 70% chance of showing, container always preserves space
     if (document.getElementById('footer-quote')) {
       var dataScript = document.getElementById('footer-quotes-data');
       if (dataScript) {
         try {
           var quotes = JSON.parse(dataScript.textContent);
+          var el = document.getElementById('footer-quote');
           if (quotes.length > 0 && Math.random() < 0.7) {
             var q = quotes[Math.floor(Math.random() * quotes.length)];
-            var el = document.getElementById('footer-quote');
             el.textContent = q.source ? q.text + ' —— ' + q.source : q.text;
-            el.style.display = '';
+            el.style.visibility = '';
+          } else {
+            el.style.visibility = 'hidden';
           }
         } catch (e) {}
       }

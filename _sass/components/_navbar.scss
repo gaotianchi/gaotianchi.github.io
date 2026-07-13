@@ -198,20 +198,21 @@
   }
 }
 
-// Random quote — subtle, right below navbar
+// Random quote — subtle, left-aligned with theme toggle
 .navbar-quote {
-  margin: 0.3rem auto 0;
+  margin: 0 auto;
   max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
-  padding: 0 $spacing-full;
+  padding: 0.3rem $spacing-full 0;
   font-family: $serif-family;
   font-size: 0.6875rem;
   color: $gray;
   opacity: 0.35;
-  text-align: center;
+  text-align: left;
   line-height: 1.7;
+  min-height: 1.4em;
 
   @include media-query($on-mobile) {
-    padding: 0 $spacing-half;
+    padding: 0.3rem $spacing-half 0;
     font-size: 0.625rem;
   }
 }
