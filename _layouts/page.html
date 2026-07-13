@@ -6,9 +6,11 @@ layout: default
     <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}.</h1>
   </header>
 
+  {% unless page.url == '/archive/' %}
   <figure class="toc-watermark" aria-hidden="true">
     <img src="/assets/img/logo.png" alt="" />
   </figure>
+  {% endunless %}
 </div>
 {% include anchor_headings.html html=content anchorClass="anchor-head" anchorBody="#" beforeHeading=true h_min=4 h_max=4 %}
 {% include content-footer.html %}
