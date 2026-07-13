@@ -198,19 +198,17 @@
   }
 }
 
-// Random quote — subtle dotted separator, text ········ source
+// Random quote — inside navbar, subtle dotted separator: text ········ source
 .navbar-quote {
   display: flex;
   align-items: baseline;
-  margin: 0 auto;
-  max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
-  padding: 0.3rem $spacing-full 0;
+  padding: 0 0 0.15rem;
   font-family: $serif-family;
   font-size: 0.6875rem;
   color: $gray;
-  opacity: 0.35;
+  opacity: 0.3;
   line-height: 1.7;
-  min-height: 1.4em;
+  min-height: 1.3em;
 
   .navbar-quote-text {
     flex-shrink: 0;
@@ -236,7 +234,6 @@
   }
 
   @include media-query($on-mobile) {
-    padding: 0.3rem $spacing-half 0;
     font-size: 0.625rem;
     flex-wrap: wrap;
 
