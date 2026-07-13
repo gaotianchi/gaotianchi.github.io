@@ -33,6 +33,13 @@ layout: compress
   </script>
 
   {% include navbar.html %}
+
+  {%- assign quotes = site.data.quotes -%}
+  {%- if quotes and quotes.size > 0 -%}
+  <script id="footer-quotes-data" type="application/json">{{ quotes | jsonify }}</script>
+  <p class="navbar-quote" id="footer-quote" style="display:none"></p>
+  {%- endif -%}
+
   <div class="wrapper{% if page.layout == 'home' %} home-wrapper{% endif %}{% if page.layout == 'post' %} post{% endif %}">
     {% if page.layout == 'home' %}{% include emblem.html %}{% endif %}
     <main aria-label="Content"{% if page.layout == 'page' %} class="page-content"{% endif %}>

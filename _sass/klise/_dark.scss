@@ -236,6 +236,10 @@ body[data-theme="dark"] {
         }
       }
     }
+  .navbar-quote {
+    color: $dark-gray;
+    opacity: 0.3;
+  }
   }
 
   // Emblem
@@ -397,10 +401,6 @@ body[data-theme="dark"] {
     }
     .footer_legacy {
       color: $dark-gray;
-    }
-    .footer-quote {
-      color: $dark-gray;
-      opacity: 0.3;
     }
   }
 
