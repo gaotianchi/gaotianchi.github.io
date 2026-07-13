@@ -198,8 +198,10 @@
   }
 }
 
-// Random quote — subtle, left-aligned with theme toggle
+// Random quote — subtle dotted separator, text ········ source
 .navbar-quote {
+  display: flex;
+  align-items: baseline;
   margin: 0 auto;
   max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
   padding: 0.3rem $spacing-full 0;
@@ -207,12 +209,43 @@
   font-size: 0.6875rem;
   color: $gray;
   opacity: 0.35;
-  text-align: left;
   line-height: 1.7;
   min-height: 1.4em;
+
+  .navbar-quote-text {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .navbar-quote-leader {
+    flex: 1 1 auto;
+    min-width: 2ch;
+    height: 0.65em;
+    overflow: hidden;
+    align-self: center;
+    margin: 0 0.4em;
+    background-image: radial-gradient(circle, currentColor 0.6px, transparent 0.6px);
+    background-size: 0.5em 0.5em;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+
+  .navbar-quote-source {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
 
   @include media-query($on-mobile) {
     padding: 0.3rem $spacing-half 0;
     font-size: 0.625rem;
+    flex-wrap: wrap;
+
+    .navbar-quote-text {
+      white-space: normal;
+    }
+
+    .navbar-quote-leader {
+      display: none;
+    }
   }
 }

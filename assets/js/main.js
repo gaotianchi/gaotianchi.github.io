@@ -221,7 +221,7 @@
       })();
     }
 
-    // Random quote — 70% chance of showing, container always preserves space
+    // Random quote — text ········ source with dotted leader
     if (document.getElementById('footer-quote')) {
       var dataScript = document.getElementById('footer-quotes-data');
       if (dataScript) {
@@ -230,7 +230,8 @@
           var el = document.getElementById('footer-quote');
           if (quotes.length > 0 && Math.random() < 0.7) {
             var q = quotes[Math.floor(Math.random() * quotes.length)];
-            el.textContent = q.source ? q.text + ' —— ' + q.source : q.text;
+            el.querySelector('.navbar-quote-text').textContent = q.text;
+            el.querySelector('.navbar-quote-source').textContent = q.source || '佚名';
             el.style.visibility = '';
           } else {
             el.style.visibility = 'hidden';
