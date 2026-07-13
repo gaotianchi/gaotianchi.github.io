@@ -398,6 +398,10 @@ body[data-theme="dark"] {
     .footer_legacy {
       color: $dark-gray;
     }
+    .footer-quote {
+      color: $dark-gray;
+      opacity: 0.3;
+    }
   }
 
   // 404 Page

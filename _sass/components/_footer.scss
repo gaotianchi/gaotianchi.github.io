@@ -70,6 +70,16 @@
     padding-top: 2px;
   }
 
+  .footer-quote {
+    margin: 0.6rem 0 0;
+    font-family: $serif-family;
+    font-size: 0.6875rem;
+    color: $gray;
+    opacity: 0.35;
+    text-align: center;
+    line-height: 1.7;
+  }
+
   .footer_copyright {
     font-size: $small-font-size - 1;
     color: $gray;

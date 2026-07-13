@@ -24,6 +24,12 @@
     <span class="footer_sep">&middot;</span>
     <a class="footer_item footer_legacy" href="/blank/">留白</a>
   </div>
+
+  {%- assign quotes = site.data.quotes -%}
+  {%- if quotes and quotes.size > 0 -%}
+  <script id="footer-quotes-data" type="application/json">{{ quotes | jsonify }}</script>
+  <p class="footer-quote" id="footer-quote" style="display:none"></p>
+  {%- endif -%}
 </footer>
 <script src="/assets/js/main.js" defer="defer"></script>
 {%- if site.google_analytics -%}
