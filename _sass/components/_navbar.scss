@@ -203,18 +203,22 @@
   display: flex;
   align-items: baseline;
   max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
+  height: 1.15rem;
   margin: 0 auto;
   padding: 0 $spacing-full 0.3rem;
   font-family: $serif-family;
   font-size: 0.6875rem;
   color: $gray;
   opacity: 0.3;
-  line-height: 1.7;
-  min-height: 1.3em;
+  line-height: 1;
+  overflow: hidden;
 
   .navbar-quote-text {
-    flex-shrink: 0;
+    flex-shrink: 1;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
 
   .navbar-quote-leader {
@@ -236,12 +240,14 @@
   }
 
   @include media-query($on-mobile) {
+    height: auto;
     padding: 0 $spacing-half 0.3rem;
     font-size: 0.625rem;
     flex-wrap: wrap;
 
     .navbar-quote-text {
       white-space: normal;
+      overflow: visible;
     }
 
     .navbar-quote-leader {

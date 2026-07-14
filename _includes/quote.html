@@ -1,0 +1,9 @@
+{%- assign quotes = site.data.quotes -%}
+{%- if quotes and quotes.size > 0 -%}
+<script id="footer-quotes-data" type="application/json">{{ quotes | jsonify }}</script>
+<div class="navbar-quote" id="footer-quote">
+  <span class="navbar-quote-text">&nbsp;</span>
+  <span class="navbar-quote-leader"></span>
+  <span class="navbar-quote-source">&nbsp;</span>
+</div>
+{%- endif -%}
