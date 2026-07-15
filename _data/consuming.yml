@@ -10,6 +10,12 @@
 #
 # 条目按 started 倒序排列，同一年份自动归组。
 
+- title: 变形记
+  creator: 卡夫卡
+  type: 书籍
+  started: 2026-06-01
+  notes: 我能读完的原因只有一个——我就是那只甲壳虫。
+
 - title: 中间人经济
   creator: 玛丽娜·克拉科夫斯基
   type: 书籍
