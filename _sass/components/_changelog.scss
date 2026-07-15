@@ -1,32 +1,50 @@
 // Changelog page — 站点变更记录
-.changelog-year {
-  font-family: $serif-family;
-  font-size: 1rem;
-  color: $gray;
-  opacity: 0.4;
-  margin: 2.5rem 0 0.5rem;
-  font-weight: $normal-weight;
-  letter-spacing: 0.06em;
-
-  &:first-of-type {
-    margin-top: 0.25rem;
-  }
+.changelog-list {
+  width: 100%;
 }
 
 .changelog-item {
-  padding: 0.2rem 0;
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0 1rem;
+  align-items: baseline;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid $light;
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .changelog-item-date {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
   color: $gray;
-  opacity: 0.45;
+  white-space: nowrap;
   line-height: 1;
-  margin-bottom: 0.15rem;
-  letter-spacing: 0.04em;
+  transform: translateY(-1px);
 }
 
 .changelog-item-desc {
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+@include media-query($on-mobile) {
+  .changelog-item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem 0;
+    padding: 1.25rem 0;
+  }
+
+  .changelog-item-date {
+    font-size: 0.75rem;
+    color: $gray;
+    opacity: 0.7;
+  }
+
+  .changelog-item-desc {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
 }

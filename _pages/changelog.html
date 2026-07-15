@@ -8,20 +8,12 @@ lastmod: 2026-07-16T00:00:00+08:00
 ai_generated: true
 ---
 
+<div class="changelog-list">
 {% assign items = site.data.changelog | sort: "date" | reverse %}
-{% assign current_year = "" %}
-
 {% for item in items %}
-  {% assign item_year = item.date | date: "%Y" %}
-  {% if item_year != current_year %}
-    {% unless forloop.first %}</div>{% endunless %}
-    <h2 class="changelog-year">{{ item_year }}</h2>
-    <div class="changelog-year-group">
-    {% assign current_year = item_year %}
-  {% endif %}
   <div class="changelog-item">
-    <div class="changelog-item-date">{{ item.date | date: "%m-%d" }}</div>
+    <div class="changelog-item-date">{{ item.date | date: "%Y-%m-%d" }}</div>
     <div class="changelog-item-desc">{{ item.desc }}</div>
   </div>
-  {% if forloop.last %}</div>{% endif %}
 {% endfor %}
+</div>

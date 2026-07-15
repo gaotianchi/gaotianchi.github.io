@@ -69,8 +69,8 @@ body[data-theme="dark"] {
   }
 
   // Changelog page
-  .changelog-year {
-    color: $dark-gray;
+  .changelog-item {
+    border-bottom-color: $dark-light;
   }
 
   .changelog-item-date {
