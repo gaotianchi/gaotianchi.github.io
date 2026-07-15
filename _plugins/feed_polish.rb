@@ -38,5 +38,47 @@ Jekyll::Hooks.register :site, :post_write do |site|
     end
   end
 
+  # ---- 4. Fix <updated> to use lastmod front matter ----
+  # jekyll-feed defaults <updated> to post.date; replace with front-matter
+  # lastmod when present.  We read the raw YAML because Jekyll overwrites
+  # post.data["lastmod"] with the file mtime.
+  require "time"
+  require "yaml"
+
+  site.posts.docs.each do |post|
+    front_matter = {}
+    begin
+      raw = File.read(post.path)
+      if raw =~ /\A---\s*\n(.*?)\n---/m
+        front_matter = YAML.safe_load(Regexp.last_match(1), permitted_classes: [Time])
+      end
+    rescue
+      # If YAML parsing fails, skip this post
+    end
+    front_matter ||= {}
+
+    lastmod = front_matter["lastmod"]
+    next unless lastmod
+
+    begin
+      lastmod_time = lastmod.utc
+      lastmod_iso = lastmod_time.strftime("%Y-%m-%dT%H:%M:%S+00:00")
+    rescue
+      next
+    end
+
+    post_url = "#{base_url}#{post.url}"
+    # Match the entire <entry> that contains this post's <id> URL,
+    # then replace its <updated> value.
+    # Use ((?!<entry>).)* instead of .*? to prevent matching across
+    # entry boundaries — without this, a regex for a later entry can
+    # accidentally span from the first <entry> in the feed.
+    content.gsub!(
+      %r{<entry>((?!<entry>).)*<id>#{Regexp.escape(post_url)}</id>((?!<entry>).)*</entry>}m
+    ) do |entry|
+      entry.sub(%r{<updated>[^<]*</updated>}, "<updated>#{lastmod_iso}</updated>")
+    end
+  end
+
   File.write(feed_path, content)
 end
