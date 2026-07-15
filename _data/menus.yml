@@ -6,6 +6,10 @@
   url: /archive/
   external: false
 
+- title: 阅览
+  url: /library/
+  external: false
+
 - title: About
   url: /about/
   external: false
