@@ -28,6 +28,23 @@
 .changelog-item-desc {
   font-size: 0.9375rem;
   line-height: 1.7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &.truncatable {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &.expanded {
+    white-space: normal;
+    overflow: visible;
+  }
 }
 
 @include media-query($on-mobile) {

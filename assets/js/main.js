@@ -221,6 +221,16 @@
       })();
     }
 
+    // Changelog — click to expand/collapse truncated descriptions
+    document.querySelectorAll('.changelog-item-desc').forEach(function(desc) {
+      if (desc.scrollWidth > desc.clientWidth) {
+        desc.classList.add('truncatable');
+        desc.addEventListener('click', function() {
+          this.classList.toggle('expanded');
+        });
+      }
+    });
+
     // Random quote — replace placeholder with random text
     if (document.getElementById('footer-quote')) {
       var dataScript = document.getElementById('footer-quotes-data');
