@@ -522,4 +522,13 @@ body[data-theme="dark"] {
   sup[id^="fnref"] a {
     color: inherit;
   }
+
+  // Library page
+  .library-type-title {
+    color: $dark-gray;
+  }
+
+  .library-item-meta {
+    color: $dark-gray;
+  }
 }
