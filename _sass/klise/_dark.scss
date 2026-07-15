@@ -68,25 +68,13 @@ body[data-theme="dark"] {
     color: $dark-gray;
   }
 
-  // Changelog table
-  .changelog-table {
-    td, th {
-      border-bottom-color: $dark-light;
-    }
+  // Changelog page
+  .changelog-year {
+    color: $dark-gray;
+  }
 
-    td:first-child {
-      color: $dark-gray;
-    }
-
-    td:last-child {
-      color: $dark-text-base-color;
-    }
-
-    @include media-query($on-mobile) {
-      tr {
-        border-bottom-color: $dark-light;
-      }
-    }
+  .changelog-item-date {
+    color: $dark-gray;
   }
 
   // Syntax
