@@ -71,7 +71,7 @@
   padding-top: 2rem;
   border-top: 1px solid $light;
   line-height: 2;
-  font-size: 1.063rem;
+  font-size: $body-font-size;
 
   @include media-query($on-mobile) {
     font-size: 1rem;

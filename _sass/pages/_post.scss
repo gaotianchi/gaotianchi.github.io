@@ -210,7 +210,7 @@
   position: relative;
   z-index: 1;
   > p {
-    font-size: 1.063rem;
+    font-size: $body-font-size;
     margin: 0;
     padding-top: $spacing-full - 13;
     padding-bottom: $spacing-full - 13;
