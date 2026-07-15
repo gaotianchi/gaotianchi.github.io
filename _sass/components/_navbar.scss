@@ -108,7 +108,7 @@
 
   .menu-link.active {
     opacity: 1;
-    font-weight: 700;
+    font-weight: $bold-weight;
   }
 
   @include media-query($on-mobile) {
@@ -207,7 +207,7 @@
   margin: 0 auto;
   padding: 0 $spacing-full 0.3rem;
   font-family: $serif-family;
-  font-size: 0.6875rem;
+  font-size: $xs-font-size;
   color: $gray;
   opacity: $opacity-muted;
   line-height: 1;
@@ -242,7 +242,7 @@
   @include media-query($on-mobile) {
     height: auto;
     padding: 0 $spacing-half 0.3rem;
-    font-size: 0.625rem;
+    font-size: $xxs-font-size;
     flex-wrap: wrap;
 
     .navbar-quote-text {

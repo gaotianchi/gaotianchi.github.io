@@ -1,7 +1,7 @@
 // Content
 .posts-item-note {
   font-size: $base-font-size;
-  font-weight: 700;
+  font-weight: $bold-weight;
   margin-bottom: 5px;
   color: $black;
 }
@@ -20,7 +20,7 @@
   .post-item-date {
     min-width: 96px;
     color: $black;
-    font-weight: 700;
+    font-weight: $bold-weight;
     padding-right: 10px;
 
     @include media-query($on-mobile) {

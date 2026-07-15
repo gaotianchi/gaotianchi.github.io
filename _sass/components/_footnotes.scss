@@ -3,7 +3,7 @@
   margin-top: 3rem;
   padding-top: 1.25rem;
   border-top: 1px solid $light;
-  font-size: 0.8125rem;
+  font-size: $meta-font-size;
   color: $gray;
   line-height: 1.75;
 
@@ -26,8 +26,8 @@
       margin: 0 0.5em 0 0;
       text-align: left;
       direction: ltr;
-      font-size: 0.75rem;
-      font-weight: 400;
+      font-size: $caption-font-size;
+      font-weight: $normal-weight;
       color: $gray;
       opacity: 0.6;
     }
@@ -53,7 +53,7 @@
 .reversefootnote {
   text-decoration: none;
   opacity: 0.3;
-  font-size: 0.75rem;
+  font-size: $caption-font-size;
   margin-left: 0.15rem;
   transition: opacity 0.2s ease;
 
@@ -66,7 +66,7 @@
 sup[id^="fnref"] {
   a {
     text-decoration: none;
-    font-weight: 400;
+    font-weight: $normal-weight;
     color: inherit;
     padding: 0 1px;
     transition: opacity 0.2s ease;

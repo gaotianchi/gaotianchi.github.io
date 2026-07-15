@@ -87,13 +87,13 @@
 .post-meta {
   margin-top: 0.85rem;
   font-family: $serif-family;
-  font-size: 0.9375rem;
+  font-size: $lg-font-size;
   color: $gray;
   opacity: 0.65;
   line-height: 1.6;
 
   @include media-query($on-mobile) {
-    font-size: 0.8125rem;
+    font-size: $meta-font-size;
   }
 
   time {

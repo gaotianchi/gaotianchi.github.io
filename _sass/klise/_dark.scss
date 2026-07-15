@@ -30,7 +30,7 @@ body[data-theme="dark"] {
   .page-content,
   .post-body {
     a {
-      color: #b8adab;
+      color: $dark-link-body-color;
       text-decoration: underline;
       text-decoration-color: $link-underline-color-dark;
       text-underline-offset: 3px;
@@ -315,7 +315,7 @@ body[data-theme="dark"] {
     border-top-color: $dark-light;
 
     a {
-      color: #b8adab;
+      color: $dark-link-body-color;
       text-decoration: underline;
       text-decoration-color: $link-underline-color-dark;
       text-underline-offset: 3px;

@@ -23,7 +23,7 @@
 .archive-filter-label {
   flex-shrink: 0;
   font-family: $serif-family;
-  font-size: 0.75rem;
+  font-size: $caption-font-size;
   color: $gray;
   opacity: $opacity-subtle;
   letter-spacing: 0.06em;
@@ -47,20 +47,20 @@
   color: $gray;
   opacity: $opacity-subtle;
   font-size: 0.95rem;
-  font-weight: 400;
+  font-weight: $normal-weight;
   letter-spacing: 0.03em;
   transition: color 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
 
   &[data-tier="2"] {
     opacity: 0.6;
     font-size: 1.05rem;
-    font-weight: 400;
+    font-weight: $normal-weight;
   }
 
   &[data-tier="3"] {
     opacity: 0.75;
     font-size: 1.18rem;
-    font-weight: 700;
+    font-weight: $bold-weight;
   }
 
   &:hover {
@@ -71,7 +71,7 @@
   &.active {
     opacity: 1;
     color: $black;
-    font-weight: 700;
+    font-weight: $bold-weight;
     border-bottom-color: $smoke;
   }
 
@@ -79,11 +79,11 @@
   &.archive-tag-all {
     opacity: 0.6;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: $normal-weight;
 
     &.active {
       opacity: 1;
-      font-weight: 700;
+      font-weight: $bold-weight;
     }
   }
 
@@ -93,7 +93,7 @@
     margin-left: 0.15em;
     vertical-align: super;
     font-family: $sans-family;
-    font-weight: 400;
+    font-weight: $normal-weight;
   }
 }
 
@@ -124,7 +124,7 @@
   margin: 2.5rem 0 0.25rem;
   padding: 0 0 0 106px;
   font-size: 7rem;
-  font-weight: 700;
+  font-weight: $bold-weight;
   font-style: italic;
   line-height: 1;
   color: $gray;
@@ -170,7 +170,7 @@
 
 .timeline-date {
   text-align: right;
-  font-size: 0.6875rem;
+  font-size: $xs-font-size;
   font-variant-numeric: tabular-nums;
   line-height: 1;
   transform: translateY(-1px);
@@ -243,7 +243,7 @@
   }
 
   .timeline-date {
-    font-size: 0.625rem;
+    font-size: $xxs-font-size;
   }
 
   .archive-timeline .timeline-link {

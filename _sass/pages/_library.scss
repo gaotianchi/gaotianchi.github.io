@@ -44,7 +44,7 @@
 @include media-query($on-mobile) {
   .library-year {
     margin-top: 2rem;
-    font-size: 0.9375rem;
+    font-size: $lg-font-size;
   }
 
   .library-item {
@@ -57,7 +57,7 @@
   }
 
   .library-item-notes {
-    font-size: 0.8125rem;
+    font-size: $meta-font-size;
     line-height: 1.75;
   }
 }

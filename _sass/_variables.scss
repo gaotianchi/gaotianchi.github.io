@@ -10,6 +10,16 @@ $mono-family: "Consolas", "Menlo", "Monaco", "Courier New",
 $base-font-size: 16px;
 $medium-font-size: $base-font-size * 0.938;
 $small-font-size: $base-font-size * 0.875;
+
+// Extended font size scale
+$lg-font-size: $base-font-size * 0.9375;    // ~15px — body large, changelog desc
+$meta-font-size: $base-font-size * 0.8125;  // ~13px — meta, captions, footnotes
+$caption-font-size: $base-font-size * 0.75; // ~12px — labels, dates, nav
+$xs-font-size: $base-font-size * 0.6875;    // ~11px — quotes, fine print
+$xxs-font-size: $base-font-size * 0.625;    // ~10px — archive timeline date
+
+$body-font-size: $base-font-size * 1.063;   // ~17px — post body, poem body
+
 $base-line-height: 1.85;
 
 // Serif font stack — 英文 EB Garamond，中文 Noto Serif SC（思源宋体）
@@ -55,6 +65,7 @@ $narrow-size: 720px;
 
 // Link colors (shared across post, poem, dark)
 $link-body-color: #6d6260;
+$dark-link-body-color: #b8adab; // dark-mode counterpart of $link-body-color
 $link-underline-color-light: rgba(0, 0, 0, 0.18);
 $link-underline-color-dark: rgba(255, 255, 255, 0.18);
 $mark-bg: #fffba0;

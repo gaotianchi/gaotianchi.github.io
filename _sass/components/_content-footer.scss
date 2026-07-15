@@ -4,7 +4,7 @@
   padding-top: 1.5rem;
   border-top: 1px solid $light;
   font-family: $serif-family;
-  font-size: 0.75rem;
+  font-size: $caption-font-size;
   color: $gray;
   opacity: 0.5;
   text-align: right;
@@ -21,7 +21,7 @@
 }
 
 .page-lastmod-meta {
-  font-size: 0.6875rem;
+  font-size: $xs-font-size;
   opacity: 0.7;
 }
 

@@ -12,7 +12,7 @@
 // Table of contents — quiet inline list, no box
 .toc {
   margin: 0 0 1.25rem;
-  font-size: 0.8125rem;
+  font-size: $meta-font-size;
   line-height: 1.8;
 }
 
@@ -22,7 +22,7 @@
 
 .toc-title {
   font-family: $serif-family;
-  font-size: 0.75rem;
+  font-size: $caption-font-size;
   color: $gray;
   opacity: 0.5;
   letter-spacing: 0.06em;
@@ -42,7 +42,7 @@
     content: none;
   }
 
-  @media (max-width: $on-mobile) {
+  @include media-query($on-mobile) {
     margin-top: 0.25rem;
   }
 }
@@ -64,7 +64,7 @@
 
     &.active {
       color: $black;
-      font-weight: 400;
+      font-weight: $normal-weight;
       opacity: 1;
     }
   }
@@ -74,5 +74,5 @@
 .toc-h3 { padding-left: 0.75rem; }
 .toc-h4 { padding-left: 1.5rem; }
 
-.toc-h3 a { font-size: 0.8125rem; }
-.toc-h4 a { font-size: 0.75rem; opacity: $opacity-subtle; }
+.toc-h3 a { font-size: $meta-font-size; }
+.toc-h4 a { font-size: $caption-font-size; opacity: $opacity-subtle; }

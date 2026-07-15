@@ -69,14 +69,14 @@
   .emblem-motto {
     margin: 0;
     font-family: $serif-family;
-    font-size: 0.9375rem;
+    font-size: $lg-font-size;
     color: $gray;
     opacity: $opacity-muted;
     line-height: 1.7;
     letter-spacing: 0.04em;
 
     @include media-query($on-mobile) {
-      font-size: 0.8125rem;
+      font-size: $meta-font-size;
     }
   }
 }
