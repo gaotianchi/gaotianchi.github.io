@@ -48,7 +48,9 @@
     }}{% else %}{{ site.title | escape }}{% endif %}" />
   {% if page.location %}
   <meta property="og:type" content="article" />
+  {% if site.author.facebook %}
   <meta property="article:publisher" content="https://web.facebook.com/{{ site.author.facebook }}" />
+  {% endif %}
   {% else %}
   <meta property="og:type" content="website" />
   {% endif %}
