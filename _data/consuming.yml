@@ -1,0 +1,36 @@
+# 个人消费记录：书籍、影视、舞台剧、音乐
+
+- title: 自由宪章
+  creator: 哈耶克
+  type: 书籍
+  started: 2023-06-01
+  finished: 2023-08-15
+  notes: 关于自由的经典论述。
+
+- title: 肖申克的救赎
+  creator: 弗兰克·德拉邦特
+  type: 影视
+  started: 2024-01-20
+
+- title: 尼采·在世纪的转折点上
+  creator: 周国平
+  type: 书籍
+  started: 2024-03-10
+  finished: 2024-04-05
+  notes: 理解尼采的绝佳入门。
+
+- title: 魔笛
+  creator: 莫扎特
+  type: 舞台剧
+  started: 2024-06-15
+
+- title: Kind of Blue
+  creator: Miles Davis
+  type: 音乐
+  started: 2024-02-01
+  finished: 2024-02-01
+
+- title: 精神分析引论
+  creator: 弗洛伊德
+  type: 书籍
+  started: 2023-11-01
