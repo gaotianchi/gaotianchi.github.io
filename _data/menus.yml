@@ -1,8 +1,8 @@
-- title: Home
+- title: 主页
   url: /
   external: false
 
-- title: Archive
+- title: 归档
   url: /archive/
   external: false
 
@@ -10,7 +10,7 @@
   url: /library/
   external: false
 
-- title: About
+- title: 关于
   url: /about/
   external: false
 
