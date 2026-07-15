@@ -8,7 +8,7 @@
   grid-template-columns: 5.5rem 1fr;
   gap: 0 1rem;
   align-items: baseline;
-  padding: 1.25rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid $light;
 
   &:last-child {
@@ -51,7 +51,7 @@
   .changelog-item {
     grid-template-columns: 1fr;
     gap: 0.35rem 0;
-    padding: 1.25rem 0;
+    padding: 0.75rem 0;
   }
 
   .changelog-item-date {
