@@ -1,21 +1,22 @@
 ---
 name: update-changelog
 description: >
-  从 git 历史更新 /changelog/ 页面（_pages/changelog.md）。
+  从 git 历史更新 /changelog/ 页面的数据文件（_data/changelog.yml）。
   当用户说"更新变更记录"、"更新 changelog"、"同步 changelog"，
   或在提交了一批用户可见的改动后希望记录到变更记录页面时触发。
 ---
 
 # 更新变更记录
 
-根据 git 历史，将今天的用户可见变动写入 `_pages/changelog.md`。
-该文件是一个 Markdown 表格：
+根据 git 历史，将今天的用户可见变动写入 `_data/changelog.yml`。
+该文件是一个 YAML 列表，每条记录包含 `date` 和 `desc` 字段：
 
+```yaml
+- date: 2026-07-13
+  desc: 移动端首页 logo 上方增加呼吸空间，不再紧贴导航栏。
 ```
-| 日期 | 变更 |
-|------|------|
-| YYYY-MM-DD | 一句话描述。 |
-```
+
+模板 `_pages/changelog.html` 读取该数据文件，按日期倒序渲染为表格风格列表。
 
 ## 工作流程
 
@@ -40,7 +41,7 @@ description: >
 - `docs(spec):` — 内部设计文档
 - `refactor(...)` — 内部代码重构
 - `chore(...)`、`ci(...)`、`build(...)`、`test(...)` — 工具链
-- `docs(changelog):` — 变更记录页自身的更新（避免无限循环）
+- `docs(changelog):` — 变更记录自身的更新（避免无限循环）
 - `refactor(skill):` — 技能管理
 
 拿不准的纳入，用户可以之后删除。
@@ -56,17 +57,17 @@ description: >
 
 ### 5. 写入文件
 
-打开 `_pages/changelog.md`。表格按日期倒序排列。
+打开 `_data/changelog.yml`。文件按日期倒序排列（最新在顶部）。
 
-- 今天的行已存在：在现有单元格末尾追加新变动，用中文句号（`。`）分隔。
-- 今天是新的一天：在表头行之后插入新行：
+- **今天的日期已存在：** 在现有 `desc` 末尾追加新变动，用中文句号（`。`）分隔。
+- **今天是新的一天：** 在文件顶部（注释之后）插入新条目：
 
+```yaml
+- date: 2026-07-16
+  desc: 变更描述内容。
 ```
-| 日期 | 变更 |
-|------|------|
-| 新行插入此处                              ← 插在这里
-| 2026-07-10 | ... |
-```
+
+放在旧的第一个条目之前，保持倒序。
 
 ### 6. 提交
 
@@ -76,8 +77,6 @@ commit message：`docs(changelog): 补充 YYYY-MM-DD 变更记录`。
 
 ## 翻译示例
 
-**好的翻译：**
-
 | 原始 commit message | 变更记录文本 |
 |---|---|
 | `style: 全站链接分型 + 背景色去黄` | 全站链接样式分型调整，页面背景色微调减少黄感 |
@@ -86,17 +85,9 @@ commit message：`docs(changelog): 补充 YYYY-MM-DD 变更记录`。
 | `refactor(changelog): HTML 列表转 Markdown 表格` | 变更记录页由列表改为表格 |
 | `style(home): 移动端首页标题恢复默认字号` | 移动端首页标题字号恢复，与归档页一致 |
 
-**不好的翻译（太技术化）：**
-
-| 原始 commit message | 不好的文本 | 问题 |
-|---|---|---|
-| `style: 全站链接分型` | 将 $text-link-blue 替换为 #6d6260 | 出现了色号 |
-| `refactor(changelog): 列表转表格` | HTML ul 替换为 GFM table，删除内联 style | 出现了 HTML/CSS 概念 |
-| `feat: 新增 external_links.rb` | 新增 _plugins/external_links.rb 插件 | 出现了文件路径 |
-
 ## 基本原则
 
 - 没有用户可见的 commit 就不要编造，如实告知并停止。
 - 不确定一个 commit 是否用户可见时，读一下它的 diff 再判断。
 - 每条描述尽量控制在 40 字以内。
-- 表格行按日期倒序，永远不要重排行顺序。
+- 条目按日期倒序排列，永远不要重排行顺序。
