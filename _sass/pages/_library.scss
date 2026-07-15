@@ -32,3 +32,11 @@
   opacity: 0.55;
   line-height: 1.6;
 }
+
+.library-empty {
+  font-family: $serif-family;
+  color: $gray;
+  opacity: 0.35;
+  padding: 3rem 0;
+  text-align: center;
+}
