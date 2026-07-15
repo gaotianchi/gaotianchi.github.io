@@ -109,7 +109,7 @@ kbd {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border: 1px solid $light;
-  border-radius: 2px;
+  border-radius: $border-radius-sm;
   color: $black;
   display: inline-block;
   font-size: $small-font-size;
@@ -259,7 +259,7 @@ a {
   transition: opacity 0.2s ease;
 
   &:hover {
-    opacity: 0.55;
+    opacity: $opacity-muted;
   }
 
   &:focus-visible {
@@ -325,7 +325,7 @@ blockquote {
 
 // Underline
 u {
-  text-decoration-color: #d2c7c7;
+  text-decoration-color: $smoke;
 }
 
 // Small

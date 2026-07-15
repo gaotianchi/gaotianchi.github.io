@@ -62,7 +62,7 @@
     padding: 0 14px;
     font-size: 0.5rem;
     color: $gray;
-    opacity: 0.35;
+    opacity: $opacity-faint;
     line-height: 1;
   }
 
@@ -71,7 +71,7 @@
     font-family: $serif-family;
     font-size: 0.9375rem;
     color: $gray;
-    opacity: 0.55;
+    opacity: $opacity-muted;
     line-height: 1.7;
     letter-spacing: 0.04em;
 

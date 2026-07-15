@@ -34,7 +34,7 @@
     font-size: $small-font-size - 1;
     font-weight: $bold-weight;
     color: $black;
-    opacity: 0.55;
+    opacity: $opacity-muted;
     margin: 0 0 0.4em 0;
     letter-spacing: 0.08em;
     text-transform: none;
@@ -52,7 +52,7 @@
     padding: 2px 0;
 
     &:hover {
-      opacity: 0.55;
+      opacity: $opacity-muted;
     }
 
     @include media-query($on-mobile) {

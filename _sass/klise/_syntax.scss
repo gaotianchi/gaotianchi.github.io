@@ -15,7 +15,7 @@ code {
     position: relative;
     top: -1px;
     background-color: $code-inline-bg;
-    border-radius: 2px;
+    border-radius: $border-radius-sm;
     border: 1px solid rgba(128,128,128,0.1);
   }
 }
@@ -29,7 +29,7 @@ pre.highlight, pre {
   }
   border: 1px solid rgba(128,128,128,0.1);
   background-color: #1a1b21;
-  border-radius: 2px;
+  border-radius: $border-radius-sm;
   padding: 10px;
   display: block;
   overflow-x: auto;

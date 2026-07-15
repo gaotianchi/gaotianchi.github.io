@@ -64,6 +64,14 @@ $code-inline-bg: #f6f6f6;
 $spacing-full: 30px;
 $spacing-half: $spacing-full / 2;
 
+// Opacity scale
+$opacity-muted: 0.55;
+$opacity-subtle: 0.45;
+$opacity-faint: 0.35;
+
+// Border radius
+$border-radius-sm: 2px;
+
 // State of devices
 $on-mobile: 768px;
 $on-tablet: 769px;

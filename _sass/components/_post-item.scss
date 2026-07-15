@@ -40,7 +40,7 @@
       color: $text-base-color;
 
       &:hover {
-        opacity: 0.55;
+        opacity: $opacity-muted;
       }
     }
   }

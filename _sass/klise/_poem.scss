@@ -60,7 +60,7 @@
 
   .poem-meta-sep {
     margin: 0 0.45em;
-    opacity: 0.45;
+    opacity: $opacity-subtle;
   }
 }
 
@@ -114,7 +114,7 @@
       &::after {
         content: "\2009↗";
         font-size: 0.75em;
-        opacity: 0.45;
+        opacity: $opacity-subtle;
       }
     }
   }

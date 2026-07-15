@@ -59,7 +59,7 @@
     border: none;
 
     &:hover {
-      opacity: 0.55;
+      opacity: $opacity-muted;
     }
 
     &.active {
@@ -75,4 +75,4 @@
 .toc-h4 { padding-left: 1.5rem; }
 
 .toc-h3 a { font-size: 0.8125rem; }
-.toc-h4 a { font-size: 0.75rem; opacity: 0.45; }
+.toc-h4 a { font-size: 0.75rem; opacity: $opacity-subtle; }

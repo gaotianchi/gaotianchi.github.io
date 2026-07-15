@@ -116,7 +116,7 @@ body[data-theme="dark"] {
     color: $dark-gray;
 
     &:hover {
-      opacity: 0.55;
+      opacity: $opacity-muted;
     }
 
     &.active {
@@ -147,7 +147,7 @@ body[data-theme="dark"] {
     color: inherit;
 
     &:hover {
-      opacity: 0.55;
+      opacity: $opacity-muted;
     }
 
     &:focus-visible {
@@ -266,7 +266,7 @@ body[data-theme="dark"] {
         color: $dark-text-base-color;
 
         &:hover {
-          opacity: 0.55;
+          opacity: $opacity-muted;
         }
       }
     }
@@ -285,7 +285,7 @@ body[data-theme="dark"] {
 
     .post-item-date {
       color: $dark-gray;
-      opacity: 0.55;
+      opacity: $opacity-muted;
     }
 
     .post-item-leader {
@@ -296,7 +296,7 @@ body[data-theme="dark"] {
       color: $dark-text-base-color;
 
       &:hover {
-        opacity: 0.55;
+        opacity: $opacity-muted;
       }
     }
 
@@ -305,7 +305,7 @@ body[data-theme="dark"] {
       opacity: 0.65;
 
       &:hover {
-        opacity: 0.55;
+        opacity: $opacity-muted;
       }
     }
   }
@@ -352,7 +352,7 @@ body[data-theme="dark"] {
       &:hover,
       &:focus {
         .post-title {
-          opacity: 0.55;
+          opacity: $opacity-muted;
         }
       }
 
@@ -405,7 +405,7 @@ body[data-theme="dark"] {
       color: $dark-gray;
     }
     .solution:hover {
-      opacity: 0.55;
+      opacity: $opacity-muted;
     }
   }  
 
@@ -483,7 +483,7 @@ body[data-theme="dark"] {
     text-decoration: none;
 
     &:hover {
-      opacity: 0.55;
+      opacity: $opacity-muted;
     }
   }
 

@@ -35,7 +35,7 @@
   transition: opacity 0.2s ease;
 
   &:hover {
-    opacity: 0.55;
+    opacity: $opacity-muted;
   }
 }
 
