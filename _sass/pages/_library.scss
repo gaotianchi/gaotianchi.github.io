@@ -1,0 +1,36 @@
+// Library page — 书影音记录
+.library-type-title {
+  font-family: $serif-family;
+  font-size: 0.85rem;
+  color: $gray;
+  opacity: 0.55;
+  margin: 2.5rem 0 0.75rem;
+  font-weight: $normal-weight;
+  letter-spacing: 0.04em;
+
+  &:first-child {
+    margin-top: 0.5rem;
+  }
+}
+
+.library-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.library-item {
+  padding: 0.15rem 0;
+}
+
+.library-item-title {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+.library-item-meta {
+  font-size: $small-font-size;
+  color: $gray;
+  opacity: 0.55;
+  line-height: 1.5;
+}
