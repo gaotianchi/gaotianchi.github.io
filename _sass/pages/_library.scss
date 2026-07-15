@@ -52,10 +52,12 @@
   }
 
   .library-item-line {
+    font-size: $medium-font-size;
     line-height: 1.65;
   }
 
   .library-item-notes {
+    font-size: 0.8125rem;
     line-height: 1.75;
   }
 }
