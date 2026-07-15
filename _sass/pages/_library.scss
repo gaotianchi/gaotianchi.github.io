@@ -40,3 +40,22 @@
   padding: 3rem 0;
   text-align: center;
 }
+
+@include media-query($on-mobile) {
+  .library-year {
+    margin-top: 2rem;
+    font-size: 0.9375rem;
+  }
+
+  .library-item {
+    padding: 0.45rem 0;
+  }
+
+  .library-item-line {
+    line-height: 1.65;
+  }
+
+  .library-item-notes {
+    line-height: 1.75;
+  }
+}
