@@ -29,7 +29,7 @@
       font-size: $caption-font-size;
       font-weight: $normal-weight;
       color: $gray;
-      opacity: 0.6;
+      opacity: $opacity-soft;
     }
 
     p {
@@ -52,13 +52,13 @@
 
 .reversefootnote {
   text-decoration: none;
-  opacity: 0.3;
+  opacity: $opacity-ghost;
   font-size: $caption-font-size;
   margin-left: 0.15rem;
   transition: opacity 0.2s ease;
 
   &:hover {
-    opacity: 0.6;
+    opacity: $opacity-soft;
   }
 }
 

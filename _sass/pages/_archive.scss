@@ -52,7 +52,7 @@
   transition: color 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
 
   &[data-tier="2"] {
-    opacity: 0.6;
+    opacity: $opacity-soft;
     font-size: 1.05rem;
     font-weight: $normal-weight;
   }
@@ -77,7 +77,7 @@
 
   // "全部" reset button — exempt from tier sizing, always moderate
   &.archive-tag-all {
-    opacity: 0.6;
+    opacity: $opacity-soft;
     font-size: 0.95rem;
     font-weight: $normal-weight;
 
@@ -89,7 +89,7 @@
 
   .cat-count {
     font-size: 0.55em;
-    opacity: 0.3;
+    opacity: $opacity-ghost;
     margin-left: 0.15em;
     vertical-align: super;
     font-family: $sans-family;
@@ -175,14 +175,14 @@
   line-height: 1;
   transform: translateY(-1px);
   color: $gray;
-  opacity: 0.3;
+  opacity: $opacity-ghost;
   letter-spacing: 0.02em;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .timeline-item:hover .timeline-date {
   color: $black;
-  opacity: 0.7;
+  opacity: $opacity-medium;
 }
 
 .archive-timeline .timeline-link {

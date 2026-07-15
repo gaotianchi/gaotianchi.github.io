@@ -28,12 +28,12 @@
     font-size: $small-font-size - 2;
     font-weight: $normal-weight;
     color: $gray;
-    opacity: 0.6;
+    opacity: $opacity-soft;
     letter-spacing: 0.03em;
 
     &::before {
       content: "#";
-      opacity: 0.5;
+      opacity: $opacity-dim;
     }
   }
 }
@@ -55,7 +55,7 @@
   font-family: $serif-family;
   font-size: $meta-font-size;
   color: $gray;
-  opacity: 0.5;
+  opacity: $opacity-dim;
   line-height: 1.6;
 
   .poem-meta-sep {

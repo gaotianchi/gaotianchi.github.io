@@ -43,7 +43,7 @@
 
   .footer_item {
     color: inherit;
-    opacity: 0.65;
+    opacity: $opacity-emphasis;
     font-weight: $normal-weight;
     font-size: $small-font-size;
     text-decoration: none;
@@ -74,11 +74,11 @@
   .footer_copyright {
     font-size: $small-font-size - 1;
     color: $gray;
-    opacity: 0.6;
+    opacity: $opacity-soft;
   }
 
   .footer_sep {
-    opacity: 0.4;
+    opacity: $opacity-bright;
     margin: 0 2px;
     color: $gray;
     font-size: $small-font-size - 1;
@@ -91,7 +91,7 @@
     font-size: $small-font-size - 1;
 
     &:hover {
-      opacity: 0.6;
+      opacity: $opacity-soft;
       color: inherit;
     }
   }

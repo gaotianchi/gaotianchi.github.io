@@ -56,12 +56,12 @@
       font-size: $small-font-size - 2;
       font-weight: $normal-weight;
       color: $gray;
-      opacity: 0.6;
+      opacity: $opacity-soft;
       letter-spacing: 0.03em;
 
       &::before {
         content: "#";
-        opacity: 0.5;
+        opacity: $opacity-dim;
       }
     }
   }
@@ -89,7 +89,7 @@
   font-family: $serif-family;
   font-size: $lg-font-size;
   color: $gray;
-  opacity: 0.65;
+  opacity: $opacity-emphasis;
   line-height: 1.6;
 
   @include media-query($on-mobile) {
@@ -112,7 +112,7 @@
 
   .post-meta-modified {
     font-style: italic;
-    opacity: 0.8;
+    opacity: $opacity-high;
   }
 }
 
@@ -147,7 +147,7 @@
     padding: 0 12px;
     font-size: 0.45rem;
     color: $gray;
-    opacity: 0.3;
+    opacity: $opacity-ghost;
     line-height: 1;
   }
 

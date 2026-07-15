@@ -25,7 +25,7 @@
     width: 24px;
     height: 24px;
     clear: both;
-    opacity: 0.7;
+    opacity: $opacity-medium;
     z-index: 1;
     &:hover {
       cursor: pointer;
@@ -84,7 +84,7 @@
     line-height: $base-line-height + 0.4;
     text-decoration: none;
     padding: 5px 8px;
-    opacity: 0.7;
+    opacity: $opacity-medium;
     letter-spacing: 0.05em;
 
     &:hover {
@@ -102,7 +102,7 @@
     }
 
     @include media-query($on-mobile) {
-      opacity: 0.8;
+      opacity: $opacity-high;
     }
   }
 
@@ -141,7 +141,7 @@
       z-index: 1;
       > svg {
         fill: $black;
-        opacity: 0.7;
+        opacity: $opacity-medium;
       }
       .icon-close {
         display: none;
