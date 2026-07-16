@@ -69,6 +69,7 @@ module Jekyll
     THUMB_QUALITY = 80
     DISPLAY_WIDTH   = 1600
     DISPLAY_QUALITY = 75
+    WATERMARK_TEXT  = 'www.gaotianchi.com'
     PER_PAGE = 5
 
     def generate(site)
@@ -193,6 +194,14 @@ module Jekyll
             image = MiniMagick::Image.open(src)
             image.resize "#{DISPLAY_WIDTH}x#{DISPLAY_WIDTH}>"
             image.quality DISPLAY_QUALITY
+            # Watermark: subtle, bottom-right, semi-transparent white
+            font_size = [(image.width * 0.033).to_i, 18].max
+            image.combine_options do |c|
+              c.gravity 'southeast'
+              c.fill 'rgba(255,255,255,0.28)'
+              c.pointsize font_size
+              c.annotate '+28+18', WATERMARK_TEXT
+            end
             image.write display_dest
             Jekyll.logger.info "Photos:", "  → display #{display_dest}"
           rescue => e
