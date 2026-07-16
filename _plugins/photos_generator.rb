@@ -1,13 +1,27 @@
 # frozen_string_literal: true
 
-# Ensure ImageMagick is in PATH on Windows
-imgmagick_paths = [
+# Ensure ImageMagick is in PATH on Windows and discover binary path
+IMAGEMAGICK_PATHS = [
   'C:/Program Files/ImageMagick-7.1.2-Q16-HDRI',
   'C:/Program Files/ImageMagick'
-]
-imgmagick_paths.each do |p|
+].freeze
+IMAGEMAGICK_PATHS.each do |p|
   if Dir.exist?(p) && !ENV['PATH'].include?(p)
     ENV['PATH'] = "#{p};#{ENV['PATH']}"
+  end
+end
+MAGICK_DIR = IMAGEMAGICK_PATHS.find { |d| Dir.exist?(d) }
+
+# Configure MiniMagick to find ImageMagick
+if MAGICK_DIR
+  begin
+    require 'mini_magick'
+    MiniMagick.configure do |config|
+      config.cli = :imagemagick
+      config.cli_path = MAGICK_DIR
+    end
+  rescue LoadError
+    # mini_magick not available — thumbnails/display won't be generated
   end
 end
 
@@ -194,15 +208,19 @@ module Jekyll
             image = MiniMagick::Image.open(src)
             image.resize "#{DISPLAY_WIDTH}x#{DISPLAY_WIDTH}>"
             image.quality DISPLAY_QUALITY
-            # Watermark: subtle, bottom-right, semi-transparent white
-            font_size = [(image.width * 0.033).to_i, 18].max
-            image.combine_options do |c|
-              c.gravity 'southeast'
-              c.fill 'rgba(255,255,255,0.28)'
-              c.pointsize font_size
-              c.annotate '+28+18', WATERMARK_TEXT
-            end
             image.write display_dest
+
+            # Watermark via ImageMagick mogrify (modifies file in-place)
+            font_size = [(image.width * 0.033).to_i, 18].max
+            magick = File.join(MAGICK_DIR, 'magick.exe')
+            magick = File.join(MAGICK_DIR, 'magick') unless File.exist?(magick)
+            system(magick, 'mogrify',
+                   '-gravity', 'southeast',
+                   '-fill', 'rgba(255,255,255,0.28)',
+                   '-pointsize', font_size.to_s,
+                   '-annotate', "+28+18", WATERMARK_TEXT,
+                   display_dest)
+
             Jekyll.logger.info "Photos:", "  → display #{display_dest}"
           rescue => e
             Jekyll.logger.warn "Photos:", "  ✗ display failed: #{filename} — #{e.message}"
