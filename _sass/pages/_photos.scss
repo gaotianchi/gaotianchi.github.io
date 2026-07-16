@@ -194,6 +194,14 @@
   }
 }
 
+.photos-lightbox-prev,
+.photos-lightbox-next {
+  &.disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+}
+
 .photos-lightbox-prev { left: 0.5rem; }
 .photos-lightbox-next { right: 0.5rem; }
 

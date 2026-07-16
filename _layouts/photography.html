@@ -85,6 +85,9 @@ layout: page
   var triggerEl = null;
 
   // Lightbox display image loading — show spinner until loaded
+  var prevBtn = lightbox.querySelector('.photos-lightbox-prev');
+  var nextBtn = lightbox.querySelector('.photos-lightbox-next');
+
   var spinner = document.getElementById('photos-lightbox-spinner');
   lightboxImg.addEventListener('load', function() {
     lightboxImg.classList.add('loaded');
@@ -93,13 +96,19 @@ layout: page
 
   function onKeydown(e) {
     if (e.key === 'Escape') hide();
-    if (e.key === 'ArrowLeft') show(currentIndex - 1);
-    if (e.key === 'ArrowRight') show(currentIndex + 1);
+    if (e.key === 'ArrowLeft' && currentIndex > 0) show(currentIndex - 1);
+    if (e.key === 'ArrowRight' && currentIndex < photoList.length - 1) show(currentIndex + 1);
+  }
+
+  function updateNav() {
+    prevBtn.classList.toggle('disabled', currentIndex <= 0);
+    nextBtn.classList.toggle('disabled', currentIndex >= photoList.length - 1);
   }
 
   function show(index) {
     if (index < 0 || index >= photoList.length) return;
     currentIndex = index;
+    updateNav();
     lightboxImg.classList.remove('loaded');
     spinner.classList.add('active');
     lightboxImg.src = photoList[index];
