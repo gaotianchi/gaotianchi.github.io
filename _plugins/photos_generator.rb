@@ -51,6 +51,9 @@ module Jekyll
     PER_PAGE = 5
 
     def generate(site)
+      # Remove stale photography pages (prevents duplicates during regeneration)
+      site.pages.reject! { |p| p.is_a?(PhotoPage) }
+
       photos_dir = File.join(site.source, '_photos')
 
       unless Dir.exist?(photos_dir)
