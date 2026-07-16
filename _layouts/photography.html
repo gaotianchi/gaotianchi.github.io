@@ -17,6 +17,7 @@ layout: page
          class="photos-item"
          data-full="{{ photo.display }}">
         <img src="{{ photo.thumb }}"
+             width="{{ photo.w }}" height="{{ photo.h }}"
              alt="" loading="lazy" />
       </a>
       {%- endfor -%}

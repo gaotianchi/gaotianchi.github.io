@@ -118,12 +118,15 @@ module Jekyll
 
         next if filenames.empty?
 
-        # Build complete URLs in Generator so Liquid never needs to concatenate
-        # path segments — eliminates the risk of group.dir being empty at render time.
+        # Build complete URLs + dimensions for aspect-ratio skeleton placeholders
         photos = filenames.map do |f|
+          thumb_path = File.join(entry[:path], 'thumbs', f)
+          dims = ImageDimensions.read(thumb_path) || [400, 300]
           {
             'thumb'   => "/_photos/#{entry[:dir]}/thumbs/#{f}",
-            'display' => "/_photos/#{entry[:dir]}/display/#{f}"
+            'display' => "/_photos/#{entry[:dir]}/display/#{f}",
+            'w' => dims[0],
+            'h' => dims[1]
           }
         end
 

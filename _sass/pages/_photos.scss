@@ -73,9 +73,8 @@
   }
 }
 
-// Skeleton — minimum height ensures visible placeholder while image loads
+// Skeleton — aspect ratio derived from img width/height attributes
 .photos-item:not(.loaded) {
-  min-height: 140px;
   --sk-base: #{$paper-white};
   --sk-pulse: #{darken($paper-white, 3%)};
   animation: photos-skeleton 2s ease-in-out infinite;
