@@ -519,4 +519,18 @@ body[data-theme="dark"] {
   .library-item-notes {
     color: $dark-gray;
   }
+
+  // Photography skeleton
+  @keyframes photos-skeleton-dark {
+    0%, 100% { background-color: $dark-paper; }
+    50%     { background-color: lighten($dark-paper, 5%); }
+  }
+
+  .photos-item:not(.loaded) {
+    animation-name: photos-skeleton-dark;
+  }
+
+  .photos-item {
+    background: $dark-paper;
+  }
 }

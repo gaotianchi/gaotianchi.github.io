@@ -43,13 +43,23 @@
   border-radius: $border-radius-sm;
   cursor: pointer;
   aspect-ratio: 1;
+  background: $paper-white;
 
   img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.35s ease;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.35s ease;
+  }
+
+  &.loaded {
+    background: transparent;
+
+    img {
+      opacity: 1;
+    }
   }
 
   &:hover img {
@@ -59,6 +69,30 @@
   &:focus-visible {
     outline: 2px solid $text-link-blue;
     outline-offset: 2px;
+  }
+}
+
+// Skeleton pulse — slow, subtle breathing animation
+@keyframes photos-skeleton {
+  0%, 100% { background-color: $paper-white; }
+  50% { background-color: darken($paper-white, 3%); }
+}
+
+.photos-item:not(.loaded) {
+  animation: photos-skeleton 2s ease-in-out infinite;
+}
+
+// Lightbox image loading fade
+.photos-lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: $border-radius-sm;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+
+  &.loaded {
+    opacity: 1;
   }
 }
 
@@ -107,13 +141,6 @@
     align-items: center;
     justify-content: center;
   }
-}
-
-.photos-lightbox-img {
-  max-width: 90vw;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: $border-radius-sm;
 }
 
 .photos-lightbox-close {
