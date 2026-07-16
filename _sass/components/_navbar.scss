@@ -150,7 +150,7 @@
     text-align: center;
     height: 50px;
     background-color: $white;
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid rgba($light, 0.6);
 
     a#mode {
       left: 10px;
@@ -172,26 +172,35 @@
       > svg {
         fill: $black;
         opacity: $opacity-medium;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+      .icon-hamburger {
+        opacity: 1;
+        transform: rotate(0deg);
       }
       .icon-close {
-        display: none;
+        opacity: 0;
+        transform: rotate(-90deg);
+        position: absolute;
+        top: 13px;
+        right: 13px;
       }
       &:hover {
         > svg {
           opacity: 1;
         }
       }
-      &:active {
-        -webkit-transform: scale(0.9, 0.9);
-        transform: scale(0.9, 0.9);
-      }
     }
 
-    input[type="checkbox"]:checked ~ label .icon-hamburger {
-      display: none;
-    }
-    input[type="checkbox"]:checked ~ label .icon-close {
-      display: inline;
+    input[type="checkbox"]:checked ~ label {
+      .icon-hamburger {
+        opacity: 0;
+        transform: rotate(90deg);
+      }
+      .icon-close {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
     }
 
     input[type="checkbox"]:not(:checked) ~ .trigger {
@@ -203,26 +212,46 @@
       position: fixed;
       left: 0;
       right: 0;
-      animation: 0.2s ease-in forwards fadein;
-      -webkit-animation: 0.2s ease-in forwards fadein;
+      top: 0;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: $white;
+      gap: 0.25rem;
+      background: rgba($white, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       height: 100vh;
       width: 100%;
-      top: 0;
     }
 
     .menu-link {
       display: block;
       box-sizing: border-box;
-      font-size: 1.1em;
+      font-size: 1.3em;
+      padding: 10px 0;
+      opacity: 0;
+      animation: 0.35s ease forwards nav-fade-in;
+
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.05}s;
+        }
+      }
 
       &:not(:last-child) {
         margin: 0;
-        padding: 2px 0;
+      }
+    }
+
+    @keyframes nav-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: $opacity-high;
+        transform: translateY(0);
       }
     }
   }

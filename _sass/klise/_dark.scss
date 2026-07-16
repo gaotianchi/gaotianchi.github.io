@@ -207,7 +207,7 @@ body[data-theme="dark"] {
       }
       @include media-query($on-mobile) {
         background-color: $dark-black;
-        border-color: $dark-light;
+        border-color: rgba($dark-light, 0.5);
 
         .menu-icon {
           > svg {
@@ -220,7 +220,7 @@ body[data-theme="dark"] {
         }
 
         input[type="checkbox"]:checked ~ .trigger {
-          background: $dark-black;
+          background: rgba($dark-black, 0.92);
         }
       }
     }
