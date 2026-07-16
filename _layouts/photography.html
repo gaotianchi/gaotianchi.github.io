@@ -64,13 +64,14 @@ layout: page
   // --- Skeleton loading: mark grid items as loaded when thumbnails arrive ---
   function markLoaded(el) { el.classList.add('loaded'); }
   for (var i = 0; i < items.length; i++) {
-    var itemEl = items[i];
-    var img = itemEl.querySelector('img');
-    if (img.complete) { markLoaded(itemEl); }
-    else {
-      img.addEventListener('load', function() { markLoaded(itemEl); });
-      img.addEventListener('error', function() { markLoaded(itemEl); });
-    }
+    (function(itemEl) {
+      var img = itemEl.querySelector('img');
+      if (img.complete) { markLoaded(itemEl); }
+      else {
+        img.addEventListener('load',  function() { markLoaded(itemEl); });
+        img.addEventListener('error', function() { markLoaded(itemEl); });
+      }
+    })(items[i]);
   }
 
   var photoList = [];
