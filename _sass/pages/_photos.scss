@@ -1,6 +1,8 @@
 // Photography page — 摄影作品展示
 
 .photos {
+  position: relative;
+  z-index: 1;
   max-width: $wide-size;
   margin: 0 auto;
   padding: 0;
