@@ -100,6 +100,15 @@ layout: page
     if (e.key === 'ArrowRight' && currentIndex < photoList.length - 1) show(currentIndex + 1);
   }
 
+  var touchStartX = 0;
+  function onTouchStart(e) { touchStartX = e.touches[0].clientX; }
+  function onTouchEnd(e) {
+    var delta = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(delta) < 50) return;
+    if (delta > 0) { show(currentIndex + 1); }
+    else          { show(currentIndex - 1); }
+  }
+
   function updateNav() {
     prevBtn.classList.toggle('disabled', currentIndex <= 0);
     nextBtn.classList.toggle('disabled', currentIndex >= photoList.length - 1);
@@ -116,6 +125,8 @@ layout: page
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onKeydown);
+    lightbox.addEventListener('touchstart', onTouchStart, { passive: true });
+    lightbox.addEventListener('touchend', onTouchEnd);
     lightbox.querySelector('.photos-lightbox-close').focus();
   }
 
@@ -126,6 +137,8 @@ layout: page
     lightboxImg.classList.remove('loaded');
     spinner.classList.remove('active');
     document.removeEventListener('keydown', onKeydown);
+    lightbox.removeEventListener('touchstart', onTouchStart);
+    lightbox.removeEventListener('touchend', onTouchEnd);
     if (triggerEl) { triggerEl.focus(); triggerEl = null; }
     else document.body.focus();
     lightbox.setAttribute('aria-hidden', 'true');
