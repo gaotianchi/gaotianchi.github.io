@@ -10,6 +10,12 @@
 #
 # 条目按 started 倒序排列，同一年份自动归组。
 
+- title: 诺曼底登陆72小时
+  creator: 安东尼·马拉斯
+  type: 电影
+  started: 2026-06-01
+  notes: 莫里亚蒂一改疯癫做派，精准演绎自信、专业、大度的稳重好男人。
+
 - title: 变形记
   creator: 卡夫卡
   type: 书籍
