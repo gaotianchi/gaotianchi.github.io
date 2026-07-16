@@ -171,11 +171,10 @@
       z-index: 1;
       > svg {
         fill: $black;
-        opacity: $opacity-medium;
         transition: opacity 0.25s ease, transform 0.25s ease;
       }
       .icon-hamburger {
-        opacity: 1;
+        opacity: $opacity-medium;
         transform: rotate(0deg);
       }
       .icon-close {
@@ -185,10 +184,8 @@
         top: 13px;
         right: 13px;
       }
-      &:hover {
-        > svg {
-          opacity: 1;
-        }
+      &:hover .icon-hamburger {
+        opacity: 1;
       }
     }
 
