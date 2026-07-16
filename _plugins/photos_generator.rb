@@ -105,13 +105,22 @@ module Jekyll
         thumbs_dir = File.join(entry[:path], 'thumbs')
         next unless Dir.exist?(thumbs_dir)
 
-        photos = Dir.entries(thumbs_dir)
+        filenames = Dir.entries(thumbs_dir)
           .select { |f| f.match?(/\.(jpg|jpeg|png|webp|gif)$/i) }
           .sort
 
-        next if photos.empty?
+        next if filenames.empty?
 
-        { 'date' => entry[:date], 'dir' => entry[:dir], 'photos' => photos }
+        # Build complete URLs in Generator so Liquid never needs to concatenate
+        # path segments — eliminates the risk of group.dir being empty at render time.
+        photos = filenames.map do |f|
+          {
+            'thumb'   => "/_photos/#{entry[:dir]}/thumbs/#{f}",
+            'display' => "/_photos/#{entry[:dir]}/display/#{f}"
+          }
+        end
+
+        { 'date' => entry[:date], 'photos' => photos }
       end
 
       if photo_groups.empty?
