@@ -10,6 +10,10 @@
   url: /library/
   external: false
 
+- title: 摄影
+  url: /photography/
+  external: false
+
 - title: 关于
   url: /about/
   external: false

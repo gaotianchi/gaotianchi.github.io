@@ -1,0 +1,118 @@
+---
+layout: default
+---
+
+{%- if page.photos.size > 0 -%}
+<div class="photos">
+
+{%- for group in page.photos -%}
+  {%- assign y = group.date | slice: 0, 4 -%}
+  {%- assign m = group.date | slice: 5, 2 | plus: 0 -%}
+  {%- assign d = group.date | slice: 8, 2 | plus: 0 -%}
+  <section class="photos-group">
+    <h2 class="photos-date">{{ y }}年{{ m }}月{{ d }}日</h2>
+    <div class="photos-grid">
+      {%- for photo in group.photos -%}
+      <a href="/_photos/{{ group.dir }}/{{ photo }}"
+         class="photos-item"
+         data-full="/_photos/{{ group.dir }}/{{ photo }}">
+        <img src="/_photos/{{ group.dir }}/thumbs/{{ photo }}"
+             alt="" loading="lazy" />
+      </a>
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endfor -%}
+
+</div>
+
+{%- if page.total_pages > 1 -%}
+<nav class="photos-pagination">
+  {%- if page.page_num > 1 -%}
+    {%- if page.page_num == 2 -%}
+    <a href="/photography/" class="photos-pagination-prev">← 上一页</a>
+    {%- else -%}
+    <a href="/photography/page/{{ page.page_num | minus: 1 }}/" class="photos-pagination-prev">← 上一页</a>
+    {%- endif -%}
+  {%- else -%}
+  <span class="photos-pagination-disabled">← 上一页</span>
+  {%- endif -%}
+  <span class="photos-pagination-info">{{ page.page_num }} / {{ page.total_pages }}</span>
+  {%- if page.page_num < page.total_pages -%}
+  <a href="/photography/page/{{ page.page_num | plus: 1 }}/" class="photos-pagination-next">下一页 →</a>
+  {%- else -%}
+  <span class="photos-pagination-disabled">下一页 →</span>
+  {%- endif -%}
+</nav>
+{%- endif -%}
+
+<!-- Lightbox -->
+<div class="photos-lightbox" id="photos-lightbox" aria-hidden="true">
+  <button class="photos-lightbox-close" aria-label="关闭">&times;</button>
+  <button class="photos-lightbox-prev" aria-label="上一张">&lsaquo;</button>
+  <button class="photos-lightbox-next" aria-label="下一张">&rsaquo;</button>
+  <img src="" alt="" class="photos-lightbox-img" id="photos-lightbox-img" />
+</div>
+
+<script>
+(function() {
+  var items = document.querySelectorAll('.photos-item');
+  if (!items.length) return;
+
+  var photoList = [];
+  for (var i = 0; i < items.length; i++) {
+    photoList.push(items[i].getAttribute('data-full'));
+  }
+
+  var lightbox   = document.getElementById('photos-lightbox');
+  var lightboxImg = document.getElementById('photos-lightbox-img');
+  var currentIndex = -1;
+
+  function show(index) {
+    if (index < 0 || index >= photoList.length) return;
+    currentIndex = index;
+    lightboxImg.src = photoList[index];
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hide() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  }
+
+  for (var i = 0; i < items.length; i++) {
+    (function(idx) {
+      items[idx].addEventListener('click', function(e) {
+        e.preventDefault();
+        show(idx);
+      });
+    })(i);
+  }
+
+  lightbox.querySelector('.photos-lightbox-close').addEventListener('click', hide);
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) hide();
+  });
+  lightbox.querySelector('.photos-lightbox-prev').addEventListener('click', function() {
+    show(currentIndex - 1);
+  });
+  lightbox.querySelector('.photos-lightbox-next').addEventListener('click', function() {
+    show(currentIndex + 1);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') show(currentIndex - 1);
+    if (e.key === 'ArrowRight') show(currentIndex + 1);
+  });
+})();
+</script>
+
+{%- else -%}
+<div class="photos-empty">还没有照片，期待你的第一张作品。</div>
+{%- endif -%}
