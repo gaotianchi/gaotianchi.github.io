@@ -51,6 +51,7 @@ layout: default
   <button class="photos-lightbox-close" aria-label="关闭">&times;</button>
   <button class="photos-lightbox-prev" aria-label="上一张">&lsaquo;</button>
   <button class="photos-lightbox-next" aria-label="下一张">&rsaquo;</button>
+  <div class="photos-lightbox-spinner" id="photos-lightbox-spinner"></div>
   <img src="" alt="" class="photos-lightbox-img" id="photos-lightbox-img" />
 </div>
 
@@ -78,13 +79,18 @@ layout: default
   var currentIndex = -1;
   var triggerEl = null;
 
-  // Lightbox display image loading
-  lightboxImg.addEventListener('load', function() { lightboxImg.classList.add('loaded'); });
+  // Lightbox display image loading — show spinner until loaded
+  var spinner = document.getElementById('photos-lightbox-spinner');
+  lightboxImg.addEventListener('load', function() {
+    lightboxImg.classList.add('loaded');
+    spinner.classList.remove('active');
+  });
 
   function show(index) {
     if (index < 0 || index >= photoList.length) return;
     currentIndex = index;
     lightboxImg.classList.remove('loaded');
+    spinner.classList.add('active');
     lightboxImg.src = photoList[index];
     lightbox.setAttribute('aria-hidden', 'false');
     lightbox.classList.add('active');
@@ -97,6 +103,7 @@ layout: default
     document.body.style.overflow = '';
     lightboxImg.src = '';
     lightboxImg.classList.remove('loaded');
+    spinner.classList.remove('active');
     if (triggerEl) { triggerEl.focus(); triggerEl = null; }
     else document.body.focus();
     lightbox.setAttribute('aria-hidden', 'true');
