@@ -155,35 +155,48 @@ module Jekyll
         thumb_dest   = File.join(thumbs_dir, "#{base}.jpg")
         display_dest = File.join(display_dir, "#{base}.jpg")
 
-        # Generate thumbnail if missing or outdated
-        unless File.exist?(thumb_dest) && File.mtime(thumb_dest) >= File.mtime(src)
+        # --- Dedup check: skip if destination exists, is not older than source,
+        #     and has non-zero file size (guards against corrupted partial writes). ---
+        thumb_current   = File.exist?(thumb_dest) &&
+                          File.size(thumb_dest) > 0 &&
+                          File.mtime(thumb_dest) >= File.mtime(src)
+        display_current = File.exist?(display_dest) &&
+                          File.size(display_dest) > 0 &&
+                          File.mtime(display_dest) >= File.mtime(src)
+
+        unless thumb_current && display_current
+          Jekyll.logger.info "Photos:", "Processing #{filename}..."
+        end
+
+        # Generate thumbnail if needed
+        unless thumb_current
           begin
             require 'mini_magick'
             image = MiniMagick::Image.open(src)
             image.resize "#{THUMB_WIDTH}x#{THUMB_WIDTH}>"
             image.quality THUMB_QUALITY
             image.write thumb_dest
-            Jekyll.logger.info "Photos:", "Generated #{thumb_dest}"
+            Jekyll.logger.info "Photos:", "  → thumbnail #{thumb_dest}"
           rescue LoadError
             Jekyll.logger.warn "Photos:", "mini_magick not installed."
             return
           rescue => e
-            Jekyll.logger.warn "Photos:", "Failed: #{filename} — #{e.message}"
+            Jekyll.logger.warn "Photos:", "  ✗ failed: #{filename} — #{e.message}"
             next
           end
         end
 
-        # Generate display version if missing or outdated
-        unless File.exist?(display_dest) && File.mtime(display_dest) >= File.mtime(src)
+        # Generate display version if needed
+        unless display_current
           begin
             require 'mini_magick'
             image = MiniMagick::Image.open(src)
             image.resize "#{DISPLAY_WIDTH}x#{DISPLAY_WIDTH}>"
             image.quality DISPLAY_QUALITY
             image.write display_dest
-            Jekyll.logger.info "Photos:", "Generated display #{display_dest}"
+            Jekyll.logger.info "Photos:", "  → display #{display_dest}"
           rescue => e
-            Jekyll.logger.warn "Photos:", "Display failed: #{filename} — #{e.message}"
+            Jekyll.logger.warn "Photos:", "  ✗ display failed: #{filename} — #{e.message}"
           end
         end
 
