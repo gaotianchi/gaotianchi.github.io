@@ -67,6 +67,7 @@ layout: default
   var lightbox   = document.getElementById('photos-lightbox');
   var lightboxImg = document.getElementById('photos-lightbox-img');
   var currentIndex = -1;
+  var triggerEl = null;
 
   function show(index) {
     if (index < 0 || index >= photoList.length) return;
@@ -75,19 +76,24 @@ layout: default
     lightbox.setAttribute('aria-hidden', 'false');
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+    lightbox.querySelector('.photos-lightbox-close').focus();
   }
 
   function hide() {
     lightbox.classList.remove('active');
-    lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     lightboxImg.src = '';
+    // Move focus out before hiding from accessibility tree
+    if (triggerEl) { triggerEl.focus(); triggerEl = null; }
+    else document.body.focus();
+    lightbox.setAttribute('aria-hidden', 'true');
   }
 
   for (var i = 0; i < items.length; i++) {
     (function(idx) {
       items[idx].addEventListener('click', function(e) {
         e.preventDefault();
+        triggerEl = this;
         show(idx);
       });
     })(i);
