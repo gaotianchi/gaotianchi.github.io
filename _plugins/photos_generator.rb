@@ -122,6 +122,16 @@ module Jekyll
         photos = filenames.map do |f|
           thumb_path = File.join(entry[:path], 'thumbs', f)
           w, h = read_jpeg_dimensions(thumb_path) || [400, 300]
+          # If the source photo has EXIF rotation 90°/270°, swap dimensions
+          # so the skeleton placeholder matches the browser's displayed orientation.
+          src_path = File.join(entry[:path], f.sub(/\.jpg$/i, '') + '.*')
+          src_file = Dir.glob(src_path).find { |g| File.file?(g) }
+          if src_file
+            orientation = read_exif_orientation(src_file)
+            if [6, 8].include?(orientation)
+              w, h = h, w
+            end
+          end
           {
             'thumb'   => "/_photos/#{entry[:dir]}/thumbs/#{f}",
             'display' => "/_photos/#{entry[:dir]}/display/#{f}",
@@ -175,6 +185,52 @@ module Jekyll
       nil
     rescue
       nil
+    end
+
+    # Read EXIF orientation from JPEG. Returns 1-8 or nil.
+    # Values 6 (90°CW) and 8 (270°CW) mean width/height are swapped visually.
+    def read_exif_orientation(path)
+      File.open(path, 'rb') do |f|
+        return nil unless f.read(2).bytes == [0xFF, 0xD8] # SOI
+        while (marker = f.read(2))
+          break unless marker&.bytesize == 2 && marker[0].ord == 0xFF
+          code = marker[1].ord
+          break if code == 0xDA # SOS
+          seg_len = f.read(2)&.unpack1('n') || 0
+          next unless seg_len >= 2
+
+          if code == 0xE1
+            # APP1: check for Exif identifier
+            id = f.read(6)
+            next unless id == "Exif\x00\x00"
+
+            # TIFF header (8 bytes): byte-order + magic + IFD0 offset
+            tiff  = f.read(8)
+            little = tiff[0..1] == 'II'
+            # IFD0 offset is always 8 for JPEG EXIF, placing IFD0 immediately after
+            # the TIFF header. Read IFD0 entry count.
+            entry_count = read_u16(f, little)
+            entry_count.times do
+              tag = read_u16(f, little)
+              f.read(6) # type(2) + count(4)
+              val = read_u16(f, little) # value (orientation fits in 2 bytes)
+              f.read(2)                  # padding to 12-byte entry
+              return val if tag == 0x0112
+            end
+            break
+          else
+            f.seek(seg_len - 2, IO::SEEK_CUR)
+          end
+        end
+      end
+      nil
+    rescue
+      nil
+    end
+
+    def read_u16(f, little)
+      b = f.read(2)
+      little ? b.unpack1('v') : b.unpack1('n')
     end
 
     def generate_thumbnails(site, dir, dir_name, magick_available)
