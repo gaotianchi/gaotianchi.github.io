@@ -27,19 +27,20 @@ layout: page
 </div>
 
 {%- if page.total_pages > 1 -%}
+{%- assign photos_base = page.url | split: '/page/' | first | append: '/' -%}
 <nav class="photos-pagination">
   {%- if page.page_num > 1 -%}
     {%- if page.page_num == 2 -%}
-    <a href="/photography/" class="photos-pagination-prev">← 上一页</a>
+    <a href="{{ photos_base }}" class="photos-pagination-prev">← 上一页</a>
     {%- else -%}
-    <a href="/photography/page/{{ page.page_num | minus: 1 }}/" class="photos-pagination-prev">← 上一页</a>
+    <a href="{{ photos_base }}page/{{ page.page_num | minus: 1 }}/" class="photos-pagination-prev">← 上一页</a>
     {%- endif -%}
   {%- else -%}
   <span class="photos-pagination-disabled">← 上一页</span>
   {%- endif -%}
   <span class="photos-pagination-info">{{ page.page_num }} / {{ page.total_pages }}</span>
   {%- if page.page_num < page.total_pages -%}
-  <a href="/photography/page/{{ page.page_num | plus: 1 }}/" class="photos-pagination-next">下一页 →</a>
+  <a href="{{ photos_base }}page/{{ page.page_num | plus: 1 }}/" class="photos-pagination-next">下一页 →</a>
   {%- else -%}
   <span class="photos-pagination-disabled">下一页 →</span>
   {%- endif -%}
@@ -63,10 +64,13 @@ layout: page
   // --- Skeleton loading: mark grid items as loaded when thumbnails arrive ---
   function markLoaded(el) { el.classList.add('loaded'); }
   for (var i = 0; i < items.length; i++) {
-    var img = items[i].querySelector('img');
-    if (img.complete) { markLoaded(items[i]); }
-    else { img.addEventListener('load', function() { markLoaded(this.parentElement); }); }
-    img.addEventListener('error', function() { markLoaded(this.parentElement); });
+    var itemEl = items[i];
+    var img = itemEl.querySelector('img');
+    if (img.complete) { markLoaded(itemEl); }
+    else {
+      img.addEventListener('load', function() { markLoaded(itemEl); });
+      img.addEventListener('error', function() { markLoaded(itemEl); });
+    }
   }
 
   var photoList = [];
@@ -86,6 +90,12 @@ layout: page
     spinner.classList.remove('active');
   });
 
+  function onKeydown(e) {
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') show(currentIndex - 1);
+    if (e.key === 'ArrowRight') show(currentIndex + 1);
+  }
+
   function show(index) {
     if (index < 0 || index >= photoList.length) return;
     currentIndex = index;
@@ -95,6 +105,7 @@ layout: page
     lightbox.setAttribute('aria-hidden', 'false');
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKeydown);
     lightbox.querySelector('.photos-lightbox-close').focus();
   }
 
@@ -104,6 +115,7 @@ layout: page
     lightboxImg.src = '';
     lightboxImg.classList.remove('loaded');
     spinner.classList.remove('active');
+    document.removeEventListener('keydown', onKeydown);
     if (triggerEl) { triggerEl.focus(); triggerEl = null; }
     else document.body.focus();
     lightbox.setAttribute('aria-hidden', 'true');
@@ -128,13 +140,6 @@ layout: page
   });
   lightbox.querySelector('.photos-lightbox-next').addEventListener('click', function() {
     show(currentIndex + 1);
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape') hide();
-    if (e.key === 'ArrowLeft') show(currentIndex - 1);
-    if (e.key === 'ArrowRight') show(currentIndex + 1);
   });
 })();
 </script>

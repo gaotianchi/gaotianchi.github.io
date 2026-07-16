@@ -1,18 +1,17 @@
 # frozen_string_literal: true
 
-# Ensure ImageMagick is in PATH on Windows and discover binary path
-IMAGEMAGICK_PATHS = [
-  'C:/Program Files/ImageMagick-7.1.2-Q16-HDRI',
-  'C:/Program Files/ImageMagick'
-].freeze
-IMAGEMAGICK_PATHS.each do |p|
-  if Dir.exist?(p) && !ENV['PATH'].include?(p)
-    ENV['PATH'] = "#{p};#{ENV['PATH']}"
-  end
-end
+# Locate ImageMagick across platforms. Committed display images already carry
+# watermarks, so CI builds never call ImageMagick — it is only needed when a
+# new photo is added locally without pre-generated derivatives.
+IMAGEMAGICK_PATHS = ([
+  Dir.glob('C:/Program Files/ImageMagick*').map { |d| d.tr('\\', '/') },
+  '/usr/bin',
+  '/usr/local/bin',
+  '/opt/homebrew/bin'
+].flatten + ['C:/Program Files/ImageMagick']).freeze
+
 MAGICK_DIR = IMAGEMAGICK_PATHS.find { |d| Dir.exist?(d) }
 
-# Configure MiniMagick to find ImageMagick
 if MAGICK_DIR
   begin
     require 'mini_magick'
@@ -21,9 +20,14 @@ if MAGICK_DIR
       config.cli_path = MAGICK_DIR
     end
   rescue LoadError
-    # mini_magick not available — thumbnails/display won't be generated
+    # mini_magick not available — new photos will skip thumbnail/display generation
   end
 end
+
+# Shared constants (DRY — defined once, referenced everywhere)
+DATE_REGEX  = /\A(\d{4})-(\d{1,2})-(\d{1,2})\z/
+IMAGE_EXTENSIONS = %w[.jpg .jpeg .png .webp .gif].freeze
+IMAGE_REGEX = /\.(jpg|jpeg|png|webp|gif)$/i
 
 module Jekyll
   # Programmatic page for photography — bypasses file reading
@@ -56,31 +60,12 @@ module Jekyll
     end
   end
 
-  # Ensure display/thumbs directories exist in _site before static files are written
-  Jekyll::Hooks.register :site, :pre_render do |site|
-    photos_dir = File.join(site.source, '_photos')
-    next unless Dir.exist?(photos_dir)
-
-    Dir.entries(photos_dir).each do |d|
-      next unless d.match?(/\A\d{4}-\d{1,2}-\d{1,2}\z/)
-      src = File.join(photos_dir, d)
-      next unless File.directory?(src)
-
-      %w[thumbs display].each do |sub|
-        src_sub = File.join(src, sub)
-        next unless Dir.exist?(src_sub)
-        dst_sub = File.join(site.dest, '_photos', d, sub)
-        FileUtils.mkdir_p(dst_sub)
-      end
-    end
-  end
-
   class PhotosGenerator < Generator
     safe false
     priority :low
 
-    THUMB_WIDTH   = 400
-    THUMB_QUALITY = 80
+    THUMB_WIDTH     = 400
+    THUMB_QUALITY   = 80
     DISPLAY_WIDTH   = 1600
     DISPLAY_QUALITY = 75
     WATERMARK_TEXT  = 'www.gaotianchi.com'
@@ -89,6 +74,13 @@ module Jekyll
     def generate(site)
       # Remove stale photography pages (prevents duplicates during regeneration)
       site.pages.reject! { |p| p.is_a?(PhotoPage) }
+
+      # Check mini_magick availability once, early — avoids repeated failures in the loop
+      magick_available = defined?(MiniMagick) && MAGICK_DIR
+      unless magick_available
+        Jekyll.logger.warn "Photos:", "ImageMagick not found — new photos will lack thumbnails/display/watermark."
+        Jekyll.logger.warn "Photos:", "Searched: #{IMAGEMAGICK_PATHS.join(', ')}"
+      end
 
       photos_dir = File.join(site.source, '_photos')
 
@@ -100,7 +92,7 @@ module Jekyll
       # Scan for date directories, normalize format
       date_entries = []
       Dir.entries(photos_dir).each do |d|
-        m = d.match(/\A(\d{4})-(\d{1,2})-(\d{1,2})\z/)
+        m = d.match(DATE_REGEX)
         next unless m
         full = File.join(photos_dir, d)
         next unless File.directory?(full)
@@ -115,13 +107,13 @@ module Jekyll
       end
 
       photo_groups = date_entries.filter_map do |entry|
-        generate_thumbnails(site, entry[:path], entry[:dir])
+        generate_thumbnails(site, entry[:path], entry[:dir], magick_available)
 
         thumbs_dir = File.join(entry[:path], 'thumbs')
         next unless Dir.exist?(thumbs_dir)
 
         filenames = Dir.entries(thumbs_dir)
-          .select { |f| f.match?(/\.(jpg|jpeg|png|webp|gif)$/i) }
+          .select { |f| f.match?(IMAGE_REGEX) }
           .sort
 
         next if filenames.empty?
@@ -154,15 +146,14 @@ module Jekyll
 
     private
 
-    def generate_thumbnails(site, dir, dir_name)
-      thumbs_dir = File.join(dir, 'thumbs')
+    def generate_thumbnails(site, dir, dir_name, magick_available)
+      thumbs_dir  = File.join(dir, 'thumbs')
       display_dir = File.join(dir, 'display')
       FileUtils.mkdir_p(thumbs_dir)
       FileUtils.mkdir_p(display_dir)
 
-      image_exts = %w[.jpg .jpeg .png .webp .gif]
       image_files = Dir.entries(dir)
-        .select { |f| image_exts.include?(File.extname(f).downcase) }
+        .select { |f| IMAGE_EXTENSIONS.include?(File.extname(f).downcase) }
 
       image_files.each do |filename|
         src  = File.join(dir, filename)
@@ -170,8 +161,7 @@ module Jekyll
         thumb_dest   = File.join(thumbs_dir, "#{base}.jpg")
         display_dest = File.join(display_dir, "#{base}.jpg")
 
-        # --- Dedup check: skip if destination exists, is not older than source,
-        #     and has non-zero file size (guards against corrupted partial writes). ---
+        # ── Dedup check ──
         thumb_current   = File.exist?(thumb_dest) &&
                           File.size(thumb_dest) > 0 &&
                           File.mtime(thumb_dest) >= File.mtime(src)
@@ -179,63 +169,73 @@ module Jekyll
                           File.size(display_dest) > 0 &&
                           File.mtime(display_dest) >= File.mtime(src)
 
-        unless thumb_current && display_current
-          Jekyll.logger.info "Photos:", "Processing #{filename}..."
-        end
+        # ── Track per-file success — only register static files for generated variants ──
+        thumb_ok   = thumb_current
+        display_ok = display_current
 
-        # Generate thumbnail if needed
+        # ── Generate thumbnail ──
         unless thumb_current
-          begin
-            require 'mini_magick'
-            image = MiniMagick::Image.open(src)
-            image.resize "#{THUMB_WIDTH}x#{THUMB_WIDTH}>"
-            image.quality THUMB_QUALITY
-            image.write thumb_dest
-            Jekyll.logger.info "Photos:", "  → thumbnail #{thumb_dest}"
-          rescue LoadError
-            Jekyll.logger.warn "Photos:", "mini_magick not installed."
-            return
-          rescue => e
-            Jekyll.logger.warn "Photos:", "  ✗ failed: #{filename} — #{e.message}"
-            next
-          end
+          thumb_ok = if magick_available
+                       begin
+                         image = MiniMagick::Image.open(src)
+                         image.resize "#{THUMB_WIDTH}x#{THUMB_WIDTH}>"
+                         image.quality THUMB_QUALITY
+                         image.write thumb_dest
+                         Jekyll.logger.info "Photos:", "  → thumbnail #{File.basename(thumb_dest)}"
+                         true
+                       rescue => e
+                         Jekyll.logger.warn "Photos:", "  ✗ thumbnail failed: #{filename} — #{e.message}"
+                         false
+                       end
+                     else
+                       false
+                     end
         end
 
-        # Generate display version if needed
+        # ── Generate display version + watermark ──
         unless display_current
-          begin
-            require 'mini_magick'
-            image = MiniMagick::Image.open(src)
-            image.resize "#{DISPLAY_WIDTH}x#{DISPLAY_WIDTH}>"
-            image.quality DISPLAY_QUALITY
-            image.write display_dest
+          display_ok = if magick_available
+                         begin
+                           image = MiniMagick::Image.open(src)
+                           image.resize "#{DISPLAY_WIDTH}x#{DISPLAY_WIDTH}>"
+                           image.quality DISPLAY_QUALITY
+                           image.write display_dest
 
-            # Watermark via ImageMagick mogrify (modifies file in-place)
-            font_size = [(image.width * 0.033).to_i, 18].max
-            magick = File.join(MAGICK_DIR, 'magick.exe')
-            magick = File.join(MAGICK_DIR, 'magick') unless File.exist?(magick)
-            system(magick, 'mogrify',
-                   '-gravity', 'southeast',
-                   '-fill', 'rgba(255,255,255,0.28)',
-                   '-pointsize', font_size.to_s,
-                   '-annotate', "+28+18", WATERMARK_TEXT,
-                   display_dest)
+                           # Watermark via ImageMagick mogrify (modifies file in-place)
+                           font_size = [(image.width * 0.033).to_i, 18].max
+                           magick = File.join(MAGICK_DIR, 'magick.exe')
+                           magick = File.join(MAGICK_DIR, 'magick') unless File.exist?(magick)
+                           unless system(magick, 'mogrify',
+                                         '-gravity', 'southeast',
+                                         '-fill', 'rgba(255,255,255,0.28)',
+                                         '-pointsize', font_size.to_s,
+                                         '-annotate', "+28+18", WATERMARK_TEXT,
+                                         display_dest)
+                             Jekyll.logger.warn "Photos:", "  ✗ watermark failed for #{File.basename(display_dest)}"
+                           end
 
-            Jekyll.logger.info "Photos:", "  → display #{display_dest}"
-          rescue => e
-            Jekyll.logger.warn "Photos:", "  ✗ display failed: #{filename} — #{e.message}"
-          end
+                           Jekyll.logger.info "Photos:", "  → display #{File.basename(display_dest)}"
+                           true
+                         rescue => e
+                           Jekyll.logger.warn "Photos:", "  ✗ display failed: #{filename} — #{e.message}"
+                           false
+                         end
+                       else
+                         false
+                       end
         end
 
-        # Register thumbnail as static file
-        site.static_files << StaticFile.new(site, site.source,
-                                            "_photos/#{dir_name}/thumbs",
-                                            "#{base}.jpg")
-
-        # Register display version as static file
-        site.static_files << StaticFile.new(site, site.source,
-                                            "_photos/#{dir_name}/display",
-                                            "#{base}.jpg")
+        # ── Register static files only for successfully generated variants ──
+        if thumb_ok
+          site.static_files << StaticFile.new(site, site.source,
+                                              "_photos/#{dir_name}/thumbs",
+                                              "#{base}.jpg")
+        end
+        if display_ok
+          site.static_files << StaticFile.new(site, site.source,
+                                              "_photos/#{dir_name}/display",
+                                              "#{base}.jpg")
+        end
       end
     end
   end

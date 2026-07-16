@@ -520,17 +520,25 @@ body[data-theme="dark"] {
     color: $dark-gray;
   }
 
-  // Photography skeleton
-  @keyframes photos-skeleton-dark {
-    0%, 100% { background-color: $dark-paper; }
-    50%     { background-color: lighten($dark-paper, 5%); }
-  }
-
+  // Photography — dark mode overrides
   .photos-item:not(.loaded) {
-    animation-name: photos-skeleton-dark;
+    --sk-base: #{$dark-paper};
+    --sk-pulse: #{lighten($dark-paper, 5%)};
   }
 
   .photos-item {
     background: $dark-paper;
+  }
+
+  .photos-date {
+    color: $dark-gray;
+  }
+
+  .photos-pagination-info {
+    color: $dark-gray;
+  }
+
+  .photos-empty {
+    color: $dark-gray;
   }
 }
