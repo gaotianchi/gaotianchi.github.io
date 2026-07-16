@@ -114,7 +114,9 @@ layout: page
     nextBtn.classList.toggle('disabled', currentIndex >= photoList.length - 1);
   }
 
-  function show(index) {
+  var historyPushed = false;
+
+  function show(index, replace) {
     if (index < 0 || index >= photoList.length) return;
     currentIndex = index;
     updateNav();
@@ -128,9 +130,18 @@ layout: page
     lightbox.addEventListener('touchstart', onTouchStart, { passive: true });
     lightbox.addEventListener('touchend', onTouchEnd);
     lightbox.querySelector('.photos-lightbox-close').focus();
+
+    // Update browser URL so back button closes lightbox instead of leaving the page
+    var hash = '#photo-' + index;
+    if (historyPushed) {
+      history.replaceState({ lightbox: index }, '', hash);
+    } else {
+      history.pushState({ lightbox: index }, '', hash);
+      historyPushed = true;
+    }
   }
 
-  function hide() {
+  function hide(fromPopstate) {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
     lightboxImg.src = '';
@@ -142,7 +153,20 @@ layout: page
     if (triggerEl) { triggerEl.focus(); triggerEl = null; }
     else document.body.focus();
     lightbox.setAttribute('aria-hidden', 'true');
+
+    // Clean up URL: if user closed manually, restore clean URL without navigating
+    if (!fromPopstate) {
+      history.replaceState(null, '', window.location.pathname);
+    }
+    historyPushed = false;
   }
+
+  // Back button → close lightbox
+  window.addEventListener('popstate', function(e) {
+    if (lightbox.classList.contains('active')) {
+      hide(true);
+    }
+  });
 
   for (var i = 0; i < items.length; i++) {
     (function(idx) {
