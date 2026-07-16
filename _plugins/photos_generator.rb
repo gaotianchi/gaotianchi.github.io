@@ -118,15 +118,15 @@ module Jekyll
 
         next if filenames.empty?
 
-        # Build complete URLs + dimensions for aspect-ratio skeleton placeholders
+        # Build complete URLs + dimensions for aspect-ratio skeleton placeholders.
         photos = filenames.map do |f|
           thumb_path = File.join(entry[:path], 'thumbs', f)
-          dims = ImageDimensions.read(thumb_path) || [400, 300]
+          w, h = read_jpeg_dimensions(thumb_path) || [400, 300]
           {
             'thumb'   => "/_photos/#{entry[:dir]}/thumbs/#{f}",
             'display' => "/_photos/#{entry[:dir]}/display/#{f}",
-            'w' => dims[0],
-            'h' => dims[1]
+            'w' => w,
+            'h' => h
           }
         end
 
@@ -148,6 +148,34 @@ module Jekyll
     end
 
     private
+
+    # Pure-Ruby JPEG dimension reader — works without ImageMagick.
+    # Returns [width, height] or [400, 300] on failure.
+    def read_jpeg_dimensions(path)
+      File.open(path, 'rb') do |f|
+        return nil unless f.read(2).bytes == [0xFF, 0xD8] # SOI marker
+        f.seek(2)
+        while f.pos < f.size - 9
+          b = f.read(2)
+          break unless b&.bytesize == 2 && b[0].ord == 0xFF
+          code = b[1].ord
+          break if [0xDA, 0xD9].include?(code) # SOS or EOI
+          seg_len = f.read(2)&.unpack1('n')
+          break unless seg_len && seg_len >= 2
+          if [0xC0, 0xC1, 0xC2].include?(code) # SOF markers
+            data = f.read(5)
+            h = data[1..2].unpack1('n')
+            w = data[3..4].unpack1('n')
+            return [w, h] if w && h && w > 0
+          else
+            f.seek(seg_len - 2, IO::SEEK_CUR)
+          end
+        end
+      end
+      nil
+    rescue
+      nil
+    end
 
     def generate_thumbnails(site, dir, dir_name, magick_available)
       thumbs_dir  = File.join(dir, 'thumbs')
@@ -181,6 +209,7 @@ module Jekyll
           thumb_ok = if magick_available
                        begin
                          image = MiniMagick::Image.open(src)
+                         image.auto_orient
                          image.resize "#{THUMB_WIDTH}x#{THUMB_WIDTH}>"
                          image.quality THUMB_QUALITY
                          image.write thumb_dest
@@ -200,6 +229,7 @@ module Jekyll
           display_ok = if magick_available
                          begin
                            image = MiniMagick::Image.open(src)
+                           image.auto_orient
                            image.resize "#{DISPLAY_WIDTH}x#{DISPLAY_WIDTH}>"
                            image.quality DISPLAY_QUALITY
                            image.write display_dest
