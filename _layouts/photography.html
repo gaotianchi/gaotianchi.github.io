@@ -13,9 +13,9 @@ layout: default
     <h2 class="photos-date">{{ y }}年{{ m }}月{{ d }}日</h2>
     <div class="photos-grid">
       {%- for photo in group.photos -%}
-      <a href="/_photos/{{ group.dir }}/{{ photo }}"
+      <a href="/_photos/{{ group.dir }}/display/{{ photo }}"
          class="photos-item"
-         data-full="/_photos/{{ group.dir }}/{{ photo }}">
+         data-full="/_photos/{{ group.dir }}/display/{{ photo }}">
         <img src="/_photos/{{ group.dir }}/thumbs/{{ photo }}"
              alt="" loading="lazy" />
       </a>

@@ -42,12 +42,33 @@ module Jekyll
     end
   end
 
+  # Ensure display/thumbs directories exist in _site before static files are written
+  Jekyll::Hooks.register :site, :pre_render do |site|
+    photos_dir = File.join(site.source, '_photos')
+    next unless Dir.exist?(photos_dir)
+
+    Dir.entries(photos_dir).each do |d|
+      next unless d.match?(/\A\d{4}-\d{1,2}-\d{1,2}\z/)
+      src = File.join(photos_dir, d)
+      next unless File.directory?(src)
+
+      %w[thumbs display].each do |sub|
+        src_sub = File.join(src, sub)
+        next unless Dir.exist?(src_sub)
+        dst_sub = File.join(site.dest, '_photos', d, sub)
+        FileUtils.mkdir_p(dst_sub)
+      end
+    end
+  end
+
   class PhotosGenerator < Generator
     safe false
     priority :low
 
-    THUMB_WIDTH  = 400
+    THUMB_WIDTH   = 400
     THUMB_QUALITY = 80
+    DISPLAY_WIDTH   = 1600
+    DISPLAY_QUALITY = 75
     PER_PAGE = 5
 
     def generate(site)
@@ -111,7 +132,9 @@ module Jekyll
 
     def generate_thumbnails(site, dir, dir_name)
       thumbs_dir = File.join(dir, 'thumbs')
+      display_dir = File.join(dir, 'display')
       FileUtils.mkdir_p(thumbs_dir)
+      FileUtils.mkdir_p(display_dir)
 
       image_exts = %w[.jpg .jpeg .png .webp .gif]
       image_files = Dir.entries(dir)
@@ -120,17 +143,18 @@ module Jekyll
       image_files.each do |filename|
         src  = File.join(dir, filename)
         base = File.basename(filename, File.extname(filename))
-        dest = File.join(thumbs_dir, "#{base}.jpg")
+        thumb_dest   = File.join(thumbs_dir, "#{base}.jpg")
+        display_dest = File.join(display_dir, "#{base}.jpg")
 
         # Generate thumbnail if missing or outdated
-        unless File.exist?(dest) && File.mtime(dest) >= File.mtime(src)
+        unless File.exist?(thumb_dest) && File.mtime(thumb_dest) >= File.mtime(src)
           begin
             require 'mini_magick'
             image = MiniMagick::Image.open(src)
             image.resize "#{THUMB_WIDTH}x#{THUMB_WIDTH}>"
             image.quality THUMB_QUALITY
-            image.write dest
-            Jekyll.logger.info "Photos:", "Generated #{dest}"
+            image.write thumb_dest
+            Jekyll.logger.info "Photos:", "Generated #{thumb_dest}"
           rescue LoadError
             Jekyll.logger.warn "Photos:", "mini_magick not installed."
             return
@@ -140,15 +164,29 @@ module Jekyll
           end
         end
 
-        # Register thumbnail as static file (whether newly generated or pre-existing)
+        # Generate display version if missing or outdated
+        unless File.exist?(display_dest) && File.mtime(display_dest) >= File.mtime(src)
+          begin
+            require 'mini_magick'
+            image = MiniMagick::Image.open(src)
+            image.resize "#{DISPLAY_WIDTH}x#{DISPLAY_WIDTH}>"
+            image.quality DISPLAY_QUALITY
+            image.write display_dest
+            Jekyll.logger.info "Photos:", "Generated display #{display_dest}"
+          rescue => e
+            Jekyll.logger.warn "Photos:", "Display failed: #{filename} — #{e.message}"
+          end
+        end
+
+        # Register thumbnail as static file
         site.static_files << StaticFile.new(site, site.source,
                                             "_photos/#{dir_name}/thumbs",
                                             "#{base}.jpg")
 
-        # Register original photo as static file
+        # Register display version as static file
         site.static_files << StaticFile.new(site, site.source,
-                                            "_photos/#{dir_name}",
-                                            filename)
+                                            "_photos/#{dir_name}/display",
+                                            "#{base}.jpg")
       end
     end
   end
