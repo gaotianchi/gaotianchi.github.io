@@ -177,7 +177,7 @@ body[data-theme="dark"] {
 
   // Navbar
   .navbar {
-    border-color: $dark-light;
+    border-color: rgba($dark-light, 0.5);
     .menu {
       a#mode {
         .mode-sunny {

@@ -6,7 +6,7 @@
   position: relative;
   margin-right: auto;
   margin-left: auto;
-  border-bottom: 1px solid $light;
+  border-bottom: 1px solid rgba($light, 0.6);
   padding: $spacing-full - 15px $spacing-full 5px;
   @extend %clearfix;
 }
@@ -25,15 +25,16 @@
     width: 24px;
     height: 24px;
     clear: both;
-    opacity: $opacity-medium;
+    opacity: $opacity-bright;
     z-index: 1;
+    transition: opacity 0.2s ease, transform 0.2s ease;
     &:hover {
       cursor: pointer;
       opacity: 1;
+      transform: scale(1.15);
     }
     &:active {
-      -webkit-transform: scale(0.9, 0.9);
-      transform: scale(0.9, 0.9);
+      transform: scale(0.9);
     }
     svg {
       position: absolute;
@@ -80,15 +81,35 @@
   }
 
   .menu-link {
+    position: relative;
     color: inherit;
     line-height: $base-line-height + 0.4;
     text-decoration: none;
-    padding: 5px 8px;
+    padding: 6px 10px;
     opacity: $opacity-medium;
     letter-spacing: 0.05em;
+    transition: opacity 0.2s ease;
+
+    // Hover underline: a thin line slides in from the center
+    &::after {
+      content: '';
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 4px;
+      height: 1px;
+      background: currentColor;
+      opacity: $opacity-bright;
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
 
     &:hover {
       opacity: 1;
+
+      &::after {
+        transform: scaleX(1);
+      }
     }
 
     &:not(:last-child) {
@@ -96,9 +117,12 @@
     }
 
     &.rss {
-      position: relative;
-      bottom: -3px;
+      vertical-align: middle;
       outline: none;
+
+      &::after {
+        display: none; // no underline on RSS icon
+      }
     }
 
     @include media-query($on-mobile) {
@@ -109,6 +133,12 @@
   .menu-link.active {
     opacity: 1;
     font-weight: $bold-weight;
+    // Compensate for font-weight layout shift with a hair of letter-spacing reduction
+    letter-spacing: 0.02em;
+
+    &::after {
+      transform: scaleX(1); // permanent underline for active
+    }
   }
 
   @include media-query($on-mobile) {
