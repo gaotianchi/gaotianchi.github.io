@@ -21,10 +21,10 @@ lastmod: 2026-07-16T00:00:00+08:00
       <div class="library-year-group">
       {% assign current_year = item_year %}
     {% endif %}
-    <div class="library-item">
-      <div class="library-item-line">{% if item.post %}<a href="{{ item.post }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %} · {{ item.creator }} · 〔{{ item.type }}〕</div>
+    <details class="library-item">
+      <summary class="library-item-line">{% if item.post %}<a href="{{ item.post }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %} · {{ item.creator }} · 〔{{ item.type }}〕</summary>
       {% if item.notes %}<div class="library-item-notes">{{ item.notes }}</div>{% endif %}
-    </div>
+    </details>
     {% if forloop.last %}</div>{% endif %}
   {% endfor %}
 {% else %}

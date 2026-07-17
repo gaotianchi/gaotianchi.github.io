@@ -10,6 +10,11 @@
 #
 # 条目按 started 倒序排列，同一年份自动归组。
 
+- title: 处处吻
+  creator: 杨千嬅
+  type: 音乐
+  started: 2026-07-17
+
 - title: 绝地求生
   creator: 蓝洞
   type: 游戏

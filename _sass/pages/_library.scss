@@ -19,11 +19,39 @@
 
 .library-item {
   padding: 0.2rem 0;
+
+  // Hide default disclosure triangle, use a subtle left border when open
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+    content: '';
+  }
 }
 
 .library-item-line {
   font-size: $base-font-size;
   line-height: $base-line-height;
+  cursor: pointer;
+  list-style: none; // also hides marker on some browsers
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    margin-right: 6px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+    opacity: $opacity-faint;
+  }
+
+  details[open] &::before {
+    transform: rotate(45deg);
+  }
 }
 
 .library-item-notes {
