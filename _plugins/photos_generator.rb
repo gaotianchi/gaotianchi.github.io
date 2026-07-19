@@ -69,7 +69,7 @@ module Jekyll
     DISPLAY_WIDTH   = 1600
     DISPLAY_QUALITY = 75
     WATERMARK_TEXT  = 'www.gaotianchi.com'
-    PER_PAGE = 5
+    PER_PAGE = 1
 
     def generate(site)
       # Remove stale photography pages (prevents duplicates during regeneration)
