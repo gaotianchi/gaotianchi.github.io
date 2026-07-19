@@ -152,6 +152,33 @@ module Jekyll
         { 'date' => entry[:date], 'photos' => photos }
       end
 
+      # ── Merge notes from _data/photos.yml ──
+      # Jekyll parses bare YYYY-MM-DD as Date objects; normalize to strings for lookup.
+      notes_data = site.data['photos'] || []
+      notes_by_date = {}
+      notes_data.each do |entry|
+        next unless entry['date']
+        key = entry['date'].to_s
+        photo_notes = {}
+        (entry['photos'] || []).each do |p|
+          photo_notes[p['file']] = p['note'] if p['file'] && p['note'] && !p['note'].strip.empty?
+        end
+        notes_by_date[key] = {
+          'note' => entry['note']&.to_s&.strip,
+          'photos' => photo_notes
+        }
+      end
+
+      photo_groups.each do |group|
+        date = group['date']
+        next unless (day_notes = notes_by_date[date])
+        group['note'] = day_notes['note'] if day_notes['note'] && !day_notes['note'].empty?
+        group['photos'].each do |photo|
+          filename = File.basename(photo['thumb'], '.*')
+          photo['note'] = day_notes['photos'][filename] if day_notes['photos'][filename]
+        end
+      end
+
       if photo_groups.empty?
         site.pages << PhotoPage.new(site, 1, [], 1)
         return

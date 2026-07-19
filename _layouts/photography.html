@@ -10,12 +10,21 @@ layout: page
   {%- assign m = group.date | slice: 5, 2 | plus: 0 -%}
   {%- assign d = group.date | slice: 8, 2 | plus: 0 -%}
   <section class="photos-group">
-    <h2 class="photos-date">{{ y }}年{{ m }}月{{ d }}日</h2>
+    {%- if group.note -%}
+    <div class="photos-note">
+      <span class="photos-note-date">{{ y }}年{{ m }}月{{ d }}日</span>
+      <p class="photos-note-text">{{ group.note }}</p>
+    </div>
+    {%- else -%}
+    <p class="photos-date">{{ y }}年{{ m }}月{{ d }}日</p>
+    {%- endif -%}
     <div class="photos-grid">
       {%- for photo in group.photos -%}
       <a href="{{ photo.display }}"
          class="photos-item"
-         data-full="{{ photo.display }}">
+         data-full="{{ photo.display }}"
+         {% if photo.note %}data-note="{{ photo.note | escape }}"{% endif %}
+         {% if photo.note %}title="{{ photo.note | escape }}"{% endif %}>
         <img src="{{ photo.thumb }}"
              width="{{ photo.w }}" height="{{ photo.h }}"
              alt="" loading="lazy" />
@@ -55,6 +64,7 @@ layout: page
   <button class="photos-lightbox-next" aria-label="下一张">&rsaquo;</button>
   <div class="photos-lightbox-spinner" id="photos-lightbox-spinner"></div>
   <img src="" alt="" class="photos-lightbox-img" id="photos-lightbox-img" />
+  <p class="photos-lightbox-caption" id="photos-lightbox-caption"></p>
 </div>
 
 <script>
@@ -76,12 +86,15 @@ layout: page
   }
 
   var photoList = [];
+  var noteList  = [];
   for (var i = 0; i < items.length; i++) {
     photoList.push(items[i].getAttribute('data-full'));
+    noteList.push(items[i].getAttribute('data-note') || '');
   }
 
   var lightbox   = document.getElementById('photos-lightbox');
   var lightboxImg = document.getElementById('photos-lightbox-img');
+  var captionEl   = document.getElementById('photos-lightbox-caption');
   var currentIndex = -1;
   var triggerEl = null;
 
@@ -124,6 +137,14 @@ layout: page
     lightboxImg.classList.remove('loaded');
     spinner.classList.add('active');
     lightboxImg.src = photoList[index];
+    // Show per-photo caption if available
+    var note = noteList[index];
+    if (note) {
+      captionEl.textContent = note;
+      captionEl.style.display = '';
+    } else {
+      captionEl.style.display = 'none';
+    }
     lightbox.setAttribute('aria-hidden', 'false');
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';

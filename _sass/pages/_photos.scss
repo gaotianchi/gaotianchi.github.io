@@ -25,6 +25,49 @@
   }
 }
 
+// Day-level journal note
+.photos-note {
+  margin-bottom: 1rem;
+  padding: 0.75rem 0 0.25rem;
+
+  &:first-child {
+    margin-top: 0.25rem;
+  }
+}
+
+.photos-note-date {
+  display: block;
+  font-family: $serif-family;
+  font-size: 0.875rem;
+  color: $gray;
+  opacity: $opacity-faint;
+  margin-bottom: 0.375rem;
+}
+
+.photos-note-text {
+  font-family: $serif-family;
+  font-size: 1rem;
+  color: $text-base-color;
+  opacity: $opacity-emphasis;
+  line-height: 1.75;
+  margin: 0;
+  font-style: italic;
+}
+
+// Per-photo note indicator on thumbnail
+.photos-item[data-note]::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
 .photos-grid {
   column-count: 2;
   column-gap: 0.375rem;
@@ -46,6 +89,7 @@
   overflow: hidden;
   cursor: pointer;
   background: $paper-white;
+  position: relative;
 
   img {
     display: block;
@@ -97,6 +141,24 @@
   &.loaded {
     opacity: 1;
   }
+}
+
+// Lightbox per-photo caption
+.photos-lightbox-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80vw;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: $serif-family;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  text-align: center;
+  border-radius: $border-radius-sm;
+  margin: 0;
 }
 
 // Pagination
@@ -242,6 +304,10 @@
     margin-bottom: 0.5rem;
   }
 
+  .photos-note-text {
+    font-size: 0.9375rem;
+  }
+
   .photos-grid {
     column-gap: 0.25rem;
     column-count: 2;
@@ -249,6 +315,13 @@
 
   .photos-item {
     margin-bottom: 0.25rem;
+  }
+
+  .photos-lightbox-caption {
+    bottom: 1rem;
+    font-size: 0.875rem;
+    max-width: 90vw;
+    padding: 0.375rem 0.75rem;
   }
 
   .photos-lightbox-img {
