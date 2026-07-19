@@ -376,6 +376,23 @@ module Jekyll
                                               "#{base}.jpg")
         end
       end
+
+      # ── Auto-generate notes.yml template if absent ──
+      notes_path = File.join(dir, 'notes.yml')
+      unless File.exist?(notes_path)
+        bases = image_files.map { |f| File.basename(f, File.extname(f)) }.sort
+        lines = []
+        lines << "# 摄影笔记"
+        lines << "# note: 当日随想（可选）"
+        lines << "# 以下每张照片可添加说明（可选），显示在灯箱内"
+        lines << ""
+        lines << "note:"
+        lines << "photos:"
+        bases.each { |b| lines << "  #{b}:" }
+        lines << ""
+        File.write(notes_path, lines.join("\n"))
+        Jekyll.logger.info "Photos:", "  → notes template #{File.basename(notes_path)}"
+      end
     end
   end
 end
