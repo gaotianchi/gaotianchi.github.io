@@ -31,20 +31,20 @@ layout: page
 </div>
 
 {%- if page.total_pages > 1 -%}
-{%- assign photos_base = page.url | split: '/page/' | first | append: '/' -%}
+{%- assign photos_base = '/photography' -%}
 <nav class="photos-pagination">
   {%- if page.page_num > 1 -%}
     {%- if page.page_num == 2 -%}
-    <a href="{{ photos_base }}" class="photos-pagination-prev">← 上一页</a>
+    <a href="{{ photos_base }}/" class="photos-pagination-prev">← 上一页</a>
     {%- else -%}
-    <a href="{{ photos_base }}page/{{ page.page_num | minus: 1 }}/" class="photos-pagination-prev">← 上一页</a>
+    <a href="{{ photos_base }}/page/{{ page.page_num | minus: 1 }}/" class="photos-pagination-prev">← 上一页</a>
     {%- endif -%}
   {%- else -%}
   <span class="photos-pagination-disabled">← 上一页</span>
   {%- endif -%}
   <span class="photos-pagination-info">{{ page.page_num }} / {{ page.total_pages }}</span>
   {%- if page.page_num < page.total_pages -%}
-  <a href="{{ photos_base }}page/{{ page.page_num | plus: 1 }}/" class="photos-pagination-next">下一页 →</a>
+  <a href="{{ photos_base }}/page/{{ page.page_num | plus: 1 }}/" class="photos-pagination-next">下一页 →</a>
   {%- else -%}
   <span class="photos-pagination-disabled">下一页 →</span>
   {%- endif -%}
