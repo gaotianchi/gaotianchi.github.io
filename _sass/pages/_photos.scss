@@ -25,33 +25,23 @@
   }
 }
 
-// Day-level journal note
+// Day-level journal note — intentionally understated
 .photos-note {
   margin-bottom: 1rem;
-  padding: 0.75rem 0 0.25rem;
+  padding: 0;
 
   &:first-child {
     margin-top: 0.25rem;
   }
 }
 
-.photos-note-date {
-  display: block;
+.photos-note-text {
   font-family: $serif-family;
   font-size: 0.875rem;
   color: $gray;
   opacity: $opacity-faint;
-  margin-bottom: 0.375rem;
-}
-
-.photos-note-text {
-  font-family: $serif-family;
-  font-size: 1rem;
-  color: $text-base-color;
-  opacity: $opacity-emphasis;
-  line-height: 1.75;
+  line-height: 1.6;
   margin: 0;
-  font-style: italic;
 }
 
 // Per-photo note indicator on thumbnail
@@ -305,7 +295,7 @@
   }
 
   .photos-note-text {
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
   }
 
   .photos-grid {

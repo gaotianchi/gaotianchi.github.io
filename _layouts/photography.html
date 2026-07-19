@@ -6,17 +6,11 @@ layout: page
 <div class="photos">
 
 {%- for group in page.photos -%}
-  {%- assign y = group.date | slice: 0, 4 -%}
-  {%- assign m = group.date | slice: 5, 2 | plus: 0 -%}
-  {%- assign d = group.date | slice: 8, 2 | plus: 0 -%}
   <section class="photos-group">
     {%- if group.note -%}
     <div class="photos-note">
-      <span class="photos-note-date">{{ y }}年{{ m }}月{{ d }}日</span>
       <p class="photos-note-text">{{ group.note }}</p>
     </div>
-    {%- else -%}
-    <p class="photos-date">{{ y }}年{{ m }}月{{ d }}日</p>
     {%- endif -%}
     <div class="photos-grid">
       {%- for photo in group.photos -%}
