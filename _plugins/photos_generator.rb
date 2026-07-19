@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'yaml'
+
 # Locate ImageMagick across platforms. Committed display images already carry
 # watermarks, so CI builds never call ImageMagick — it is only needed when a
 # new photo is added locally without pre-generated derivatives.
@@ -152,31 +154,9 @@ module Jekyll
         { 'date' => entry[:date], 'photos' => photos }
       end
 
-      # ── Merge notes from _data/photos.yml ──
-      # Jekyll parses bare YYYY-MM-DD as Date objects; normalize to strings for lookup.
-      notes_data = site.data['photos'] || []
-      notes_by_date = {}
-      notes_data.each do |entry|
-        next unless entry['date']
-        key = entry['date'].to_s
-        photo_notes = {}
-        (entry['photos'] || []).each do |p|
-          photo_notes[p['file']] = p['note'] if p['file'] && p['note'] && !p['note'].strip.empty?
-        end
-        notes_by_date[key] = {
-          'note' => entry['note']&.to_s&.strip,
-          'photos' => photo_notes
-        }
-      end
-
+      # ── Merge notes from per-directory notes.yml ──
       photo_groups.each do |group|
-        date = group['date']
-        next unless (day_notes = notes_by_date[date])
-        group['note'] = day_notes['note'] if day_notes['note'] && !day_notes['note'].empty?
-        group['photos'].each do |photo|
-          filename = File.basename(photo['thumb'], '.*')
-          photo['note'] = day_notes['photos'][filename] if day_notes['photos'][filename]
-        end
+        load_notes(group, site)
       end
 
       if photo_groups.empty?
@@ -194,6 +174,40 @@ module Jekyll
     end
 
     private
+
+    # Load notes from _photos/<date>/notes.yml if present.
+    # Merges day-level note and per-photo notes into the group hash in-place.
+    def load_notes(group, site)
+      # Reconstruct the filesystem directory path from the first photo's thumb URL.
+      # Thumb URLs are like "/_photos/2026-07-19/thumbs/DSC00240.jpg"
+      first = group['photos']&.first
+      return unless first && first['thumb']
+      # Extract: "/_photos/2026-07-19" from "/_photos/2026-07-19/thumbs/..."
+      photos_dir = File.dirname(File.dirname(first['thumb'])) # e.g. "/_photos/2026-07-19"
+      notes_path = File.join(site.source, photos_dir, 'notes.yml')
+      return unless File.exist?(notes_path)
+
+      begin
+        notes = YAML.safe_load(File.read(notes_path)) || {}
+      rescue => e
+        Jekyll.logger.warn "Photos:", "  Failed to parse #{notes_path}: #{e.message}"
+        return
+      end
+
+      # Day-level note
+      day_note = notes['note']
+      group['note'] = day_note.strip if day_note.is_a?(String) && !day_note.strip.empty?
+
+      # Per-photo notes — keyed by filename (without extension)
+      photo_notes = notes['photos']
+      return unless photo_notes.is_a?(Hash)
+
+      group['photos'].each do |photo|
+        filename = File.basename(photo['thumb'], '.*')
+        note = photo_notes[filename]
+        photo['note'] = note.strip if note.is_a?(String) && !note.strip.empty?
+      end
+    end
 
     # Pure-Ruby JPEG dimension reader — works without ImageMagick.
     # Returns [width, height] or [400, 300] on failure.
