@@ -42,10 +42,19 @@ module Jekyll
       process(@name)
 
       permalink = page_num == 1 ? '/photography/' : "/photography/page/#{page_num}/"
-      title_suffix = page_num == 1 ? '' : " · 第 #{page_num} 页"
+
+      # Extract date from the first photo group for a meaningful title
+      date_label = ''
+      if photos&.first&.is_a?(Hash) && (d = photos.first['date'])
+        parts = d.to_s.split('-')
+        if parts.length == 3
+          date_label = " · #{parts[1].to_i}月#{parts[2].to_i}日"
+        end
+      end
+
       self.data = {
         'layout'       => 'photography',
-        'title'        => "摄影#{title_suffix}",
+        'title'        => "摄影#{date_label}",
         'photos'       => photos,
         'page_num'     => page_num,
         'total_pages'  => total_pages,
