@@ -3,6 +3,13 @@ layout: page
 ---
 
 {%- if page.photos.size > 0 -%}
+
+{%- comment -%} Count total photos on this page to adapt layout density {%- endcomment -%}
+{%- assign total_photos = 0 -%}
+{%- for group in page.photos -%}
+  {%- assign total_photos = total_photos | plus: group.photos.size -%}
+{%- endfor -%}
+
 <div class="photos">
 
 {%- for group in page.photos -%}
@@ -12,7 +19,7 @@ layout: page
       <p class="photos-note-text">{{ group.note }}</p>
     </div>
     {%- endif -%}
-    <div class="photos-grid">
+    <div class="photos-grid{% if total_photos == 1 %} photos-grid--single{% elsif total_photos <= 3 %} photos-grid--few{% endif %}">
       {%- for photo in group.photos -%}
       <a href="{{ photo.display }}"
          class="photos-item"

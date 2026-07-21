@@ -71,6 +71,18 @@
   }
 }
 
+// Few photos (2–3): reduce columns so each image is larger
+.photos-grid--few {
+  @media (min-width: $on-desktop) {
+    column-count: 2;
+  }
+}
+
+// Single photo: one column at all breakpoints, full width
+.photos-grid--single {
+  column-count: 1;
+}
+
 .photos-item {
   display: block;
   break-inside: avoid;
