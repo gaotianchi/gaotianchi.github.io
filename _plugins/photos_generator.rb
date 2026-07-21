@@ -37,7 +37,7 @@ module Jekyll
     def initialize(site, page_num, photos, total_pages)
       @site = site
       @base = site.source
-      @dir  = ''
+      @dir  = page_num == 1 ? 'photography' : "photography/page/#{page_num}"
       @name = 'index.html'
       @path = File.join(site.source, @dir, @name)
 
