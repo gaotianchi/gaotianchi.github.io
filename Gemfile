@@ -34,7 +34,7 @@ gem "webrick", "~> 1.7"
 
 gem "jekyll-redirect-from"
 
-gem "mini_magick", "~> 4.12"
+gem "mini_magick", "~> 5.3"
 
 gem "csv"
 gem "base64"
